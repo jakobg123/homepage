@@ -1,0 +1,26 @@
+// @import './extensions.scss';
+// @import './includes.scss';
+
+@import './fonts.scss';
+
+$font: 'Raleway', sans-serif;
+
+$patternPath: '/patterns/';
+$iconPath: '/icons/minified/';
+
+$colorGreen: #aef249;
+
+$colorPrimaryBlue: #000d29;
+$colorSecondaryYellow: #fffb0f;
+
+$colorWhiteBackground: #fafafa;
+$colorGrey5: #424242;
+
+// SPACINGS
+$spacingXs: 4px;
+$spacingS: 8px;
+$spacingSm: 12px;
+$spacingM: 16px;
+$spacingMl: 20px;
+$spacingL: 24px;
+$spacingXl: 32px;

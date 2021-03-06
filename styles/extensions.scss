@@ -1,0 +1,75 @@
+// @import './variables.scss';
+// @import './includes.scss';
+
+@import './variables.scss';
+
+%h1 {
+  font-size: 4.209rem;
+  @extend %heading;
+  margin-bottom: $spacingM;
+  font-weight: 400;
+}
+
+%h2 {
+  font-size: 3.157rem;
+  @extend %heading;
+}
+
+%h3 {
+  font-size: 2.369rem;
+  @extend %heading;
+  font-weight: 700;
+  margin-bottom: $spacingL;
+}
+
+%h4 {
+  font-size: 1.777rem;
+  @extend %heading;
+}
+
+%body {
+  font-size: 1.777rem;
+  @extend %p;
+}
+
+%smallBody {
+  font-size: 1.333rem;
+  @extend %p;
+}
+
+%label {
+  // font-size: 1.333rem;
+  @extend %h4;
+  text-transform: uppercase;
+  // padding: $spacingS;
+  margin-bottom: 0;
+}
+
+%heading {
+  // text-transform: uppercase;
+  // font-weight: 900;
+  letter-spacing: 2.7px;
+  line-height: 1.26;
+  font-family: $font;
+  word-break: break-word;
+  @extend %fontColor;
+  //   color: $colorWhiteBackground;
+}
+
+%p {
+  font-weight: 400;
+  letter-spacing: 2.7px;
+  line-height: 1.6;
+  font-family: $font;
+  word-break: break-word;
+  @extend %fontColor;
+  //   color: $colorWhiteBackground;
+}
+
+%fontColor {
+  color: $colorWhiteBackground;
+}
+
+%grid {
+  padding: 0 $spacingL;
+}
