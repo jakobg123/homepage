@@ -16,13 +16,14 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noImplicitAny": false,
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "pages/_app.js", "pages/index.jsx", "components/Icon/Icon.jsx", "components/Header/Header.jsx"  ],
   "exclude": [
     "node_modules"
   ]
