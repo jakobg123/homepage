@@ -1,0 +1,100 @@
+@import '../../styles/variables.scss';
+@import '../../styles/extensions.scss';
+
+.TabList {
+  $root: &;
+
+  padding: $spacingM $spacingS;
+  border-radius: $radiusCardSmall;
+  margin-bottom: $colorChangeSpacing;
+  position: relative;
+  overflow: hidden;
+  background-color: $colorGrey-3;
+  box-shadow: $boxShadowCard;
+  z-index: 1;
+
+  //   &--Dark{
+  //       background-color: $colorGrey-3;
+  //   }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @include bgColorGradient4(
+      to right bottom,
+      $colorGrey-2,
+      0.5,
+      0,
+      $colorGrey-3,
+      0.8,
+      75%,
+      $colorOrange,
+      0.6,
+      75%,
+      $colorOrange,
+      0.6,
+      95%
+    );
+  }
+
+  &--Dark.TabList::after {
+    @include bgColorGradient4(
+      to right bottom,
+      $colorPrimaryBlueLight,
+      0.5,
+      0,
+      $colorPrimaryBlue,
+      0.8,
+      75%,
+      $colorGreen,
+      0.5,
+      75%,
+      $colorGreen,
+      0.7,
+      95%
+    );
+  }
+  // &--Dark.TabList::after {
+  //   @include bgColorGradient4(
+  //     to right bottom,
+  //     $colorGrey-2,
+  //     0.5,
+  //     0,
+  //     $colorGrey-3,
+  //     0.8,
+  //     75%,
+  //     $colorGreen,
+  //     0.6,
+  //     75%,
+  //     $colorGreen,
+  //     0.6,
+  //     95%
+  //   );
+  // }
+
+  &__Title {
+    @extend %labelFat;
+    // @extend %h2;
+
+    @extend %fontColorBlack;
+
+    .TabList--Dark & {
+      @extend %fontColor;
+    }
+  }
+
+  &__List {
+    border-top: 2px solid $colorOrange;
+    padding-top: $spacingL;
+
+    .TabList--Dark & {
+      border-top: 2px solid $colorGreen;
+    }
+  }
+}

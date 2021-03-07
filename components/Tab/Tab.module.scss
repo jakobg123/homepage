@@ -1,0 +1,92 @@
+@import '../../styles/variables.scss';
+@import '../../styles/extensions.scss';
+
+.Tab {
+  // border: 1px solid red;
+  // padding: $spacingM $spacingM $spacingL;
+  padding-bottom: $spacingS;
+  margin-bottom: $spacingL;
+  background-color: $colorWhiteBackground;
+  // background-color: $colorOrange;
+  // background: linear-gradient(to right bottom, @include bgColorOpacity());
+  border-radius: $radiusCardSmall;
+  box-shadow: $boxShadowCardSmall;
+  // @include customBoxShadow($boxShadowSmall, $colorOrange);
+
+  padding: $spacingXs;
+  padding-bottom: $spacingM;
+
+  &--Dark {
+    background-color: $colorPrimaryBlue;
+  }
+
+  &__TextWrapper {
+    display: inline;
+    // flex-direction: column;
+  }
+
+  &__Title {
+    @extend %h3;
+    margin-bottom: $spacingXs;
+    padding-top: $spacingXs;
+    padding-left: $spacingXs;
+    @extend %fontColorBlack;
+    position: relative;
+    display: inline-block;
+    // display: block;
+    // text-decoration: underline;
+    // text-underline-position: below;
+    .Tab--Dark & {
+      @extend %fontColor;
+    }
+
+    &::after {
+      content: '';
+      background-color: $colorPrimaryBlue;
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: $spacingXs;
+
+      .Tab--Dark & {
+        background-color: $colorWhiteBackground;
+      }
+    }
+  }
+
+  &__Knowledge {
+    @extend %bodyFat;
+    @extend %fontColorBlack;
+    margin-bottom: $spacingS;
+    padding-top: $spacingXs;
+    padding-left: $spacingXs;
+    display: block;
+
+    .Tab--Dark & {
+      @extend %fontColor;
+    }
+  }
+
+  &__TitleAndIconWrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $spacingXs;
+    // margin-bottom: $spacingS;
+  }
+
+  &__IconWrapper {
+    padding: $spacingS;
+    width: 7.5rem;
+    height: 7.5rem;
+    background-color: $colorPrimaryBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $radiusButtonSmall;
+
+    .Tab--Dark & {
+      background-color: $colorWhiteBackground;
+    }
+  }
+}
