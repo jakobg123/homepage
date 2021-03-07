@@ -41,7 +41,7 @@
 
     &--Expanded {
       z-index: 5001;
-      @include radiusButtonExpanded;
+      // @include radiusButtonExpanded;
       // border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
 
