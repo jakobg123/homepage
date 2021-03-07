@@ -1,30 +1,17 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useInView } from 'react-intersection-observer';
+// import { useInView } from 'react-intersection-observer';
 
 import styles from './MobileNav.module.scss';
 
 import classNames from 'classnames';
 import Icon from '../Icon';
-import { fileURLToPath } from 'node:url';
 
-const MobileNav = () => {
+// import data from "../../public/data/menu.json";
+
+const MobileNav = ({ data }) => {
     const [openNav, setOpenNav] = useState(false);
-
-    const { ref, inView, entry } = useInView({
-        /* Optional options */
-        threshold: .9,
-    });
-
-    useEffect(() => {
-        console.log("OUTPUT ÄR ~ file: MobileNav.tsx ~ line 15 ~ MobileNav ~ inView", inView)
-        // console.log("OUTPUT ÄR ~ file: MobileNav.tsx ~ line 15 ~ MobileNav ~ entry", entry)
-
-        let entryBool = Boolean(entry)
-        console.log("OUTPUT ÄR ~ file: MobileNav.tsx ~ line 24 ~ useEffect ~ entryBool", entryBool)
-    }, [inView])
-
-
+    const [drop, setDrop] = useState(false);
 
     const handleMobileNav = () => {
         setOpenNav(!openNav);
@@ -32,10 +19,6 @@ const MobileNav = () => {
             ? (document.body.style.overflow = 'scroll')
             : (document.body.style.overflow = 'hidden');
     };
-
-    const [drop, setDrop] = useState(false);
-    // const [sticky, setSticky] = useState(false)
-    // console.log("OUTPUT ÄR ~ file: MobileNav.tsx ~ line 28 ~ MobileNav ~ sticky", sticky)
 
     const slideIn = (bool) => {
         setTimeout(() => {
@@ -48,23 +31,11 @@ const MobileNav = () => {
         openNav ? slideIn(true) : slideIn(false);
     }, [openNav]);
 
-    // useEffect(() => {
-    //     // console.log(
-    //     //     'OUTPUT ÄR ~ file: MobileNav.tsx ~ line 46 ~ MobileNav ~ inView',
-    //     //     inView
-    //     // );
-    //     setSticky(!inView)
-    // }, [inView]);
-
-    // useEffect(() => {
-    //     setDrop(false)
-    // }, [])
-
     return (
         <div className={styles['MobileNav']}>
             {/* <div className={styles['MobileNav__ButtonWrapper']}> */}
             <button
-                ref={ref}
+                // ref={ref}
                 aria-expanded={openNav ? 'true' : 'false'}
                 aria-controls="menu"
                 onClick={handleMobileNav}
@@ -112,10 +83,21 @@ const MobileNav = () => {
                             <span
                                 className={classNames(styles['MobileNav__NavListTitleText'])}>
                                 Meny
-              </span>
+                            </span>
                             {/* <Link href="/projects"><a className={styles["MobileNav__NavLink"]}></a></Link> */}
                         </li>
-                        <li
+                        {!!data.length && data.map(({ link, url }, index) => (
+                            <li
+                                key={index}
+                                className={classNames(styles['MobileNav__NavListItem'], {
+                                    [styles['MobileNav__NavListItem--Drop']]: !drop,
+                                })}>
+                                <Link href={url}>
+                                    <a className={styles['MobileNav__NavLink']}>{link}</a>
+                                </Link>
+                            </li>
+                        ))}
+                        {/* <li
                             className={classNames(styles['MobileNav__NavListItem'], {
                                 [styles['MobileNav__NavListItem--Drop']]: !drop,
                             })}>
@@ -146,7 +128,7 @@ const MobileNav = () => {
                             <Link href="">
                                 <a className={styles['MobileNav__NavLink']}>Kontakt</a>
                             </Link>
-                        </li>
+                        </li> */}
                     </ul>
                 </nav>
             </div>
