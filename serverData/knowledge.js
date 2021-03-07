@@ -55,6 +55,12 @@ export default {
             number: '6',
             html: '<p>Text om Redux</p>',
         },
+        {
+            type: 'github',
+            title: 'GitHub',
+            number: '7',
+            html: '<p>Text om GitHub</p>',
+        },
     ],
     backend: [
         {
