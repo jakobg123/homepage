@@ -9,12 +9,30 @@ $patternPath: '/patterns/';
 $iconPath: '/icons/minified/';
 
 $colorGreen: #aef249;
+$colorOrange: #ff7730;
 
+$colorPrimaryBlueLight: #001542;
 $colorPrimaryBlue: #000d29;
 $colorSecondaryYellow: #fffb0f;
 
-$colorWhiteBackground: #fafafa;
-$colorGrey5: #424242;
+//old white
+// $colorWhiteBackground: #fafafa;
+$colorWhite: #fafafa;
+
+//new white
+$colorWhiteBackground: #dcdcdc;
+// $colorGrey5: #424242;
+
+$colorGrey-1: #dcdcdc;
+$colorGrey-2: #d3d3d3;
+$colorGrey-3: #c0c0c0;
+$colorGrey-4: #a9a9a9;
+$colorGrey-5: #808080;
+$colorGrey-6: #696969;
+$colorGrey-7: #3b3b3b;
+
+$transitionNormal: 0.4s ease-in-out;
+$transitionQuick: 0.2s ease-in-out;
 
 // SPACINGS
 $spacingXs: 4px;
@@ -24,3 +42,92 @@ $spacingM: 16px;
 $spacingMl: 20px;
 $spacingL: 24px;
 $spacingXl: 32px;
+
+$colorChangeSpacing: 180px;
+
+$maxWidthTextMobile: 100%;
+
+//BORDER RADIUS
+$radiusButtonSmall: $spacingXs;
+$radiusCardSmall: $spacingXs;
+@mixin radiusButtonExpanded() {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+//BOX SHADOW
+$boxShadowCard: 2px 2px 6px rgba(0, 0, 0, 0.5);
+$boxShadowCardSmall: 0px 0px 4px rgba(0, 0, 0, 0.5);
+
+$boxShadowMedium: 2px 2px 6px;
+$boxShadowSmall: 1px 1px 2px;
+
+@mixin customBoxShadow($boxShadow, $color) {
+  box-shadow: $boxShadow rgba($color, 0.9);
+}
+
+@mixin bgColorOpacity($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+
+@mixin bgColorGradient(
+  $direction,
+  $color,
+  $opacity,
+  $percentage,
+  $color2,
+  $opacity2,
+  $percentage2
+) {
+  background: linear-gradient(
+    $direction,
+    rgba($color, $opacity) $percentage,
+    rgba($color2, $opacity2) $percentage2
+  );
+}
+
+@mixin bgColorGradient3(
+  $direction,
+  $color,
+  $opacity,
+  $percentage,
+  $color2,
+  $opacity2,
+  $percentage2,
+  $color3,
+  $opacity3,
+  $percentage3
+) {
+  background: linear-gradient(
+    $direction,
+    rgba($color, $opacity) $percentage,
+    rgba($color2, $opacity2) $percentage2,
+    rgba($color3, $opacity3) $percentage3
+  );
+}
+
+@mixin bgColorGradient4(
+  $direction,
+  $color,
+  $opacity,
+  $percentage,
+  $color2,
+  $opacity2,
+  $percentage2,
+  $color3,
+  $opacity3,
+  $percentage3,
+  $color4,
+  $opacity4,
+  $percentage4
+) {
+  background: linear-gradient(
+    $direction,
+    rgba($color, $opacity) $percentage,
+    rgba($color2, $opacity2) $percentage2,
+    rgba($color3, $opacity3) $percentage3,
+    rgba($color4, $opacity4) $percentage4
+  );
+}
+
+// background: linear-gradient(to right bottom, @include bgColorOpacity());

@@ -32,6 +32,17 @@
   @extend %p;
 }
 
+%bodyFat {
+  font-size: 1.777rem;
+  letter-spacing: 2.3px;
+  line-height: 1.6;
+  font-family: $font;
+  word-break: break-word;
+  @extend %fontColor;
+  // @extend %body;
+  font-weight: 600;
+}
+
 %smallBody {
   font-size: 1.333rem;
   @extend %p;
@@ -43,6 +54,25 @@
   text-transform: uppercase;
   // padding: $spacingS;
   margin-bottom: 0;
+}
+
+%labelFat {
+  @extend %h2;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: $spacingM;
+}
+
+%labelSmall {
+  // @extend %smallBody;
+  font-size: 1.333rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 2.7px;
+  line-height: 1.6;
+  font-family: $font;
+  word-break: break-word;
+  @extend %fontColor;
 }
 
 %heading {
@@ -70,6 +100,15 @@
   color: $colorWhiteBackground;
 }
 
-%grid {
-  padding: 0 $spacingL;
+%fontColorBlack {
+  color: $colorPrimaryBlue;
+  // color: $colorGrey-7;
 }
+
+%grid {
+  padding: 0 $spacingM;
+}
+
+// %maxWidthTextMobile {
+//   width: calc(100% - (16px + 55px));
+// }
