@@ -10,7 +10,7 @@ const Header: React.FC = () => {
   console.log('HEADER');
 
   const bgImage: IImageProps = {
-    src: '/images/glass.jpg',
+    src: '/images/glassOptXl.webp',
     alt: 'Cool ljus glaskula',
     width: 640,
     height: 960,
@@ -41,7 +41,7 @@ const Header: React.FC = () => {
           onLoadFade
         />
 
-        <MobileNav />
+        {/* <MobileNav /> */}
       </div>
     </div>
   );
