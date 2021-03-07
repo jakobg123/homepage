@@ -16,7 +16,12 @@ const Card = () => {
     <div
       className={classNames(styles['Card'], { [styles['Card--Show']]: inView })}
       ref={ref}>
-      <Image src={'/images/green1.jpg'} />
+      <Image
+        src={'/images/green1.jpg'}
+        width={269}
+        height={179}
+        alt="en bildtext"
+      />
       <div className={styles['Card__TextWrapper']}>
         <h3 className={styles['Card__Title']}>{inView.toString()}</h3>
         <h3 className={styles['Card__Title']}>Title</h3>
