@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/_app.js", "pages/index.jsx", "components/Icon/Icon.jsx", "components/Header/Header.jsx"  ],
+, "pages/_app.js", "pages/index.jsx", "components/Icon/Icon.jsx", "components/Header/Header.jsx", "containers/StartContainer/StartContainer.jsx"  ],
   "exclude": [
     "node_modules"
   ]
