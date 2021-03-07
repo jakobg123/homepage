@@ -21,11 +21,17 @@
   }
 
   &--White svg {
-    fill: white;
+    color: $colorWhiteBackground;
+    fill: $colorWhiteBackground;
   }
 
   &--Yellow svg {
     color: $colorSecondaryYellow;
     fill: $colorSecondaryYellow;
+  }
+
+  &--Primary svg {
+    color: $colorPrimaryBlue;
+    fill: $colorPrimaryBlue;
   }
 }

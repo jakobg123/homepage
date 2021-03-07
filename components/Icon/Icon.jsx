@@ -71,6 +71,7 @@ import dynamic from 'next/dynamic';
 //   import('./icons/minified/wordpress.svg').then((mod) => mod.ReactComponent)
 // );
 
+import ChevronDown from './icons/minified/chevronDown.svg';
 import Code from './icons/minified/code.svg';
 import Css from './icons/minified/css.svg';
 import Django from './icons/minified/django.svg';
@@ -95,6 +96,7 @@ import Wagtail from './icons/minified/wagtail.svg';
 import Wordpress from './icons/minified/wordpress.svg';
 
 export const allIcons = {
+  chevronDown: ChevronDown,
   code: Code,
   css: Css,
   django: Django,
