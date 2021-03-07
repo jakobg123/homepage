@@ -2,6 +2,8 @@
 @import '../../styles/extensions.scss';
 
 .Tab {
+  position: relative;
+  display: flex;
   // border: 1px solid red;
   // padding: $spacingM $spacingM $spacingL;
   padding-bottom: $spacingS;
@@ -14,7 +16,7 @@
   // @include customBoxShadow($boxShadowSmall, $colorOrange);
 
   padding: $spacingXs;
-  padding-bottom: $spacingM;
+  padding-bottom: $spacingS;
 
   &--Dark {
     background-color: $colorPrimaryBlue;
@@ -33,9 +35,7 @@
     @extend %fontColorBlack;
     position: relative;
     display: inline-block;
-    // display: block;
-    // text-decoration: underline;
-    // text-underline-position: below;
+
     .Tab--Dark & {
       @extend %fontColor;
     }
@@ -68,17 +68,22 @@
     }
   }
 
-  &__TitleAndIconWrapper {
+  &__TextAndDropDownWrapper {
+    width: 70%;
+    // border: 1px solid red;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     padding-top: $spacingXs;
-    // margin-bottom: $spacingS;
+    padding-left: $spacingM;
   }
 
   &__IconWrapper {
     padding: $spacingS;
-    width: 7.5rem;
-    height: 7.5rem;
+    width: 30%;
+    // margin-right: $spacingM;
+
+    // height: 7.5rem;
     background-color: $colorPrimaryBlue;
     display: flex;
     justify-content: center;

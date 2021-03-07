@@ -4,6 +4,7 @@
 .DropDown {
   padding-top: $spacingS;
   height: 4.5rem;
+  // border: 1px solid red;
   // padding-top: $spacingXs;
   // display: flex;
   // flex-direction: column;
@@ -41,7 +42,7 @@
     &--Expanded {
       z-index: 5001;
       @include radiusButtonExpanded;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+      // border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
 
     .DropDown--Dark & {
@@ -58,8 +59,9 @@
     width: $spacingL;
   }
   &__Preamble {
+    // border: 1px solid white;
     background-color: $colorWhiteBackground;
-    box-shadow: $boxShadowCardSmall;
+    box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.5);
     will-change: transform;
     transform: translateZ(0);
 
@@ -71,13 +73,25 @@
     transition: $transitionQuick;
     // margin: 0 -$spacingL;
     padding: $spacingS $spacingXl $spacingL $spacingM;
-    margin: 0 $spacingXs;
-    position: relative;
+    margin: 0;
+    position: absolute;
+    top: calc(100% - 4px);
+    right: 0;
+    width: calc(100%);
+    // margin-left: $spacingL * 2;
     z-index: 1000;
+    border-bottom-left-radius: $radiusButtonSmall;
+    border-bottom-right-radius: $radiusButtonSmall;
+
+    // width: 25rem;
 
     &--Expanded {
       transform: scaleY(1);
       z-index: 5000;
+    }
+
+    .DropDown--Dark & {
+      background-color: $colorPrimaryBlue;
     }
   }
   &__Content {
@@ -90,6 +104,10 @@
     p {
       color: $colorPrimaryBlue;
       @extend %bodyFat;
+
+      .DropDown--Dark & {
+        color: $colorWhiteBackground;
+      }
     }
 
     &--Expanded {
