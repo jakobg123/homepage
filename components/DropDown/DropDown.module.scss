@@ -1,0 +1,112 @@
+@import '../../styles/variables.scss';
+@import '../../styles/extensions.scss';
+
+.DropDown {
+  padding-top: $spacingS;
+  height: 4.5rem;
+  // padding-top: $spacingXs;
+  // display: flex;
+  // flex-direction: column;
+
+  // $dropDownTransition: transform $transitionQuick;
+
+  &--Expanded {
+    // transform: scaleY(0);
+    // transform-origin: top;
+    // transition: transform $transitionNormal;
+
+    // &--Expanded {
+    //   transform: scaleY(1);
+    // }
+  }
+
+  &__Button {
+    display: flex;
+    align-items: center;
+    // background-color: $colorPrimaryBlue;
+    background-color: $colorOrange;
+    border-radius: $radiusButtonSmall;
+    outline: none;
+    border: none;
+    width: 100%;
+    justify-content: space-between;
+    padding: $spacingXs;
+
+    padding-right: $spacingS;
+    padding-left: $spacingM;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+
+    &--Expanded {
+      z-index: 5001;
+      @include radiusButtonExpanded;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    }
+
+    .DropDown--Dark & {
+      background-color: $colorGreen;
+    }
+  }
+  &__ButtonText {
+    // color: $colorSecondaryYellow;
+    @extend %fontColorBlack;
+    @extend %labelSmall;
+    margin-right: $spacingS;
+  }
+  &__IconWrapper {
+    width: $spacingL;
+  }
+  &__Preamble {
+    background-color: $colorWhiteBackground;
+    box-shadow: $boxShadowCardSmall;
+    will-change: transform;
+    transform: translateZ(0);
+
+    // @extend %body;
+
+    overflow: hidden;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: $transitionQuick;
+    // margin: 0 -$spacingL;
+    padding: $spacingS $spacingXl $spacingL $spacingM;
+    margin: 0 $spacingXs;
+    position: relative;
+    z-index: 1000;
+
+    &--Expanded {
+      transform: scaleY(1);
+      z-index: 5000;
+    }
+  }
+  &__Content {
+    will-change: transform;
+    transform: translateZ(0);
+    transition: $transitionQuick;
+    transform: translate(0, -100%);
+    // display: none;
+
+    p {
+      color: $colorPrimaryBlue;
+      @extend %bodyFat;
+    }
+
+    &--Expanded {
+      // display: block;
+      transform: translate(0, 0rem);
+      // transform: scale(1);
+    }
+  }
+
+  &__IconWrapper {
+    will-change: transform;
+    transform: translateZ(0);
+    transform: rotate(0);
+    transition: $transitionQuick;
+
+    &--Expanded {
+      transform: rotate(-180deg);
+    }
+  }
+}
