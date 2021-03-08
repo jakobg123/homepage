@@ -1,0 +1,41 @@
+@import '../../styles/variables.scss';
+@import '../../styles/extensions.scss';
+
+.Button {
+  display: flex;
+  align-items: center;
+  padding: $spacingL $spacingM $spacingL $spacingM;
+  background-color: $colorSecondaryYellow;
+  border-radius: 2px;
+  position: relative;
+  outline: none;
+
+  &__Style {
+    display: block;
+    text-decoration: none;
+    @extend %label;
+    font-weight: 900;
+    @extend %fontColorBlack;
+    // -webkit-transition: none !important;
+    // -moz-transition: none !important;
+    // -ms-transition: none !important;
+    // -o-transition: none !important;
+    // transition: none !important;
+  }
+
+  &__Link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    font-size: 0;
+  }
+
+  &__IconWrapper {
+    height: $spacingM;
+    width: $spacingM;
+    margin-left: $spacingM;
+  }
+}
