@@ -6,7 +6,7 @@
 %h1 {
   font-size: 4.209rem;
   @extend %heading;
-  margin-bottom: $spacingM;
+  padding-bottom: $spacingM;
   font-weight: 400;
 }
 
@@ -19,7 +19,7 @@
   font-size: 2.369rem;
   @extend %heading;
   font-weight: 700;
-  margin-bottom: $spacingL;
+  padding-bottom: $spacingL;
 }
 
 %h4 {
@@ -32,9 +32,15 @@
   @extend %p;
 }
 
+%richtext {
+  font-size: 1.777rem;
+  @extend %p;
+  padding-bottom: $spacingL;
+}
+
 %bodyFat {
   font-size: 1.777rem;
-  letter-spacing: 2.3px;
+  letter-spacing: 1.9px;
   line-height: 1.6;
   font-family: $font;
   word-break: break-word;
@@ -68,7 +74,7 @@
   font-size: 1.333rem;
   text-transform: uppercase;
   font-weight: 900;
-  letter-spacing: 2.7px;
+  letter-spacing: 1.9px;
   line-height: 1.6;
   font-family: $font;
   word-break: break-word;
@@ -78,7 +84,7 @@
 %heading {
   // text-transform: uppercase;
   // font-weight: 900;
-  letter-spacing: 2.7px;
+  letter-spacing: 1.25px;
   line-height: 1.26;
   font-family: $font;
   word-break: break-word;
@@ -88,7 +94,7 @@
 
 %p {
   font-weight: 400;
-  letter-spacing: 2.7px;
+  letter-spacing: 1.9px;
   line-height: 1.6;
   font-family: $font;
   word-break: break-word;
