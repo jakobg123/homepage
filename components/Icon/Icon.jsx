@@ -71,6 +71,7 @@ import dynamic from 'next/dynamic';
 //   import('./icons/minified/wordpress.svg').then((mod) => mod.ReactComponent)
 // );
 
+import ArrowNext from './icons/minified/arrowNext.svg';
 import ChevronDown from './icons/minified/chevronDown.svg';
 import Code from './icons/minified/code.svg';
 import Css from './icons/minified/css.svg';
@@ -96,6 +97,7 @@ import Wagtail from './icons/minified/wagtail.svg';
 import Wordpress from './icons/minified/wordpress.svg';
 
 export const allIcons = {
+  arrowNext: ArrowNext,
   chevronDown: ChevronDown,
   code: Code,
   css: Css,
@@ -121,7 +123,8 @@ export const allIcons = {
   wordpress: Wordpress,
 };
 
-const Icon = ({ type = 'react', color = 'White' }) => {
+const Icon = ({ type, color = 'White' }) => {
+  // console.log('OUTPUT ÄR ~ file: Icon.jsx ~ line 127 ~ Icon ~ type', type);
   const Svg = allIcons[type];
 
   if (!type) {
