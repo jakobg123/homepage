@@ -21,14 +21,7 @@
 
   &__Button {
     padding: 0.5rem;
-    // position: fixed;
-    // position: sticky;
-    // bottom: $spacingL;
-    // right: $spacingL;
     position: absolute;
-
-    // right: 0;
-
     bottom: $spacingM;
     right: $spacingM;
     height: 5.5rem;
@@ -38,16 +31,13 @@
     border: none;
     align-items: center;
     justify-content: space-evenly;
-    // background-color: $colorWhiteBackground;
     border-radius: 0.5rem;
-    // border: 2px solid $colorGrey5;
-    // box-shadow: 0px 0px 10px $colorOrange;
     box-shadow: 0px 0px 6px $colorWhiteBackground;
+    background-color: $colorWhiteBackground;
     outline: none;
     z-index: 2000;
     opacity: 1;
     transition: all 0.4s ease-in-out;
-    // transform: translate(0, calc(-25vh));
 
     &--Active {
       background-color: $colorPrimaryBlue;
@@ -64,6 +54,36 @@
       // border: 5px solid red;
     }
   }
+
+  // &__Button {
+  //   padding: 0.5rem;
+  //   // position: fixed;
+  //   // position: sticky;
+  //   // bottom: $spacingL;
+  //   // right: $spacingL;
+  //   position: absolute;
+
+  //   // right: 0;
+
+  //   bottom: $spacingM;
+  //   right: $spacingM;
+  //   height: 5.5rem;
+  //   width: 5.5rem;
+  //   display: flex;
+  //   flex-direction: column;
+  //   border: none;
+  //   align-items: center;
+  //   justify-content: space-evenly;
+  //   // background-color: $colorWhiteBackground;
+  //   border-radius: 0.5rem;
+  //   // border: 2px solid $colorGrey5;
+  //   // box-shadow: 0px 0px 10px $colorOrange;
+  //   box-shadow: 0px 0px 6px $colorWhiteBackground;
+  //   outline: none;
+  //   z-index: 2000;
+  //   opacity: 1;
+  //   transition: all 0.4s ease-in-out;
+  //   // transform: translate(0, calc(-25vh));
 
   &__Line {
     // background-color: $colorGrey5;
