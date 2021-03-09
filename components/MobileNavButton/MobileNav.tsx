@@ -34,16 +34,24 @@ const MobileNav = ({ data }) => {
     return (
         <div className={styles['MobileNav']}>
             {/* <div className={styles['MobileNav__ButtonWrapper']}> */}
-            <button
-                // ref={ref}
+            <div
+                role="button"
                 aria-expanded={openNav ? 'true' : 'false'}
                 aria-controls="menu"
                 onClick={handleMobileNav}
                 className={classNames(
                     styles['MobileNav__Button'],
                     { [styles['MobileNav__Button--Active']]: openNav },
-                    // { [styles['MobileNav__Button--Sticky']]: !inView }
                 )}>
+
+                {/* <button
+                aria-expanded={openNav ? 'true' : 'false'}
+                aria-controls="menu"
+                onClick={handleMobileNav}
+                className={classNames(
+                    styles['MobileNav__Button'],
+                    { [styles['MobileNav__Button--Active']]: openNav },
+                )}> */}
                 <div className="sr-only">Open menu</div>
                 <span
                     className={classNames(
@@ -63,8 +71,8 @@ const MobileNav = ({ data }) => {
                         styles['MobileNav__Line--3'],
                         { [styles['MobileNav__Line--Active']]: openNav }
                     )}></span>
-            </button>
-            {/* </div> */}
+                {/* </button> */}
+            </div>
             <div
                 id="menu"
                 aria-hidden={openNav ? 'false' : 'true'}
