@@ -1,0 +1,77 @@
+@mixin media($key) {
+  @if $key == 'd' {
+    @content;
+  } @else if map-has-key($breakpoints, $key) {
+    @media (min-width: map-get($breakpoints, $key)) {
+      @content;
+    }
+  }
+}
+
+@mixin customBoxShadow($boxShadow, $color) {
+  box-shadow: $boxShadow rgba($color, 0.9);
+}
+
+@mixin bgColorOpacity($color, $opacity) {
+  background-color: rgba($color, $opacity);
+}
+
+@mixin bgColorGradient(
+  $direction,
+  $color,
+  $opacity,
+  $percentage,
+  $color2,
+  $opacity2,
+  $percentage2
+) {
+  background: linear-gradient(
+    $direction,
+    rgba($color, $opacity) $percentage,
+    rgba($color2, $opacity2) $percentage2
+  );
+}
+
+@mixin bgColorGradient3(
+  $direction,
+  $color,
+  $opacity,
+  $percentage,
+  $color2,
+  $opacity2,
+  $percentage2,
+  $color3,
+  $opacity3,
+  $percentage3
+) {
+  background: linear-gradient(
+    $direction,
+    rgba($color, $opacity) $percentage,
+    rgba($color2, $opacity2) $percentage2,
+    rgba($color3, $opacity3) $percentage3
+  );
+}
+
+@mixin bgColorGradient4(
+  $direction,
+  $color,
+  $opacity,
+  $percentage,
+  $color2,
+  $opacity2,
+  $percentage2,
+  $color3,
+  $opacity3,
+  $percentage3,
+  $color4,
+  $opacity4,
+  $percentage4
+) {
+  background: linear-gradient(
+    $direction,
+    rgba($color, $opacity) $percentage,
+    rgba($color2, $opacity2) $percentage2,
+    rgba($color3, $opacity3) $percentage3,
+    rgba($color4, $opacity4) $percentage4
+  );
+}
