@@ -1,0 +1,8 @@
+@import '../../styles/extensions.scss';
+@import '../../styles/variables.scss';
+
+.Knowledge {
+  &__Grid {
+    @extend %grid;
+  }
+}
