@@ -12,14 +12,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="sv">
-        <Head>
-          <title>En SEO-lämplig titel</title>
-          <link
-            rel="preload"
-            href="/_next/static/css/d0593b78b17e779e2eb2.css"
-            as="style"
-          />
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />
