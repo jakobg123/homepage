@@ -2,8 +2,19 @@ import React, { useState } from 'react'
 import styles from "./ProjectsContainer.module.scss";
 import classNames from "classnames";
 
+import { IImageProps } from '../../types/types';
+
 const ProjectsContainer = () => {
     const [openNav, setOpenNav] = useState(false);
+
+    const bgImage: IImageProps = {
+        src: '/images/goldenGateSmall.jpg',
+        // src: '/images/glassOptXl.webp',
+        alt: 'Cool ljus glaskula',
+        width: 640,
+        height: 960,
+        loading: 'lazy',
+    };
 
     const handleMobileNav = () => {
         setOpenNav(!openNav);
@@ -17,10 +28,10 @@ const ProjectsContainer = () => {
 
                 <div className={classNames(styles["ProjectsContainer__Absolute"], { [styles["ProjectsContainer__Absolute--Active"]]: openNav })}>
 
-                    <div className={classNames(styles["ProjectsContainer__Fixed"], { [styles["ProjectsContainer__Fixed--Active"]]: openNav })}>
+                    <img src={bgImage.src} className={classNames(styles["ProjectsContainer__Fixed"], { [styles["ProjectsContainer__Fixed--Active"]]: openNav })}>
 
 
-                    </div>
+                    </img>
 
                 </div>
 
