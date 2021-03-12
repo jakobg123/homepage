@@ -4,7 +4,6 @@
 * {
   box-sizing: border-box;
   font-family: $font serif;
-  // color: $colorWhiteBackground !important;
 }
 
 html {
@@ -13,8 +12,8 @@ html {
 }
 
 body {
-  background-color: $colorWhiteBackground;
-  background-color: $colorPrimaryBlue;
+  background-color: rgb(195, 195, 195);
+  background-color: black;
 }
 
 button {
