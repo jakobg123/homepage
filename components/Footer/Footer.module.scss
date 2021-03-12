@@ -1,6 +1,53 @@
-.Footer {
-  background-color: mediumseagreen;
+@import '../../styles/extensions.scss';
+@import '../../styles/variables.scss';
 
-  height: 200px;
-  width: 100%;
+.Footer {
+  &__TopWave {
+    position: relative;
+    background-color: $colorWhiteBackground;
+    padding-top: 10rem;
+    width: 100%;
+
+    &::after {
+      top: 0;
+      left: 0;
+      width: 100;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('#{$patternPath}waveFooter.svg');
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+  }
+
+  &__Content {
+    position: relative;
+    height: 30rem;
+    background-color: $colorSecondaryYellow;
+    // font-size: 5rem;
+    @extend %h2;
+    @extend %fontColorBlack;
+
+    // @include bgColorGradient4(
+    //   to right bottom,
+    //   $colorSecondaryYellow,
+    //   1,
+    //   60%,
+    //   $colorPrimaryBlue,
+    //   1,
+    //   60%,
+    //   $colorPrimaryBlue,
+    //   1,
+    //   80%,
+    //   $colorSecondaryYellow,
+    //   1,
+    //   80%
+    // );
+  }
 }
