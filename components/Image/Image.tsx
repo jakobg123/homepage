@@ -14,15 +14,20 @@ const Image: React.FC<IImageProps> = ({
     loading = 'lazy',
     focal = { x: '50%', y: '50%' },
     onLoadFade = false,
+    height: string,
 }) => {
     const [fade, setFade] = useState(false)
 
-    const fadeImage = () => {
-        onLoadFade ? setFade(true) : null;
-    }
+    useEffect(() => {
+        if (onLoadFade) {
+            setFade(true)
+        }
+    }, [])
 
     return (
-        <picture className={styles['Image']}>
+        <picture className={styles['Image']}
+            style={{ paddingTop: height }}
+        >
             {!!mediaQueries?.length &&
                 mediaQueries.map(({ src, minWidth }, index) => (
                     <source
@@ -40,8 +45,7 @@ const Image: React.FC<IImageProps> = ({
                 style={{ objectPosition: focal.x + ' ' + focal.y }}
                 className={classNames(styles['Image__Image'], { [styles["Image__Image--Fade"]]: fade }, { [styles["Image__Image--NoFade"]]: !onLoadFade })
                 }
-                onLoad={fadeImage}
-            // onLoad={onLoadFade ? fadeImage : () => { }}
+            // onLoad={fadeImage}
             />
         </picture>
     );
