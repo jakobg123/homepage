@@ -3,24 +3,34 @@ import Icon from '../Icon';
 import styles from './DropDown.module.scss';
 import classNames from 'classnames';
 
-const DropDown = ({ html, dark }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+const DropDown = ({ html, dark, onClick, isExpanded }) => {
+    // const [isExpanded, setIsExpanded] = useState(false);
 
-    const handleOnClick = () => {
-        setIsExpanded(!isExpanded);
-    };
+    // const handleOnClick = () => {
+    //     setIsExpanded(!isExpanded);
+    // };
 
     return (
-        <div className={classNames(styles['DropDown'], {
-            [styles['DropDown--Expanded']]: isExpanded,
-        }, {
-            [styles['DropDown--Dark']]: dark,
-        })}>
-            <button className={classNames(styles['DropDown__Button'], { [styles["DropDown__Button--Expanded"]]: isExpanded })} onClick={handleOnClick}>
+        <div
+            className={classNames(
+                styles['DropDown'],
+                {
+                    [styles['DropDown--Expanded']]: isExpanded,
+                },
+                {
+                    [styles['DropDown--Dark']]: dark,
+                }
+            )}>
+            <button
+                className={classNames(styles['DropDown__Button'], {
+                    [styles['DropDown__Button--Expanded']]: isExpanded,
+                })}
+                onClick={onClick}>
                 <strong className={styles['DropDown__ButtonText']}>Läs mer</strong>
-                <span className={classNames(styles['DropDown__IconWrapper'], {
-                    [styles['DropDown__IconWrapper--Expanded']]: isExpanded,
-                })}>
+                <span
+                    className={classNames(styles['DropDown__IconWrapper'], {
+                        [styles['DropDown__IconWrapper--Expanded']]: isExpanded,
+                    })}>
                     <Icon type="chevronDown" color="Blue" />
                 </span>
             </button>
