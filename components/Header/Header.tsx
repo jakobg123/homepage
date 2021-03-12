@@ -1,16 +1,19 @@
 import Image from '../Image';
 
+
 import styles from './Header.module.scss';
 import classNames from 'classnames';
-import MobileNav from '../MobileNavButton';
 
 import { IImageProps, IMediaQueries } from '../../types/types';
 
 const Header: React.FC = () => {
+
   console.log('HEADER');
 
   const bgImage: IImageProps = {
-    src: '/images/glassOptXl.webp',
+    // src: '/images/goldenGateSmall.jpg',
+    // src: '/images/glassOptXl.webp',
+    src: '/images/tuscany1.jpg',
     alt: 'Cool ljus glaskula',
     width: 640,
     height: 960,
@@ -19,29 +22,28 @@ const Header: React.FC = () => {
 
   const mediaQueries: IMediaQueries[] = [
     {
-      minWidth: 1024,
-      src: '/images/goldenGateLarge.jpg',
-    },
-    {
-      minWidth: 640,
-      src: '/images/goldenGateMedium.jpg',
+      minWidth: 768,
+      src: '/images/tuscany1.jpg',
     },
   ];
+
+
 
   return (
     <div className={styles['Header']}>
       <div
-        className={classNames(styles['Header__ImageWrapper'], {
-          [styles['Header__ImageWrapper--Overlay']]: true,
-        })}>
+        className={classNames(styles['Header__ImageWrapper'])}>
         <Image
           {...bgImage}
           mediaQueries={mediaQueries}
-          focal={{ x: '60%', y: '0%' }}
+          focal={{ x: '0', y: '50%' }}
           onLoadFade
+          loading="lazy"
         />
-
-        {/* <MobileNav /> */}
+        <div
+          className={classNames(styles['Header__Overlay'], {
+            [styles['Header__TESTOverlay']]: true,
+          })}></div>
       </div>
     </div>
   );
