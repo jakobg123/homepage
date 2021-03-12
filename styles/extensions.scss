@@ -2,17 +2,30 @@
 // @import './includes.scss';
 
 @import './variables.scss';
+@import './mixins.scss';
+
+//Type scales
+// Mobile Perfect fourth
+// Desktop Perfect fifth
 
 %h1 {
   font-size: 4.209rem;
   @extend %heading;
   padding-bottom: $spacingM;
   font-weight: 400;
+
+  @include media(desktop) {
+    font-size: 7.594rem;
+  }
 }
 
 %h2 {
   font-size: 3.157rem;
   @extend %heading;
+
+  @include media(desktop) {
+    font-size: 5.063rem;
+  }
 }
 
 %h3 {
@@ -20,22 +33,38 @@
   @extend %heading;
   font-weight: 700;
   padding-bottom: $spacingL;
+
+  @include media(desktop) {
+    font-size: 3.375rem;
+  }
 }
 
 %h4 {
   font-size: 1.777rem;
   @extend %heading;
+
+  @include media(desktop) {
+    font-size: 2.25rem;
+  }
 }
 
 %body {
   font-size: 1.777rem;
   @extend %p;
+
+  @include media(desktop) {
+    font-size: 2.25rem;
+  }
 }
 
 %richtext {
   font-size: 1.777rem;
   @extend %p;
   padding-bottom: $spacingL;
+
+  @include media(desktop) {
+    font-size: 2.25rem;
+  }
 }
 
 %bodyFat {
@@ -47,11 +76,19 @@
   @extend %fontColor;
   // @extend %body;
   font-weight: 600;
+
+  @include media(desktop) {
+    font-size: 2.25rem;
+  }
 }
 
 %smallBody {
   font-size: 1.333rem;
   @extend %p;
+
+  @include media(desktop) {
+    font-size: 1.5rem;
+  }
 }
 
 %label {
@@ -79,6 +116,10 @@
   font-family: $font;
   word-break: break-word;
   @extend %fontColor;
+
+  @include media(desktop) {
+    font-size: 1.5rem;
+  }
 }
 
 %heading {
@@ -113,8 +154,22 @@
 
 %grid {
   padding: 0 $spacingM;
+
+  @include media(tablet) {
+    padding: 0 $spacingL;
+  }
+
+  @include media(desktop) {
+    margin: 0 auto;
+    padding: 0 $spacingL * 3;
+    max-width: 144rem;
+  }
 }
 
-// %maxWidthTextMobile {
-//   width: calc(100% - (16px + 55px));
-// }
+%outsideGrid {
+  margin: 0 - $spacingL * 3;
+}
+
+%innerContainerSpacing {
+  padding: 0 $spacingL;
+}

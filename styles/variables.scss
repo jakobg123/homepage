@@ -64,72 +64,13 @@ $boxShadowCardSmall: 0px 0px 4px rgba(0, 0, 0, 0.5);
 $boxShadowMedium: 2px 2px 6px;
 $boxShadowSmall: 1px 1px 2px;
 
-@mixin customBoxShadow($boxShadow, $color) {
-  box-shadow: $boxShadow rgba($color, 0.9);
-}
+// BREAKPOINTS
+$bp-m: 768px;
+$bp-l: 1024px;
 
-@mixin bgColorOpacity($color, $opacity) {
-  background-color: rgba($color, $opacity);
-}
-
-@mixin bgColorGradient(
-  $direction,
-  $color,
-  $opacity,
-  $percentage,
-  $color2,
-  $opacity2,
-  $percentage2
-) {
-  background: linear-gradient(
-    $direction,
-    rgba($color, $opacity) $percentage,
-    rgba($color2, $opacity2) $percentage2
-  );
-}
-
-@mixin bgColorGradient3(
-  $direction,
-  $color,
-  $opacity,
-  $percentage,
-  $color2,
-  $opacity2,
-  $percentage2,
-  $color3,
-  $opacity3,
-  $percentage3
-) {
-  background: linear-gradient(
-    $direction,
-    rgba($color, $opacity) $percentage,
-    rgba($color2, $opacity2) $percentage2,
-    rgba($color3, $opacity3) $percentage3
-  );
-}
-
-@mixin bgColorGradient4(
-  $direction,
-  $color,
-  $opacity,
-  $percentage,
-  $color2,
-  $opacity2,
-  $percentage2,
-  $color3,
-  $opacity3,
-  $percentage3,
-  $color4,
-  $opacity4,
-  $percentage4
-) {
-  background: linear-gradient(
-    $direction,
-    rgba($color, $opacity) $percentage,
-    rgba($color2, $opacity2) $percentage2,
-    rgba($color3, $opacity3) $percentage3,
-    rgba($color4, $opacity4) $percentage4
-  );
-}
+$breakpoints: (
+  tablet: $bp-m,
+  desktop: $bp-l,
+);
 
 // background: linear-gradient(to right bottom, @include bgColorOpacity());
