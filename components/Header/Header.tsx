@@ -12,8 +12,8 @@ const Header: React.FC = () => {
 
   const bgImage: IImageProps = {
     // src: '/images/goldenGateSmall.jpg',
-    // src: '/images/glassOptXl.webp',
-    src: '/images/tuscany1.jpg',
+    src: '/images/glassOptXl.webp',
+    // src: '/images/tuscany1.jpg',
     alt: 'Cool ljus glaskula',
     width: 640,
     height: 960,
