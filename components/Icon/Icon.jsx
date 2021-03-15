@@ -123,21 +123,42 @@ export const allIcons = {
   wordpress: Wordpress,
 };
 
-const Icon = ({ type, color = 'White' }) => {
-  // console.log('OUTPUT ÄR ~ file: Icon.jsx ~ line 127 ~ Icon ~ type', type);
+const Icon = ({ type, color = 'White', modifier = [] }) => {
   const Svg = allIcons[type];
 
   if (!type) {
     return null;
   }
 
+  const classes = classNames(
+    !!modifier.length && modifier.map((x) => ' ' + x),
+    styles['Icon'],
+    {
+      [styles['Icon--' + color]]: color,
+    }
+  );
+  // const classes = classNames(
+  //   modifier.map((x) => styles[x] + ' '),
+  //   styles['Icon'],
+  //   {
+  //     [styles['Icon--' + color]]: color,
+  //   },
+  //   modifier.map((x) => styles[x])
+  // );
+
   return (
-    <div
-      className={classNames(styles['Icon'], {
-        [styles['Icon--' + color]]: color,
-      })}>
+    // <div className={styles['Icon'] + ' ' + styles[modifier]}>
+    //   <Svg />
+    // </div>
+    <div className={classes}>
       <Svg />
     </div>
+    // <div
+    //   className={classNames(styles['Icon'], [styles['Tab__Height']], {
+    //     [styles['Icon--' + color]]: color,
+    //   })}>
+    //   <Svg />
+    // </div>
   );
 };
 
