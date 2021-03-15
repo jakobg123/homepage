@@ -67,10 +67,12 @@ $boxShadowSmall: 1px 1px 2px;
 // BREAKPOINTS
 $bp-m: 768px;
 $bp-l: 1024px;
+$bp-xl: 1280px;
 
 $breakpoints: (
   tablet: $bp-m,
   desktop: $bp-l,
+  xl: $bp-xl,
 );
 
 // background: linear-gradient(to right bottom, @include bgColorOpacity());
