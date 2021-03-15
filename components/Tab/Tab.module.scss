@@ -2,35 +2,63 @@
 @import '../../styles/extensions.scss';
 
 .Tab {
+  border: 1px solid red;
   position: relative;
   display: flex;
-  // border: 1px solid red;
-  // padding: $spacingM $spacingM $spacingL;
   padding-bottom: $spacingS;
   margin-bottom: $spacingL;
   background-color: $colorWhiteBackground;
-  // background-color: $colorOrange;
-  // background: linear-gradient(to right bottom, @include bgColorOpacity());
   border-radius: $radiusCardSmall;
   box-shadow: $boxShadowCardSmall;
-  // @include customBoxShadow($boxShadowSmall, $colorOrange);
-
   padding: $spacingXs;
   padding-bottom: $spacingS;
+
+  @include media(tablet) {
+    flex-direction: column;
+    align-items: center;
+    height: 25rem;
+    width: 100%;
+    // flex: 1 1 40%;
+  }
 
   &--Dark {
     background-color: $colorPrimaryBlue;
   }
 
+  &__Button {
+    // border: 1px solid blue;
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    border: none;
+
+    &:hover {
+      // background-color: red;
+    }
+
+    &:active,
+    &:focus {
+      // background-color: green;
+      // background-color: none;
+    }
+  }
+
   &__TextWrapper {
     display: inline;
-    // flex-direction: column;
+
+    @include media(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
   &__Title {
     @extend %h3;
-    margin-bottom: $spacingXs;
-    padding-top: $spacingXs;
+    padding-bottom: $spacingXs;
     padding-left: $spacingXs;
     @extend %fontColorBlack;
     position: relative;
@@ -52,6 +80,10 @@
       .Tab--Dark & {
         background-color: $colorWhiteBackground;
       }
+
+      @include media(tablet) {
+        display: none;
+      }
     }
   }
 
@@ -63,35 +95,70 @@
     padding-left: $spacingXs;
     display: block;
 
+    &--Strong {
+      @extend %h3;
+      @extend %fontColorBlack;
+
+      &--Dark {
+        color: $colorWhiteBackground !important;
+      }
+    }
+
     .Tab--Dark & {
       @extend %fontColor;
     }
   }
 
   &__TextAndDropDownWrapper {
-    width: 70%;
-    // border: 1px solid red;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-top: $spacingXs;
-    padding-left: $spacingM;
+    padding-left: $spacingS;
+
+    @include media(tablet) {
+      width: 100%;
+      padding-left: 0;
+    }
   }
 
   &__IconWrapper {
-    padding: $spacingS;
-    width: 30%;
-    // margin-right: $spacingM;
-
-    // height: 7.5rem;
-    background-color: $colorPrimaryBlue;
+    border: 1px solid green;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: $radiusButtonSmall;
 
+    @include media(tablet) {
+      // display: block;
+      width: 100%;
+      // height: 100%;
+      // max-width: 20rem;
+      max-width: 16.5rem;
+      // max-height: 15.5rem;
+      height: 15.5rem;
+      // padding: $spacingMl;
+      // overflow: hidden;
+      // svg {
+      //   object-fit: cover;
+      //   width: 100%;
+      // }
+    }
+
     .Tab--Dark & {
       background-color: $colorWhiteBackground;
+    }
+  }
+
+  &__Height {
+    border: 1px solid green;
+    height: 100%;
+  }
+
+  &__DropDownWrapper {
+    @include media(tablet) {
+      display: none;
     }
   }
 }
