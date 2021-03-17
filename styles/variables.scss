@@ -3,7 +3,21 @@
 
 @import './fonts.scss';
 
-$font: 'Raleway', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
+
+// @font-face {
+//   font-family: 'Quicksand';
+//   src: url('/fonts/Quicksand/static/Quicksand-Regular.ttf') format('ttf');
+//   font-weight: normal;
+//   font-family: 'Raleway';
+// src: url('/fonts/Raleway/Raleway-Regular.ttf') format('ttf');
+// font-weight: normal;
+// font-family: 'Roboto';
+// src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+// font-weight: normal;
+// }
+
+$font: 'Quicksand', sans-serif;
 
 $patternPath: '/patterns/';
 $iconPath: '/icons/minified/';
@@ -30,6 +44,10 @@ $colorGrey-4: #a9a9a9;
 $colorGrey-5: #808080;
 $colorGrey-6: #696969;
 $colorGrey-7: #3b3b3b;
+
+$colorPrimary: #f2e8df;
+$colorWhite: #f2f2f2;
+$colorBlack: #232622;
 
 $transitionNormal: 0.4s ease-in-out;
 $transitionQuick: 0.2s ease-in-out;
