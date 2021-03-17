@@ -7,38 +7,19 @@
 
   &__ImageWrapper {
     height: 0;
-    padding-top: 45rem;
+    padding-top: 35rem;
     width: 100%;
     overflow: hidden;
     position: relative;
 
     @include media(desktop) {
-      padding-top: 85vh;
+      padding-top: 80vh;
     }
-  }
-
-  &__Overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
 
     &::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      background-image: url('#{$patternPath}waveBlue4.svg');
+      background-image: url('#{$patternPath}topWave.svg');
       background-position: bottom;
       background-size: contain;
       background-repeat: no-repeat;
@@ -49,5 +30,59 @@
       width: calc(100% + 2px);
       z-index: 2;
     }
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      height: 100%;
+      z-index: 1;
+      // background-color: green;
+      @include bgColorGradient(
+        to top,
+        $colorPrimary,
+        1,
+        0%,
+        rgba(0, 0, 0, 0.01),
+        0.1,
+        50%
+      );
+    }
   }
+
+  // &__Overlay {
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   z-index: 2;
+
+  //   &::before {
+  //     content: '';
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //     z-index: 1;
+  //   }
+
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     background-image: url('#{$patternPath}waveBlue4.svg');
+  //     background-position: bottom;
+  //     background-size: contain;
+  //     background-repeat: no-repeat;
+  //     bottom: -1px;
+  //     right: -1px;
+  //     left: -1px;
+  //     height: 100%;
+  //     width: calc(100% + 2px);
+  //     z-index: 2;
+  //   }
+  // }
 }

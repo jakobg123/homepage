@@ -12,18 +12,28 @@ const Header: React.FC = () => {
 
   const bgImage: IImageProps = {
     // src: '/images/goldenGateSmall.jpg',
-    src: '/images/glassOptXl.webp',
+    src: '/images/hero_small.jpg',
     // src: '/images/tuscany1.jpg',
-    alt: 'Cool ljus glaskula',
+    alt: 'Vacker naturbild',
     width: 640,
-    height: 960,
+    height: 450,
     loading: 'lazy',
+    // src: '/images/glassOptXl.webp',
+    // // src: '/images/tuscany1.jpg',
+    // alt: 'Cool ljus glaskula',
+    // width: 640,
+    // height: 960,
+    // loading: 'lazy',
   };
 
   const mediaQueries: IMediaQueries[] = [
     {
+      minWidth: 1280,
+      src: '/images/hero_large.jpg',
+    },
+    {
       minWidth: 768,
-      src: '/images/tuscany1.jpg',
+      src: '/images/hero_medium.jpg',
     },
   ];
 
@@ -36,7 +46,7 @@ const Header: React.FC = () => {
         <Image
           {...bgImage}
           mediaQueries={mediaQueries}
-          focal={{ x: '0', y: '50%' }}
+          focal={{ x: '0%', y: '90%' }}
           onLoadFade
           loading="lazy"
         />
