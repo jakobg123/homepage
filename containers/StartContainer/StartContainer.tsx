@@ -27,7 +27,7 @@ const StartContainer = ({ knowledge }) => {
         <div
           className={classNames(
             // styles['StartContainer__Grid'],
-            styles['StartContainer__BgImage']
+            styles['StartContainer__EntryWrapper']
           )}>
           <strong className={styles['StartContainer__Strong']}>
             Vad kul att du är här!
@@ -48,7 +48,7 @@ const StartContainer = ({ knowledge }) => {
           </div>
         </div>
       </div>
-      <div className={styles['StartContainer__ButtonWave']}>
+      {/* <div className={styles['StartContainer__ButtonWave']}>
         <div className={styles['StartContainer__ButtonWrapper']}>
           <Button
             label={'Hur sidan är byggd'}
@@ -56,6 +56,27 @@ const StartContainer = ({ knowledge }) => {
             onClick={() => { }}
             icon={'arrowNext'}
           />
+        </div>
+      </div> */}
+
+      <div
+        className={classNames(
+          styles['StartContainer__KnowledgeSection'],
+          styles['StartContainer__KnowledgeSection--Dark']
+        )}>
+        <div
+          className={classNames(
+            styles['StartContainer__TextWrapper'],
+            styles['StartContainer__TextWrapper--Light']
+          )}>
+          <h2 className={styles['StartContainer__SubTitle']}>
+            Tekniker jag jobbat mest med hittills
+            </h2>
+          <p className={styles['StartContainer__Paragraph']}>
+            <strong>Här är det mer text. </strong>
+              Även här skriver jag mer text som är relevant till ämnet. Får ta
+              en funderare när jag fyller sidan med content
+            </p>
         </div>
       </div>
 

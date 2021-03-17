@@ -8,7 +8,7 @@
 
   &__Title {
     @extend %h1;
-    margin-top: -2rem;
+    margin-top: -8rem;
     position: relative;
     z-index: 5;
     position: relative;
@@ -16,22 +16,76 @@
     hyphens: manual;
     padding-bottom: $spacingL;
 
+    @include media(ms) {
+      margin-top: -11rem;
+      width: 90%;
+    }
+    @include media(tablet) {
+      margin-top: -13rem;
+      width: 70%;
+    }
     @include media(desktop) {
       margin-top: -21rem;
-      width: 70%;
+      width: 100%;
+    }
+    @include media(xl) {
+      margin-top: -27rem;
+      width: 90%;
     }
   }
 
-  &__Strong {
-    display: block;
+  &__EntryWrapper {
+    position: relative;
+    z-index: 2;
   }
 
-  &__Em {
-    color: $colorSecondaryYellow;
+  &__KnowledgeSection {
+    position: relative;
+    background-color: $colorWhite;
+    .StartContainer__Strong,
+    .StartContainer__SubTitle,
+    .StartContainer__Paragraph {
+      @extend %fontColor;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('#{$patternPath}bottomWave.svg');
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: -1px;
+      right: -1px;
+      left: -1px;
+      height: 100%;
+      width: calc(100% + 2px);
+      z-index: 2;
+
+      @include media(ms) {
+        background-size: cover;
+      }
+    }
   }
+
+  &__TextWrapper {
+    position: relative;
+    z-index: 5;
+    &--Light {
+      // background-color: $colorWhite;
+    }
+  }
+
+  // &__Strong {
+  //   display: block;
+  // }
+
+  // &__Em {
+  //   color: $colorSecondaryYellow;
+  // }
 
   &__Row {
-    padding-bottom: $spacingBlock;
+    // padding-bottom: $spacingBlock;
   }
 
   &__Row--Dark {
@@ -109,12 +163,6 @@
     position: absolute;
     top: 0;
     z-index: 2;
-  }
-
-  &__TextWrapper {
-    &--Dark {
-      background-color: $colorWhiteBackground;
-    }
   }
 
   &__Padding {
