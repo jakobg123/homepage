@@ -83,11 +83,13 @@ $boxShadowMedium: 2px 2px 6px;
 $boxShadowSmall: 1px 1px 2px;
 
 // BREAKPOINTS
+$bp-ms: 550px;
 $bp-m: 768px;
 $bp-l: 1024px;
 $bp-xl: 1280px;
 
 $breakpoints: (
+  ms: $bp-ms,
   tablet: $bp-m,
   desktop: $bp-l,
   xl: $bp-xl,
