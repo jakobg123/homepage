@@ -72,6 +72,7 @@ import dynamic from 'next/dynamic';
 // );
 
 import ArrowNext from './icons/minified/arrowNext.svg';
+import ChevronNext from './icons/minified/chevronNext.svg';
 import ChevronDown from './icons/minified/chevronDown.svg';
 import Code from './icons/minified/code.svg';
 import Css from './icons/minified/css.svg';
@@ -99,6 +100,7 @@ import Wordpress from './icons/minified/wordpress.svg';
 
 export const allIcons = {
   arrowNext: ArrowNext,
+  chevronNext: ChevronNext,
   chevronDown: ChevronDown,
   code: Code,
   css: Css,
