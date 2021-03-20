@@ -42,8 +42,7 @@ const StartContainer = ({ data, knowledge }) => {
             </div>
             <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}>
             </div>
-            <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: ctaText }}>
-            </div>
+
 
             {/* <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}>
             </div> */}
@@ -71,6 +70,8 @@ const StartContainer = ({ data, knowledge }) => {
           styles['StartContainer__Block--White']
         )}>
         <div className={styles['StartContainer__CtaWrapper']}>
+          <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: ctaText }}>
+          </div>
           <div className={styles['StartContainer__ButtonWrapper']}>
             <Button label={cta.label} icon={cta.icon} href={cta.href} />
           </div>
