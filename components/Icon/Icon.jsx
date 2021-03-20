@@ -79,6 +79,7 @@ import Django from './icons/minified/django.svg';
 import Github from './icons/minified/github.svg';
 import Html from './icons/minified/html.svg';
 import Javascript from './icons/minified/javascript.svg';
+import LinkedIn from './icons/minified/linkedIn.svg';
 import Menu from './icons/minified/menu2.svg';
 import Moon from './icons/minified/moon.svg';
 import MySql from './icons/minified/mysql.svg';
@@ -105,6 +106,7 @@ export const allIcons = {
   github: Github,
   html: Html,
   javascript: Javascript,
+  linkedIn: LinkedIn,
   menu: Menu,
   moon: Moon,
   mysql: MySql,
@@ -123,7 +125,12 @@ export const allIcons = {
   wordpress: Wordpress,
 };
 
-const Icon = ({ type, color = 'White', modifier = [] }) => {
+const Icon = ({
+  type,
+  color = 'White',
+  modifier = [],
+  hoverEffect = false,
+}) => {
   const Svg = allIcons[type];
 
   if (!type) {
@@ -131,10 +138,11 @@ const Icon = ({ type, color = 'White', modifier = [] }) => {
   }
 
   const classes = classNames(
-    !!modifier.length && modifier.map((x) => ' ' + x),
+    !!modifier.length && modifier.map((x) => x),
     styles['Icon'],
     {
       [styles['Icon--' + color]]: color,
+      [styles['Icon--Hover']]: hoverEffect,
     }
   );
   // const classes = classNames(

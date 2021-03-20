@@ -10,19 +10,15 @@
   svg {
     width: 100%;
     height: 100%;
+  }
 
-    // #{$root}--White & {
-    //   fill: white;
-    // }
-    // #{$root}--Yellow & {
-    //   color: $colorSecondaryYellow;
-    //   fill: $colorSecondaryYellow;
-    // }
+  &--Hover svg {
+    transition: fill $transitionQuick;
   }
 
   &--White svg {
-    color: $colorWhiteBackground;
-    fill: $colorWhiteBackground;
+    color: $colorWhite;
+    fill: $colorWhite;
   }
 
   &--Yellow svg {
@@ -31,7 +27,17 @@
   }
 
   &--Primary svg {
-    color: $colorPrimaryBlue;
-    fill: $colorPrimaryBlue;
+    color: $colorPrimary;
+    fill: $colorPrimary;
   }
+
+  &--Black svg {
+    color: $colorBlack;
+    fill: $colorBlack;
+  }
+
+  // &--Primary svg {
+  //   color: $colorPrimaryBlue;
+  //   fill: $colorPrimaryBlue;
+  // }
 }
