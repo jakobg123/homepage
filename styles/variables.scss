@@ -73,6 +73,7 @@ $maxWidthTextMobile: 100%;
 
 //BORDER RADIUS
 $radiusButtonSmall: $spacingXs;
+$radiusButtonMedium: $spacingS;
 $radiusCardSmall: $spacingXs;
 @mixin radiusButtonExpanded() {
   border-bottom-left-radius: 0;

@@ -60,10 +60,26 @@
 %richtext {
   font-size: 1.777rem;
   @extend %p;
+  @extend %links;
   padding-bottom: $spacingL;
+
+  em {
+    font-style: italic;
+  }
 
   @include media(desktop) {
     font-size: 2.25rem;
+  }
+}
+
+%links {
+  a {
+    color: $colorBlack;
+    transition: color $transitionNormal;
+    &:hover,
+    &:focus {
+      color: $linkHover;
+    }
   }
 }
 
@@ -141,6 +157,24 @@
   word-break: break-word;
   @extend %fontColorBlack;
   //   color: $colorWhiteBackground;
+}
+
+%strong {
+  // font-weight: 900;
+  // display: inline-block;
+  // color: red;
+}
+
+%preamble {
+  @extend %h3;
+  // font-size: 2.369rem;
+  // @extend %heading;
+  // // font-weight: 700;
+  // padding-bottom: $spacingL;
+
+  // @include media(desktop) {
+  //   font-size: 3.375rem;
+  // }
 }
 
 %fontColor {
