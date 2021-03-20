@@ -8,7 +8,6 @@
 
   &__Title {
     @extend %h1;
-    font-size: 8.5rem;
     // font-weight: 600;
     margin-top: -8rem;
     position: relative;
@@ -31,6 +30,7 @@
       width: 100%;
     }
     @include media(xl) {
+      font-size: 8.5rem;
       margin-top: -27rem;
       width: 90%;
     }
@@ -115,7 +115,7 @@
   &__TextWrapper {
     position: relative;
     z-index: 5;
-    padding-top: 20rem;
+    padding-top: $spacingL * 4;
     &--White {
       // background-color: $colorWhite;
     }

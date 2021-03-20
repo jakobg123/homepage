@@ -13,6 +13,10 @@ const MobileNav = ({ data }) => {
     const [openNav, setOpenNav] = useState(false);
     const [drop, setDrop] = useState(false);
 
+    useEffect(() => {
+        openNav ? slideIn(true) : slideIn(false);
+    }, [openNav]);
+
     const handleMobileNav = () => {
         setOpenNav(!openNav);
         openNav
@@ -27,15 +31,9 @@ const MobileNav = ({ data }) => {
         return;
     };
 
-    useEffect(() => {
-        openNav ? slideIn(true) : slideIn(false);
-    }, [openNav]);
-
     return (
         <div className={styles['MobileNav']}>
-            {/* <div className={styles['MobileNav__ButtonWrapper']}> */}
-            <div
-                role="button"
+            <button
                 aria-expanded={openNav ? 'true' : 'false'}
                 aria-controls="menu"
                 onClick={handleMobileNav}
@@ -44,15 +42,7 @@ const MobileNav = ({ data }) => {
                     { [styles['MobileNav__Button--Active']]: openNav },
                 )}>
 
-                {/* <button
-                aria-expanded={openNav ? 'true' : 'false'}
-                aria-controls="menu"
-                onClick={handleMobileNav}
-                className={classNames(
-                    styles['MobileNav__Button'],
-                    { [styles['MobileNav__Button--Active']]: openNav },
-                )}> */}
-                <div className="sr-only">Open menu</div>
+                <span className="sr-only">{openNav ? 'Stäng meny' : 'Öppna meny'}</span>
                 <span
                     className={classNames(
                         styles['MobileNav__Line'],
@@ -72,7 +62,7 @@ const MobileNav = ({ data }) => {
                         { [styles['MobileNav__Line--Active']]: openNav }
                     )}></span>
                 {/* </button> */}
-            </div>
+            </button>
             <div
                 id="menu"
                 aria-hidden={openNav ? 'false' : 'true'}
@@ -80,26 +70,27 @@ const MobileNav = ({ data }) => {
                     [styles['MobileNav__Menu--Active']]: openNav,
                 })}>
                 <nav className={styles['MobileNav__Nav']}>
+                    <h2
+                        className={classNames(styles['MobileNav__NavListTitle'], {
+                            [styles['MobileNav__NavListTitle--Drop']]: !drop,
+                        })}>
+                        <div className={styles['MobileNav__MenuIconWrapper']}>
+                            <Icon type="menu" color="Black" />
+                        </div>
+                        <span
+                            className={classNames(styles['MobileNav__NavListTitleText'])}>
+                            Meny
+                        </span>
+                    </h2>
                     <ul className={styles['MobileNav__NavList']}>
-                        <li
-                            className={classNames(styles['MobileNav__NavListTitle'], {
-                                [styles['MobileNav__NavListTitle--Drop']]: !drop,
-                            })}>
-                            <div className={styles['MobileNav__MenuIconWrapper']}>
-                                <Icon type="menu" color="Yellow" />
-                            </div>
-                            <span
-                                className={classNames(styles['MobileNav__NavListTitleText'])}>
-                                Meny
-                            </span>
-                            {/* <Link href="/projects"><a className={styles["MobileNav__NavLink"]}></a></Link> */}
-                        </li>
                         {!!data.length && data.map(({ link, url }, index) => (
                             <li
                                 key={index}
                                 className={classNames(styles['MobileNav__NavListItem'], {
                                     [styles['MobileNav__NavListItem--Drop']]: !drop,
-                                })}>
+                                })}
+                                onClick={handleMobileNav}
+                            >
                                 <Link href={url}>
                                     <a className={styles['MobileNav__NavLink']}>{link}</a>
                                 </Link>

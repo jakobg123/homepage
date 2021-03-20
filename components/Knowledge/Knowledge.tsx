@@ -5,7 +5,7 @@ import styles from "./Knowledge.module.scss";
 
 const Knowledge = ({ knowledge, inViewRef }) => {
     return (
-        <div className={styles['Knowledge__Grid']}>
+        <div className={styles['Knowledge']}>
             <TabList knowledge={knowledge.frontend} title={'Frontend'} />
             <div
                 ref={inViewRef}

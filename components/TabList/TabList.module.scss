@@ -4,21 +4,40 @@
 .TabList {
   // border: 1px solid black;
   display: flex;
-  padding: $spacingM $spacingS;
+  padding: 0 $spacingXs;
   border-radius: $radiusCardSmall;
-  margin: 0 -3.2rem $spacingBlock * 2;
+
   // margin-bottom: $spacingBlock * 2;
   position: relative;
   // background-color: $colorGrey-3;
   box-shadow: $boxShadowCard;
   z-index: 1;
 
+  @include media(s) {
+    padding: $spacingL;
+  }
+  @include media(ms) {
+    // padding: $spacingM $spacingXl * 4;
+  }
+  @include media(tablet) {
+    padding: $spacingL;
+  }
+  @include media(desktop) {
+    margin: 0 -3.2rem $spacingBlock * 2;
+    padding: 3.2rem;
+  }
+
   &__InfoContainer {
     display: none;
     @extend %fontColorBlack;
 
-    @include media(tablet) {
-      padding: $spacingXl * 2 $spacingL * 3;
+    @include media(desktop) {
+      padding: 8rem $spacingL;
+      display: block;
+      width: 70%;
+    }
+    @include media(xl) {
+      padding: 8rem $spacingL * 3;
       display: block;
       width: 50%;
     }
@@ -43,19 +62,20 @@
   }
 
   &__CardsContainer {
-    // width: 100%;
-    // // padding: $spacingM $spacingS;
-    // // border-radius: $radiusCardSmall;
-    // // margin-bottom: $spacingBlock * 2;
-    // position: relative;
-    // background-color: $colorGrey-3;
-    // box-shadow: $boxShadowCard;
-    // z-index: 1;
+    width: 100%;
+    // padding: 0 $spacingXl * 4;
+    // @include media(tablet) {
 
-    @include media(tablet) {
-      // border: 1px solid red;
-      width: 50%;
+    // }
+
+    @include media(desktop) {
+      width: 45%;
+      padding: 0;
     }
+
+    // @include media(xl) {
+    //   width: 50%;
+    // }
 
     &::after {
       content: '';
@@ -120,6 +140,8 @@
   &__Title {
     @extend %labelFat;
     @extend %fontColorBlack;
+    padding-bottom: $spacingS;
+    // text-align: center;
 
     .TabList--Dark & {
       @extend %fontColor;
@@ -127,11 +149,15 @@
   }
 
   &__List {
-    // border-top: 2px solid $colorOrange;
-    // padding-top: $spacingL;
+    @for $i from 0 through 20 {
+      :nth-child(#{$i + 1}) {
+        div:last-child > span > div div {
+          z-index: 1000 - $i;
+        }
+      }
+    }
 
     @include media(tablet) {
-      // border: 1px solid green;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -143,14 +169,25 @@
   }
 
   &__ListItem {
+    max-width: 100%;
+
     @include media(tablet) {
+      max-width: 48%;
+      // width: 100%;
+      // max-width: 50%;
+      flex: 1 1 calc(50% - 8px);
+      margin-right: $spacingS;
+    }
+
+    @include media(desktop) {
       max-width: 50%;
       flex: 1 1 calc(50% - 16px);
       margin-right: $spacingS;
     }
+
     @include media(xl) {
       max-width: 30%;
-      flex: 1 1 calc(30% - 24px);
+      flex: 1 1 calc(30% - 16px);
       margin-right: $spacingS;
     }
   }

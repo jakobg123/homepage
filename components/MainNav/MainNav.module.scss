@@ -3,11 +3,13 @@
 @import '../../styles/extensions.scss';
 
 .MainNav {
-  //   border: 1px solid red;
-  height: 100%;
-  width: 100%;
-  //   position: relative;
-  //   z-index: 2000;
+  display: none;
+
+  @include media(tablet) {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
 
   &__List {
     display: flex;

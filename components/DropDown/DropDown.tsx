@@ -21,29 +21,30 @@ const DropDown = ({ html, dark, onClick, isExpanded }) => {
                     [styles['DropDown--Dark']]: dark,
                 }
             )}>
-            <button
+            <span
                 className={classNames(styles['DropDown__Button'], {
                     [styles['DropDown__Button--Expanded']]: isExpanded,
                 })}
-                onClick={onClick}>
+            // onClick={onClick}
+            >
                 <strong className={styles['DropDown__ButtonText']}>Läs mer</strong>
                 <span
                     className={classNames(styles['DropDown__IconWrapper'], {
                         [styles['DropDown__IconWrapper--Expanded']]: isExpanded,
                     })}>
-                    <Icon type="chevronDown" color="Blue" />
+                    <Icon type="chevronDown" color="Black" />
                 </span>
-            </button>
-            <article
-                className={classNames(styles['DropDown__Preamble'], {
-                    [styles['DropDown__Preamble--Expanded']]: isExpanded,
+            </span>
+            <div
+                className={classNames(styles['DropDown__Text'], {
+                    [styles['DropDown__Text--Expanded']]: isExpanded,
                 })}>
                 <div
                     className={classNames(styles['DropDown__Content'], {
                         [styles['DropDown__Content--Expanded']]: isExpanded,
                     })}
                     dangerouslySetInnerHTML={{ __html: html }}></div>
-            </article>
+            </div>
         </div>
     );
 };

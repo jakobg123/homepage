@@ -83,6 +83,21 @@
   }
 }
 
+%knowledgeTitle {
+  font-size: 2.369rem;
+  @extend %heading;
+
+  @include media(ms) {
+    // word-break: break-word !important;
+    font-size: 3.157rem;
+    // font-size: 10rem;
+  }
+  @include media(desktop) {
+    // word-break: break-word !important;
+    font-size: 2.369rem;
+  }
+}
+
 %bodyFat {
   font-size: 1.777rem;
   letter-spacing: 1.9px;
@@ -98,7 +113,7 @@
   }
 }
 
-%smallBody {
+%bodySmall {
   font-size: 1.333rem;
   @extend %p;
 
@@ -136,27 +151,6 @@
   @include media(desktop) {
     font-size: 1.5rem;
   }
-}
-
-%heading {
-  // text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 1.25px;
-  line-height: 1.26;
-  font-family: $font;
-  word-break: break-word;
-  @extend %fontColorBlack;
-  //   color: $colorWhiteBackground;
-}
-
-%p {
-  font-weight: 700;
-  letter-spacing: 1.9px;
-  line-height: 1.6;
-  font-family: $font;
-  word-break: break-word;
-  @extend %fontColorBlack;
-  //   color: $colorWhiteBackground;
 }
 
 %strong {
@@ -207,4 +201,27 @@
 
 %innerContainerSpacing {
   padding: 0 $spacingL;
+}
+
+%heading {
+  // text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 1.25px;
+  line-height: 1.26;
+  font-family: $font;
+  word-break: break-word;
+  @extend %fontColorBlack;
+  max-width: $maxWidthText;
+  //   color: $colorWhiteBackground;
+}
+
+%p {
+  font-weight: 700;
+  letter-spacing: 1.9px;
+  line-height: 1.6;
+  font-family: $font;
+  word-break: break-word;
+  @extend %fontColorBlack;
+  max-width: $maxWidthText;
+  //   color: $colorWhiteBackground;
 }

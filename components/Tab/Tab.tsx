@@ -9,9 +9,12 @@ const Tab = ({ type, number, html, title, dark, id, onClick }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     // console.log("OUTPUT ÄR ~ file: Tab.tsx ~ line 8 ~ Tab ~ type", type)
-    const handleOnClick = () => {
-        // console.log("klickad");
+    const handleOnClick = (id) => {
+        // for dropdown in mobileview
         setIsExpanded(!isExpanded);
+
+        // for displaying text in infoview in desktopview
+        onClick(id)
     };
 
     return (
@@ -24,7 +27,8 @@ const Tab = ({ type, number, html, title, dark, id, onClick }) => {
                 )}
                 // role="button"
                 // onClick={handleOnClick}
-                onClick={() => onClick(id)}
+                onClick={() => handleOnClick(id)}
+            // onClick={() => onClick(id)}
             >
                 <span className="sr-only">Läs om mina erfarenheter med {type}</span>
             </button>

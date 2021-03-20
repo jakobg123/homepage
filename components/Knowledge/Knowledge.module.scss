@@ -2,7 +2,10 @@
 @import '../../styles/variables.scss';
 
 .Knowledge {
-  &__Grid {
-    // @extend %grid;
+  @include media(ms) {
+    padding: $spacingM $spacingXl * 4;
+  }
+  @include media(tablet) {
+    padding: 0;
   }
 }

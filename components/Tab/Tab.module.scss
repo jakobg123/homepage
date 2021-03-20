@@ -2,18 +2,16 @@
 @import '../../styles/extensions.scss';
 
 .Tab {
-  // border: 1px solid red;
   position: relative;
   display: flex;
   margin-bottom: $spacingL;
-  // background-color: $colorWhite;
   border-radius: $radiusCardSmall;
   box-shadow: $boxShadowCardSmall;
   padding: $spacingXs 0 $spacingS 0;
-  // padding-bottom: $spacingS;
-  // border-radius: 50%;
+  justify-content: space-between;
+  background-color: $colorWhite;
 
-  @include media(tablet) {
+  @include media(desktop) {
     flex-direction: column;
     align-items: center;
     height: 25rem;
@@ -36,19 +34,18 @@
   // }
 
   &__Button {
-    // border: 1px solid blue;
     background: none;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 2;
+    z-index: 3;
     border: none;
+    outline-color: $colorBlack;
 
     &:focus + .Tab__Overlay,
     &:hover + .Tab__Overlay {
-      // background-color: $colorBlack;
       @include bgColorOpacity($colorBlack, 0.8);
     }
 
@@ -88,26 +85,37 @@
 
   &__TextWrapper {
     display: inline;
+    display: flex;
+    // justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-end;
 
     @include media(tablet) {
       display: flex;
-      justify-content: space-between;
+      // justify-content: space-between;
       flex-direction: column;
+      align-items: flex-end;
+    }
+    @include media(desktop) {
+      display: flex;
+      justify-content: space-between;
+      // flex-direction: column;
       align-items: center;
     }
   }
 
   &__Title {
-    @extend %h3;
     padding-bottom: $spacingXs;
     padding-left: $spacingXs;
     @extend %fontColorBlack;
     position: relative;
     display: inline-block;
-    text-align: center;
+    text-align: right;
     transition: color $transitionQuick;
+    @extend %knowledgeTitle;
 
     @include media(tablet) {
+      text-align: center;
       padding-bottom: 0;
     }
 
@@ -136,15 +144,17 @@
 
   .Tab__Button:hover + span + div + div > div > *,
   .Tab__Button:focus + span + div + div > div > * {
-    // @extend %fontColorWhite;
-    color: $colorWhite;
-    * {
+    @include media(desktop) {
       color: $colorWhite;
+      * {
+        color: $colorWhite;
+      }
     }
   }
 
   &__Knowledge {
-    @extend %bodyFat;
+    // @extend %bodyFat;
+    @extend %bodySmall;
     @extend %fontColorBlack;
     margin-bottom: $spacingS;
     padding-top: $spacingXs;
@@ -153,7 +163,7 @@
     transition: color $transitionQuick;
 
     &--Strong {
-      @extend %h3;
+      @extend %body;
       @extend %fontColorBlack;
       transition: color $transitionQuick;
 
@@ -168,14 +178,20 @@
   }
 
   &__TextAndDropDownWrapper {
-    width: 50%;
+    width: 70%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-top: $spacingXs;
     padding-left: $spacingS;
+    padding-right: $spacingS;
 
     @include media(tablet) {
+      // width: calc(100% - 16px);
+      // padding-left: $spacingL;
+      width: 60%;
+    }
+    @include media(desktop) {
       width: 100%;
       padding-left: 0;
     }
@@ -187,8 +203,11 @@
     justify-content: center;
     align-items: center;
     border-radius: $radiusButtonSmall;
+    padding-left: $spacingS;
 
     @include media(tablet) {
+      padding-left: 0;
+
       // display: block;
       // width: 100%;
       // height: 100%;
@@ -218,7 +237,7 @@
   }
 
   &__DropDownWrapper {
-    @include media(tablet) {
+    @include media(desktop) {
       display: none;
     }
   }
