@@ -26,6 +26,7 @@ const Footer = () => {
           <h2 className={styles['Footer__Title']}>Kom i kontakt</h2>
           <div className={styles['Footer__ContentWrapper']}>
             <FooterColumn
+              key={0}
               title={'Skriv gärna till mig på LinkedIn'}
               links={[
                 {
@@ -36,6 +37,7 @@ const Footer = () => {
               ]}
             />
             <FooterColumn
+              key={1}
               title={'Se mer kod på GitHub'}
               links={[
                 {
@@ -76,8 +78,8 @@ const FooterColumn = ({ title, links = [] }) => {
 
       {!!links.length && (
         <ul className={styles['Footer__IconLinkWrapper']}>
-          {links.map((link) => (
-            <li className={styles['Footer__IconLinkWrapper']}>
+          {links.map((link, index) => (
+            <li key={index} className={styles['Footer__IconLinkWrapper']}>
               <IconLink type={link.type} label={link.label} href={link.href} />
             </li>
           ))}
