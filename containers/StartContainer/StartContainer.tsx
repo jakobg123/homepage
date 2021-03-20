@@ -61,15 +61,15 @@ const StartContainer = ({ knowledge }) => {
 
       <div
         className={classNames(
-          styles['StartContainer__KnowledgeSection'],
-          styles['StartContainer__KnowledgeSection--Dark']
+          styles['StartContainer__Block'],
+          styles['StartContainer__Block--White']
         )}>
         <div
           className={classNames(
             styles['StartContainer__TextWrapper'],
-            styles['StartContainer__TextWrapper--Light']
+            styles['StartContainer__TextWrapper--White']
           )}>
-          <h2 className={styles['StartContainer__SubTitle']}>
+          <h2 id="technology" className={styles['StartContainer__SubTitle']}>
             Tekniker jag jobbat mest med hittills
             </h2>
           <p className={styles['StartContainer__Paragraph']}>
@@ -78,23 +78,23 @@ const StartContainer = ({ knowledge }) => {
               en funderare när jag fyller sidan med content
             </p>
         </div>
+
+        <div className={styles["StartContainer__KnowledgeWrapper"]}>
+          <Knowledge knowledge={knowledge} inViewRef={ref} />
+        </div>
+
       </div>
 
       <div
         className={classNames(
-          styles['StartContainer__Line'],
-          styles['StartContainer__Line--Dark']
-        )}></div>
-      <article
-        className={classNames(
           styles['StartContainer__Row'],
           styles['StartContainer__Row--Dark']
         )}>
-        <div className={styles['StartContainer__Grid']}>
+        {/* <div className={styles['StartContainer__Grid']}>
           <div
             className={classNames(
               styles['StartContainer__TextWrapper'],
-              styles['StartContainer__TextWrapper--Dark']
+              styles['StartContainer__TextWrapper--White']
             )}>
             <h2 className={styles['StartContainer__SubTitle']}>
               Tekniker jag jobbat mest med hittills
@@ -105,9 +105,9 @@ const StartContainer = ({ knowledge }) => {
               en funderare när jag fyller sidan med content
             </p>
           </div>
-        </div>
+        </div> */}
 
-        <div
+        {/* <div
           className={classNames(
             styles['StartContainer__Padding'],
             { [styles['StartContainer__Padding--White']]: !inView },
@@ -116,9 +116,9 @@ const StartContainer = ({ knowledge }) => {
             }
           )}>
           <Knowledge knowledge={knowledge} inViewRef={ref} />
-        </div>
+        </div> */}
 
-        <section className={styles['StartContainer__Row']}>
+        <div id="internship" className={styles['StartContainer__Row']}>
           <h2 className={styles['StartContainer__SubTitle']}>
             Om praktik på Fröjd
           </h2>
@@ -129,9 +129,9 @@ const StartContainer = ({ knowledge }) => {
             Nån kommentar från Micke, kanske ett blockquote.
           </p>
 
-        </section>
+        </div>
 
-      </article>
+      </div>
       {/* <Card /> */}
     </div>
   );
