@@ -8,8 +8,8 @@
 
   &__Title {
     @extend %h1;
-    font-size: 10rem;
-    font-weight: 600;
+    font-size: 8.5rem;
+    // font-weight: 600;
     margin-top: -8rem;
     position: relative;
     z-index: 5;
@@ -46,11 +46,36 @@
     position: relative;
     background-color: $colorWhite;
     .StartContainer__Strong,
-    .StartContainer__SubTitle,
+    .StartContainer__Subtitle,
     .StartContainer__Paragraph {
       @extend %fontColorBlack;
     }
 
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   background-image: url('#{$patternPath}bottomWave.svg');
+    //   background-position: top;
+    //   background-size: contain;
+    //   background-repeat: no-repeat;
+    //   top: -1px;
+    //   right: -1px;
+    //   left: -1px;
+    //   height: 100%;
+    //   width: calc(100% + 2px);
+    //   z-index: 0;
+
+    //   @include media(ms) {
+    //     background-size: contain;
+    //   }
+    // }
+  }
+
+  &__CtaWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    // border: 1px solid red;
     &::after {
       content: '';
       position: absolute;
@@ -61,19 +86,29 @@
       top: -1px;
       right: -1px;
       left: -1px;
-      height: 100%;
+      height: 50rem;
       width: calc(100% + 2px);
       z-index: 0;
 
       @include media(ms) {
         background-size: contain;
+        width: 1440px;
+        margin-left: -7.2rem;
+        margin-right: -7.2rem;
       }
     }
+  }
+
+  &__ButtonWrapper {
+    position: relative;
+    z-index: 2;
+    // padding-bottom: 15rem;
   }
 
   &__TextWrapper {
     position: relative;
     z-index: 5;
+    padding-top: 20rem;
     &--White {
       // background-color: $colorWhite;
     }
@@ -94,16 +129,17 @@
   &__Row--Dark {
     background-color: $colorWhite;
     .StartContainer__Strong,
-    .StartContainer__SubTitle,
+    .StartContainer__Subtitle,
     .StartContainer__Paragraph {
       @extend %fontColorBlack;
     }
   }
 
-  &__Strong,
-  &__SubTitle {
+  &__Subtitle,
+  &__Strong {
     @extend %h2;
-    padding-bottom: $spacingM;
+    display: block;
+    padding-bottom: $spacingXl;
   }
 
   &__Line {
@@ -114,11 +150,26 @@
     }
   }
 
-  &__Paragraph {
+  &__Preamble {
+    @extend %preamble;
+    // border: 1px solid red;
+    // P {
+    //   @extend %richtext;
+
+    //   &:last-of-type {
+    //     padding-bottom: $spacingL * 2;
+    //   }
+    // }
+    // strong {
+    //   @extend %strong;
+    // }
+  }
+
+  &__Paragraph p {
     // @extend %richtext;
     @extend %richtext;
 
-    &:last-of-type {
+    p:last-of-type {
       padding-bottom: $spacingL * 2;
     }
   }
@@ -163,11 +214,11 @@
     }
   }
 
-  &__ButtonWrapper {
-    position: absolute;
-    top: 0;
-    z-index: 2;
-  }
+  // &__ButtonWrapper {
+  //   position: absolute;
+  //   top: 0;
+  //   z-index: 2;
+  // }
 
   &__Padding {
     padding-bottom: $spacingBlock;

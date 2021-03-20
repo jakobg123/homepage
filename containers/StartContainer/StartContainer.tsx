@@ -10,18 +10,20 @@ import Knowledge from "../../components/Knowledge";
 
 import { useInView } from 'react-intersection-observer';
 
-const StartContainer = ({ knowledge }) => {
+const StartContainer = ({ data, knowledge }) => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
     // triggerOnce: true,
   });
+
+  const { heading, greeting, preamble, entryText, ctaText, cta, technologies, internship } = data;
 
   return (
     <div className={styles['StartContainer']}>
       <div className={styles['StartContainer__Grid']}>
 
         <h1 className={styles['StartContainer__Title']}>
-          Frontend-utecklare som <em className={styles['StartContainer__Em']}>vill bygga din webb.</em>
+          {heading}
         </h1>
 
         <div
@@ -30,21 +32,25 @@ const StartContainer = ({ knowledge }) => {
             styles['StartContainer__EntryWrapper']
           )}>
           <strong className={styles['StartContainer__Strong']}>
-            Vad kul att du är här!
+            {greeting}
           </strong>
           <div className={styles['StartContainer__Row']}>
-            <h2 className={styles['StartContainer__SubTitle']}>
-              Till sommar blir jag en färdigutbildad frontendutvecklare, och letar
-              nu jobb på en kreativ och trevlig webbyrå.
-            </h2>
-            <p className={styles['StartContainer__Paragraph']}>
-              Här på min hemsida showcase:ar jag lite av det jag har lärt mig i
-              programmering och webbutveckling efter 2 års YH-utbildning.
-            </p>
-            <p className={styles['StartContainer__Paragraph']}>
+            {/* <h2 className={styles['StartContainer__SubTitle']}>
+              {preamble}
+            </h2> */}
+            <div className={styles['StartContainer__Preamble']} dangerouslySetInnerHTML={{ __html: preamble }}>
+            </div>
+            <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}>
+            </div>
+            <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: ctaText }}>
+            </div>
+
+            {/* <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}>
+            </div> */}
+            {/* <p className={styles['StartContainer__Paragraph']}>
               Den här sidan är bl.a. gjord med Next.js och Typescript. Jag har
               också jobbat med prestandaoptimering och tillgänglighet.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>
@@ -64,19 +70,23 @@ const StartContainer = ({ knowledge }) => {
           styles['StartContainer__Block'],
           styles['StartContainer__Block--White']
         )}>
+        <div className={styles['StartContainer__CtaWrapper']}>
+          <div className={styles['StartContainer__ButtonWrapper']}>
+            <Button label={cta.label} icon={cta.icon} href={cta.href} />
+          </div>
+        </div>
         <div
           className={classNames(
             styles['StartContainer__TextWrapper'],
             styles['StartContainer__TextWrapper--White']
           )}>
-          <h2 id="technology" className={styles['StartContainer__SubTitle']}>
-            Tekniker jag jobbat mest med hittills
-            </h2>
-          <p className={styles['StartContainer__Paragraph']}>
-            <strong>Här är det mer text. </strong>
-              Även här skriver jag mer text som är relevant till ämnet. Får ta
-              en funderare när jag fyller sidan med content
-            </p>
+          {/* <div className={styles['StartContainer__Preamble']} dangerouslySetInnerHTML={{ __html: technologies }}>
+          </div> */}
+          <h2 id="technology" className={styles['StartContainer__Subtitle']}>
+            {technologies.heading}
+          </h2>
+          <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: technologies.html }}>
+          </div>
         </div>
 
         <div className={styles["StartContainer__KnowledgeWrapper"]}>
@@ -119,15 +129,11 @@ const StartContainer = ({ knowledge }) => {
         </div> */}
 
         <div id="internship" className={styles['StartContainer__Row']}>
-          <h2 className={styles['StartContainer__SubTitle']}>
-            Om praktik på Fröjd
+          <h2 className={styles['StartContainer__Subtitle']}>
+            {internship.heading}
           </h2>
-          <p className={styles['StartContainer__Paragraph']}>
-            Här är det text om Fröjd. Lite om det jag har gjort och vilka typ av projekt och sammansättningar jag arbetat i.
-          </p>
-          <p className={styles['StartContainer__Paragraph']}>
-            Nån kommentar från Micke, kanske ett blockquote.
-          </p>
+          <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: internship.html }}>
+          </div>
 
         </div>
 

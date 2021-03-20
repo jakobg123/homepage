@@ -4,6 +4,7 @@ import Head from 'next/head';
 //Data for getStaticProps
 import menuData from '../serverData/menu.js';
 import knowledgeData from '../serverData/knowledge.js';
+import startData from '../serverData/startData.js';
 
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNavButton';
@@ -27,17 +28,18 @@ class index extends PureComponent {
   // }
 
   render() {
-    let { menu, knowledgeData } = this.props;
+    let { menu, knowledgeData, startData } = this.props;
 
     return (
       <>
         <Head>
-          <title>SEO-lämplig titel</title>
-          <link
-            rel="preload"
-            href="/_next/static/css/d0593b78b17e779e2eb2.css"
-            as="style"
+          <title>Frontend-utvecklare som vill bygga din webb: jakobg.se</title>
+          <meta
+            name="description"
+            content="Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."
+            // content="I juni 2021 tar jag examen i Frontendutveckling på IT-Högskolan. Jag söker nu ett jobb där jag får arbeta med webbutveckling och växa inom programmering."
           />
+          <meta name="viewport" content="user-scalable=yes" />
         </Head>
         <div className={styles['Base']}>
           <header className={styles['Base__Header']}>
@@ -47,7 +49,7 @@ class index extends PureComponent {
             <MobileNav data={menu} />
           </div>
           <main>
-            <StartContainer knowledge={knowledgeData} />
+            <StartContainer knowledge={knowledgeData} data={startData} />
           </main>
           <footer className={styles['Base__Footer']}>
             <Footer />
@@ -63,6 +65,7 @@ export async function getStaticProps(content) {
     props: {
       menu: menuData,
       knowledgeData,
+      startData,
     },
   };
 }
