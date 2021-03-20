@@ -18,11 +18,11 @@ const Image: React.FC<IImageProps> = ({
 }) => {
     const [fade, setFade] = useState(false)
 
-    useEffect(() => {
-        if (onLoadFade) {
-            setFade(true)
-        }
-    }, [])
+    // useEffect(() => {
+    //     if (onLoadFade) {
+    //         setFade(true)
+    //     }
+    // }, [])
 
     return (
         <picture className={styles['Image']}
