@@ -1,0 +1,40 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.MainNav {
+  //   border: 1px solid red;
+  height: 100%;
+  width: 100%;
+  //   position: relative;
+  //   z-index: 2000;
+
+  &__List {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__ListItem {
+    padding: $spacingL;
+
+    &:last-child {
+      padding-right: $spacingL * 2;
+    }
+  }
+
+  &__Link {
+    text-decoration: none;
+    @extend %label;
+    color: $colorBlack;
+    @include bgColorOpacity($colorPrimary, 0.5);
+    padding: $spacingXs $spacingS;
+    // border: 1px solid $colorBlack;
+    transition: background-color $transitionNormal;
+
+    &:hover,
+    &:focus {
+      @include bgColorOpacity($colorPrimary, 1);
+    }
+  }
+}
