@@ -1,6 +1,6 @@
 export default [
-    { link: 'om sidan', url: '/about/' },
-    { link: 'cv', url: '/' },
+    { link: 'Teknologier', url: '#technology' },
+    { link: 'Praktik', url: '#internship' },
     { link: 'om mig', url: '/' },
-    { link: 'kontakt', url: '/' },
+    { link: 'kontakt', url: '#contact' },
 ];
