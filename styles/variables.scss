@@ -49,6 +49,9 @@ $colorPrimary: #f2e8df;
 $colorWhite: #f2f2f2;
 $colorBlack: #232622;
 
+$linkHover: #bf3918;
+$linkHoverLight: #f09a84;
+
 $transitionNormal: 0.4s ease-in-out;
 $transitionQuick: 0.2s ease-in-out;
 
@@ -65,6 +68,7 @@ $spacingBlock: 48px;
 
 $colorChangeSpacing: 180px;
 
+$maxWidthText: 70rem;
 $maxWidthTextMobile: 100%;
 
 //BORDER RADIUS
@@ -76,19 +80,22 @@ $radiusCardSmall: $spacingXs;
 }
 
 //BOX SHADOW
-$boxShadowCard: 2px 2px 6px rgba(0, 0, 0, 0.5);
+$boxShadowCard: 1px 1px 4px rgba(0, 0, 0, 0.3);
 $boxShadowCardSmall: 0px 0px 4px rgba(0, 0, 0, 0.5);
+$boxShadowContainer: 0px 0px 10px rgba(0, 0, 0, 0.5);
 
 $boxShadowMedium: 2px 2px 6px;
 $boxShadowSmall: 1px 1px 2px;
 
 // BREAKPOINTS
-$bp-ms: 550px;
+$bp-s: 550px;
+$bp-ms: 640px;
 $bp-m: 768px;
 $bp-l: 1024px;
 $bp-xl: 1280px;
 
 $breakpoints: (
+  s: $bp-s,
   ms: $bp-ms,
   tablet: $bp-m,
   desktop: $bp-l,
