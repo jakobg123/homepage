@@ -23,7 +23,8 @@
     position: relative;
 
     @include media(desktop) {
-      padding-top: 73vh;
+      padding-top: 85rem;
+      // max-height: 65rem;
     }
 
     &::before {
