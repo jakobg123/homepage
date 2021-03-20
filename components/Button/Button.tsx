@@ -3,51 +3,38 @@ import Link from "next/link";
 import styles from "./Button.module.scss";
 import Icon from "../Icon";
 
-const Button = ({ label, icon, href, onClick }) => {
-    icon = "arrowNext";
-
-    href = "/";
+const Button = ({ label, icon, href, onClick = null }) => {
 
     let ButtonThing = null;
 
     if (!href) {
-        ButtonThing = () => (
-            <button className={styles["Button__Style"]} onClick={onClick}>{label}</button>
+        ButtonThing = ({ children }) => (
+            <button className={styles["Button"]} onClick={onClick}>{label}{children}</button>
         )
     }
     else if ("http" === href.substring(0, 4)) {
-        ButtonThing = () => (
-            <div>
-                <a href={href} className={styles["Button__Link"]} target="_blank">{label}</a>
-                <span className={styles["Button__Style"]}>{label}</span>
-            </div>
+        ButtonThing = ({ children }) => (
+            <a href={href} className={styles["Button"]} >{label}{children}</a>
         )
     }
     else {
-        ButtonThing = () => (
-            <>
-                <Link href={href}>
-                    <a className={styles["Button__Link"]}>{label}</a>
-                </Link>
-                <span className={styles["Button__Style"]}>{label}</span>
-            </>
+        ButtonThing = ({ children }) => (
+            <Link href={href}>
+                <a className={styles["Button"]}>{label}{children}</a>
+            </Link>
         )
     }
 
     const IconWrapper = ({ icon }) => (
-        <div className={styles["Button__IconWrapper"]}>
-            <Icon type={icon} color={"Primary"} />
-        </div>
+        <span aria-hidden="true" className={styles["Button__IconWrapper"]}>
+            <Icon type={icon} color={"Black"} hoverEffect />
+        </span>
     )
 
     return (
-        <>
-            <div className={styles["Button"]}>
-                <ButtonThing />
-                {!!icon && <IconWrapper icon={icon} />}
-
-            </div>
-        </>
+        <ButtonThing>
+            {!!icon && <IconWrapper icon={icon} />}
+        </ButtonThing>
     )
 }
 
