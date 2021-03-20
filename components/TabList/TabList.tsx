@@ -31,7 +31,7 @@ const InfoContainer = ({ info }) => {
 const TabList = ({ knowledge, title, dark = false }) => {
 
     const [currentKnowledge, setCurrentKnowledge] = useState([]);
-    console.log("OUTPUT ÄR ~ file: TabList.tsx ~ line 34 ~ TabList ~ currentKnowledge", currentKnowledge)
+    // console.log("OUTPUT ÄR ~ file: TabList.tsx ~ line 34 ~ TabList ~ currentKnowledge", currentKnowledge)
 
     const prevId = useRef(0);
 
