@@ -1,4 +1,5 @@
 import Image from '../Image';
+import MainNav from "../MainNav";
 
 
 import styles from './Header.module.scss';
@@ -41,14 +42,17 @@ const Header: React.FC = () => {
 
   return (
     <div className={styles['Header']}>
+      <div className={styles['Header__MainNavWrapper']}>
+        <MainNav />
+      </div>
       <div
         className={classNames(styles['Header__ImageWrapper'])}>
         <Image
           {...bgImage}
           mediaQueries={mediaQueries}
-          focal={{ x: '0%', y: '90%' }}
-          onLoadFade
-          loading="lazy"
+          focal={{ x: '0%', y: '0%' }}
+          // onLoadFade
+          loading="eager"
         />
         <div
           className={classNames(styles['Header__Overlay'], {
@@ -60,3 +64,5 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+
