@@ -2,28 +2,38 @@
 @import '../../styles/extensions.scss';
 
 .Tab {
-  border: 1px solid red;
+  // border: 1px solid red;
   position: relative;
   display: flex;
-  padding-bottom: $spacingS;
   margin-bottom: $spacingL;
-  background-color: $colorWhiteBackground;
+  // background-color: $colorWhite;
   border-radius: $radiusCardSmall;
   box-shadow: $boxShadowCardSmall;
-  padding: $spacingXs;
-  padding-bottom: $spacingS;
+  padding: $spacingXs 0 $spacingS 0;
+  // padding-bottom: $spacingS;
+  // border-radius: 50%;
 
   @include media(tablet) {
     flex-direction: column;
     align-items: center;
     height: 25rem;
     width: 100%;
-    // flex: 1 1 40%;
+    transform: scale(1);
+    transition: transform $transitionNormal;
+    will-change: transform;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 
   &--Dark {
     background-color: $colorPrimaryBlue;
   }
+
+  // &__Button:focus{
+
+  // }
 
   &__Button {
     // border: 1px solid blue;
@@ -36,6 +46,12 @@
     z-index: 2;
     border: none;
 
+    &:focus + .Tab__Overlay,
+    &:hover + .Tab__Overlay {
+      // background-color: $colorBlack;
+      @include bgColorOpacity($colorBlack, 0.8);
+    }
+
     &:hover {
       // background-color: red;
     }
@@ -45,6 +61,29 @@
       // background-color: green;
       // background-color: none;
     }
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: 100%;
+    //   background-color: steelblue;
+    //   z-index: -5;
+    // }
+  }
+
+  &__Overlay {
+    position: absolute;
+    // border: 1px solid red;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $colorWhite;
+    z-index: -1;
+    transition: all $transitionQuick;
   }
 
   &__TextWrapper {
@@ -53,6 +92,8 @@
     @include media(tablet) {
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
     }
   }
 
@@ -63,6 +104,12 @@
     @extend %fontColorBlack;
     position: relative;
     display: inline-block;
+    text-align: center;
+    transition: color $transitionQuick;
+
+    @include media(tablet) {
+      padding-bottom: 0;
+    }
 
     .Tab--Dark & {
       @extend %fontColor;
@@ -87,6 +134,15 @@
     }
   }
 
+  .Tab__Button:hover + span + div + div > div > *,
+  .Tab__Button:focus + span + div + div > div > * {
+    // @extend %fontColorWhite;
+    color: $colorWhite;
+    * {
+      color: $colorWhite;
+    }
+  }
+
   &__Knowledge {
     @extend %bodyFat;
     @extend %fontColorBlack;
@@ -94,13 +150,15 @@
     padding-top: $spacingXs;
     padding-left: $spacingXs;
     display: block;
+    transition: color $transitionQuick;
 
     &--Strong {
       @extend %h3;
       @extend %fontColorBlack;
+      transition: color $transitionQuick;
 
       &--Dark {
-        color: $colorWhiteBackground !important;
+        // color: $colorWhiteBackground !important;
       }
     }
 
@@ -124,7 +182,7 @@
   }
 
   &__IconWrapper {
-    border: 1px solid green;
+    // border: 1px solid green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,10 +190,11 @@
 
     @include media(tablet) {
       // display: block;
-      width: 100%;
+      // width: 100%;
       // height: 100%;
       // max-width: 20rem;
-      max-width: 16.5rem;
+      // max-width: 16.5rem;
+      width: 15.5rem;
       // max-height: 15.5rem;
       height: 15.5rem;
       // padding: $spacingMl;
@@ -147,13 +206,15 @@
     }
 
     .Tab--Dark & {
-      background-color: $colorWhiteBackground;
+      // background-color: $colorWhiteBackground;
     }
   }
 
   &__Height {
-    border: 1px solid green;
-    height: 100%;
+    // border: 1px solid green;
+    // height: 100%;
+    height: 12rem;
+    width: 12rem;
   }
 
   &__DropDownWrapper {
