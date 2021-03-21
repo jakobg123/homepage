@@ -204,8 +204,87 @@
     // @extend %richtext;
     @extend %richtext;
 
+    &--Pres {
+      border: 1px solid red;
+    }
+
     p:last-of-type {
       padding-bottom: $spacingL * 2;
+    }
+  }
+  &__ParagraphPres {
+    // border: 1px solid red;
+    max-width: 120rem;
+    p {
+      position: relative;
+      z-index: 10;
+      // @extend %richtext;
+      @extend %richtext;
+
+      p:last-of-type {
+        padding-bottom: $spacingL * 2;
+      }
+    }
+  }
+
+  // &__PresImage {
+  //   height: 13rem;
+  //   width: 13rem;
+  //   border-radius: 50%;
+  //   shape-outside: circle();
+  //   object-fit: cover;
+  //   float: right;
+  //   border: 5px solid $colorWhite;
+  //   outline-style: 1px solid black;
+  // }
+
+  &__PresImageWrapper {
+    position: relative;
+    padding-right: $spacingXl * 2;
+    // right: $spacingL;
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+    shape-outside: circle();
+    // overflow: hidden;
+    object-fit: cover;
+    float: right;
+    border: 5px solid $colorWhite;
+    box-shadow: $boxShadowCard;
+    // border: 5px solid black;
+    z-index: 5;
+    // box-shadow: ;
+
+    @include media(ms) {
+      height: 20rem;
+      width: 20rem;
+    }
+    @include media(desktop) {
+      height: 25rem;
+      width: 25rem;
+    }
+    @include media(xl) {
+      height: 35rem;
+      width: 35rem;
+      top: -5rem;
+    }
+
+    // picture {
+    //   border-radius: 50%;
+    //   overflow: hidden;
+    //   display: block;
+    // }
+
+    &::after {
+      content: '';
+      top: 0;
+      right: 0;
+      width: 25rem;
+      height: 25rem;
+      // background-color: $colorWhite;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -1;
     }
   }
 

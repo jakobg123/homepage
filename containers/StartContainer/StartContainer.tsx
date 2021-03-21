@@ -7,6 +7,7 @@ import Card from '../../components/Card';
 import TabList from '../../components/TabList';
 import Button from '../../components/Button';
 import Internship from "../../components/Internship";
+import Image from "../../components/Image";
 
 import dynamic from "next/dynamic";
 const Knowledge = dynamic(() => import("../../components/Knowledge"));
@@ -33,6 +34,24 @@ const StartContainer = ({ data, knowledge }) => {
 
   const { heading, greeting, preamble, entryText, ctaText, cta, technologies, internship } = data;
 
+  const presImage: IImageProps = {
+    src: '/images/temp/small150x150.jpg',
+    alt: 'Jakob Gauffin, d.v.s han som gjort sidan.',
+    width: 150,
+    height: 150,
+  };
+
+  const mediaQueries: IMediaQueries[] = [
+    {
+      minWidth: 1280,
+      src: '/images/temp/large350x350.jpg',
+    },
+    {
+      minWidth: 768,
+      src: '/images/temp/medium250x250.jpg',
+    },
+  ];
+
   return (
     <div className={styles['StartContainer']}>
       <div className={styles['StartContainer__Grid']}>
@@ -55,8 +74,18 @@ const StartContainer = ({ data, knowledge }) => {
             </h2> */}
             <div className={styles['StartContainer__Preamble']} dangerouslySetInnerHTML={{ __html: preamble }}>
             </div>
-            <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}>
+            {/* <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}> */}
+            <div className={styles['StartContainer__ParagraphPres']} >
+              <div className={styles['StartContainer__PresImageWrapper']}>
+                <Image {...presImage} mediaQueries={mediaQueries} round />
+                {/* <Image src={"/images/temp/small150x150.jpg"} width={"13rem"} height={"13rem"} alt={"Jakob Gauffin, han som gjort sidan."} round mediaQueries={[]} /> */}
+              </div>
+              {/* <img src="/images/temp/medium500x500.jpg" className={styles['StartContainer__PresImage']} /> */}
+              <p>Sidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik <strong>6 månaders LIA (praktik)</strong> på <a href="https://www.frojd.se" >digitalbyrån Fröjd Interactive</a>.</p>
+              <p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.</p>
+              <p>Jag kan redan nu avslöja att den är gjord i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering.</p>
             </div>
+            {/* </div> */}
 
 
             {/* <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: entryText }}>
@@ -171,7 +200,7 @@ const StartContainer = ({ data, knowledge }) => {
         </div>
       </div>
       {/* <Card /> */}
-    </div>
+    </div >
   );
 };
 

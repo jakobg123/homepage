@@ -15,6 +15,7 @@ const Image: React.FC<IImageProps> = ({
     focal = { x: '50%', y: '50%' },
     onLoadFade = false,
     height: string,
+    round = false,
 }) => {
     const [fade, setFade] = useState(false)
 
@@ -42,7 +43,7 @@ const Image: React.FC<IImageProps> = ({
                 width={width}
                 height={height}
                 loading={loading}
-                style={{ objectPosition: focal.x + ' ' + focal.y }}
+                style={{ objectPosition: focal.x + ' ' + focal.y, borderRadius: round && "50%" }}
                 className={classNames(styles['Image__Image'], { [styles["Image__Image--Fade"]]: fade }, { [styles["Image__Image--NoFade"]]: !onLoadFade })
                 }
             // onLoad={fadeImage}
