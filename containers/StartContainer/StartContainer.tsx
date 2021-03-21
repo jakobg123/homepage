@@ -9,6 +9,8 @@ import Button from '../../components/Button';
 import Internship from "../../components/Internship";
 import Image from "../../components/Image";
 
+import { IImageProps, IMediaQueries } from '../../types/types';
+
 import dynamic from "next/dynamic";
 const Knowledge = dynamic(() => import("../../components/Knowledge"));
 // const Knowledge = dynamic(() => import("../../components/Knowledge"));
