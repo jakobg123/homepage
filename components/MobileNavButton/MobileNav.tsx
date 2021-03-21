@@ -11,17 +11,31 @@ import Icon from '../Icon';
 
 const MobileNav = ({ data }) => {
     const [openNav, setOpenNav] = useState(false);
+    const [showOverlay, setShowOverlay] = useState(false)
     const [drop, setDrop] = useState(false);
 
-    useEffect(() => {
-        openNav ? slideIn(true) : slideIn(false);
-    }, [openNav]);
+    const open = () => {
+        setShowOverlay(true)
+
+        setTimeout(() => {
+            setOpenNav(true)
+            slideIn(true)
+            document.body.style.overflow = 'hidden';
+        }, 100)
+    }
+
+    const close = () => {
+        setOpenNav(false)
+        slideIn(false)
+        document.body.style.overflow = 'scroll';
+
+        setTimeout(() => {
+            setShowOverlay(false)
+        }, 500)
+    }
 
     const handleMobileNav = () => {
-        setOpenNav(!openNav);
-        openNav
-            ? (document.body.style.overflow = 'scroll')
-            : (document.body.style.overflow = 'hidden');
+        openNav ? open() : close();
     };
 
     const slideIn = (bool) => {
@@ -41,7 +55,6 @@ const MobileNav = ({ data }) => {
                     styles['MobileNav__Button'],
                     { [styles['MobileNav__Button--Active']]: openNav },
                 )}>
-
                 <span className="sr-only">{openNav ? 'Stäng meny' : 'Öppna meny'}</span>
                 <span
                     className={classNames(
@@ -61,14 +74,15 @@ const MobileNav = ({ data }) => {
                         styles['MobileNav__Line--3'],
                         { [styles['MobileNav__Line--Active']]: openNav }
                     )}></span>
-                {/* </button> */}
             </button>
             <div
                 id="menu"
                 aria-hidden={openNav ? 'false' : 'true'}
-                className={classNames(styles['MobileNav__Menu'], {
-                    [styles['MobileNav__Menu--Active']]: openNav,
-                })}>
+                className={classNames(styles['MobileNav__Menu'],
+                    {
+                        [styles['MobileNav__Menu--Active']]: openNav,
+                        [styles['MobileNav__Menu--Hide']]: !showOverlay,
+                    })}>
                 <nav className={styles['MobileNav__Nav']}>
                     <h2
                         className={classNames(styles['MobileNav__NavListTitle'], {
