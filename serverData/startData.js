@@ -8,7 +8,7 @@ export default {
     ctaText:
         '<p>I väntan på mer information så finns koden till sajten här:</p>',
     cta: {
-        label: 'Sajtens GitHub-repo',
+        label: 'Git-repot',
         icon: 'arrowNext',
         href: 'https://github.com/jakobg123/homepage',
     },
@@ -20,6 +20,8 @@ export default {
     internship: {
         heading: 'Lärande i arbete på Fröjd',
         html:
-            '<p>Jag har haft turen och glädjen att få genomföra min 6 månaders LIA-period på Fröjd. Det är en eftertrakad digitalbyrå som jobbar med hela ekosystemet kring webbsidor. De är experter på att ta fram koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p><p>Här har jag lärt mig hur det är att jobba som webbutvecklare på riktigt. Från daglig standup, till att jobba agilt med kanban-boards och att ha möten med kund. Jag har både jobbat i större och mindre utvecklarteams och fått en god uppfattning om vad som är viktigt att tänka på när man bygger komponenter i React i anslutning till ett headless CMS. Fröjds val av CMS är Wagtail, som har varit roligt att sätta sig in i, och på köpet har jag lärt mig en del Python och Django.</p><p>Övergripande har jag arbetat i Next.js med mycket tonvikt på komponentens utformning (flexibilitet och SCSS) samt att skriva lättläst kod. Semantik och tillgänglighet har varit ledord och jag har även fått jobba en del med prestandaoptimering.</p><p>I skrivande stund har jag två månader kvar av min praktik och ska få gå vidare från Next.js-projekt till att arbeta med olika Wordpressprojekt vilket ska bli jättekul. Det är verkligen en intressant och lärorik tid!</p><p>Min handledare är <a href="https://www.linkedin.com/in/mikael-engstr%C3%B6m-75671344/">Mikael Engström</a> som är Techincal Lead på <a href="https://www.frojd.se">Fröjd</a>.</p>',
+            '<p>Jag har haft turen och glädjen att få genomföra min 6 månaders LIA-period på Fröjd. Det är en eftertrakad digitalbyrå som jobbar med hela ekosystemet kring webbsidor. De är experter på att ta fram koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p>',
+        html:
+            '<p>Här har jag lärt mig hur det är att jobba som webbutvecklare på riktigt. Från daglig standup, till att jobba agilt med kanban-boards och att ha möten med kund. Jag har både jobbat i större och mindre utvecklarteams och fått en god uppfattning om vad som är viktigt att tänka på när man bygger komponenter i React i anslutning till ett headless CMS. Fröjds val av CMS är Wagtail, som har varit roligt att sätta sig in i, och på köpet har jag lärt mig en del Python och Django.</p><p>Övergripande har jag arbetat i Next.js med mycket tonvikt på komponentens utformning (flexibilitet och SCSS) samt att skriva lättläst kod. Semantik och tillgänglighet har varit ledord och jag har även fått jobba en del med prestandaoptimering.</p><p>I skrivande stund har jag två månader kvar av min praktik och ska få gå vidare från Next.js-projekt till att arbeta med olika Wordpressprojekt vilket ska bli jättekul. Det är verkligen en intressant och lärorik tid!</p><p>Min handledare är <a href="https://www.linkedin.com/in/mikael-engstr%C3%B6m-75671344/">Mikael Engström</a> som är Techincal Lead på <a href="https://www.frojd.se">Fröjd</a>.</p>',
     },
 };
