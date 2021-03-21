@@ -6,12 +6,9 @@ import React, { useState } from "react";
 import Card from '../../components/Card';
 import TabList from '../../components/TabList';
 import Button from '../../components/Button';
-// import Knowledge from "../../components/Knowledge";
+
 import dynamic from "next/dynamic";
-
 const Knowledge = dynamic(() => import("../../components/Knowledge"));
-// const Knowledge = React.lazy(() => import("../../components/Knowledge"));
-
 
 
 import { useInView } from 'react-intersection-observer';
@@ -19,9 +16,8 @@ import { useInView } from 'react-intersection-observer';
 const StartContainer = ({ data, knowledge }) => {
   const { ref, inView, entry } = useInView({
     threshold: 0.1,
-    // triggerOnce: true,
+    triggerOnce: true,
   });
-  console.log("OUTPUT ÄR ~ file: StartContainer.tsx ~ line 21 ~ StartContainer ~ inView", inView)
 
   const { heading, greeting, preamble, entryText, ctaText, cta, technologies, internship } = data;
 
@@ -90,7 +86,7 @@ const StartContainer = ({ data, knowledge }) => {
           )}>
           {/* <div className={styles['StartContainer__Preamble']} dangerouslySetInnerHTML={{ __html: technologies }}>
           </div> */}
-          <h2 id="technology" className={styles['StartContainer__Subtitle']}>
+          <h2 id="technology" className={styles['StartContainer__Subtitle']} ref={ref}>
             {technologies.heading}
           </h2>
           <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: technologies.html }}>
@@ -98,6 +94,19 @@ const StartContainer = ({ data, knowledge }) => {
         </div>
       </div>
       <div
+
+        className={classNames(
+          styles['StartContainer__Background'],
+          { [styles['StartContainer__Background--White']]: !inView },
+          {
+            [styles['StartContainer__Background--Black']]: inView,
+          }
+        )}>
+        {inView && (<div className={styles["StartContainer__KnowledgeWrapper"]}>
+          <Knowledge knowledge={knowledge} />
+        </div>)}
+      </div>
+      {/* <div
         className={classNames(
           styles['StartContainer__Background'],
           { [styles['StartContainer__Background--White']]: !inView },
@@ -108,7 +117,7 @@ const StartContainer = ({ data, knowledge }) => {
         <div className={styles["StartContainer__KnowledgeWrapper"]}>
           <Knowledge knowledge={knowledge} inViewRef={ref} />
         </div>
-      </div>
+      </div> */}
 
 
       <div
@@ -143,6 +152,10 @@ const StartContainer = ({ data, knowledge }) => {
           )}>
           <Knowledge knowledge={knowledge} inViewRef={ref} />
         </div> */}
+        {/* 
+        {!!comp && <Example />}
+
+        <button onClick={handleImport} >ankjdnmas</button> */}
 
         <div id="internship" className={styles['StartContainer__Row']}>
           <h2 className={styles['StartContainer__Subtitle']}>
@@ -158,5 +171,7 @@ const StartContainer = ({ data, knowledge }) => {
     </div>
   );
 };
+
+
 
 export default StartContainer;
