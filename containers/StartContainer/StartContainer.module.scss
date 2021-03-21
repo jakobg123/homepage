@@ -129,6 +129,8 @@
     @extend %grid;
     transition: background-color 1s ease-in-out;
     will-change: transform;
+    background-color: $colorWhite;
+    z-index: 1;
 
     &--White {
       background-color: $colorWhite;
@@ -259,5 +261,13 @@
     &--Black {
       background-color: $colorPrimaryBlue;
     }
+  }
+
+  &__InternshipWrapper {
+    @extend %outsideGrid;
+
+    // margin-left: 7.2;
+    // border: 1px solid red;
+    // margin-top: -10rem;
   }
 }

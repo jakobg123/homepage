@@ -1,0 +1,76 @@
+@import '../../styles/variables.scss';
+@import '../../styles/extensions.scss';
+
+.Internship {
+  @extend %grid;
+  padding-top: $spacingBlock * 2;
+  padding-bottom: $spacingBlock * 2;
+  background-color: $colorBlack;
+  transition: all $transitionNormal;
+  @extend %fontColor;
+  will-change: transform;
+
+  &--Primary {
+    @extend %fontColorBlack;
+    background-color: $colorPrimary;
+  }
+
+  &__Subtitle,
+  &__Strong {
+    transition: all $transitionNormal;
+    @extend %h2;
+    display: block;
+    padding-bottom: $spacingXl;
+    color: $colorPrimary;
+    // @extend %fontColor;
+
+    .Internship--Primary & {
+      color: $colorBlack;
+      //   @extend %fontColorBlack;
+    }
+  }
+
+  &__Paragraph p {
+    transition: all $transitionNormal;
+    @extend %richtext;
+    // @extend %fontColor;
+    color: $colorPrimary;
+
+    a {
+      transition: all $transitionNormal;
+      color: $colorPrimary;
+
+      &:hover,
+      &:focus {
+        color: $linkHoverLight;
+      }
+    }
+
+    .Internship--Primary & {
+      color: $colorBlack;
+      // @extend %fontColorBlack;
+      a {
+        // transition: all $transitionNormal;
+        // @extend %links;
+        color: $colorBlack;
+        // transition: color $transitionNormal;
+        &:hover,
+        &:focus {
+          color: $linkHover;
+        }
+      }
+    }
+
+    p:last-of-type {
+      padding-bottom: $spacingL * 2;
+    }
+  }
+  //   &__Paragraph a {
+  //     transition: all $transitionNormal;
+  //     color: $colorPrimary;
+
+  //     // .Internship--Primary & {
+  //     //   color: $linkHover;
+  //     // }
+  //   }
+}
