@@ -7,7 +7,6 @@ import classNames from "classnames";
 const InfoContainer = ({ info }) => {
     const [show, setShow] = useState(false)
     useEffect(() => {
-        console.log("körs");
         if (show) {
             setShow(false)
             return;
@@ -31,7 +30,6 @@ const InfoContainer = ({ info }) => {
 const TabList = ({ knowledge, title, dark = false }) => {
 
     const [currentKnowledge, setCurrentKnowledge] = useState([]);
-    // console.log("OUTPUT ÄR ~ file: TabList.tsx ~ line 34 ~ TabList ~ currentKnowledge", currentKnowledge)
 
     const prevId = useRef(0);
 
@@ -58,7 +56,10 @@ const TabList = ({ knowledge, title, dark = false }) => {
                 </ul>
             </div>
             <div className={classNames(styles["TabList__InfoContainer"], { [styles["TabList__Text--Dark"]]: dark })}>
-                {!!currentKnowledge.length && <InfoContainer info={currentKnowledge} key={currentKnowledge[0].id} />}
+                {!!currentKnowledge.length && (
+                    <InfoContainer info={currentKnowledge} key={currentKnowledge[0].id} />
+                )
+                }
             </div>
         </div>
     )

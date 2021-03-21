@@ -270,6 +270,21 @@
     // height: 100%;
     height: 12rem;
     width: 12rem;
+
+    .Tab:focus &,
+    .Tab:hover & {
+      svg {
+        color: $colorWhite;
+        fill: $colorWhite;
+      }
+    }
+    .Tab--Dark:focus &,
+    .Tab--Dark:hover & {
+      svg {
+        color: $colorBlack;
+        fill: $colorBlack;
+      }
+    }
   }
 
   &__DropDownWrapper {

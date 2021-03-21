@@ -11,8 +11,8 @@
   position: relative;
   // background-color: $colorGrey-3;
   box-shadow: $boxShadowCard;
-  z-index: 1;
-  margin-bottom: $spacingBlock * 2;
+  z-index: 2;
+  margin-bottom: $spacingM;
 
   &--Dark {
     flex-direction: row-reverse;
@@ -23,7 +23,7 @@
   padding: $spacingM $spacingS $spacingBlock;
   // }
   @include media(ms) {
-    padding: $spacingM $spacingXl * 4;
+    // padding: $spacingM $spacingXl * 4;
   }
   @include media(tablet) {
     // padding: $spacingL;
@@ -138,11 +138,11 @@
       .TabList--Dark & {
         @include bgColorGradient4(
           to left bottom,
-          $colorPrimaryBlueLight,
-          0.01,
+          $colorBlack,
+          1,
           0,
-          $colorPrimaryBlue,
-          0.01,
+          $colorBlack,
+          1,
           75%,
           $linkHoverLight,
           1,

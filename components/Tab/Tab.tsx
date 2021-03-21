@@ -35,7 +35,7 @@ const Tab = ({ type, number, html, title, dark, id, onClick }) => {
             <span className={classNames(styles['Tab__Overlay'],
                 { [styles['Tab__Overlay--Dark']]: dark })}></span>
             <div className={styles['Tab__IconWrapper']}>
-                <Icon type={type} color={"Black"} modifier={[styles["Tab__Height"]]} />
+                <Icon type={type} color={dark ? "White" : "Black"} modifier={[styles["Tab__Height"]]} hoverEffect />
             </div>
             <div className={styles['Tab__TextAndDropDownWrapper']}>
                 <div className={styles['Tab__TextWrapper']}>
