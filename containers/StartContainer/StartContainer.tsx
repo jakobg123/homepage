@@ -25,15 +25,11 @@ const StartContainer = ({ data, knowledge }) => {
   let x = 0;
   useEffect(() => {
     if (inView && x === 0) {
-      console.log("körs");
       setShowKnowledge(true)
       x++;
     }
     return
   }, [inView])
-
-
-  console.log("OUTPUT ÄR ~ file: StartContainer.tsx ~ line 20 ~ StartContainer ~ inView", inView)
 
   const { heading, greeting, preamble, entryText, ctaText, cta, technologies, internship } = data;
 
@@ -84,6 +80,7 @@ const StartContainer = ({ data, knowledge }) => {
       </div> */}
 
       <div
+        ref={ref}
         className={classNames(
           styles['StartContainer__Block'],
           styles['StartContainer__Block--White']
@@ -108,18 +105,16 @@ const StartContainer = ({ data, knowledge }) => {
           <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: technologies.html }}>
           </div>
         </div>
-      </div>
-      <div
-        ref={ref}
-        className={classNames(
-          styles['StartContainer__Background'],
-          { [styles['StartContainer__Background--White']]: !inView },
-        )}>
-        {!!showKnowledge && (<div className={styles["StartContainer__KnowledgeWrapper"]}>
-          <Knowledge knowledge={knowledge} />
-        </div>)}
-      </div>
-      {/* <div
+        <div
+          className={classNames(
+            styles['StartContainer__Background'],
+            { [styles['StartContainer__Background--White']]: !inView },
+          )}>
+          {!!showKnowledge && (<div className={styles["StartContainer__KnowledgeWrapper"]}>
+            <Knowledge knowledge={knowledge} />
+          </div>)}
+        </div>
+        {/* <div
         className={classNames(
           styles['StartContainer__Background'],
           { [styles['StartContainer__Background--White']]: !inView },
@@ -132,7 +127,7 @@ const StartContainer = ({ data, knowledge }) => {
         </div>
       </div> */}
 
-
+      </div>
       <div
         className={classNames(
           styles['StartContainer__Block'],
@@ -170,16 +165,10 @@ const StartContainer = ({ data, knowledge }) => {
 
         <button onClick={handleImport} >ankjdnmas</button> */}
 
+
         <div id="internship" className={styles['StartContainer__InternshipWrapper']}>
-          <Internship data={internship} inView={inView} />
-          {/* <h2 className={styles['StartContainer__Subtitle']}>
-            {internship.heading}
-          </h2>
-          <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: internship.html }}>
-          </div> */}
-
+          <Internship data={internship} inView={inView && showKnowledge ? true : false} />
         </div>
-
       </div>
       {/* <Card /> */}
     </div>

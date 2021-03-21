@@ -43,14 +43,14 @@
   }
 
   &__Block {
-    @extend %grid;
-    position: relative;
+    // @extend %grid;
+    // position: relative;
     background-color: $colorWhite;
-    .StartContainer__Strong,
-    .StartContainer__Subtitle,
-    .StartContainer__Paragraph {
-      @extend %fontColorBlack;
-    }
+    // .StartContainer__Strong,
+    // .StartContainer__Subtitle,
+    // .StartContainer__Paragraph {
+    //   @extend %fontColorBlack;
+    // }
 
     // &::after {
     //   content: '';
@@ -73,10 +73,13 @@
   }
 
   &__CtaWrapper {
+    @extend %grid;
     position: relative;
     height: 100%;
     width: 100%;
     padding-top: $spacingL;
+    // background-color: $colorWhite;
+    z-index: 2;
 
     .StartContainer__Paragraph {
       position: relative;
@@ -99,10 +102,10 @@
       z-index: 0;
 
       @include media(ms) {
-        background-size: contain;
-        width: 1440px;
-        margin-left: -7.2rem;
-        margin-right: -7.2rem;
+        // background-size: contain;
+        // width: 1440px;
+        // margin-left: -7.2rem;
+        // margin-right: -7.2rem;
       }
     }
   }
@@ -114,9 +117,11 @@
   }
 
   &__TextWrapper {
+    @extend %grid;
     position: relative;
     z-index: 5;
     padding-top: $spacingL * 4;
+    // background-color: $colorWhite;
     &--White {
       // background-color: $colorWhite;
     }
@@ -264,7 +269,7 @@
   }
 
   &__InternshipWrapper {
-    @extend %outsideGrid;
+    // @extend %outsideGrid;
 
     // margin-left: 7.2;
     // border: 1px solid red;
