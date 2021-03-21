@@ -35,7 +35,7 @@ const MobileNav = ({ data }) => {
     }
 
     const handleMobileNav = () => {
-        openNav ? open() : close();
+        openNav ? close() : open();
     };
 
     const slideIn = (bool) => {
