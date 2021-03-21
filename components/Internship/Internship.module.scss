@@ -2,7 +2,6 @@
 @import '../../styles/extensions.scss';
 
 .Internship {
-  @extend %grid;
   padding-top: $spacingBlock * 2;
   padding-bottom: $spacingBlock * 2;
   background-color: $colorBlack;
@@ -13,6 +12,10 @@
   &--Primary {
     @extend %fontColorBlack;
     background-color: $colorPrimary;
+  }
+
+  &__Grid {
+    @extend %grid;
   }
 
   &__Subtitle,
