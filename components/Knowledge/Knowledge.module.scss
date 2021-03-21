@@ -3,7 +3,7 @@
 
 .Knowledge {
   @include media(ms) {
-    padding: $spacingM $spacingXl * 4;
+    padding: $spacingM $spacingXl * 4 0;
   }
   @include media(tablet) {
     padding: 0;
@@ -14,9 +14,10 @@
       position: relative;
       margin-left: -$spacingM;
       margin-right: -$spacingM;
-      padding: $spacingL * 6 $spacingM;
+      padding: $spacingL * 6 $spacingM $spacingM;
       background-color: $colorBlack;
       z-index: 1;
+      overflow: visible;
 
       @include media(s) {
         margin-top: -5rem;
