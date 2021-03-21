@@ -32,7 +32,7 @@ const DropDown = ({ html, dark, onClick, isExpanded }) => {
                     className={classNames(styles['DropDown__IconWrapper'], {
                         [styles['DropDown__IconWrapper--Expanded']]: isExpanded,
                     })}>
-                    <Icon type="chevronDown" color="Black" />
+                    <Icon type="chevronDown" color={dark ? "Primary" : "Black"} />
                 </span>
             </span>
             <div

@@ -1,12 +1,18 @@
 import styles from './StartContainer.module.scss';
 import classNames from 'classnames';
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 import Card from '../../components/Card';
 import TabList from '../../components/TabList';
 import Button from '../../components/Button';
-import Knowledge from "../../components/Knowledge";
+// import Knowledge from "../../components/Knowledge";
+import dynamic from "next/dynamic";
+
+const Knowledge = dynamic(() => import("../../components/Knowledge"));
+// const Knowledge = React.lazy(() => import("../../components/Knowledge"));
+
+
 
 import { useInView } from 'react-intersection-observer';
 
@@ -15,6 +21,7 @@ const StartContainer = ({ data, knowledge }) => {
     threshold: 0.1,
     // triggerOnce: true,
   });
+  console.log("OUTPUT ÄR ~ file: StartContainer.tsx ~ line 21 ~ StartContainer ~ inView", inView)
 
   const { heading, greeting, preamble, entryText, ctaText, cta, technologies, internship } = data;
 
@@ -89,12 +96,20 @@ const StartContainer = ({ data, knowledge }) => {
           <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: technologies.html }}>
           </div>
         </div>
-
+      </div>
+      <div
+        className={classNames(
+          styles['StartContainer__Background'],
+          { [styles['StartContainer__Background--White']]: !inView },
+          {
+            [styles['StartContainer__Background--Black']]: inView,
+          }
+        )}>
         <div className={styles["StartContainer__KnowledgeWrapper"]}>
           <Knowledge knowledge={knowledge} inViewRef={ref} />
         </div>
-
       </div>
+
 
       <div
         className={classNames(

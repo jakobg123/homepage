@@ -4,7 +4,7 @@
 .TabList {
   // border: 1px solid black;
   display: flex;
-  padding: 0 $spacingXs;
+  // padding: 0 $spacingXs $spacingXl * 4;
   border-radius: $radiusCardSmall;
 
   // margin-bottom: $spacingBlock * 2;
@@ -12,15 +12,21 @@
   // background-color: $colorGrey-3;
   box-shadow: $boxShadowCard;
   z-index: 1;
+  margin-bottom: $spacingBlock * 2;
 
-  @include media(s) {
-    padding: $spacingL;
+  &--Dark {
+    flex-direction: row-reverse;
+    box-shadow: $boxShadowCardWhite;
   }
+
+  // @include media(s) {
+  padding: $spacingM $spacingS $spacingBlock;
+  // }
   @include media(ms) {
-    // padding: $spacingM $spacingXl * 4;
+    padding: $spacingM $spacingXl * 4;
   }
   @include media(tablet) {
-    padding: $spacingL;
+    // padding: $spacingL;
   }
   @include media(desktop) {
     margin: 0 -3.2rem $spacingBlock * 2;
@@ -30,6 +36,10 @@
   &__InfoContainer {
     display: none;
     @extend %fontColorBlack;
+
+    .TabList--Dark & {
+      @extend %fontColor;
+    }
 
     @include media(desktop) {
       padding: 8rem $spacingL;
@@ -46,6 +56,10 @@
   &__InfoTitle {
     @extend %h3;
     @extend %fontColorBlack;
+
+    .TabList--Dark & {
+      @extend %fontColor;
+    }
   }
 
   &__InfoText {
@@ -54,6 +68,10 @@
     opacity: 0;
     transition: all $transitionNormal;
     transform: translateY(10rem);
+
+    .TabList--Dark & {
+      @extend %fontColor;
+    }
 
     &--Show {
       opacity: 1;
@@ -89,10 +107,10 @@
       @include bgColorGradient4(
         to right bottom,
         $colorWhite,
-        0.01,
+        1,
         0,
         $colorWhite,
-        0.01,
+        1,
         75%,
         $colorPrimary,
         1,
@@ -116,25 +134,43 @@
       //   0.6,
       //   95%
       // );
+
+      .TabList--Dark & {
+        @include bgColorGradient4(
+          to left bottom,
+          $colorPrimaryBlueLight,
+          0.01,
+          0,
+          $colorPrimaryBlue,
+          0.01,
+          75%,
+          $linkHoverLight,
+          1,
+          75%,
+          $linkHoverLight,
+          1,
+          100%
+        );
+      }
     }
 
-    &--Dark.TabList::after {
-      @include bgColorGradient4(
-        to right bottom,
-        $colorPrimaryBlueLight,
-        0.5,
-        0,
-        $colorPrimaryBlue,
-        0.8,
-        75%,
-        $colorGreen,
-        0.5,
-        75%,
-        $colorGreen,
-        0.7,
-        95%
-      );
-    }
+    // &--Dark.TabList::after {
+    //   @include bgColorGradient4(
+    //     to right bottom,
+    //     $colorPrimaryBlueLight,
+    //     0.01,
+    //     0,
+    //     $colorPrimaryBlue,
+    //     0.01,
+    //     75%,
+    //     $colorGreen,
+    //     0.5,
+    //     75%,
+    //     $colorGreen,
+    //     0.7,
+    //     95%
+    //   );
+    // }
   }
 
   &__Title {
@@ -163,9 +199,9 @@
       justify-content: space-between;
     }
 
-    .TabList--Dark & {
-      border-top: 2px solid $colorGreen;
-    }
+    // .TabList--Dark & {
+    //   border-top: 2px solid $colorGreen;
+    // }
   }
 
   &__ListItem {

@@ -16,10 +16,11 @@
     word-break: break-word;
     hyphens: manual;
     padding-bottom: $spacingL;
+    width: 90%;
 
     @include media(ms) {
       margin-top: -11rem;
-      width: 90%;
+      // width: 90%;
     }
     @include media(tablet) {
       margin-top: -13rem;
@@ -119,6 +120,26 @@
     &--White {
       // background-color: $colorWhite;
     }
+  }
+
+  &__Background {
+    // border: 1px solid red;
+    // margin-left: -72px;
+    // margin-right: -72px;
+    @extend %grid;
+    transition: background-color 1s ease-in-out;
+    will-change: transform;
+
+    &--White {
+      background-color: $colorWhite;
+    }
+    &--Black {
+      background-color: $colorBlack;
+    }
+  }
+
+  &__KnowledgeWrapper {
+    // background-color: green;
   }
 
   // &__Strong {

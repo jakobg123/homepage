@@ -46,7 +46,7 @@ const TabList = ({ knowledge, title, dark = false }) => {
 
 
     return (
-        <div className={styles["TabList"]}>
+        <div className={classNames(styles["TabList"], { [styles["TabList--Dark"]]: dark })}>
             <div className={classNames(styles["TabList__CardsContainer"], { [styles["TabList__CardsContainer--Dark"]]: dark })}>
                 <h3 className={styles["TabList__Title"]}>{title}</h3>
                 <ul className={styles["TabList__List"]}>

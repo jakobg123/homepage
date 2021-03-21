@@ -4,7 +4,10 @@
 .DropDown {
   padding-top: $spacingS;
   height: 4.5rem;
-  // border: 1px solid red;
+
+  // &--Dark {
+  //   border: 1px solid red;
+  // }
   // padding-top: $spacingXs;
   // display: flex;
   // flex-direction: column;
@@ -40,22 +43,42 @@
     position: relative;
     // z-index: -1;
 
+    // .Dropdown--Dark & {
+    //   background-color: $colorBlack;
+    //   border: 1px solid red;
+    // }
+
     &--Expanded {
       // z-index: 5001;
       // @include radiusButtonExpanded;
       // border-bottom: 1px solid rgba(0, 0, 0, 0.5);
     }
 
-    .DropDown--Dark & {
-      background-color: $colorGreen;
-    }
+    // .DropDown--Dark & {
+    //   background-color: $colorGreen;
+    // }
   }
+  &--Dark .DropDown__Button {
+    background-color: $colorBlack;
+    border: 1px solid $colorPrimary;
+  }
+
   &__ButtonText {
     // color: $colorSecondaryYellow;
     @extend %fontColorBlack;
     @extend %labelSmall;
     margin-right: $spacingS;
+
+    .Dropdown--Dark & {
+      @extend %fontColor;
+      // background-color: $colorBlack;
+    }
   }
+
+  &--Dark .DropDown__ButtonText {
+    @extend %fontColor;
+  }
+
   &__IconWrapper {
     width: $spacingL;
   }
@@ -92,7 +115,8 @@
     }
 
     .DropDown--Dark & {
-      background-color: $colorPrimaryBlue;
+      background-color: $colorBlack;
+      box-shadow: 0px 4px 4px rgba(255, 255, 255, 0.5);
     }
   }
   &__Content {
@@ -103,11 +127,11 @@
     // display: none;
 
     p {
-      color: $colorPrimaryBlue;
+      color: $colorBlack;
       @extend %bodyFat;
 
       .DropDown--Dark & {
-        color: $colorWhiteBackground;
+        color: $colorPrimary;
       }
     }
 

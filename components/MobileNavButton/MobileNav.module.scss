@@ -89,15 +89,19 @@
 
     &--1 {
       transform: translate(0, 0);
+      opacity: 1;
       .MobileNav__Button--Active & {
         transform: translate(0, -1.5rem);
+        opacity: 0;
       }
     }
 
     &--3 {
       transform: translate(0, 0);
+      opacity: 1;
       .MobileNav__Button--Active & {
         transform: translate(0, 1.5rem);
+        opacity: 0;
       }
     }
 

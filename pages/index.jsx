@@ -43,6 +43,8 @@ class index extends PureComponent {
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
           />
+          {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
         </Head>
         <div className={styles['Base']}>
           <header className={styles['Base__Header']}>

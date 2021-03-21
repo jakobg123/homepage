@@ -11,6 +11,11 @@
   justify-content: space-between;
   background-color: $colorWhite;
 
+  &--Dark {
+    box-shadow: $boxShadowCardSmallWhite;
+    background-color: $colorBlack;
+  }
+
   @include media(desktop) {
     flex-direction: column;
     align-items: center;
@@ -26,7 +31,7 @@
   }
 
   &--Dark {
-    background-color: $colorPrimaryBlue;
+    // background-color: $colorPrimaryBlue;
   }
 
   // &__Button:focus{
@@ -44,9 +49,18 @@
     border: none;
     outline-color: $colorBlack;
 
+    .Tab--Dark & {
+      outline-color: $colorWhite;
+    }
+
     &:focus + .Tab__Overlay,
     &:hover + .Tab__Overlay {
       @include bgColorOpacity($colorBlack, 0.8);
+    }
+
+    .Tab--Dark &:focus + .Tab__Overlay,
+    .Tab--Dark &:hover + .Tab__Overlay {
+      @include bgColorOpacity($colorWhite, 0.8);
     }
 
     &:hover {
@@ -81,6 +95,10 @@
     background-color: $colorWhite;
     z-index: -1;
     transition: all $transitionQuick;
+
+    .Tab--Dark & {
+      background-color: $colorBlack;
+    }
   }
 
   &__TextWrapper {
@@ -152,6 +170,16 @@
     }
   }
 
+  &--Dark .Tab__Button:hover + span + div + div > div > *,
+  &--Dark .Tab__Button:focus + span + div + div > div > * {
+    @include media(desktop) {
+      color: $colorBlack;
+      * {
+        color: $colorBlack;
+      }
+    }
+  }
+
   &__Knowledge {
     // @extend %bodyFat;
     @extend %bodySmall;
@@ -162,6 +190,10 @@
     display: block;
     transition: color $transitionQuick;
 
+    .Tab--Dark & {
+      @extend %fontColor;
+    }
+
     &--Strong {
       @extend %body;
       @extend %fontColorBlack;
@@ -169,6 +201,10 @@
 
       &--Dark {
         // color: $colorWhiteBackground !important;
+      }
+
+      .Tab--Dark & {
+        @extend %fontColor;
       }
     }
 
