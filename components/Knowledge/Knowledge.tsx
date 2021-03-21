@@ -8,7 +8,6 @@ const Knowledge = ({ knowledge }) => {
         <div className={styles['Knowledge']}>
             <TabList knowledge={knowledge.frontend} title={'Frontend'} />
             <div
-                // ref={inViewRef}
                 className={styles['Knowledge__TabListWrapper--Backend']}>
                 <TabList
                     knowledge={knowledge.backend}
