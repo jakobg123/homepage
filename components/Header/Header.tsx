@@ -9,8 +9,6 @@ import { IImageProps, IMediaQueries } from '../../types/types';
 
 const Header: React.FC = () => {
 
-  console.log('HEADER');
-
   const bgImage: IImageProps = {
     // src: '/images/goldenGateSmall.jpg',
     src: '/images/hero_small.jpg',
