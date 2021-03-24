@@ -257,7 +257,7 @@
   }
 
   &__List {
-    @for $i from 0 through 20 {
+    @for $i from 0 through 10 {
       :nth-child(#{$i + 1}) {
         div:last-child > span > div div {
           z-index: 1000 - $i;
