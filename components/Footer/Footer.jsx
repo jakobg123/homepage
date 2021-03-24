@@ -1,23 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import styles from './Footer.module.scss';
 
 import Icon from '../Icon';
-import Link from 'next/link';
 
-// class Footer extends PureComponent {
-//   //   shouldComponentUpdate(nextProps, nextState) {
-//   //     return false;
-//   //   }
-
-//   render() {
-//     // console.log('FOOOTER');
-//     return (
-//       <div className={styles['Footer']}>
-//         <h2>Här är footern</h2>
-//       </div>
-//     );
-//   }
-// }
 const Footer = () => {
   return (
     <div id="contact" className={styles['Footer']}>
@@ -52,18 +37,6 @@ const Footer = () => {
                 },
               ]}
             />
-            {/* <div className={styles['Footer__Column']}>
-              <h3 className={styles['Footer__Heading']}>Titta mer på GitHub</h3>
-
-              <ul className={styles['Footer__IconLinkWrapper']}>
-                <li className={styles['Footer__IconLinkWrapper']}>
-                  <IconLink type={'github'} label={'Sajtens repo'} />
-                </li>
-                <li className={styles['Footer__IconLinkWrapper']}>
-                  <IconLink type={'github'} label={'Mitt skolrepo'} />
-                </li>
-              </ul>
-            </div> */}
           </div>
         </div>
       </div>
@@ -94,12 +67,7 @@ const IconLink = ({ type, label, href }) => {
     <div className={styles['IconLink']}>
       <a href={href} className={styles['IconLink__Anchor']}>
         <span className={styles['IconLink__IconWrapper']} aria-hidden="true">
-          <Icon
-            type={type}
-            modifier={['IconLink__HoverColor']}
-            color={'Primary'}
-            hoverEffect
-          />
+          <Icon type={type} color={'Primary'} hoverEffect />
         </span>
         {label}
       </a>
