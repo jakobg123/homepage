@@ -5,58 +5,20 @@
   padding-top: $spacingS;
   height: 4.5rem;
 
-  // &--Dark {
-  //   border: 1px solid red;
-  // }
-  // padding-top: $spacingXs;
-  // display: flex;
-  // flex-direction: column;
-
-  // $dropDownTransition: transform $transitionQuick;
-
-  &--Expanded {
-    // transform: scaleY(0);
-    // transform-origin: top;
-    // transition: transform $transitionNormal;
-
-    // &--Expanded {
-    //   transform: scaleY(1);
-    // }
-  }
-
   &__Button {
     display: flex;
     align-items: center;
-    // background-color: $colorPrimaryBlue;
     background-color: $colorPrimary;
     border: 1px solid $colorBlack;
     border-radius: $radiusButtonSmall;
     outline: none;
-    // border: none;
     width: 100%;
     justify-content: space-between;
     padding: $spacingXs;
-
     padding-right: $spacingS;
     padding-left: $spacingM;
     height: 100%;
     position: relative;
-    // z-index: -1;
-
-    // .Dropdown--Dark & {
-    //   background-color: $colorBlack;
-    //   border: 1px solid red;
-    // }
-
-    &--Expanded {
-      // z-index: 5001;
-      // @include radiusButtonExpanded;
-      // border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    }
-
-    // .DropDown--Dark & {
-    //   background-color: $colorGreen;
-    // }
   }
   &--Dark .DropDown__Button {
     background-color: $colorBlack;
@@ -64,14 +26,12 @@
   }
 
   &__ButtonText {
-    // color: $colorSecondaryYellow;
     @extend %fontColorBlack;
     @extend %labelSmall;
     margin-right: $spacingS;
 
     .Dropdown--Dark & {
       @extend %fontColor;
-      // background-color: $colorBlack;
     }
   }
 
@@ -83,31 +43,22 @@
     width: $spacingL;
   }
   &__Text {
-    // border: 1px solid white;
     background-color: $colorWhite;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
     will-change: transform;
-    transform: translateZ(0);
-
-    // @extend %body;
-
     overflow: hidden;
     transform: scaleY(0);
     transform-origin: top;
     transition: $transitionQuick;
-    // margin: 0 -$spacingL;
     padding: $spacingS $spacingXl $spacingL $spacingM;
     margin: 0;
     position: absolute;
     top: calc(100% - 4px);
     right: 0;
-    width: calc(100%);
-    // margin-left: $spacingL * 2;
+    width: 100%;
     z-index: 1000;
     border-bottom-left-radius: $radiusButtonSmall;
     border-bottom-right-radius: $radiusButtonSmall;
-
-    // width: 25rem;
 
     &--Expanded {
       transform: scaleY(1);
@@ -121,18 +72,13 @@
   }
   &__Content {
     will-change: transform;
-    // transform: translateZ(0);
     transition: $transitionQuick;
     transform: translate(0, -100%);
-    // display: none;
-
     @extend %richtext;
-
     max-width: 100%;
 
     p {
       color: $colorBlack;
-      // @extend %bodyFat;
       padding-bottom: $spacingM;
 
       .DropDown--Dark & {
@@ -141,15 +87,12 @@
     }
 
     &--Expanded {
-      // display: block;
       transform: translate(0, 0rem);
-      // transform: scale(1);
     }
   }
 
   &__IconWrapper {
     will-change: transform;
-    // transform: translateZ(0);
     transform: rotate(0);
     transition: $transitionQuick;
 
