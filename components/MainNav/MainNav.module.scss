@@ -8,7 +8,6 @@
   @extend %grid;
 
   @include media(tablet) {
-    // display: block;
     display: flex;
     height: 100%;
     width: 100%;
@@ -59,7 +58,6 @@
     color: $colorBlack;
     @include bgColorOpacity($colorPrimary, 0.5);
     padding: $spacingXs $spacingS;
-    // border: 1px solid $colorBlack;
     transition: background-color $transitionNormal;
 
     &:hover,
