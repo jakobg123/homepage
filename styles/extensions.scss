@@ -8,34 +8,112 @@
 // Mobile Perfect fourth
 // Desktop Perfect fifth
 
+%titleWidth {
+  max-width: 95%;
+
+  @include media(ms) {
+    max-width: 100%;
+  }
+
+  @include media(tablet) {
+    max-width: 85%;
+  }
+  @include media(desktop) {
+    max-width: 100%;
+  }
+}
+
+%preambleWidth {
+  max-width: 95%;
+
+  @include media(ms) {
+    max-width: 85%;
+  }
+
+  @include media(tablet) {
+    // max-width: 85%;
+  }
+  @include media(desktop) {
+    max-width: 75%;
+  }
+}
+
+%textWidth {
+  max-width: 95%;
+
+  @include media(ms) {
+    max-width: 85%;
+  }
+
+  @include media(tablet) {
+    // max-width: 85%;
+    max-width: 70%;
+  }
+  @include media(desktop) {
+  }
+  @include media(xl) {
+    max-width: 65%;
+  }
+}
+
 %h1 {
   font-size: 4.209rem;
   @extend %heading;
-  padding-bottom: $spacingM;
+  // padding-bottom: $spacingM;
+  padding-bottom: $spacingL;
   font-weight: 400;
+
+  @include media(s) {
+    font-size: 5.063rem;
+  }
+
+  @include media(tablet) {
+    // font-size: 7.594rem;
+    // padding-bottom: $spacingL;
+  }
 
   @include media(desktop) {
     font-size: 7.594rem;
+    padding-bottom: $spacingXl;
+  }
+
+  @include media(xl) {
+    font-size: 8.5rem;
+    padding-bottom: $spacingL * 2;
   }
 }
 
 %h2 {
   font-size: 3.157rem;
   @extend %heading;
+  @extend %textWidth;
+  padding-bottom: $spacingS;
 
   @include media(desktop) {
+    padding-bottom: $spacingL;
     font-size: 5.063rem;
+  }
+
+  @include media(xl) {
+    padding-bottom: $spacingXl;
+    // font-size: 5.063rem;
   }
 }
 
 %h3 {
   font-size: 2.369rem;
   @extend %heading;
+  padding-bottom: $spacingM;
   // font-weight: 700;
-  padding-bottom: $spacingL;
 
   @include media(desktop) {
     font-size: 3.375rem;
+    // padding-bottom: $spacingS;
+  }
+
+  @include media(xl) {
+    padding-bottom: $spacingM;
+    // font-size: 5.063rem;
   }
 }
 
@@ -62,6 +140,9 @@
   @extend %p;
   @extend %links;
   padding-bottom: $spacingL;
+  p {
+    padding-bottom: $spacingL;
+  }
 
   em {
     font-style: italic;
@@ -70,12 +151,16 @@
   @include media(desktop) {
     font-size: 2.25rem;
   }
+
+  p:last-of-type {
+    // padding-bottom: $spacingL * 2;
+  }
 }
 
 %links {
   a {
     color: $colorBlack;
-    transition: color $transitionNormal;
+    transition: color $transitionQuick;
     &:hover,
     &:focus {
       color: $linkHover;
@@ -161,6 +246,15 @@
 
 %preamble {
   @extend %h3;
+  @extend %preambleWidth;
+
+  p {
+    padding-bottom: $spacingL;
+
+    @include media(desktop) {
+      padding-bottom: $spacingXl;
+    }
+  }
   // font-size: 2.369rem;
   // @extend %heading;
   // // font-weight: 700;
@@ -189,6 +283,11 @@
   }
 
   @include media(desktop) {
+    margin: 0 auto;
+    padding: 0 $spacingL * 2;
+    // max-width: 144rem;
+  }
+  @include media(xl) {
     margin: 0 auto;
     padding: 0 $spacingL * 3;
     max-width: 144rem;
@@ -220,7 +319,7 @@
   font-family: $font;
   word-break: break-word;
   @extend %fontColorBlack;
-  max-width: $maxWidthText;
+  // max-width: $maxWidthText;
   //   color: $colorWhiteBackground;
 }
 
@@ -231,6 +330,7 @@
   font-family: $font;
   word-break: break-word;
   @extend %fontColorBlack;
-  max-width: $maxWidthText;
+  @extend %textWidth;
+  // max-width: $maxWidthText;
   //   color: $colorWhiteBackground;
 }

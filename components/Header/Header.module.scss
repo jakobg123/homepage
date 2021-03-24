@@ -22,8 +22,28 @@
     overflow: hidden;
     position: relative;
 
+    // @include media(s) {
+    //   padding-top: 65vh;
+    // }
+
+    @include media(ms) {
+      padding-top: 55rem;
+    }
+
+    @include media(tablet) {
+      padding-top: 55vh;
+    }
+
+    @include media(ml) {
+      padding-top: 75vh;
+    }
+
     @include media(desktop) {
-      padding-top: 85rem;
+      padding-top: 77vh;
+      // max-height: 65rem;
+    }
+    @include media(xl) {
+      padding-top: 88vh;
       // max-height: 65rem;
     }
 

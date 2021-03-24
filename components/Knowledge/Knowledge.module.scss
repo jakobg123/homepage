@@ -14,7 +14,7 @@
       position: relative;
       margin-left: -$spacingM;
       margin-right: -$spacingM;
-      padding: $spacingL * 6 $spacingM $spacingM;
+      padding: $spacingL * 6 $spacingM $spacingXs;
       background-color: $colorBlack;
       z-index: 1;
       overflow: visible;
@@ -27,7 +27,7 @@
         // margin-top: -5rem;
         margin-left: -14.4rem;
         margin-right: -14.4rem;
-        padding: $spacingL * 8 14.4rem $spacingM;
+        padding: $spacingL * 8 14.4rem $spacingXs;
       }
 
       @include media(tablet) {

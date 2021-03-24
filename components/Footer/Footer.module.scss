@@ -27,7 +27,7 @@
     position: relative;
     @extend %h2;
     color: $colorPrimary;
-    padding-top: $spacingXl * 2;
+    // padding-top: $spacingXl * 2;
     padding-bottom: $spacingXl * 4;
     z-index: 1;
   }
@@ -37,11 +37,11 @@
     color: $colorPrimary;
     padding-bottom: $spacingL * 2;
 
-    padding-top: 10rem;
+    padding-top: 5rem;
 
-    @include media(tablet) {
-      padding-top: 5rem;
-    }
+    // @include media(tablet) {
+    //   padding-top: 5rem;
+    // }
 
     @include media(desktop) {
       padding-top: 8rem;

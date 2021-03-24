@@ -52,6 +52,7 @@ $colorBlack: #232622;
 $linkHover: #bf3918;
 $linkHoverLight: #f09a84;
 
+$transitionSlow: 1s ease-in-out;
 $transitionNormal: 0.4s ease-in-out;
 $transitionQuick: 0.2s ease-in-out;
 
@@ -64,7 +65,7 @@ $spacingMl: 20px;
 $spacingL: 24px;
 $spacingXl: 32px;
 
-$spacingBlock: 48px;
+$spacingBlock: 64px;
 
 $colorChangeSpacing: 180px;
 
@@ -91,17 +92,21 @@ $boxShadowMedium: 2px 2px 6px;
 $boxShadowSmall: 1px 1px 2px;
 
 // BREAKPOINTS
+$bp-xs: 420px;
 $bp-s: 500px;
 $bp-ms: 640px;
 $bp-m: 768px;
+$bp-ml: 900px;
 $bp-l: 1024px;
 $bp-xl: 1280px;
 
 $breakpoints: (
+  xs: $bp-xs,
   s: $bp-s,
   ms: $bp-ms,
   tablet: $bp-m,
   desktop: $bp-l,
+  ml: $bp-ml,
   xl: $bp-xl,
 );
 
