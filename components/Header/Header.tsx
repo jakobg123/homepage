@@ -11,12 +11,12 @@ const Header: React.FC = () => {
 
   const bgImage: IImageProps = {
     // src: '/images/goldenGateSmall.jpg',
-    src: '/images/hero_small.jpg',
+    src: '/images/temp/hero_xs.jpg',
     // src: '/images/tuscany1.jpg',
     alt: 'Vacker naturbild',
-    width: 640,
-    height: 450,
-    loading: 'lazy',
+    width: 1440,
+    height: 700,
+    loading: 'eager',
     // src: '/images/glassOptXl.webp',
     // // src: '/images/tuscany1.jpg',
     // alt: 'Cool ljus glaskula',
@@ -27,12 +27,20 @@ const Header: React.FC = () => {
 
   const mediaQueries: IMediaQueries[] = [
     {
-      minWidth: 1280,
-      src: '/images/hero_large.jpg',
+      minWidth: 1440,
+      src: '/images/temp/hero_l.jpg',
+    },
+    {
+      minWidth: 1024,
+      src: '/images/temp/hero_ml.jpg',
     },
     {
       minWidth: 768,
-      src: '/images/hero_medium.jpg',
+      src: '/images/temp/hero_m.jpg',
+    },
+    {
+      minWidth: 420,
+      src: '/images/temp/hero_s.jpg',
     },
   ];
 
@@ -48,14 +56,14 @@ const Header: React.FC = () => {
         <Image
           {...bgImage}
           mediaQueries={mediaQueries}
-          focal={{ x: '0%', y: '0%' }}
+          focal={{ x: '5%', y: '0%' }}
           // onLoadFade
           loading="eager"
         />
-        <div
+        {/* <div
           className={classNames(styles['Header__Overlay'], {
             [styles['Header__TESTOverlay']]: true,
-          })}></div>
+          })}></div> */}
       </div>
     </div>
   );
