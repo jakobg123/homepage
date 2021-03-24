@@ -1,7 +1,4 @@
-import { DetailedHTMLProps, ImgHTMLAttributes, useState, useEffect } from 'react';
-
 import styles from './Image.module.scss';
-import classNames from "classnames";
 
 import { IImageProps } from '../../types/types';
 
@@ -13,18 +10,8 @@ const Image: React.FC<IImageProps> = ({
     mediaQueries,
     loading = 'lazy',
     focal = { x: '50%', y: '50%' },
-    onLoadFade = false,
-    height: string,
     round = false,
 }) => {
-    // const [fade, setFade] = useState(false)
-
-    // useEffect(() => {
-    //     if (onLoadFade) {
-    //         setFade(true)
-    //     }
-    // }, [])
-
     return (
         <picture className={styles['Image']}
             style={{ paddingTop: height }}
@@ -45,9 +32,6 @@ const Image: React.FC<IImageProps> = ({
                 loading={loading}
                 style={{ objectPosition: focal.x + ' ' + focal.y, borderRadius: round && "50%" }}
                 className={styles['Image__Image']}
-            // className={classNames(styles['Image__Image'], { [styles["Image__Image--Fade"]]: fade }, { [styles["Image__Image--NoFade"]]: !onLoadFade })
-
-            // onLoad={fadeImage}
             />
         </picture>
     );
