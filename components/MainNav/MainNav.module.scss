@@ -4,11 +4,29 @@
 
 .MainNav {
   display: none;
+  position: relative;
+  @extend %grid;
 
   @include media(tablet) {
-    display: block;
+    // display: block;
+    display: flex;
     height: 100%;
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__Logo {
+    padding-top: $spacingS;
+    display: block;
+
+    img {
+      width: 16rem;
+
+      @include media(desktop) {
+        width: 20rem;
+      }
+    }
   }
 
   &__List {
@@ -18,10 +36,20 @@
   }
 
   &__ListItem {
-    padding: $spacingL;
+    @include media(tablet) {
+      padding: $spacingL $spacingS;
+    }
+
+    @include media(desktop) {
+      padding: $spacingL $spacingS;
+    }
+
+    @include media(xl) {
+      padding-right: $spacingL;
+    }
 
     &:last-child {
-      padding-right: $spacingL * 2;
+      padding-right: 0;
     }
   }
 
