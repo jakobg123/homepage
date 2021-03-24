@@ -121,14 +121,19 @@
   }
   &__Content {
     will-change: transform;
-    transform: translateZ(0);
+    // transform: translateZ(0);
     transition: $transitionQuick;
     transform: translate(0, -100%);
     // display: none;
 
+    @extend %richtext;
+
+    max-width: 100%;
+
     p {
       color: $colorBlack;
-      @extend %bodyFat;
+      // @extend %bodyFat;
+      padding-bottom: $spacingM;
 
       .DropDown--Dark & {
         color: $colorPrimary;
@@ -144,7 +149,7 @@
 
   &__IconWrapper {
     will-change: transform;
-    transform: translateZ(0);
+    // transform: translateZ(0);
     transform: rotate(0);
     transition: $transitionQuick;
 
