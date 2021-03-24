@@ -1,28 +1,18 @@
 import Image from '../Image';
 import MainNav from "../MainNav";
 
-
 import styles from './Header.module.scss';
 import classNames from 'classnames';
 
 import { IImageProps, IMediaQueries } from '../../types/types';
 
 const Header: React.FC = () => {
-
   const bgImage: IImageProps = {
-    // src: '/images/goldenGateSmall.jpg',
     src: '/images/temp/hero_xs.jpg',
-    // src: '/images/tuscany1.jpg',
     alt: 'Vacker naturbild',
     width: 1440,
     height: 700,
     loading: 'eager',
-    // src: '/images/glassOptXl.webp',
-    // // src: '/images/tuscany1.jpg',
-    // alt: 'Cool ljus glaskula',
-    // width: 640,
-    // height: 960,
-    // loading: 'lazy',
   };
 
   const mediaQueries: IMediaQueries[] = [
@@ -44,8 +34,6 @@ const Header: React.FC = () => {
     },
   ];
 
-
-
   return (
     <div className={styles['Header']}>
       <div className={styles['Header__MainNavWrapper']}>
@@ -57,13 +45,8 @@ const Header: React.FC = () => {
           {...bgImage}
           mediaQueries={mediaQueries}
           focal={{ x: '5%', y: '0%' }}
-          // onLoadFade
           loading="eager"
         />
-        {/* <div
-          className={classNames(styles['Header__Overlay'], {
-            [styles['Header__TESTOverlay']]: true,
-          })}></div> */}
       </div>
     </div>
   );
