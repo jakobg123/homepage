@@ -7,7 +7,6 @@ import { useInView } from 'react-intersection-observer';
 
 const Card = () => {
   const { ref, inView, entry } = useInView({
-    /* Optional options */
     threshold: 0.2,
     triggerOnce: true,
   });
