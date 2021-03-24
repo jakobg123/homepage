@@ -20,7 +20,7 @@ import Link from 'next/link';
 // }
 const Footer = () => {
   return (
-    <div className={styles['Footer']}>
+    <div id="contact" className={styles['Footer']}>
       <div className={styles['Footer__Grid']}>
         <div className={styles['Footer__Content']}>
           <h2 className={styles['Footer__Title']}>Kom i kontakt</h2>
