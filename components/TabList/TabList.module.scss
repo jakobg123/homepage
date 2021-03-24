@@ -1,5 +1,6 @@
 @import '../../styles/variables.scss';
 @import '../../styles/extensions.scss';
+@import '../../styles/animations.scss';
 
 .TabList {
   // border: 1px solid black;
@@ -14,11 +15,6 @@
   z-index: 2;
   margin-bottom: $spacingM;
 
-  &--Dark {
-    flex-direction: row-reverse;
-    box-shadow: $boxShadowCardWhite;
-  }
-
   // @include media(s) {
   padding: $spacingM $spacingS $spacingBlock;
   // }
@@ -32,55 +28,101 @@
     margin: 0 -3.2rem $spacingM;
     padding: 3.2rem;
 
-    &:first-of-type {
-      margin-bottom: $spacingBlock * 2;
-    }
+    // &:first-of-type {
+    margin-bottom: $spacingBlock * 2;
+    // }
   }
 
   @include media(xl) {
     margin: 0 -3.2rem $spacingM;
     padding: 3.2rem;
 
-    &:first-of-type {
-      margin-bottom: $spacingBlock * 2;
-    }
+    // &:first-of-type {
+    margin-bottom: $spacingBlock * 2;
+    // }
+  }
+
+  &--Dark {
+    flex-direction: row-reverse;
+    box-shadow: $boxShadowCardWhite;
+    margin-bottom: 0;
   }
 
   &__InfoContainer {
     display: none;
     @extend %fontColorBlack;
+    overflow-y: auto;
 
     .TabList--Dark & {
       @extend %fontColor;
     }
 
     @include media(desktop) {
-      padding: 8rem $spacingL;
+      padding: 8rem 0 8rem $spacingL * 2;
       display: block;
       width: 70%;
     }
     @include media(xl) {
-      padding: 8rem $spacingL * 3;
+      padding: 8rem 0 8rem $spacingL * 3;
+      // padding: 8rem $spacingL * 3;
       display: block;
       width: 50%;
     }
+
+    &--Dark {
+      @include media(desktop) {
+        padding: 8rem $spacingL * 2 0rem 0;
+        // display: block;
+        // width: 70%;
+      }
+      @include media(xl) {
+        padding: 8rem $spacingL * 3 0rem 0;
+        // padding: 8rem $spacingL * 3;
+        // display: block;
+        // width: 50%;
+      }
+    }
   }
 
-  &__InfoTitle {
-    @extend %h3;
+  &__InfoTitle,
+  &__InfoStartText {
+    @extend %h2;
     @extend %fontColorBlack;
+    max-width: 95%;
 
     .TabList--Dark & {
       @extend %fontColor;
     }
   }
 
+  &__InfoStartText {
+    text-align: center;
+  }
+
   &__InfoText {
-    @extend %body;
+    max-width: 95% !important;
     @extend %fontColorBlack;
+    // @extend %p;
+    // @extend %links;
+    @extend %richtext;
     opacity: 0;
     transition: all $transitionNormal;
     transform: translateY(10rem);
+    // p {
+    //   padding-bottom: $spacingL;
+    // }
+
+    // em {
+    //   font-style: italic;
+    // }
+
+    @include media(desktop) {
+      font-size: 2.25rem;
+    }
+
+    p:last-of-type {
+      padding-bottom: $spacingL * 2;
+    }
 
     .TabList--Dark & {
       @extend %fontColor;
@@ -90,6 +132,22 @@
       opacity: 1;
       transform: translateY(0);
     }
+  }
+
+  &__InfoStartWrapper {
+    // border: 1px solid red;
+    // display: flex;
+  }
+
+  &__InfoStartIconWrapper {
+    height: 10rem;
+    width: 30rem;
+    animation-name: rotate;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    margin: 0 auto;
+    // transform-origin: right;
   }
 
   &__CardsContainer {
@@ -190,6 +248,7 @@
     @extend %labelFat;
     @extend %fontColorBlack;
     padding-bottom: $spacingS;
+    max-width: 100%;
     // text-align: center;
 
     .TabList--Dark & {

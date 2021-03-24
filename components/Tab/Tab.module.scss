@@ -273,16 +273,20 @@
 
     .Tab:focus &,
     .Tab:hover & {
-      svg {
-        color: $colorWhite;
-        fill: $colorWhite;
+      @include media(desktop) {
+        svg {
+          color: $colorWhite;
+          fill: $colorWhite;
+        }
       }
     }
     .Tab--Dark:focus &,
     .Tab--Dark:hover & {
-      svg {
-        color: $colorBlack;
-        fill: $colorBlack;
+      @include media(desktop) {
+        svg {
+          color: $colorBlack;
+          fill: $colorBlack;
+        }
       }
     }
   }
