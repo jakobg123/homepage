@@ -85,9 +85,7 @@ const MobileNav = ({ data }) => {
                     })}>
                 <nav className={styles['MobileNav__Nav']}>
                     <h2
-                        className={classNames(styles['MobileNav__NavListTitle'], {
-                            [styles['MobileNav__NavListTitle--Drop']]: !drop,
-                        })}>
+                        className={classNames(styles['MobileNav__NavListTitle'])}>
                         <div className={styles['MobileNav__MenuIconWrapper']}>
                             <Icon type="menu" color="Black" />
                         </div>
