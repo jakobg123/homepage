@@ -39,6 +39,10 @@ class index extends PureComponent {
             content="Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."
             // content="I juni 2021 tar jag examen i Frontendutveckling på IT-Högskolan. Jag söker nu ett jobb där jag får arbeta med webbutveckling och växa inom programmering."
           />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com/"
+            crossorigin></link>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
