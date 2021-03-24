@@ -71,11 +71,20 @@ import dynamic from 'next/dynamic';
 //   import('./icons/minified/wordpress.svg').then((mod) => mod.ReactComponent)
 // );
 
-import ArrowNext from './icons/minified/arrowNext.svg';
-import ChevronNext from './icons/minified/chevronNext.svg';
-import ChevronDown from './icons/minified/chevronDown.svg';
-import Code from './icons/minified/code.svg';
-import Css from './icons/minified/css.svg';
+// import ArrowNext from './icons/minified/arrowNext.svg';
+const ArrowNext = dynamic(() => import('./icons/minified/arrowNext.svg'));
+const ArrowPrev = dynamic(() => import('./icons/minified/arrowPrev.svg'));
+const ChevronNext = dynamic(() => import('./icons/minified/chevronNext.svg'));
+const ChevronDown = dynamic(() => import('./icons/minified/chevronDown.svg'));
+const Code = dynamic(() => import('./icons/minified/code.svg'));
+const Css = dynamic(() => import('./icons/minified/css.svg'));
+const Frojd = dynamic(() => import('./icons/minified/frojd.svg'));
+// import ArrowPrev from './icons/minified/arrowPrev.svg';
+
+// import ChevronNext from './icons/minified/chevronNext.svg';
+// import ChevronDown from './icons/minified/chevronDown.svg';
+// import Code from './icons/minified/code.svg';
+// import Css from './icons/minified/css.svg';
 import Django from './icons/minified/django.svg';
 import Github from './icons/minified/github.svg';
 import Html from './icons/minified/html.svg';
@@ -100,11 +109,13 @@ import Wordpress from './icons/minified/wordpress.svg';
 
 export const allIcons = {
   arrowNext: ArrowNext,
+  arrowPrev: ArrowPrev,
   chevronNext: ChevronNext,
   chevronDown: ChevronDown,
   code: Code,
   css: Css,
   django: Django,
+  frojd: Frojd,
   github: Github,
   html: Html,
   javascript: Javascript,
