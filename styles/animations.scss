@@ -1,0 +1,33 @@
+@keyframes rotate {
+  0% {
+    transform: rotate3d(0, 3, 1, 30deg);
+    -ms-transform: rotate3d(0, 3, 1, 30deg);
+  }
+  50% {
+    transform: rotate3d(0, 3, 1, -30deg);
+    -ms-transform: rotate3d(0, 3, 1, -30deg);
+  }
+  100% {
+    transform: rotate3d(0, 3, 1, 30deg);
+    // -ms-transform: rotate(30deg); /* IE 9 */
+    -ms-transform: rotate3d(0, 3, 1, 30deg);
+  }
+  //   0% {
+  //     transform: rotateZ(-10deg);
+  //   }
+  //   50% {
+  //     transform: rotateZ(10deg);
+  //   }
+  //   100% {
+  //     transform: rotateZ(-10deg);
+  //   }
+  //   0% {
+  //     transform: rotateY(-45deg);
+  //   }
+  //   50% {
+  //     transform: rotateY(45deg);
+  //   }
+  //   100% {
+  //     transform: rotateY(-45deg);
+  //   }
+}
