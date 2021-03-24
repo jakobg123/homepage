@@ -27,10 +27,7 @@ class index extends PureComponent {
             name="description"
             content="Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."
           />
-          <link
-            rel="preconnect"
-            href="https://fonts.gstatic.com/"
-            crossOrigin></link>
+          <link rel="preconnect" href="https://fonts.gstatic.com/"></link>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <meta
             name="viewport"
