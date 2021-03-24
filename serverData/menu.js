@@ -1,6 +1,6 @@
 export default [
+    { link: 'Hem', url: '/' },
     { link: 'Teknologier', url: '#technology' },
     { link: 'Praktik', url: '#internship' },
-    { link: 'om mig', url: '/' },
-    { link: 'kontakt', url: '#contact' },
+    { link: 'Kontakt', url: '#contact' },
 ];

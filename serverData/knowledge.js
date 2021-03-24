@@ -37,7 +37,7 @@ export default {
             title: 'React',
             number: '8',
             html:
-                'Jag har arbetat mycket med React och känner att jag behärskar grunderna väl. Jag har två större React-projekt att visa upp: framför allt den här sajten där koden finns på här på <a href="https://github.com/jakobg123/homepage">GitHub-repot</a>. Sedan gjorde jag <a href="https://hamsterwars-fs-eff-frontend.herokuapp.com">Hamster-wars</a> våren 2020, alltså nästan ett år sedan, därav är koden inte den bästa. Koden finns på mitt skol-git-repo. Hamster-wars var ett fullstackprojekt där jag byggde ett REST-api med CRUD-funktionalitet i Node.js med Firebase som databas och React som frontendlager. Uppgiften bestod i att göra en sajt där användaren rankar den sötaste hamstern, där resultat registreras och presenteras på olika sätt utifrån hur man konsumerar api:et. Jag arbetade även med Redux, React-Spring och @emotion vilket var trevligt. Tyvärr hann jag inte göra sidan responsiv utan är endast mobilanpassad.',
+                '<p>Jag har arbetat mycket med React och känner att jag behärskar grunderna väl.</p><p>Jag har två större React-projekt att visa upp: framför allt den här sajten där koden finns på här på <a href="https://github.com/jakobg123/homepage">GitHub-repot</a>.</p><p>Sedan gjorde jag <a href="https://hamsterwars-fs-eff-frontend.herokuapp.com">Hamster-wars</a> våren 2020, alltså nästan ett år sedan, därav är koden inte den bästa. Koden finns på mitt skol-git-repo. Hamster-wars var ett fullstackprojekt där jag byggde ett REST-api med CRUD-funktionalitet i Node.js med Firebase som databas och React som frontendlager. Uppgiften bestod i att göra en sajt där användaren rankar den sötaste hamstern, där resultat registreras och presenteras på olika sätt utifrån hur man konsumerar api:et. Jag arbetade även med Redux, React-Spring och @emotion vilket var trevligt. Tyvärr hann jag inte göra sidan responsiv utan är endast mobilanpassad.</p>',
             id: 5,
         },
         {
@@ -72,7 +72,7 @@ export default {
         },
         {
             type: 'github',
-            title: 'GitHub',
+            title: 'Git & GitHub',
             number: '7',
             html: '<p>Text om GitHub</p>',
             id: 10,
@@ -96,7 +96,7 @@ export default {
         {
             type: 'nodejs',
             title: 'Node.js',
-            number: '7',
+            number: '6',
             html: '<p>Text om Node</p>',
             id: 13,
         },
@@ -117,14 +117,14 @@ export default {
         {
             type: 'django',
             title: 'Django',
-            number: '5',
+            number: '4',
             html: '<p>Text om Django</p>',
             id: 16,
         },
         {
             type: 'wagtail',
             title: 'Wagtail',
-            number: '6',
+            number: '5',
             html: '<p>Text om Wagtail</p>',
             id: 17,
         },
