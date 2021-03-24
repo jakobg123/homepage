@@ -2,7 +2,7 @@ import Icon from '../Icon';
 import styles from './DropDown.module.scss';
 import classNames from 'classnames';
 
-const DropDown = ({ html, dark, isExpanded }) => {
+const DropDown = ({ html, dark, onClick, isExpanded }) => {
     return (
         <div
             className={classNames(
