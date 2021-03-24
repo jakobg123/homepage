@@ -28,29 +28,6 @@
     }
   }
 
-  // &__Style {
-  //   display: block;
-  //   text-decoration: none;
-  //   @extend %label;
-  //   font-weight: 900;
-  //   @extend %fontColorBlack;
-  // -webkit-transition: none !important;
-  // -moz-transition: none !important;
-  // -ms-transition: none !important;
-  // -o-transition: none !important;
-  // transition: none !important;
-  // }
-
-  // &__Link {
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   z-index: 2;
-  //   font-size: 0;
-  // }
-
   &__IconWrapper {
     height: $spacingXl;
     width: $spacingXl;
@@ -62,9 +39,4 @@
       transform: translateX(3rem);
     }
   }
-  // .Button:hover &__IconHover {
-  //   svg {
-  //     color: $colorPrimary;
-  //   }
-  // }
 }
