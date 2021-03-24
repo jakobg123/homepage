@@ -5,23 +5,15 @@
 .Base {
   max-width: 144rem;
   margin: 0 auto;
-  // border: 1px solid black;
   overflow: hidden;
-  // @extend %grid;
-  // background-color: $colorPrimaryBlue;
   background-color: $colorPrimary;
   box-shadow: $boxShadowContainer;
-
-  &__Header,
-  &__Footer {
-  }
 
   &__Header {
     position: relative;
   }
 
   &__Logo {
-    // border: 1px solid red;
     position: absolute;
     display: block;
     top: $spacingMl;
@@ -37,17 +29,16 @@
 
     img {
       width: 14rem;
-      // height: 10rem;
 
       @include media(ms) {
         width: 16rem;
       }
     }
   }
-}
 
-.StickyContainer {
-  position: sticky;
-  top: calc(16px + 15px + 55px);
-  z-index: 100;
+  &__StickyContainer {
+    position: sticky;
+    top: calc(16px + 15px + 55px);
+    z-index: 100;
+  }
 }

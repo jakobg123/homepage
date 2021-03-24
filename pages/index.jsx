@@ -10,22 +10,11 @@ import Header from '../components/Header';
 import MobileNav from '../components/MobileNavButton';
 import Footer from '../components/Footer';
 import styles from './index.module.scss';
-import classNames from 'classnames';
-
-// Dynamic import just for reference
-
-// import dynamic from 'next/dynamic';
-// const Footer = dynamic(() => import('../components/Footer'), {
-//   ssr: false,
-// });
 
 import StartContainer from '../containers/StartContainer';
 
 class index extends PureComponent {
   state = {};
-  // constructor() {
-  //   super();
-  // }
 
   render() {
     let { menu, knowledgeData, startData } = this.props;
@@ -42,6 +31,7 @@ class index extends PureComponent {
             rel="preconnect"
             href="https://fonts.gstatic.com/"
             crossOrigin></link>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
@@ -135,8 +125,6 @@ class index extends PureComponent {
             name="msapplication-square310x310logo"
             content="mstile-310x310.png"
           />
-          {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
-          <link rel="preconnect" href="https://fonts.googleapis.com" /> */}
         </Head>
         <div className={styles['Base']}>
           <header className={styles['Base__Header']}>
@@ -149,7 +137,7 @@ class index extends PureComponent {
               />
             </figure>
             <Header />
-            <div className={styles['StickyContainer']}>
+            <div className={styles['Base__StickyContainer']}>
               <MobileNav data={menu} />
             </div>
           </header>

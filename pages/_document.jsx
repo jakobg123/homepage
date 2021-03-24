@@ -6,9 +6,6 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
-  // ::TODO
-  //kan va värt att ta bort preloaden sen
-
   render() {
     return (
       <Html lang="sv">
