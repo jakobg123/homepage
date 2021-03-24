@@ -3,75 +3,6 @@ import styles from './Icon.module.scss';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 
-// const Code = dynamic(() =>
-//   import('./icons/minified/code.svg').then((mod) => {
-//     console.log(mod.default());
-//     mod.default();
-//   })
-// );
-
-// const Css = dynamic(() =>
-//   import('./icons/minified/css.svg').then((mod) => mod.ReactComponent)
-// );
-// const Django = dynamic(() =>
-//   import('./icons/minified/django.svg').then((mod) => mod.ReactComponent)
-// );
-// const Github = dynamic(() =>
-//   import('./icons/minified/github.svg').then((mod) => mod.ReactComponent)
-// );
-// const Html = dynamic(() =>
-//   import('./icons/minified/html.svg').then((mod) => mod.ReactComponent)
-// );
-// const Javascript = dynamic(() =>
-//   import('./icons/minified/javascript.svg').then((mod) => mod.ReactComponent)
-// );
-// const Moon = dynamic(() =>
-//   import('./icons/minified/moon.svg').then((mod) => mod.ReactComponent)
-// );
-// const MySql = dynamic(() =>
-//   import('./icons/minified/mysql.svg').then((mod) => mod.ReactComponent)
-// );
-// const NextJs = dynamic(() =>
-//   import('./icons/minified/nextjs.svg').then((mod) => mod.ReactComponent)
-// );
-// const NodeJs = dynamic(() =>
-//   import('./icons/minified/nodejs.svg').then((mod) => mod.ReactComponent)
-// );
-// const Npm = dynamic(() =>
-//   import('./icons/minified/npm.svg').then((mod) => mod.ReactComponent)
-// );
-// const Php = dynamic(() =>
-//   import('./icons/minified/php.svg').then((mod) => mod.ReactComponent)
-// );
-// const PostgreSql = dynamic(() =>
-//   import('./icons/minified/postgresql.svg').then((mod) => mod.ReactComponent)
-// );
-// const Python = dynamic(() =>
-//   import('./icons/minified/Python.svg').then((mod) => mod.ReactComponent)
-// );
-// const ReactIcon = dynamic(() =>
-//   import('./icons/minified/react.svg').then((mod) => mod.ReactComponent)
-// );
-// const ReactSpring = dynamic(() =>
-//   import('./icons/minified/reactSpring.svg').then((mod) => mod.ReactComponent)
-// );
-// const Redux = dynamic(() =>
-//   import('./icons/minified/redux.svg').then((mod) => mod.ReactComponent)
-// );
-// const Sass = dynamic(() =>
-//   import('./icons/minified/Sass.svg').then((mod) => mod.ReactComponent)
-// );
-// const Typescript = dynamic(() =>
-//   import('./icons/minified/typescript.svg').then((mod) => mod.ReactComponent)
-// );
-// const Wagtail = dynamic(() =>
-//   import('./icons/minified/wagtail.svg').then((mod) => mod.ReactComponent)
-// );
-// const Wordpress = dynamic(() =>
-//   import('./icons/minified/wordpress.svg').then((mod) => mod.ReactComponent)
-// );
-
-// import ArrowNext from './icons/minified/arrowNext.svg';
 const ArrowNext = dynamic(() => import('./icons/minified/arrowNext.svg'));
 const ArrowPrev = dynamic(() => import('./icons/minified/arrowPrev.svg'));
 const ChevronNext = dynamic(() => import('./icons/minified/chevronNext.svg'));
@@ -79,12 +10,6 @@ const ChevronDown = dynamic(() => import('./icons/minified/chevronDown.svg'));
 const Code = dynamic(() => import('./icons/minified/code.svg'));
 const Css = dynamic(() => import('./icons/minified/css.svg'));
 const Frojd = dynamic(() => import('./icons/minified/frojd.svg'));
-// import ArrowPrev from './icons/minified/arrowPrev.svg';
-
-// import ChevronNext from './icons/minified/chevronNext.svg';
-// import ChevronDown from './icons/minified/chevronDown.svg';
-// import Code from './icons/minified/code.svg';
-// import Css from './icons/minified/css.svg';
 import Django from './icons/minified/django.svg';
 import Github from './icons/minified/github.svg';
 import Html from './icons/minified/html.svg';
@@ -158,28 +83,11 @@ const Icon = ({
       [styles['Icon--Hover']]: hoverEffect,
     }
   );
-  // const classes = classNames(
-  //   modifier.map((x) => styles[x] + ' '),
-  //   styles['Icon'],
-  //   {
-  //     [styles['Icon--' + color]]: color,
-  //   },
-  //   modifier.map((x) => styles[x])
-  // );
 
   return (
-    // <div className={styles['Icon'] + ' ' + styles[modifier]}>
-    //   <Svg />
-    // </div>
     <div className={classes}>
       <Svg />
     </div>
-    // <div
-    //   className={classNames(styles['Icon'], [styles['Tab__Height']], {
-    //     [styles['Icon--' + color]]: color,
-    //   })}>
-    //   <Svg />
-    // </div>
   );
 };
 

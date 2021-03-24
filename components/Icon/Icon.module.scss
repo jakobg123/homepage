@@ -1,8 +1,6 @@
 @import '../../styles/variables.scss';
 
 .Icon {
-  $root: &;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,9 +33,4 @@
     color: $colorBlack;
     fill: $colorBlack;
   }
-
-  // &--Primary svg {
-  //   color: $colorPrimaryBlue;
-  //   fill: $colorPrimaryBlue;
-  // }
 }
