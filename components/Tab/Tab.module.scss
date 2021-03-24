@@ -30,14 +30,6 @@
     }
   }
 
-  &--Dark {
-    // background-color: $colorPrimaryBlue;
-  }
-
-  // &__Button:focus{
-
-  // }
-
   &__Button {
     background: none;
     position: absolute;
@@ -62,32 +54,10 @@
     .Tab--Dark &:hover + .Tab__Overlay {
       @include bgColorOpacity($colorWhite, 0.8);
     }
-
-    &:hover {
-      // background-color: red;
-    }
-
-    &:active,
-    &:focus {
-      // background-color: green;
-      // background-color: none;
-    }
-
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   top: 0;
-    //   left: 0;
-    //   width: 100%;
-    //   height: 100%;
-    //   background-color: steelblue;
-    //   z-index: -5;
-    // }
   }
 
   &__Overlay {
     position: absolute;
-    // border: 1px solid red;
     top: 0;
     left: 0;
     width: 100%;
@@ -102,22 +72,12 @@
   }
 
   &__TextWrapper {
-    display: inline;
     display: flex;
-    // justify-content: space-between;
     flex-direction: column;
     align-items: flex-end;
 
-    @include media(tablet) {
-      display: flex;
-      // justify-content: space-between;
-      flex-direction: column;
-      align-items: flex-end;
-    }
     @include media(desktop) {
-      display: flex;
       justify-content: space-between;
-      // flex-direction: column;
       align-items: center;
     }
   }
@@ -181,7 +141,6 @@
   }
 
   &__Knowledge {
-    // @extend %bodyFat;
     @extend %bodySmall;
     @extend %fontColorBlack;
     margin-bottom: $spacingS;
@@ -198,10 +157,6 @@
       @extend %body;
       @extend %fontColorBlack;
       transition: color $transitionQuick;
-
-      &--Dark {
-        // color: $colorWhiteBackground !important;
-      }
 
       .Tab--Dark & {
         @extend %fontColor;
@@ -223,8 +178,6 @@
     padding-right: $spacingS;
 
     @include media(tablet) {
-      // width: calc(100% - 16px);
-      // padding-left: $spacingL;
       width: 60%;
     }
     @include media(desktop) {
@@ -234,7 +187,6 @@
   }
 
   &__IconWrapper {
-    // border: 1px solid green;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -243,31 +195,12 @@
 
     @include media(tablet) {
       padding-left: 0;
-
-      // display: block;
-      // width: 100%;
-      // height: 100%;
-      // max-width: 20rem;
-      // max-width: 16.5rem;
       width: 15.5rem;
-      // max-height: 15.5rem;
       height: 15.5rem;
-      // padding: $spacingMl;
-      // overflow: hidden;
-      // svg {
-      //   object-fit: cover;
-      //   width: 100%;
-      // }
-    }
-
-    .Tab--Dark & {
-      // background-color: $colorWhiteBackground;
     }
   }
 
   &__Height {
-    // border: 1px solid green;
-    // height: 100%;
     height: 12rem;
     width: 12rem;
 
@@ -280,6 +213,7 @@
         }
       }
     }
+
     .Tab--Dark:focus &,
     .Tab--Dark:hover & {
       @include media(desktop) {
