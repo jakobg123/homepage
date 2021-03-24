@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Link from 'next/link';
-// import { useInView } from 'react-intersection-observer';
-
 import styles from './MobileNav.module.scss';
-
 import classNames from 'classnames';
-import Icon from '../Icon';
 
-// import data from "../../public/data/menu.json";
+import Icon from '../Icon';
 
 const MobileNav = ({ data }) => {
     const [openNav, setOpenNav] = useState(false);
@@ -108,38 +104,6 @@ const MobileNav = ({ data }) => {
                                 </Link>
                             </li>
                         ))}
-                        {/* <li
-                            className={classNames(styles['MobileNav__NavListItem'], {
-                                [styles['MobileNav__NavListItem--Drop']]: !drop,
-                            })}>
-                            <Link href="/projects">
-                                <a className={styles['MobileNav__NavLink']}>Om sidan</a>
-                            </Link>
-                        </li>
-                        <li
-                            className={classNames(styles['MobileNav__NavListItem'], {
-                                [styles['MobileNav__NavListItem--Drop']]: !drop,
-                            })}>
-                            <Link href="">
-                                <a className={styles['MobileNav__NavLink']}>CV</a>
-                            </Link>
-                        </li>
-                        <li
-                            className={classNames(styles['MobileNav__NavListItem'], {
-                                [styles['MobileNav__NavListItem--Drop']]: !drop,
-                            })}>
-                            <Link href="">
-                                <a className={styles['MobileNav__NavLink']}>Om mig</a>
-                            </Link>
-                        </li>
-                        <li
-                            className={classNames(styles['MobileNav__NavListItem'], {
-                                [styles['MobileNav__NavListItem--Drop']]: !drop,
-                            })}>
-                            <Link href="">
-                                <a className={styles['MobileNav__NavLink']}>Kontakt</a>
-                            </Link>
-                        </li> */}
                     </ul>
                 </nav>
             </div>
