@@ -15,6 +15,35 @@
   &__Header,
   &__Footer {
   }
+
+  &__Header {
+    position: relative;
+  }
+
+  &__Logo {
+    // border: 1px solid red;
+    position: absolute;
+    display: block;
+    top: $spacingMl;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    @extend %grid;
+
+    @include media(tablet) {
+      display: none;
+    }
+
+    img {
+      width: 14rem;
+      // height: 10rem;
+
+      @include media(ms) {
+        width: 16rem;
+      }
+    }
+  }
 }
 
 .StickyContainer {
