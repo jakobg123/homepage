@@ -67,9 +67,9 @@ const StartContainer = ({ data, knowledge }) => {
             // styles['StartContainer__Grid'],
             styles['StartContainer__EntryWrapper']
           )}>
-          <strong className={styles['StartContainer__Strong']}>
+          <em className={styles['StartContainer__Em']}>
             {greeting}
-          </strong>
+          </em>
           <div className={styles['StartContainer__Row']}>
             {/* <h2 className={styles['StartContainer__SubTitle']}>
               {preamble}
@@ -83,6 +83,7 @@ const StartContainer = ({ data, knowledge }) => {
                 {/* <Image src={"/images/temp/small150x150.jpg"} width={"13rem"} height={"13rem"} alt={"Jakob Gauffin, han som gjort sidan."} round mediaQueries={[]} /> */}
               </div>
               {/* <img src="/images/temp/medium500x500.jpg" className={styles['StartContainer__PresImage']} /> */}
+              <h2>Om sidan</h2>
               <p>Sidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik <strong>6 månaders LIA (praktik)</strong> på <a href="https://www.frojd.se" >digitalbyrån Fröjd Interactive</a>.</p>
               <p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.</p>
               <p>Jag kan redan nu avslöja att den är gjord i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering.</p>
@@ -134,6 +135,8 @@ const StartContainer = ({ data, knowledge }) => {
             {technologies.heading}
           </h2>
           <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: technologies.html }}>
+          </div>
+          <div className={styles['StartContainer__Paragraph']} dangerouslySetInnerHTML={{ __html: technologies.html2 }}>
           </div>
         </div>
         <div
@@ -197,7 +200,7 @@ const StartContainer = ({ data, knowledge }) => {
         <button onClick={handleImport} >ankjdnmas</button> */}
 
 
-        <div id="internship" className={styles['StartContainer__InternshipWrapper']}>
+        <div className={styles['StartContainer__InternshipWrapper']}>
           <Internship data={internship} inView={inView && showKnowledge ? true : false} />
         </div>
       </div>

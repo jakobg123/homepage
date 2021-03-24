@@ -8,32 +8,31 @@
 
   &__Title {
     @extend %h1;
-    // font-weight: 600;
+    @extend %titleWidth;
     margin-top: -8rem;
     position: relative;
     z-index: 5;
     position: relative;
     word-break: break-word;
     hyphens: manual;
-    padding-bottom: $spacingL;
-    width: 90%;
+    // padding-bottom: $spacingL;
+    // width: 90%;
 
     @include media(ms) {
-      margin-top: -11rem;
+      margin-top: -13rem;
       // width: 90%;
     }
     @include media(tablet) {
-      margin-top: -13rem;
-      width: 70%;
+      margin-top: -15rem;
+      // width: 70%;
     }
     @include media(desktop) {
       margin-top: -21rem;
-      width: 100%;
+      // width: 100%;
     }
     @include media(xl) {
-      font-size: 8.5rem;
       margin-top: -27rem;
-      width: 90%;
+      // width: 90%;
     }
   }
 
@@ -77,14 +76,25 @@
     position: relative;
     height: 100%;
     width: 100%;
-    padding-top: $spacingL;
+    padding-top: $spacingS;
     // background-color: $colorWhite;
     z-index: 2;
 
     .StartContainer__Paragraph {
+      p {
+        padding-bottom: $spacingL !important;
+      }
+
       position: relative;
       z-index: 1;
-      padding-bottom: $spacingL;
+      padding-bottom: $spacingS;
+
+      @include media(tablet) {
+        padding-bottom: $spacingM;
+      }
+      @include media(xl) {
+        padding-bottom: $spacingL;
+      }
     }
     // border: 1px solid red;
     &::after {
@@ -120,7 +130,8 @@
     @extend %grid;
     position: relative;
     z-index: 5;
-    padding-top: $spacingL * 4;
+    padding-top: $spacingBlock;
+    // padding-top: $spacingL * 4;
     // background-color: $colorWhite;
     &--White {
       // background-color: $colorWhite;
@@ -171,10 +182,18 @@
   }
 
   &__Subtitle,
-  &__Strong {
+  &__Em {
     @extend %h2;
     display: block;
+    // padding-bottom: $spacingXl;
+  }
+
+  &__Em {
     padding-bottom: $spacingXl;
+
+    @include media(desktop) {
+      padding-bottom: $spacingL * 2;
+    }
   }
 
   &__Line {
@@ -200,30 +219,51 @@
     // }
   }
 
-  &__Paragraph p {
+  &__Paragraph {
     // @extend %richtext;
-    @extend %richtext;
 
-    &--Pres {
-      border: 1px solid red;
+    h2 {
+      @extend %h2;
     }
 
-    p:last-of-type {
-      padding-bottom: $spacingL * 2;
+    h3 {
+      @extend %h3;
+    }
+
+    p {
+      @extend %richtext;
+
+      span {
+        display: inline-block;
+      }
+
+      &:last-of-type {
+        padding-bottom: $spacingL * 2;
+      }
     }
   }
   &__ParagraphPres {
     // border: 1px solid red;
-    max-width: 120rem;
+    // max-width: 120rem;
+    // max-width: 95%;
+
+    @include media(tablet) {
+      max-width: 90%;
+    }
+
+    @include media(desktop) {
+      max-width: 100%;
+    }
+
+    h2 {
+      @extend %h2;
+    }
+
     p {
       position: relative;
       z-index: 10;
       // @extend %richtext;
       @extend %richtext;
-
-      p:last-of-type {
-        padding-bottom: $spacingL * 2;
-      }
     }
   }
 
@@ -334,18 +374,18 @@
   //   z-index: 2;
   // }
 
-  &__Padding {
-    padding-bottom: $spacingBlock;
-    transition: background-color $transitionNormal;
+  // &__Padding {
+  //   padding-bottom: $spacingBlock;
+  //   transition: background-color $transitionNormal;
 
-    &--White {
-      background-color: $colorWhiteBackground;
-    }
+  //   &--White {
+  //     background-color: $colorWhiteBackground;
+  //   }
 
-    &--Black {
-      background-color: $colorPrimaryBlue;
-    }
-  }
+  //   &--Black {
+  //     background-color: $colorPrimaryBlue;
+  //   }
+  // }
 
   &__InternshipWrapper {
     // @extend %outsideGrid;
