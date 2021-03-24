@@ -15,24 +15,21 @@
     position: relative;
     word-break: break-word;
     hyphens: manual;
-    // padding-bottom: $spacingL;
-    // width: 90%;
 
     @include media(ms) {
       margin-top: -13rem;
-      // width: 90%;
     }
+
     @include media(tablet) {
       margin-top: -15rem;
-      // width: 70%;
     }
+
     @include media(desktop) {
       margin-top: -21rem;
-      // width: 100%;
     }
+
     @include media(xl) {
       margin-top: -27rem;
-      // width: 90%;
     }
   }
 
@@ -42,33 +39,7 @@
   }
 
   &__Block {
-    // @extend %grid;
-    // position: relative;
     background-color: $colorWhite;
-    // .StartContainer__Strong,
-    // .StartContainer__Subtitle,
-    // .StartContainer__Paragraph {
-    //   @extend %fontColorBlack;
-    // }
-
-    // &::after {
-    //   content: '';
-    //   position: absolute;
-    //   background-image: url('#{$patternPath}bottomWave.svg');
-    //   background-position: top;
-    //   background-size: contain;
-    //   background-repeat: no-repeat;
-    //   top: -1px;
-    //   right: -1px;
-    //   left: -1px;
-    //   height: 100%;
-    //   width: calc(100% + 2px);
-    //   z-index: 0;
-
-    //   @include media(ms) {
-    //     background-size: contain;
-    //   }
-    // }
   }
 
   &__CtaWrapper {
@@ -77,17 +48,16 @@
     height: 100%;
     width: 100%;
     padding-top: $spacingS;
-    // background-color: $colorWhite;
     z-index: 2;
 
     .StartContainer__Paragraph {
-      p {
-        padding-bottom: $spacingL !important;
-      }
-
       position: relative;
       z-index: 1;
       padding-bottom: $spacingS;
+
+      p {
+        padding-bottom: $spacingL !important;
+      }
 
       @include media(tablet) {
         padding-bottom: $spacingM;
@@ -96,7 +66,7 @@
         padding-bottom: $spacingL;
       }
     }
-    // border: 1px solid red;
+
     &::after {
       content: '';
       position: absolute;
@@ -110,20 +80,12 @@
       height: 50rem;
       width: calc(100% + 2px);
       z-index: 0;
-
-      @include media(ms) {
-        // background-size: contain;
-        // width: 1440px;
-        // margin-left: -7.2rem;
-        // margin-right: -7.2rem;
-      }
     }
   }
 
   &__ButtonWrapper {
     position: relative;
     z-index: 2;
-    // padding-bottom: 15rem;
   }
 
   &__TextWrapper {
@@ -131,17 +93,9 @@
     position: relative;
     z-index: 5;
     padding-top: $spacingBlock;
-    // padding-top: $spacingL * 4;
-    // background-color: $colorWhite;
-    &--White {
-      // background-color: $colorWhite;
-    }
   }
 
   &__Background {
-    // border: 1px solid red;
-    // margin-left: -72px;
-    // margin-right: -72px;
     @extend %grid;
     transition: background-color 1s ease-in-out;
     will-change: transform;
@@ -156,36 +110,10 @@
     }
   }
 
-  &__KnowledgeWrapper {
-    // background-color: green;
-  }
-
-  // &__Strong {
-  //   display: block;
-  // }
-
-  // &__Em {
-  //   color: $colorSecondaryYellow;
-  // }
-
-  &__Row {
-    // padding-bottom: $spacingBlock;
-  }
-
-  &__Row--Dark {
-    background-color: $colorWhite;
-    .StartContainer__Strong,
-    .StartContainer__Subtitle,
-    .StartContainer__Paragraph {
-      @extend %fontColorBlack;
-    }
-  }
-
   &__Subtitle,
   &__Em {
     @extend %h2;
     display: block;
-    // padding-bottom: $spacingXl;
   }
 
   &__Em {
@@ -206,22 +134,9 @@
 
   &__Preamble {
     @extend %preamble;
-    // border: 1px solid red;
-    // P {
-    //   @extend %richtext;
-
-    //   &:last-of-type {
-    //     padding-bottom: $spacingL * 2;
-    //   }
-    // }
-    // strong {
-    //   @extend %strong;
-    // }
   }
 
   &__Paragraph {
-    // @extend %richtext;
-
     h2 {
       @extend %h2;
     }
@@ -243,10 +158,6 @@
     }
   }
   &__ParagraphPres {
-    // border: 1px solid red;
-    // max-width: 120rem;
-    // max-width: 95%;
-
     @include media(tablet) {
       max-width: 90%;
     }
@@ -262,38 +173,22 @@
     p {
       position: relative;
       z-index: 10;
-      // @extend %richtext;
       @extend %richtext;
     }
   }
 
-  // &__PresImage {
-  //   height: 13rem;
-  //   width: 13rem;
-  //   border-radius: 50%;
-  //   shape-outside: circle();
-  //   object-fit: cover;
-  //   float: right;
-  //   border: 5px solid $colorWhite;
-  //   outline-style: 1px solid black;
-  // }
-
   &__PresImageWrapper {
     position: relative;
     padding-right: $spacingXl * 2;
-    // right: $spacingL;
     height: 13rem;
     width: 13rem;
     border-radius: 50%;
     shape-outside: circle();
-    // overflow: hidden;
     object-fit: cover;
     float: right;
     border: 5px solid $colorWhite;
     box-shadow: $boxShadowCard;
-    // border: 5px solid black;
     z-index: 5;
-    // box-shadow: ;
 
     @include media(ms) {
       height: 20rem;
@@ -309,27 +204,16 @@
       top: -5rem;
     }
 
-    // picture {
-    //   border-radius: 50%;
-    //   overflow: hidden;
-    //   display: block;
-    // }
-
     &::after {
       content: '';
       top: 0;
       right: 0;
       width: 25rem;
       height: 25rem;
-      // background-color: $colorWhite;
       border-radius: 50%;
       position: absolute;
       z-index: -1;
     }
-  }
-
-  &__TabListWrapper {
-    // @extend %grid;
   }
 
   &__ButtonWave {
@@ -349,7 +233,6 @@
       padding-top: 20rem;
     }
     @include media(desktop) {
-      margin-top: -2px;
       padding-top: 26rem;
     }
 
@@ -366,32 +249,5 @@
       background-repeat: no-repeat;
       z-index: 1;
     }
-  }
-
-  // &__ButtonWrapper {
-  //   position: absolute;
-  //   top: 0;
-  //   z-index: 2;
-  // }
-
-  // &__Padding {
-  //   padding-bottom: $spacingBlock;
-  //   transition: background-color $transitionNormal;
-
-  //   &--White {
-  //     background-color: $colorWhiteBackground;
-  //   }
-
-  //   &--Black {
-  //     background-color: $colorPrimaryBlue;
-  //   }
-  // }
-
-  &__InternshipWrapper {
-    // @extend %outsideGrid;
-
-    // margin-left: 7.2;
-    // border: 1px solid red;
-    // margin-top: -10rem;
   }
 }
