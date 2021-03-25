@@ -3,43 +3,24 @@
 @import '../../styles/animations.scss';
 
 .TabList {
-  // border: 1px solid black;
   display: flex;
-  // padding: 0 $spacingXs $spacingXl * 4;
   border-radius: $radiusCardSmall;
-
-  // margin-bottom: $spacingBlock * 2;
   position: relative;
-  // background-color: $colorGrey-3;
   box-shadow: $boxShadowCard;
   z-index: 2;
   margin-bottom: $spacingM;
-
-  // @include media(s) {
   padding: $spacingM $spacingS $spacingBlock;
-  // }
-  @include media(ms) {
-    // padding: $spacingM $spacingXl * 4;
-  }
-  @include media(tablet) {
-    // padding: $spacingL;
-  }
+
   @include media(desktop) {
     margin: 0 -3.2rem $spacingM;
     padding: 3.2rem;
-
-    // &:first-of-type {
     margin-bottom: $spacingBlock * 2;
-    // }
   }
 
   @include media(xl) {
     margin: 0 -3.2rem $spacingM;
     padding: 3.2rem;
-
-    // &:first-of-type {
     margin-bottom: $spacingBlock * 2;
-    // }
   }
 
   &--Dark {
@@ -64,22 +45,15 @@
     }
     @include media(xl) {
       padding: 8rem 0 8rem $spacingL * 3;
-      // padding: 8rem $spacingL * 3;
-      display: block;
       width: 50%;
     }
 
     &--Dark {
       @include media(desktop) {
         padding: 8rem $spacingL * 2 0rem 0;
-        // display: block;
-        // width: 70%;
       }
       @include media(xl) {
         padding: 8rem $spacingL * 3 0rem 0;
-        // padding: 8rem $spacingL * 3;
-        // display: block;
-        // width: 50%;
       }
     }
   }
@@ -102,19 +76,10 @@
   &__InfoText {
     max-width: 95% !important;
     @extend %fontColorBlack;
-    // @extend %p;
-    // @extend %links;
     @extend %richtext;
     opacity: 0;
     transition: all $transitionNormal;
     transform: translateY(10rem);
-    // p {
-    //   padding-bottom: $spacingL;
-    // }
-
-    // em {
-    //   font-style: italic;
-    // }
 
     @include media(desktop) {
       font-size: 2.25rem;
@@ -134,11 +99,6 @@
     }
   }
 
-  &__InfoStartWrapper {
-    // border: 1px solid red;
-    // display: flex;
-  }
-
   &__InfoStartIconWrapper {
     height: 10rem;
     width: 30rem;
@@ -147,24 +107,15 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
     margin: 0 auto;
-    // transform-origin: right;
   }
 
   &__CardsContainer {
     width: 100%;
-    // padding: 0 $spacingXl * 4;
-    // @include media(tablet) {
-
-    // }
 
     @include media(desktop) {
       width: 45%;
       padding: 0;
     }
-
-    // @include media(xl) {
-    //   width: 50%;
-    // }
 
     &::after {
       content: '';
@@ -190,21 +141,6 @@
         1,
         100%
       );
-      // @include bgColorGradient4(
-      //   to right bottom,
-      //   $colorGrey-2,
-      //   0.5,
-      //   0,
-      //   $colorGrey-3,
-      //   0.8,
-      //   75%,
-      //   $colorOrange,
-      //   0.6,
-      //   75%,
-      //   $colorOrange,
-      //   0.6,
-      //   95%
-      // );
 
       .TabList--Dark & {
         @include bgColorGradient4(
@@ -224,24 +160,6 @@
         );
       }
     }
-
-    // &--Dark.TabList::after {
-    //   @include bgColorGradient4(
-    //     to right bottom,
-    //     $colorPrimaryBlueLight,
-    //     0.01,
-    //     0,
-    //     $colorPrimaryBlue,
-    //     0.01,
-    //     75%,
-    //     $colorGreen,
-    //     0.5,
-    //     75%,
-    //     $colorGreen,
-    //     0.7,
-    //     95%
-    //   );
-    // }
   }
 
   &__Title {
@@ -249,7 +167,6 @@
     @extend %fontColorBlack;
     padding-bottom: $spacingS;
     max-width: 100%;
-    // text-align: center;
 
     .TabList--Dark & {
       @extend %fontColor;
@@ -270,10 +187,6 @@
       flex-wrap: wrap;
       justify-content: space-between;
     }
-
-    // .TabList--Dark & {
-    //   border-top: 2px solid $colorGreen;
-    // }
   }
 
   &__ListItem {
@@ -281,8 +194,6 @@
 
     @include media(tablet) {
       max-width: 48%;
-      // width: 100%;
-      // max-width: 50%;
       flex: 1 1 calc(50% - 8px);
       margin-right: $spacingS;
     }
