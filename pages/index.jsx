@@ -32,6 +32,10 @@ class index extends PureComponent {
             rel="preconnect"
             href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
           />
+          <link
+            rel="preconnect"
+            href="https://homepage-liart-ten.vercel.app/_next/static/css/5676e49514609378db1e.css"
+          />
 
           <meta
             name="viewport"
