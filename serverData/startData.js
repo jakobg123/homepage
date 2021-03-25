@@ -17,7 +17,7 @@ export default {
         html:
             '<p>Under utbildningen har jag arbetat med många olika verktyg, vars primära användningsområden har varit Frontend. Huvudsakligen kan jag HTML, CSS, JS och React. <p>Jag har också jobbat en del med Backend och kan även Wordpress, PHP och grundläggande Node.js.</p><p> Givetvis är jag ännu inte fullärd i alla språk och tekniker. Men jag gillar verkligen programmering och att lära mig nya saker, så jag ser det enbart som en tidsfråga innan jag behärskar ett nytt ramverk eller språk för den delen.</p>',
         html2:
-            '<h3>Betygsättning av mina kunskaper</h3><p>Nedan har jag listat de större teknologier jag jobbat med.</p><p>Min kunskapsgrad i ämnet har jag sedan godtyckligt rankat från <span>1 till 10</span>, där 10 är bäst.</p>',
+            '<h3>Betygsättning av mina kunskaper</h3><p>Nedan har jag listat de större teknologier jag jobbat med.</p><p>Min kunskapsgrad i ämnet har jag sedan partiskt rankat från <span>1 till 10</span>, där 10 är bäst.</p>',
     },
     internship: {
         heading: 'Praktik på Fröjd',
