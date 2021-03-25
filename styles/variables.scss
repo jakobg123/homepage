@@ -1,21 +1,6 @@
-// @import './extensions.scss';
-// @import './includes.scss';
-
 @import './fonts.scss';
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand&display=swap');
-
-// @font-face {
-//   font-family: 'Quicksand';
-//   src: url('/fonts/Quicksand/static/Quicksand-Regular.ttf') format('ttf');
-//   font-weight: normal;
-//   font-family: 'Raleway';
-// src: url('/fonts/Raleway/Raleway-Regular.ttf') format('ttf');
-// font-weight: normal;
-// font-family: 'Roboto';
-// src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-// font-weight: normal;
-// }
 
 $font: 'Quicksand', sans-serif;
 
@@ -29,13 +14,8 @@ $colorPrimaryBlueLight: #001542;
 $colorPrimaryBlue: #000d29;
 $colorSecondaryYellow: #fffb0f;
 
-//old white
-// $colorWhiteBackground: #fafafa;
 $colorWhite: #fafafa;
-
-//new white
 $colorWhiteBackground: #dcdcdc;
-// $colorGrey5: #424242;
 
 $colorGrey-1: #dcdcdc;
 $colorGrey-2: #d3d3d3;
@@ -109,5 +89,3 @@ $breakpoints: (
   ml: $bp-ml,
   xl: $bp-xl,
 );
-
-// background: linear-gradient(to right bottom, @include bgColorOpacity());
