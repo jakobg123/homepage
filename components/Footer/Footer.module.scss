@@ -27,22 +27,29 @@
     position: relative;
     @extend %h2;
     color: $colorPrimary;
-    padding-bottom: $spacingBlock * 2;
+    padding-bottom: $spacingBlock * 3;
     z-index: 1;
   }
 
   &__Title {
     @extend %h2;
     color: $colorPrimary;
-    padding-bottom: $spacingL * 2;
-    padding-top: 5rem;
-
-    @include media(desktop) {
-      padding-top: 8rem;
-    }
+    padding-bottom: $spacingL;
+    padding-top: 8rem;
 
     @include media(xl) {
       padding-top: 10rem;
+    }
+  }
+
+  &__Text {
+    @extend %h3;
+    color: $colorPrimary;
+    display: block;
+    padding-bottom: $spacingXl;
+
+    @include media(tablet) {
+      padding-bottom: $spacingXl * 2;
     }
   }
 
@@ -68,7 +75,7 @@
   &__Heading {
     @extend %h3;
     color: $colorPrimary;
-    padding-bottom: $spacingXl;
+    padding-bottom: $spacingL;
   }
 
   &__IconLinkWrapper {

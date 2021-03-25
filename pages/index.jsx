@@ -127,7 +127,7 @@ class index extends PureComponent {
             content="mstile-310x310.png"
           />
         </Head>
-        <div className={styles['Base']}>
+        <div className={styles['Base']} id="start">
           <header className={styles['Base__Header']}>
             <figure className={styles['Base__Logo']}>
               <img

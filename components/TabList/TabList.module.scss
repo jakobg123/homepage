@@ -91,6 +91,15 @@
 
     .TabList--Dark & {
       @extend %fontColor;
+      a {
+        @extend %links;
+        color: $colorPrimary;
+
+        &:focus,
+        &:hover {
+          color: $linkHoverLight;
+        }
+      }
     }
 
     &--Show {
@@ -151,10 +160,10 @@
           $colorBlack,
           1,
           75%,
-          $linkHoverLight,
+          $colorBlack,
           1,
           75%,
-          $linkHoverLight,
+          $colorBlack,
           1,
           100%
         );

@@ -9,10 +9,14 @@ const Footer = () => {
       <div className={styles['Footer__Grid']}>
         <div className={styles['Footer__Content']}>
           <h2 className={styles['Footer__Title']}>Kom i kontakt</h2>
+          <strong className={styles['Footer__Text']}>
+            Hör gärna av dig om du vill veta mer!
+          </strong>
+
           <div className={styles['Footer__ContentWrapper']}>
             <FooterColumn
               key={0}
-              title={'Skriv gärna till mig på LinkedIn'}
+              title={'Skriv på LinkedIn'}
               links={[
                 {
                   type: 'linkedIn',

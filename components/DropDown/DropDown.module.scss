@@ -50,7 +50,7 @@
     transform: scaleY(0);
     transform-origin: top;
     transition: $transitionQuick;
-    padding: $spacingS $spacingXl $spacingL $spacingM;
+    padding: $spacingM $spacingXl 0 $spacingM;
     margin: 0;
     position: absolute;
     top: calc(100% - 4px);
@@ -75,11 +75,12 @@
     transition: $transitionQuick;
     transform: translate(0, -100%);
     @extend %richtext;
+    @extend %bodySmall;
     max-width: 100%;
+    padding-bottom: 0;
 
     p {
       color: $colorBlack;
-      padding-bottom: $spacingM;
 
       .DropDown--Dark & {
         color: $colorPrimary;

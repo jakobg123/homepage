@@ -69,7 +69,7 @@ const TabList = ({ knowledge, title, dark = false }) => {
                     [styles['TabList__InfoContainer--Dark']]: dark,
                 })}>
                 {!!currentKnowledge.length ? (
-                    <InfoContainer info={currentKnowledge} />
+                    <InfoContainer info={currentKnowledge} key={currentKnowledge[0].id} />
                 ) : (
                     <div
                         className={classNames(styles['TabList__InfoStartWrapper'], {

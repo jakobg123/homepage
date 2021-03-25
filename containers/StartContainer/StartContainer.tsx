@@ -75,9 +75,7 @@ const StartContainer = ({ data, knowledge }) => {
               mig under den 2-åriga YH-utbildningen, som bl.a. består av en
                 lärorik <strong>6 månaders LIA (praktik)</strong> på{' '}
               <a href="https://www.frojd.se">
-                digitalbyrån Fröjd Interactive
-                </a>
-                .
+                digitalbyrån Fröjd</a>.
               </p>
             <p>
               Sajten är fortfarande under uppbyggnad, men kommer snart ha mer
