@@ -22,7 +22,7 @@ export default {
     internship: {
         heading: 'Praktik på Fröjd',
         html:
-            '<p>Jag har haft turen och glädjen att få genomföra min 6 månaders LIA-period på <a href="https://www.frojd.se">Fröjd</a>.</p><p>Det är en eftertrakad digitalbyrå med expertis inom hela ekosystemet kring webb.</p><p>De är experter på koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p>',
+            '<p>Jag har haft turen och glädjen att få genomföra min 6 månaders LIA-period på <a href="https://www.frojd.se">Fröjd</a>.</p><p>Det är en eftertrakad digitalbyrå med stor kunskap inom hela ekosystemet kring webb.</p><p>De är experter på koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p>',
         html2:
             '<p>På Fröjd har jag lärt mig hur det är att jobba som webbutvecklare på riktigt.</p>',
         html3:
