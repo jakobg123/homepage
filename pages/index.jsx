@@ -27,8 +27,12 @@ class index extends PureComponent {
             name="description"
             content="Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."
           />
-          <link rel="preconnect" href="https://fonts.gstatic.com/"></link>
-          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com/" />
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+          />
+
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0, user-scalable=yes"
