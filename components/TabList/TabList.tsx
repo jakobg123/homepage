@@ -19,15 +19,15 @@ const InfoContainer = ({ info }) => {
         return () => setShow(false);
     }, [info]);
 
-    return info.map(({ title, html }) => (
-        <>
+    return info.map(({ title, html, id }) => (
+        <div key={id}>
             <h5 className={styles['TabList__InfoTitle']}>{title}</h5>
             <div
                 className={classNames(styles['TabList__InfoText'], {
                     [styles['TabList__InfoText--Show']]: show,
                 })}
                 dangerouslySetInnerHTML={{ __html: html }}></div>
-        </>
+        </div>
     ));
 };
 
@@ -69,7 +69,7 @@ const TabList = ({ knowledge, title, dark = false }) => {
                     [styles['TabList__InfoContainer--Dark']]: dark,
                 })}>
                 {!!currentKnowledge.length ? (
-                    <InfoContainer info={currentKnowledge} key={currentKnowledge[0].id} />
+                    <InfoContainer info={currentKnowledge} />
                 ) : (
                     <div
                         className={classNames(styles['TabList__InfoStartWrapper'], {

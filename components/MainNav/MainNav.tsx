@@ -15,8 +15,8 @@ const MainNav = () => {
             </figure>
             <ul className={styles['MainNav__List']}>
                 {!!links.length && (
-                    links.map(({ target, label }) => (
-                        <li className={styles['MainNav__ListItem']}>
+                    links.map(({ target, label }, index) => (
+                        <li className={styles['MainNav__ListItem']} key={index}>
                             <Link href={target}>
                                 <a className={styles['MainNav__Link']} >{label}</a>
                             </Link>
