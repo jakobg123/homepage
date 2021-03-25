@@ -17,6 +17,7 @@ const Internship = ({ data, inView }) => {
             className={styles['Internship__Paragraph']}
             dangerouslySetInnerHTML={{ __html: data.html }}></div>
           <a href="https://www.frojd.se" className={styles["Internship__FrojdContainer"]}>
+            <span className="sr-only">Till Fröjds hemsida</span>
             <span aria-hidden="true" className={styles["Internship__IconWrapper"]}>
               <Icon type={"frojd"} color={"White"} modifier={[styles["Internship__Width"]]} />
             </span>
@@ -29,11 +30,12 @@ const Internship = ({ data, inView }) => {
           <div
             className={styles['Internship__Paragraph']}
             dangerouslySetInnerHTML={{ __html: data.html + data.html2 }}></div>
-          <div aria-hidden="true" className={styles["Internship__FrojdContainer"]}>
-            <div className={styles["Internship__IconWrapper"]}>
+          <a href="https://www.frojd.se" className={styles["Internship__FrojdContainer"]}>
+            <span className="sr-only">Till Fröjds hemsida</span>
+            <span aria-hidden="true" className={styles["Internship__IconWrapper"]}>
               <Icon type={"frojd"} color={"White"} modifier={[styles["Internship__Width"]]} />
-            </div>
-          </div>
+            </span>
+          </a>
         </div>
         <div
           className={styles['Internship__Paragraph']}
