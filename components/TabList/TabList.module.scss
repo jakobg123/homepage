@@ -32,7 +32,7 @@
   &__InfoContainer {
     display: none;
     @extend %fontColorBlack;
-    overflow-y: auto;
+    overflow-y: scroll;
 
     &::-webkit-scrollbar {
       width: 0;
@@ -43,21 +43,21 @@
     }
 
     @include media(desktop) {
-      padding: 8rem 0 8rem $spacingL * 2;
+      padding: 8rem 0 $spacingM * 2 $spacingL * 2;
       display: block;
       width: 70%;
     }
     @include media(xl) {
-      padding: 8rem 0 8rem $spacingL * 3;
+      padding: 8rem 0 $spacingM * 2 $spacingL * 3;
       width: 50%;
     }
 
     &--Dark {
       @include media(desktop) {
-        padding: 8rem $spacingL * 2 0rem 0;
+        padding: 8rem $spacingL * 2 $spacingM * 2 0;
       }
       @include media(xl) {
-        padding: 8rem $spacingL * 3 0rem 0;
+        padding: 8rem $spacingL * 3 $spacingM * 2 0;
       }
     }
   }
