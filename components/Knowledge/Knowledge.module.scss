@@ -10,6 +10,17 @@
   }
 
   &__TabListWrapper {
+    &--Hide {
+      transition: all $transitionNormal;
+      will-change: transform;
+      opacity: 0;
+      transform: translateY(10rem);
+    }
+    &--Show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
     &--Backend {
       position: relative;
       margin-left: -$spacingM;
