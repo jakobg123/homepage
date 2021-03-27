@@ -1,11 +1,21 @@
-// @font-face {
-//   // font-family: 'Quicksand';
-//   // src: url('/fonts/Quicksand/static/Quicksand-Regular.ttf') format('ttf');
-//   // font-weight: normal;
-//   // font-family: 'Raleway';
-//   // src: url('/fonts/Raleway/Raleway-Regular.ttf') format('ttf');
-//   // font-weight: normal;
-//   font-family: 'Roboto';
-//   src: url('/fonts/Roboto/Roboto-Regular.ttf') format('truetype');
-//   font-weight: normal;
-// }
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/QuicksandLatin/quicksand-v22-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local(''),
+    url('/fonts/QuicksandLatin/quicksand-v22-latin-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-IE8 */ url('/fonts/QuicksandLatin/quicksand-v22-latin-regular.woff2')
+      format('woff2'),
+    /* Super Modern Browsers */
+      url('/fonts/QuicksandLatin/quicksand-v22-latin-regular.woff')
+      format('woff'),
+    /* Modern Browsers */
+      url('/fonts/QuicksandLatin/quicksand-v22-latin-regular.ttf')
+      format('truetype'),
+    /* Safari, Android, iOS */
+      url('/fonts/QuicksandLatin/quicksand-v22-latin-regular.svg#Quicksand')
+      format('svg'); /* Legacy iOS */
+}
