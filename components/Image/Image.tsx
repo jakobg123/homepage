@@ -11,10 +11,11 @@ const Image: React.FC<IImageProps> = ({
     loading = 'lazy',
     focal = { x: '50%', y: '50%' },
     round = false,
+    pTHeight = null,
 }) => {
     return (
         <picture className={styles['Image']}
-            style={{ paddingTop: height }}
+            style={{ paddingTop: !!pTHeight && pTHeight }}
         >
             {!!mediaQueries?.length &&
                 mediaQueries.map(({ src, minWidth }, index) => (

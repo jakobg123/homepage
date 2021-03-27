@@ -13,4 +13,5 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     mediaQueries?: IMediaQueries[];
     onLoadFade?: boolean;
     round?: boolean;
+    pTHeight?: number;
 }
