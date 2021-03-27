@@ -79,8 +79,11 @@
 
     p {
       color: $colorBlack;
+    }
 
-      .DropDown--Dark & {
+    .DropDown--Dark & {
+      p,
+      a {
         color: $colorPrimary;
       }
     }
