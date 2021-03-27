@@ -3,6 +3,8 @@
 * {
   box-sizing: border-box;
   font-family: $font serif;
+  scroll-behavior: smooth;
+  overscroll-behavior: none;
 }
 
 html {
