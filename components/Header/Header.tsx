@@ -44,7 +44,7 @@ const Header: React.FC = () => {
         <Image
           {...bgImage}
           mediaQueries={mediaQueries}
-          focal={{ x: '5%', y: '0%' }}
+          focal={{ x: '5%', y: '30%' }}
           loading="eager"
         />
       </div>
