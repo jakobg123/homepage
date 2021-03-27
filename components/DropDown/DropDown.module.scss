@@ -56,13 +56,11 @@
     top: calc(100% - 4px);
     right: 0;
     width: 100%;
-    z-index: 1000;
     border-bottom-left-radius: $radiusButtonSmall;
     border-bottom-right-radius: $radiusButtonSmall;
 
     &--Expanded {
       transform: scaleY(1);
-      z-index: 5000;
     }
 
     .DropDown--Dark & {

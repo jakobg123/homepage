@@ -2,7 +2,7 @@ import Icon from '../Icon';
 import styles from './DropDown.module.scss';
 import classNames from 'classnames';
 
-const DropDown = ({ html, dark, onClick, isExpanded }) => {
+const DropDown = ({ html, dark, onClick, isExpanded, zIndex }) => {
     return (
         <div
             className={classNames(
@@ -22,6 +22,7 @@ const DropDown = ({ html, dark, onClick, isExpanded }) => {
                 </span>
             </span>
             <div
+                style={{ zIndex: zIndex }}
                 className={classNames(styles['DropDown__Text'], {
                     [styles['DropDown__Text--Expanded']]: isExpanded,
                 })}>

@@ -48,6 +48,7 @@ const Tab = ({ type, number, html, title, dark, id, onClick }) => {
                 {!!html && (
                     <span className={styles['Tab__DropDownWrapper']}>
                         <DropDown
+                            zIndex={1001 - id}
                             html={html}
                             dark={dark}
                             onClick={handleOnClick}

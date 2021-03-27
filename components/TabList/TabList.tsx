@@ -58,7 +58,7 @@ const TabList = ({ knowledge, title, dark = false }) => {
                 <ul className={styles['TabList__List']}>
                     {!!knowledge.length &&
                         knowledge.map((item, index) => (
-                            <li key={index} className={styles['TabList__ListItem']}>
+                            <li key={index} className={styles['TabList__ListItem']} style={{ zIndex: 1001 - item.id }}>
                                 <Tab {...item} dark={dark} onClick={handleClick} key={index} />
                             </li>
                         ))}
