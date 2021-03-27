@@ -22,19 +22,18 @@ class index extends PureComponent {
     return (
       <>
         <Head>
-          <title>Frontend-utvecklare som vill bygga din webb: jakobg.se</title>
+          <title>
+            Frontend-utvecklare som vill bygga din webb: jakobgauffin.se
+          </title>
           <meta
             name="description"
             content="Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."
           />
-          <link rel="preconnect" href="https://fonts.gstatic.com/" />
           <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
-          />
-          <link
-            rel="preconnect"
-            href="https://homepage-liart-ten.vercel.app/_next/static/css/5676e49514609378db1e.css"
+            rel="preload"
+            href="/fonts/QuicksandLatin/quicksand-v22-latin-regular.woff2"
+            as="font"
+            crossOrigin=""
           />
 
           <meta
