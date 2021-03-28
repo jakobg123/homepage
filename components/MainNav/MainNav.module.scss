@@ -56,13 +56,33 @@
     text-decoration: none;
     @extend %label;
     color: $colorBlack;
-    @include bgColorOpacity($colorPrimary, 0.5);
+    position: relative;
     padding: $spacingXs $spacingS;
-    transition: background-color $transitionNormal;
+    display: inline-block;
+    z-index: 1;
+    transition: transform $transitionNormal;
+    transform: scale(1);
+
+    &::after {
+      content: '';
+      display: block;
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      @include bgColorOpacity($colorPrimary, 0.5);
+      transition: all $transitionNormal;
+      transform: rotateX(-90deg) scale(1);
+    }
 
     &:hover,
     &:focus {
-      @include bgColorOpacity($colorPrimary, 1);
+      &::after {
+        @include bgColorOpacity($colorPrimary, 1);
+        transform: rotateX(-360deg) scale(1.1);
+      }
     }
   }
 }

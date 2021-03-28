@@ -21,7 +21,6 @@ const MainNav = () => {
                                 <a className={styles['MainNav__Link']} >{label}</a>
                             </Link>
                         </li>
-
                     ))
                 )}
             </ul>
