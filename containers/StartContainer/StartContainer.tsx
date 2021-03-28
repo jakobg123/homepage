@@ -1,7 +1,7 @@
 import styles from './StartContainer.module.scss';
 import classNames from 'classnames';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 import Button from '../../components/Button';
