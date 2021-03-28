@@ -2,12 +2,16 @@
 @import '../../styles/extensions.scss';
 
 .Internship {
-  padding-top: $spacingBlock;
+  padding-top: $spacingXl;
   padding-bottom: $spacingBlock;
   background-color: $colorBlack;
   transition: all $transitionSlow;
   @extend %fontColor;
   will-change: transform;
+
+  @include media(desktop) {
+    padding-top: $spacingBlock;
+  }
 
   &--Primary {
     @extend %fontColorBlack;
