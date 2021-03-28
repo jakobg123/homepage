@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import styles from "./MobileNavMenu.module.scss";
 import classNames from "classnames";
 import Link from 'next/link';
-import dynamic from "next/dynamic";
-const Icon = dynamic(() => import("../Icon"));
+// import dynamic from "next/dynamic";
+import Icon from "../Icon";
+// const Icon = dynamic(() => import("../Icon"));
 
 const MobileNavMenu = ({ data, openNav, setOpenNav }) => {
 
