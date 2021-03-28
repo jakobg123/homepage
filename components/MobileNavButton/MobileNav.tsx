@@ -3,7 +3,6 @@ import styles from './MobileNav.module.scss';
 import classNames from 'classnames';
 import dynamic from 'next/dynamic';
 const MobileNavMenu = dynamic(() => import('../MobileNavMenu'));
-// import MobileNavMenu from "../MobileNavMenu";
 
 const MobileNav = ({ data }) => {
     const [openNav, setOpenNav] = useState(false);
