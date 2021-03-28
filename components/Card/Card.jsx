@@ -1,4 +1,3 @@
-import React from 'react';
 import Image from '../Image';
 import styles from './Card.module.scss';
 import classNames from 'classnames';
