@@ -2,18 +2,24 @@ import { PureComponent } from 'react';
 import Head from 'next/head';
 
 //Data for getStaticProps
-import menuData from '../serverData/menu.js';
-import knowledgeData from '../serverData/knowledge.js';
-import startData from '../serverData/startData.js';
+import menuData from '../data/menu.js';
+import knowledgeData from '../data/knowledge.js';
+import startData from '../data/startData.js';
 
 import Header from '../components/Header';
 import MobileNav from '../components/MobileNavButton';
-import Footer from '../components/Footer';
+import Footer from "../components/Footer";
 import styles from './index.module.scss';
 
 import StartContainer from '../containers/StartContainer';
 
-class index extends PureComponent {
+interface IndexItemProps {
+    menu: any[];
+    knowledgeData: any[];
+    startData: any[];
+}
+
+class index extends PureComponent<IndexItemProps> {
   state = {};
 
   render() {
@@ -23,7 +29,7 @@ class index extends PureComponent {
       <>
         <Head>
           <title>
-            Frontend-utvecklare som vill bygga din webb: jakobgauffin.se
+            Frontendutvecklare som vill bygga din webb | jakobgauffin.se
           </title>
           <meta
             name="description"
