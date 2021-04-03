@@ -4,9 +4,9 @@ export default {
     preamble:
         '<p>Nu till sommaren 2021 tar jag examen i Frontendutveckling på IT-Högskolan i Stockholm.</p><p><strong>Jag söker nu ett jobb</strong> där jag får tillämpa mina kunskaper i webbutveckling, samtidigt som jag fortsätter växa och får arbetslivserfarenhet inom IT-branschen.</p>',
     entryText:
-        '<h2>Om sidan</h2><p>Sidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik <strong>6 månaders LIA (praktik)</strong> på <a href="https://www.frojd.se" >digitalbyrån Fröjd</a>.</p><p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.</p><p>Jag kan redan nu avslöja att den är gjord i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering.</p>',
+        '<h2>Om webbsidan</h2><p>Webbsidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik 6 månaders LIA(praktik) på <a href="https://www.frojd.se" >digitalbyrån Fröjd</a>.</p><p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.</p><p>Jag kan redan nu avslöja att den är skriven i Typescript i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering. Jag har också ansträngt mig för att få en bra Lighthouse-audit av sajten.</p>',
     ctaText:
-        '<p>I väntan på mer information så finns koden till sajten här:</p>',
+        '<p>I väntan på mer information så finns koden till webbsidan här:</p>',
     cta: {
         label: 'Git-repot',
         icon: 'arrowNext',
@@ -24,10 +24,10 @@ export default {
         html:
             '<p>Jag har haft turen och glädjen att få genomföra min 6 månaders LIA-period på <a href="https://www.frojd.se">Fröjd</a>.</p><p>Det är en eftertrakad digitalbyrå med stor kunskap inom hela ekosystemet kring webb.</p><p>De är experter på koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p>',
         html2:
-            '<p>På Fröjd har jag lärt mig hur det är att jobba som webbutvecklare på riktigt.</p>',
+            '<p>På Fröjd har jag fått en god uppfattning om hur det är att arbeta professionellt som webbutvecklare.</p>',
         html3:
-            '<p>Från att ha daglig standup, till att arbeta agilt med kanban-boards i med projektledare, designers och andra utvecklare.</p><p>Jag har jobbat i mindre utvecklarteams och fått en god uppfattning om vad som är viktigt att tänka på när man bygger komponenter i React i anslutning till ett headless CMS.</p><p>Fröjds val av CMS är Wagtail, som har varit roligt att sätta sig in i, och på köpet har jag lärt mig en del Python och Django.</p>',
+            '<p>Från att ha daglig standup, till att jobba agilt med kanban-boards i samarbete med projektledare, designers och andra utvecklare.</p><p>Jag har jobbat i mindre utvecklarteams och fått insikt om vad som är viktigt att tänka på när man bygger komponenter i React i anslutning till ett headless CMS.</p><p>Fröjds val av CMS är Wagtail, som har varit roligt att sätta sig in i, och på köpet har jag lärt mig en del Python och Django.</p>',
         html4:
-            '<p>Övergripande har jag arbetat i Next.js med mycket tonvikt på komponentens utformning (prop-flexibilitet och styling) samt att eftersträva lättläst kod.</p><p> Semantik och tillgänglighet har varit ledord och jag har även fått jobba en del med prestandaoptimering.</p><p>I skrivande stund har jag två månader kvar av min praktik och ska få gå vidare från Next.js-projekt till att arbeta med olika Wordpressprojekt vilket ska bli jättekul.</p><p>Det är verkligen en intressant och lärorik tid!</p>',
+            '<p>Övergripande har jag arbetat i Next.js med mycket tonvikt på komponentens utformning (prop-flexibilitet och styling) samt att eftersträva lättläst kod.</p><p> Semantik och tillgänglighet har varit ledord och jag har även fått jobba en del med prestandaoptimering.</p><p>I skrivande stund har jag två månader kvar av min praktik och har gått vidare från Next.js-projekt till att arbeta med Wordpressprojekt vilket är jättekul.</p><p>Det är verkligen en intressant och lärorik tid!</p>',
     },
 };

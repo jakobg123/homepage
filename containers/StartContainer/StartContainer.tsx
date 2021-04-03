@@ -75,23 +75,13 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                         <div className={styles['StartContainer__PresImageWrapper']}>
                             <Image {...presImage} mediaQueries={mediaQueries} round />
                         </div>
-                        <h2>Om sidan</h2>
-                        <p>
-                            Sidan har jag byggt för att showcase:a lite av det jag har lärt
-                            mig under den 2-åriga YH-utbildningen, som bl.a. består av en
-                lärorik <strong>6 månaders LIA (praktik)</strong> på{' '}
-                            <a href="https://www.frojd.se">
-                                digitalbyrån Fröjd</a>.
-              </p>
-                        <p>
-                            Sajten är fortfarande under uppbyggnad, men kommer snart ha mer
-                innehåll så att du kan läsa om <em>hur</em> jag byggt den.
-              </p>
-                        <p>
-                            Jag kan redan nu avslöja att den är gjord i Next.js och jag
-                            arbetar även med tillgänglighetsanpassning och
-                            prestandaoptimering.
-              </p>
+                        <h2>Om webbsidan</h2>
+                        <p>Webbsidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik 6 månaders LIA(praktik) på{' '}<a href="https://www.frojd.se">digitalbyrån Fröjd</a>.
+                        </p>
+                        <p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.
+                        </p>
+                        <p>Jag kan redan nu avslöja att den är skriven i Typescript i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering. Jag har också ansträngt mig för att få en bra Lighthouse-audit av sajten.
+                        </p>
                     </div>
                 </div>
             </div>

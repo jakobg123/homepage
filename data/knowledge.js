@@ -51,9 +51,9 @@ export default {
         {
             type: 'typescript',
             title: 'Typescript',
-            number: '5',
+            number: '6',
             html:
-                '<p>Jag håller på att lära mig Typescript just nu.</p><p>Den här sidan är det första större projektet som jag tänker skriva i Typescript, men av tidsskäl är den just nu skriven i js.</p><p> Jag uppskattar verkligen tydligheten med TypeScript och den direkta feedbacken.</p>',
+                '<p>Jag håller på att lära mig Typescript just nu.</p><p>Den här sidan är det första större projektet som jag skriver i Typescript. Av tidsskäl är den inte helt konverterad ännu, men sidan uppfyller hittills "noImplicitAny"-kravet.</p><p> Jag uppskattar tydligheten med TypeScript och den direkta feedbacken.</p>',
             id: 7,
         },
         {
@@ -87,7 +87,7 @@ export default {
             title: 'Wordpress',
             number: '7',
             html:
-                '<p>Wordpress har varit det CMS vi arbetat med i utbildningen och jag gillar det!</p><p>Jag har byggt ett flertal mindre Wordpress-sajter, både med editorn, men har även gjort egna teman från scratch i PHP för att lära mig hur systemet fungerar under huven.</p><p>Jag har gjort mycket av sajten <a href="https://ankra.jakobg.se">Ankra</a> som var ett större grupparbete vi gjorde vintern 2020. Uppgiften bestod i att göra ett Wordpresstema för en fiktiv bokningssajt för gästhamnar i Sverige.</p><p>Överlag känner jag att jag har en god förståelse för hur Wordpress fungerar, och jag har precis satt igång med ett större Wordpressprojekt på Fröjd så jag kommer ha goda kunskaper vid examen.</p><p>Här är <a href="https://github.com/iths-jakob-gauffin/titanic-theme">git-repot till Ankra</a>.</p>',
+                '<p>Wordpress har varit det CMS vi arbetat med i utbildningen och jag gillar det!</p><p>Jag har byggt ett flertal mindre Wordpress-sajter, både med editorn, men har även gjort egna teman från scratch i PHP för att lära mig hur systemet fungerar under huven.</p><p>Jag har gjort mycket av sajten <a href="https://ankra.jakobg.se">Ankra</a> som var ett större grupparbete vi gjorde vintern 2020. Uppgiften bestod i att göra ett Wordpresstema för en fiktiv bokningssajt för gästhamnar i Sverige.</p><p>Överlag känner jag att jag har en god förståelse för hur Wordpress fungerar, och jag har precis satt igång med ett större Wordpressprojekt med Bedrock och Sage på Fröjd, så jag kommer ha goda kunskaper vid examen.</p><p>Här är <a href="https://github.com/iths-jakob-gauffin/titanic-theme">git-repot till Ankra</a>.</p>',
             id: 11,
         },
         {
@@ -95,7 +95,7 @@ export default {
             title: 'Php',
             number: '6',
             html:
-                '<p>Jag har mestadels kommit i kontakt med PHP när jag arbetat med WordPress.</p><p>Jag trivs med språket och har för avsikt att bli lika bra på det som jag är på Javascript.</p><p>Nu på praktiken har jag precis satt igång med ett större PHP-projekt med Blade och borde vara en fena på det tills examen förhoppningsvis!</p>',
+                '<p>Jag har mestadels kommit i kontakt med PHP när jag arbetat med WordPress.</p><p>Jag trivs med språket och har för avsikt att bli lika bra på det som jag är på Javascript.</p><p>Nu på praktiken har jag satt igång med ett PHP-projekt med Wordpress och Sage, där jag skriver PHP tillsammans med Blade.</p>',
             id: 12,
         },
         {
