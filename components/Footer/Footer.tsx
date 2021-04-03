@@ -1,19 +1,31 @@
 import styles from './Footer.module.scss';
+import {IIconProps} from "../../types/types";
 
 import Icon from '../Icon';
 
-const Footer = () => {
+export interface IFooter{
+    title: string,
+    text: string,
+    columns: IFooterColumnProps[]
+}
+
+const Footer: React.FC<IFooter> = ({title, text, columns}) => {
   return (
     <div id="contact" className={styles['Footer']}>
       <div className={styles['Footer__Grid']}>
         <div className={styles['Footer__Content']}>
-          <h2 className={styles['Footer__Title']}>Kom i kontakt</h2>
+          <h2 className={styles['Footer__Title']}>{title}</h2>
           <strong className={styles['Footer__Text']}>
-            Hör gärna av dig om du vill veta mer!
+            {text}
           </strong>
 
           <div className={styles['Footer__ContentWrapper']}>
-            <FooterColumn
+              {!!columns.length && (
+                  columns.map((column, index) => (
+                      <FooterColumn key={index} {...column} />
+                  ))
+              )}
+            {/* <FooterColumn
               key={0}
               title={'Skriv på LinkedIn'}
               links={[
@@ -39,7 +51,7 @@ const Footer = () => {
                   href: 'https://github.com/iths-jakob-gauffin',
                 },
               ]}
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -47,7 +59,12 @@ const Footer = () => {
   );
 };
 
-const FooterColumn = ({ title, links = [] }) => {
+interface IFooterColumnProps{
+    title: string;
+    links: IIconLinkProps[];
+}
+
+const FooterColumn: React.FC<IFooterColumnProps> = ({ title, links = [] }) => {
   return (
     <div className={styles['Footer__Column']}>
       {!!title && <h3 className={styles['Footer__Heading']}>{title}</h3>}
@@ -65,7 +82,13 @@ const FooterColumn = ({ title, links = [] }) => {
   );
 };
 
-const IconLink = ({ type, label, href }) => {
+interface IIconLinkProps{
+    type: IIconProps['type'],
+    label: string,
+    href: string,
+}
+
+const IconLink: React.FC<IIconLinkProps> = ({ type, label, href }) => {
   return (
     <div className={styles['IconLink']}>
       <a href={href} className={styles['IconLink__Anchor']}>

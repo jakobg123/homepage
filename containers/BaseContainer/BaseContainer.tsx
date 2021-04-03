@@ -7,18 +7,28 @@ import styles from './BaseContainer.module.scss';
 
 import StartContainer from '../StartContainer';
 
-interface BaseContainerProps {
-    menuData: any[];
-    knowledgeData: any[];
-    startData: any[];
-    logoData: {};
+import {IMainNavProps} from "../../components/MainNav/MainNav";
+import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
+
+import {ILogoData, IKnowledgeData, IStartContainerData} from "../../types/typesData";
+import { IHeaderProps } from '../../components/Header/Header';
+import { IFooter } from "../../components/Footer/Footer";
+
+export interface BaseContainerProps {
+    menuData: IMobileNavProps;
+    knowledgeData: IKnowledgeData;
+    startData: IStartContainerData;
+    logoData: ILogoData;
+    footerData: IFooter;
+    headerData: IHeaderProps;
+    mainNavData: IMainNavProps;
 }
 
 class BaseContainer extends PureComponent<BaseContainerProps> {
     state = {};
 
     render() {
-        const { menuData, knowledgeData, startData, logoData } = this.props;
+        const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData } = this.props;
 
         return (
             <div className={styles['BaseContainer']} id="start">
@@ -28,16 +38,16 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
                             {...logoData}
                         />
                     </figure>
-                    <Header />
+                    <Header {...headerData} mainNavData={mainNavData} />
                     <div className={styles['BaseContainer__StickyContainer']}>
-                        <MobileNav data={menuData} />
+                        <MobileNav {...menuData} />
                     </div>
                 </header>
                 <main>
                     <StartContainer knowledge={knowledgeData} data={startData} />
                 </main>
                 <footer className={styles['BaseContainer__Footer']}>
-                    <Footer />
+                    <Footer {...footerData} />
                 </footer>
             </div>
         );

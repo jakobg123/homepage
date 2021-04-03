@@ -1,6 +1,8 @@
-export default [
-    { link: 'Hem', url: '#start' },
-    { link: 'Teknologier', url: '#technology' },
-    { link: 'Praktik', url: '#internship' },
-    { link: 'Kontakt', url: '#contact' },
-];
+export default {
+    mobileMenu: [
+        { target: '#start', label: 'Hem' },
+        { target: '#technology', label: 'Teknologier' },
+        { target: '#internship', label: 'Praktik' },
+        { target: '#contact', label: 'Kontakt' },
+    ]
+};

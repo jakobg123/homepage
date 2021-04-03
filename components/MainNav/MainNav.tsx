@@ -1,17 +1,19 @@
 import styles from "./MainNav.module.scss";
 import Link from "next/link";
 
-const MainNav = () => {
-    const links = [
-        { target: "#technology", label: "Teknologier" },
-        { target: "#internship", label: "Praktik" },
-        { target: "#contact", label: "Kontakt" }
-    ];
+import { INavLinks, ILogoData } from "../../types/typesData";
+
+export interface IMainNavProps{
+    links: INavLinks[];
+    logo: ILogoData;
+}
+
+const MainNav: React.FC<IMainNavProps> = ({links, logo}) => {
 
     return (
         <nav className={styles['MainNav']}>
             <figure className={styles['MainNav__Logo']} >
-                <img src="/logoPrimary.svg" alt="Jakob Gauffin, sidans logotyp" width="200px" height="40px" />
+                <img {...logo} />
             </figure>
             <ul className={styles['MainNav__List']}>
                 {!!links.length && (

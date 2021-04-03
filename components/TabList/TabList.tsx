@@ -4,8 +4,13 @@ import Tab from '../Tab';
 import styles from './TabList.module.scss';
 import classNames from 'classnames';
 import Icon from '../Icon';
+import { IKnowledge } from "../../types/typesData";
 
-const InfoContainer = ({ info }) => {
+interface IInfoContainerProps {
+    info: IKnowledge[];
+}
+
+const InfoContainer: React.FC<IInfoContainerProps> = ({ info }) => {
     const [show, setShow] = useState(false);
 
     useEffect(() => {
@@ -19,28 +24,38 @@ const InfoContainer = ({ info }) => {
         return () => setShow(false);
     }, [info]);
 
-    return info.map(({ title, html, id }) => (
-        <div key={id}>
-            <h5 className={styles['TabList__InfoTitle']}>{title}</h5>
-            <div
-                className={classNames(styles['TabList__InfoText'], {
-                    [styles['TabList__InfoText--Show']]: show,
-                })}
-                dangerouslySetInnerHTML={{ __html: html }}></div>
-        </div>
-    ));
+    return (
+        <>
+            {info.map(({ title, html, id }) => (
+                <div key={id}>
+                    <h5 className={styles['TabList__InfoTitle']}>{title}</h5>
+                    <div
+                        className={classNames(styles['TabList__InfoText'], {
+                            [styles['TabList__InfoText--Show']]: show,
+                        })}
+                        dangerouslySetInnerHTML={{ __html: html }}></div>
+                </div>
+            ))}
+        </>
+    )
 };
 
-const TabList = ({ knowledge, title, dark = false }) => {
-    const [currentKnowledge, setCurrentKnowledge] = useState([]);
+interface ITabListProps {
+    knowledge: IKnowledge[];
+    title: string;
+    dark?: boolean;
+}
+
+const TabList: React.FC<ITabListProps> = ({ knowledge, title, dark = false }) => {
+    const [currentKnowledge, setCurrentKnowledge] = useState<IKnowledge[]>([]);
 
     const prevId = useRef(0);
 
-    const handleClick = (id) => {
+    const handleClick = (id: number) => {
         if (prevId.current === id) {
             return;
         }
-        const info = knowledge.filter((x) => x.id === id);
+        const info = knowledge.filter((x: { id: number }) => x.id === id);
         setCurrentKnowledge(info);
         prevId.current = id;
     };

@@ -5,7 +5,13 @@ import classNames from 'classnames';
 
 import Icon from '../Icon';
 
-const MobileNav = ({ data }) => {
+import {INavLinks} from "../../types/typesData";
+
+export interface IMobileNavProps{
+    mobileMenu: INavLinks[];
+}
+
+const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
     const [openNav, setOpenNav] = useState(false);
     const [showOverlay, setShowOverlay] = useState(false)
     const [drop, setDrop] = useState(false);
@@ -34,7 +40,7 @@ const MobileNav = ({ data }) => {
         openNav ? close() : open();
     };
 
-    const slideIn = (bool) => {
+    const slideIn = (bool: boolean) => {
         setTimeout(() => {
             setDrop(bool);
         }, 300);
@@ -91,7 +97,7 @@ const MobileNav = ({ data }) => {
                         </span>
                     </h2>
                     <ul className={styles['MobileNav__NavList']}>
-                        {!!data.length && data.map(({ link, url }, index) => (
+                        {!!mobileMenu.length && mobileMenu.map(({ label, target }, index) => (
                             <li
                                 key={index}
                                 className={classNames(styles['MobileNav__NavListItem'], {
@@ -99,8 +105,8 @@ const MobileNav = ({ data }) => {
                                 })}
                                 onClick={handleMobileNav}
                             >
-                                <Link href={url}>
-                                    <a className={styles['MobileNav__NavLink']}>{link}</a>
+                                <Link href={target}>
+                                    <a className={styles['MobileNav__NavLink']}>{label}</a>
                                 </Link>
                             </li>
                         ))}

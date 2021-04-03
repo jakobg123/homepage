@@ -1,13 +1,25 @@
-import { useState } from 'react';
+import { useState, MouseEvent } from 'react';
 import DropDown from '../DropDown';
 import styles from './Tab.module.scss';
 import Icon from '../Icon';
 import classNames from 'classnames';
 
-const Tab = ({ type, number, html, title, dark, id, onClick }) => {
+import {IIconProps} from "../../types/types";
+
+interface ITabProps{
+    type: IIconProps['type'];
+    number: number | string;
+    html: string;
+    title: string;
+    dark: boolean;
+    id: number;
+    onClick: (id:number) => void;
+}
+
+const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
-    const handleOnClick = (id) => {
+    const handleOnClick = (id: number) => {
         // for dropdown in mobileview
         setIsExpanded(!isExpanded);
 
@@ -18,6 +30,7 @@ const Tab = ({ type, number, html, title, dark, id, onClick }) => {
     return (
         <div className={classNames(styles['Tab'], { [styles['Tab--Dark']]: dark })}>
             <button
+                type="button"
                 className={styles['Tab__Button']}
                 onClick={() => handleOnClick(id)}>
                 <span className="sr-only">Läs om mina erfarenheter med {type}</span>
@@ -51,7 +64,7 @@ const Tab = ({ type, number, html, title, dark, id, onClick }) => {
                             zIndex={1001 - id}
                             html={html}
                             dark={dark}
-                            onClick={handleOnClick}
+                            // onClick={handleOnClick}
                             isExpanded={isExpanded}
                         />
                     </span>

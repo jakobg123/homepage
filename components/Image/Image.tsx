@@ -1,6 +1,6 @@
 import styles from './Image.module.scss';
 
-import { IImageProps } from '../../types/types';
+import { IImageProps, IMediaQueries } from '../../types/types';
 
 const Image: React.FC<IImageProps> = ({
     src,
@@ -13,9 +13,11 @@ const Image: React.FC<IImageProps> = ({
     round = false,
     pTHeight = null,
 }) => {
+    const paddingTop = pTHeight && {paddingTop: pTHeight};
+
     return (
         <picture className={styles['Image']}
-            style={{ paddingTop: !!pTHeight && pTHeight }}
+            style={paddingTop}
         >
             {!!mediaQueries?.length &&
                 mediaQueries.map(({ src, minWidth }, index) => (

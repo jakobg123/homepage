@@ -31,63 +31,65 @@ const Typescript = dynamic(() => import('./icons/minified/typescript.svg'));
 const Wagtail = dynamic(() => import('./icons/minified/wagtail.svg'));
 const Wordpress = dynamic(() => import('./icons/minified/wordpress.svg'));
 
+import {IIconProps} from "../../types/types";
+
 export const allIcons = {
-  arrowNext: ArrowNext,
-  arrowPrev: ArrowPrev,
-  chevronNext: ChevronNext,
-  chevronDown: ChevronDown,
-  code: Code,
-  css: Css,
-  django: Django,
-  frojd: Frojd,
-  github: Github,
-  html: Html,
-  javascript: Javascript,
-  linkedIn: LinkedIn,
-  menu: Menu,
-  moon: Moon,
-  mysql: MySql,
-  nextjs: NextJs,
-  nodejs: NodeJs,
-  npm: Npm,
-  php: Php,
-  postgresql: PostgreSql,
-  python: Python,
-  react: ReactIcon,
-  reactSpring: ReactSpring,
-  redux: Redux,
-  sass: Sass,
-  typescript: Typescript,
-  wagtail: Wagtail,
-  wordpress: Wordpress,
+    arrowNext: ArrowNext,
+    arrowPrev: ArrowPrev,
+    chevronNext: ChevronNext,
+    chevronDown: ChevronDown,
+    code: Code,
+    css: Css,
+    django: Django,
+    frojd: Frojd,
+    github: Github,
+    html: Html,
+    javascript: Javascript,
+    linkedIn: LinkedIn,
+    menu: Menu,
+    moon: Moon,
+    mysql: MySql,
+    nextjs: NextJs,
+    nodejs: NodeJs,
+    npm: Npm,
+    php: Php,
+    postgresql: PostgreSql,
+    python: Python,
+    react: ReactIcon,
+    reactSpring: ReactSpring,
+    redux: Redux,
+    sass: Sass,
+    typescript: Typescript,
+    wagtail: Wagtail,
+    wordpress: Wordpress,
 };
 
-const Icon = ({
-  type,
-  color = 'White',
-  modifier = [],
-  hoverEffect = false,
+const Icon: React.FC<IIconProps> = ({
+    type,
+    color = 'White',
+    modifier = [],
+    hoverEffect = false,
 }) => {
-  const Svg = allIcons[type];
+    const Svg = allIcons[type];
 
-  if (!type) {
-    return null;
-  }
-
-  const classes = classNames(
-    !!modifier.length && modifier.map((x) => x),
-    styles['Icon'],
-    {
-      [styles['Icon--' + color]]: color,
-      [styles['Icon--Hover']]: hoverEffect,
+    if (!type) {
+        return null;
     }
-  );
 
-  return (
-    <div className={classes}>
-      <Svg />
-    </div>
-  );
+    const classes = classNames(
+        !!modifier.length && modifier.map((x) => x),
+        styles['Icon'],
+        {
+            [styles['Icon--' + color]]: color,
+            [styles['Icon--Hover']]: hoverEffect,
+        }
+    );
+
+    return (
+        <div className={classes}>
+            <Svg />
+        </div>
+    );
 };
 
 export default Icon;

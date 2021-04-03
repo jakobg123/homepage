@@ -1,24 +1,35 @@
 import { PureComponent } from 'react';
 import Head from 'next/head';
-
+import { InferGetStaticPropsType } from "next";
 //Data for getStaticProps
 import menuData from '../data/menu.js';
 import knowledgeData from '../data/knowledge.js';
 import startData from '../data/startData.js';
 import logoData from "../data/logo";
+import footerData from "../data/footer";
+import headerData from "../data/header";
+import mainNavData from "../data/mainNav";
 
 import BaseContainer from "../containers/BaseContainer";
+import { IMobileNavProps } from '../components/MobileNavButton/MobileNav.jsx';
+import { IKnowledgeData, ILogoData, IStartContainerData } from '../types/typesData.jsx';
+import { IFooter } from '../components/Footer/Footer.jsx';
+import { IHeaderProps } from '../components/Header/Header.jsx';
+import { IMainNavProps } from '../components/MainNav/MainNav.jsx';
 
-interface BaseProps {
+interface IBaseProps {
     baseData: {
-        menuData: any[];
-        knowledgeData: any[];
-        startData: any[];
-        logoData: {};
+        menuData: IMobileNavProps;
+        knowledgeData: IKnowledgeData;
+        startData: IStartContainerData;
+        logoData: ILogoData;
+        footerData: IFooter;
+        headerData: IHeaderProps;
+        mainNavData: IMainNavProps;
     };
 }
 
-class Base extends PureComponent<BaseProps> {
+class Base extends PureComponent<IBaseProps>  {
     state = {};
 
     render() {
@@ -143,7 +154,7 @@ class Base extends PureComponent<BaseProps> {
     }
 }
 
-export async function getStaticProps(content) {
+export async function getStaticProps() {
     return {
         props: {
             baseData: {
@@ -151,6 +162,9 @@ export async function getStaticProps(content) {
                 knowledgeData,
                 startData,
                 logoData,
+                footerData,
+                headerData,
+                mainNavData,
             }
         },
     };

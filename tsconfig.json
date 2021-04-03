@@ -14,16 +14,22 @@
     "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "noImplicitAny": false,
+    "noImplicitAny": true
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
-, "pages/_app.js", "pages/index.jsx", "components/Icon/Icon.jsx", "components/Header/Header.jsx", "containers/StartContainer/StartContainer.jsx"  ],
+    "**/*.tsx",
+    "pages/_app.js",
+    "pages/index.jsx",
+    "components/Icon/Icon.jsx",
+    "components/Header/Header.jsx",
+    "containers/StartContainer/StartContainer.jsx"
+  ],
   "exclude": [
     "node_modules"
   ]

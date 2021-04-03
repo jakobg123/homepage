@@ -1,8 +1,17 @@
+import { MouseEvent } from "react";
 import Icon from '../Icon';
 import styles from './DropDown.module.scss';
 import classNames from 'classnames';
 
-const DropDown = ({ html, dark, onClick, isExpanded, zIndex }) => {
+interface IDropDownProps{
+    html: string;
+    dark: boolean;
+    // onClick: MouseEvent;
+    isExpanded: boolean;
+    zIndex: number;
+}
+
+const DropDown: React.FC<IDropDownProps> = ({ html, dark, isExpanded, zIndex }) => {
     return (
         <div
             className={classNames(
