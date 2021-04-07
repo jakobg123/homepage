@@ -1,6 +1,6 @@
 export default {
     title: "Kom i kontakt",
-    text: "Hör gärna av dig om du vill veta mer!",
+    text: "Hör gärna av dig för mer information.",
     columns: [
         {
             title: 'Skriv på LinkedIn',
