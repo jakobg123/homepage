@@ -26,18 +26,7 @@
     }
 
     @include media(tablet) {
-      padding-top: 55vh;
-    }
-
-    @include media(ml) {
-      padding-top: 75vh;
-    }
-
-    @include media(desktop) {
-      padding-top: 77vh;
-    }
-    @include media(xl) {
-      padding-top: 88vh;
+      padding-top: 98vh;
     }
 
     &::before {
@@ -71,7 +60,7 @@
         0%,
         rgba(0, 0, 0, 0.01),
         0.1,
-        50%
+        65%
       );
     }
   }
