@@ -51,7 +51,7 @@ interface ITabListState {
 }
 
 class TabList extends PureComponent<ITabListProps, ITabListState> {
-    private prevId: React.RefObject<number>;
+    private prevId: React.MutableRefObject<number>;
 
     constructor(props: ITabListProps) {
         super(props);
