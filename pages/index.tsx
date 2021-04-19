@@ -51,7 +51,7 @@ class Base extends PureComponent<IBaseProps>  {
                         as="font"
                         crossOrigin=""
                     />
-
+                    <meta name="google-site-verification" content="tbnaq2fOx_d8yW90nFU4WBYBWkwwfX6tScz3D5Uv-Ik" />
                     <meta
                         name="viewport"
                         content="width=device-width, initial-scale=1.0, user-scalable=yes"
