@@ -7,7 +7,7 @@ function addPage(page) {
   const date = new Date().toISOString()
 
   return `  <url>
-    <loc>${`https://www.jakobgauffin.com${route}`}</loc>
+    <loc>${`https://www.jakobgauffin.com/`}</loc>
     <changefreq>daily</changefreq>
     <lastmod>${date}</lastmod>
   </url>`
