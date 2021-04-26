@@ -39,7 +39,7 @@ class Base extends PureComponent<IBaseProps>  {
             <>
                 <Head>
                     <title>
-                        Frontendutvecklare som vill bygga din webb | jakobgauffin.se
+                        Jakob Gauffin - Frontendutvecklare som vill bygga din webb
                     </title>
                     <meta
                         name="description"
