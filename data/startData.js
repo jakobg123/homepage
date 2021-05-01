@@ -22,12 +22,44 @@ export default {
     internship: {
         heading: 'Praktik på Fröjd',
         html:
-            '<p>Jag har haft turen och glädjen att få genomföra min 6 månaders LIA-period på <a href="https://www.frojd.se">Fröjd</a>.</p><p>Det är en eftertrakad digitalbyrå med stor kunskap inom hela ekosystemet kring webb.</p><p>De är experter på koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p>',
+            '<p>Jag har haft turen och nöjet att få genomföra hela min 6 månaders LIA-period på <a href="https://www.frojd.se">Fröjd</a>.</p><p>Det är en eftertrakad digitalbyrå med stor kunskap inom hela ekosystemet kring webb.</p><p>De är experter på koncept, UX-design, teknisk utveckling och underhåll av webbsajter.</p>',
         html2:
-            '<p>På Fröjd har jag fått en god uppfattning om hur det är att arbeta professionellt som webbutvecklare.</p>',
+            '<p>På Fröjd har jag fått en god uppfattning om hur det är att arbeta professionellt som webbutvecklare. </p>',
         html3:
-            '<p>Från att ha daglig standup, till att jobba agilt med kanban-boards i samarbete med projektledare, designers och andra utvecklare.</p><p>Jag har jobbat i mindre utvecklarteams och fått insikt om vad som är viktigt att tänka på när man bygger komponenter i React i anslutning till ett headless CMS.</p><p>Fröjds val av CMS är Wagtail, som har varit roligt att sätta sig in i, och på köpet har jag lärt mig en del Python och Django.</p>',
+            '<p>Från att ha daglig standup, till att jobba agilt tillsammans med projektledare, designers och andra utvecklare.</p><p>Fröjds val av CMS är Wagtail, som har varit roligt att sätta sig in i, och på köpet har jag lärt mig en del Python och Django.</p>',
         html4:
-            '<p>Övergripande har jag arbetat i Next.js med mycket tonvikt på komponentens utformning (prop-flexibilitet och styling) samt att eftersträva lättläst kod.</p><p> Semantik och tillgänglighet har varit ledord och jag har även fått jobba en del med prestandaoptimering.</p><p>I skrivande stund har jag två månader kvar av min praktik och har gått vidare från Next.js-projekt till att arbeta med Wordpressprojekt vilket är jättekul.</p><p>Det är verkligen en intressant och lärorik tid!</p>',
+            '<p>Övergripande har jag arbetat i Next.js och Wordpress. Mycket tonvikt i Next har legat på komponenters utformning (flexibilitet och styling) gentemot Wagtail. Samt att eftersträva en lättläst och underhållningsbar kod.</p><p> Semantik och tillgänglighet har varit ledord och jag har även jobbat en del med prestandaoptimering.</p><p>På sistone har jag gått vidare från Next-, till olika Wordpressprojekt i Bedrock och Sage vilket är jättekul.</p><p>Det är verkligen en inspirerande och lärorik tid!</p>',
+        images: [
+            {
+                src: '/images/temp/kanban2_small-min.jpg',
+                alt: 'Anlagstavla med todo-lappar.',
+                caption: 'Foto: Paul Hanaoka, unsplash.com',
+                width: 640,
+                height: 960,
+                mediaQueries: [
+                    {
+                        minWidth: 580,
+                        src: '/images/temp/kanban2_medium-min.jpg',
+                    },
+                ],
+            },
+            {
+                src: '/images/temp/code_small-min.jpg',
+                alt: 'Laptop med programmeringskod.',
+                caption: 'Foto: James Harrison, unsplash.com',
+                width: 1920,
+                height: 1080,
+                mediaQueries: [
+                    {
+                        minWidth: 768,
+                        src: '/images/temp/code_large-min.jpg',
+                    },
+                    {
+                        minWidth: 580,
+                        src: '/images/temp/code_medium-min.jpg',
+                    },
+                ],
+            },
+        ],
     },
 };
