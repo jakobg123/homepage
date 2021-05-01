@@ -48,4 +48,5 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     round?: boolean;
     pTHeight?: number;
     modifier?: any[];
+    caption?: string;
 }
