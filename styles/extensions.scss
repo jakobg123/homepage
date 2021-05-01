@@ -238,6 +238,39 @@
   color: $colorBlack;
 }
 
+%themeColor {
+  color: $colorBlack;
+
+  a {
+    color: $colorBlack;
+    &:hover,
+    &:focus {
+      color: $linkHover;
+    }
+  }
+}
+
+%internshipTextBlock {
+  flex: 1 1 50%;
+  transition: all $transitionNormal;
+  @extend %richtext;
+  color: $colorPrimary;
+
+  p:last-of-type {
+    padding-bottom: 0;
+  }
+
+  a {
+    transition: all $transitionNormal;
+    color: $colorPrimary;
+
+    &:hover,
+    &:focus {
+      color: $linkHoverLight;
+    }
+  }
+}
+
 %grid {
   padding: 0 $spacingM;
 
