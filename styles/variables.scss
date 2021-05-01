@@ -76,6 +76,7 @@ $bp-ml: 900px;
 $bp-l: 1024px;
 $bp-xl: 1280px;
 $bp-xxl: 1440px;
+$bp-xxxl: 1600px;
 
 $breakpoints: (
   xs: $bp-xs,
@@ -86,4 +87,5 @@ $breakpoints: (
   ml: $bp-ml,
   xl: $bp-xl,
   xxl: $bp-xxl,
+  xxxl: $bp-xxxl,
 );
