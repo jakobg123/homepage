@@ -5,9 +5,9 @@ import classNames from 'classnames';
 
 import Icon from '../Icon';
 
-import {INavLinks} from "../../types/typesData";
+import { INavLinks } from "../../types/typesData";
 
-export interface IMobileNavProps{
+export interface IMobileNavProps {
     mobileMenu: INavLinks[];
 }
 
@@ -88,9 +88,9 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
                 <nav className={styles['MobileNav__Nav']}>
                     <h2
                         className={classNames(styles['MobileNav__NavListTitle'])}>
-                        <div className={styles['MobileNav__MenuIconWrapper']}>
+                        <span className={styles['MobileNav__MenuIconWrapper']} aria-hidden="true" >
                             <Icon type="menu" color="Black" />
-                        </div>
+                        </span>
                         <span
                             className={classNames(styles['MobileNav__NavListTitleText'])}>
                             Meny
