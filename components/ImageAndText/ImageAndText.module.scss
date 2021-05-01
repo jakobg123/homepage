@@ -4,11 +4,18 @@
 .ImageAndText {
   $root: &;
   display: flex;
-  flex-direction: row;
-  padding-bottom: $spacingXl;
+  flex-direction: column;
+  padding-bottom: $spacingM;
+
+  @include media(tablet) {
+    flex-direction: row;
+    padding-bottom: $spacingXl;
+  }
 
   &--Left {
-    flex-direction: row-reverse;
+    @include media(tablet) {
+      flex-direction: row-reverse;
+    }
   }
 
   &__TextWrapper {
@@ -21,26 +28,39 @@
 
   &__ImageWrapper {
     position: relative;
-    height: 45rem;
     width: 100%;
+    height: 33rem;
     display: block;
+
+    @include media(tablet) {
+      height: 45rem;
+    }
 
     .ImageAndText--Left & {
       margin-left: 0;
-      margin-right: 6rem;
     }
   }
 
   &__Figure {
     position: relative;
     flex: 1 1 50%;
-    margin-left: 6rem;
     display: flex;
     flex-direction: column;
 
+    @include media(ms) {
+      width: 85%;
+    }
+
+    @include media(tablet) {
+      margin-left: 6rem;
+    }
+
     .ImageAndText--Left & {
       margin-left: 0;
-      margin-right: 6rem;
+
+      @include media(tablet) {
+        margin-right: 6rem;
+      }
     }
   }
 
@@ -51,7 +71,9 @@
     margin: $spacingXs 0;
 
     .ImageAndText--Left & {
-      text-align: left;
+      @include media(tablet) {
+        text-align: left;
+      }
     }
   }
 }

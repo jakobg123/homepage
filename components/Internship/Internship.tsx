@@ -31,14 +31,11 @@ const Internship: React.FC<IInternship> = ({ data }) => {
                             <Icon type={"frojd"} color={"White"} modifier={[styles["Internship__Width"]]} />
                         </span>
                     </a>
-                    <div
-                        className={styles['Internship__TextWrapper']}
-                        dangerouslySetInnerHTML={{ __html: data.html2 }}></div>
                 </div>
                 <div className={styles["Internship__ImageAndTextWrapper"] + " " + styles["Internship__ImageAndTextWrapper--Desktop"]}>
                     <div
                         className={styles['Internship__TextWrapper']}
-                        dangerouslySetInnerHTML={{ __html: data.html + data.html2 }}></div>
+                        dangerouslySetInnerHTML={{ __html: data.html }}></div>
                     <a href="https://www.frojd.se" className={styles["Internship__FrojdContainer"]}>
                         <span className="sr-only">Till Fröjds hemsida</span>
                         <span aria-hidden="true" className={styles["Internship__IconWrapper"]}>
@@ -47,8 +44,8 @@ const Internship: React.FC<IInternship> = ({ data }) => {
                     </a>
                 </div>
 
-                <ImageAndText html={data.html3} imageToLeft />
-                <ImageAndText html={data.html4} />
+                <ImageAndText html={data.html2 + data.html3} image={data.images[0]} imageToLeft />
+                <ImageAndText html={data.html4} image={data.images[1]} />
             </div>
         </div>
     );
