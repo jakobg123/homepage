@@ -25,11 +25,15 @@
       padding-top: 55rem;
     }
 
-    @include media(tablet) {
+    @include media(desktop) {
       padding-top: 96vh;
     }
 
     @include media(xxl) {
+      padding-top: 98vh;
+    }
+
+    @include media(xxxl) {
       padding-top: 90vh;
     }
 
@@ -79,7 +83,7 @@
       }
 
       @include media(xxl) {
-        object-position: 33% 0% !important;
+        object-position: 33% 23% !important;
       }
     }
   }
