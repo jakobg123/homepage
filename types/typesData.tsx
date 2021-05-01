@@ -1,14 +1,15 @@
-import { IIconProps } from "./types";
+import { IIconProps, IImageProps } from "./types";
 
-export interface IInternshipData{
+export interface IInternshipData {
     heading: string;
     html: string;
     html2: string;
     html3: string;
     html4: string;
+    images: IImageProps[];
 }
 
-export interface IKnowledge{
+export interface IKnowledge {
     type: IIconProps['type'];
     title: string;
     number: string | number;
@@ -16,24 +17,24 @@ export interface IKnowledge{
     id: number;
 }
 
-export interface IKnowledgeData{
+export interface IKnowledgeData {
     frontend: IKnowledge[];
     backend: IKnowledge[];
 }
 
-export interface INavLinks{
+export interface INavLinks {
     target: string;
     label: string;
 }
 
-export interface ILogoData{
+export interface ILogoData {
     src: string;
     alt: string;
     width: string;
     height: string;
 }
 
-export interface IStartContainerData{
+export interface IStartContainerData {
     heading: string;
     greeting: string;
     preamble: string;
@@ -44,7 +45,7 @@ export interface IStartContainerData{
         icon: IIconProps['type'];
         href: string;
     };
-    technologies:{
+    technologies: {
         heading: string;
         html: string;
         html2: string;
