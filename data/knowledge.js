@@ -45,7 +45,7 @@ export default {
             title: 'Next.js',
             number: '7',
             html:
-                '<p>Jag har jobbat mycket i Next under min praktik på Fröjd och den här sajten är skriven med ramverket.</p><p>Jag ser flera fördelar med Next. Man kan få statiskt genererade sidor vilket ger blixtsnabba sidor, samtidigt kan man nyttja server-side-rendering, som i många fall är att föredra vid API-anrop. Dessutom är det enkelt att bygga ett api med Next, så <span lang="en">"what\'s not to like"?</span></p>',
+                '<p>Jag har jobbat mycket i Next under min praktik på Fröjd och den här sajten är skriven med ramverket.</p><p>Jag ser flera fördelar med Next. Man kan få statiskt genererade sidor vilket ger blixtsnabba sidor, samtidigt kan man nyttja server-side-rendering, som i många fall är att föredra vid API-anrop. Dessutom är det enkelt att bygga ett REST-api med Next, så <span lang="en">"what\'s not to like"?</span></p>',
             id: 6,
         },
         {
