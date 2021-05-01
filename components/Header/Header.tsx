@@ -23,7 +23,7 @@ const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
                 className={classNames(styles['Header__ImageWrapper'])}>
                 <Image
                     {...heroImage}
-                    focal={{ x: '5%', y: '30%' }}
+                    modifier={[styles["Header__FocalPoint"]]}
                 />
             </div>
         </div>
