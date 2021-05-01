@@ -8,9 +8,10 @@ import { useInView } from 'react-intersection-observer';
 
 interface IKnowledgeProps {
     knowledge: IKnowledgeData;
+    nextRef?: (node?: Element) => void;
 }
 
-const Knowledge: React.FC<IKnowledgeProps> = ({ knowledge }) => {
+const Knowledge: React.FC<IKnowledgeProps> = ({ knowledge, nextRef }) => {
     const { ref, inView, entry } = useInView({
         threshold: 0.05,
         triggerOnce: true,
@@ -30,6 +31,7 @@ const Knowledge: React.FC<IKnowledgeProps> = ({ knowledge }) => {
                         knowledge={knowledge.backend}
                         title={'Backend'}
                         dark={true}
+                        nextRef={nextRef}
                     />
                 </div>
             </div>

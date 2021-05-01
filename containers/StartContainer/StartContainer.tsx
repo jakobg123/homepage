@@ -1,3 +1,4 @@
+import React from "react";
 import styles from './StartContainer.module.scss';
 import classNames from 'classnames';
 
@@ -5,7 +6,8 @@ import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 import Button from '../../components/Button';
-import Internship from '../../components/Internship';
+const Internship = dynamic(() => import('../../components/Internship'));
+
 import Image from '../../components/Image';
 const Knowledge = dynamic(() => import('../../components/Knowledge'));
 
@@ -18,18 +20,35 @@ interface IStartContainerProps {
     data: IStartContainerData;
 }
 
+export const Theme = React.createContext<boolean>(false);
+
 const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => {
-    const { ref, inView, entry } = useInView({
+    const [ref, inView] = useInView({
         threshold: 0,
+    });
+    const [ref2, inViewRef2] = useInView({
+        triggerOnce: true
     });
 
     const [showKnowledge, setShowKnowledge] = useState(false);
 
+    const [lightTheme, setLightTheme] = useState(false);
+
     useEffect(() => {
-        if (inView) {
+        if (inView && !showKnowledge) {
             setShowKnowledge(true);
+            lightTheme && setLightTheme(false);
         }
-        return;
+
+        if (showKnowledge) {
+            inView ? setLightTheme(false) : setLightTheme(true);
+        }
+
+        if (!inView && !showKnowledge) {
+            !lightTheme && setLightTheme(true);
+        }
+
+        return (() => setLightTheme(false));
     }, [inView]);
 
     const {
@@ -44,10 +63,10 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
     } = data;
 
     const presImage: IImageProps = {
-        src: '/images/temp/small150x150.jpg',
-        alt: 'Jakob Gauffin, d.v.s han som gjort sidan.',
-        width: 150,
-        height: 150,
+        src: '/images/temp/xsmall120x120-min.jpg',
+        alt: 'Jakob Gauffin, d.v.s han som gjort sajten.',
+        width: 120,
+        height: 120,
     };
 
     const mediaQueries: IMediaQueries[] = [
@@ -118,7 +137,7 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                     })}>
                     {!!showKnowledge && (
                         <div className={styles['StartContainer__KnowledgeWrapper']}>
-                            <Knowledge knowledge={knowledge} />
+                            <Knowledge knowledge={knowledge} nextRef={ref2} />
                         </div>
                     )}
                 </div>
@@ -128,12 +147,15 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                     styles['StartContainer__Block'],
                     styles['StartContainer__Block--Dark']
                 )}>
-                <div className={styles['StartContainer__InternshipWrapper']}>
-                    <Internship
-                        data={internship}
-                        inView={inView && showKnowledge ? true : false}
-                    />
-                </div>
+                {!!inViewRef2 && (
+                    <div className={styles['StartContainer__InternshipWrapper']}>
+                        <Theme.Provider value={lightTheme}>
+                            <Internship
+                                data={internship}
+                            />
+                        </Theme.Provider>
+                    </div>
+                )}
             </div>
         </div>
     );
