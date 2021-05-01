@@ -31,7 +31,7 @@ const Typescript = dynamic(() => import('./icons/minified/typescript.svg'));
 const Wagtail = dynamic(() => import('./icons/minified/wagtail.svg'));
 const Wordpress = dynamic(() => import('./icons/minified/wordpress.svg'));
 
-import {IIconProps} from "../../types/types";
+import { IIconProps } from "../../types/types";
 
 export const allIcons = {
     arrowNext: ArrowNext,
@@ -86,9 +86,9 @@ const Icon: React.FC<IIconProps> = ({
     );
 
     return (
-        <div className={classes}>
+        <span className={classes}>
             <Svg />
-        </div>
+        </span>
     );
 };
 
