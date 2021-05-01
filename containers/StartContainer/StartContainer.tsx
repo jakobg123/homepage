@@ -75,7 +75,7 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
             src: '/images/temp/large350x350.jpg',
         },
         {
-            minWidth: 768,
+            minWidth: 640,
             src: '/images/temp/medium250x250.jpg',
         },
     ];
