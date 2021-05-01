@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 import classNames from 'classnames';
 
 import { IImageProps } from '../../types/types';
-import {IMainNavProps} from "../MainNav/MainNav";
+import { IMainNavProps } from "../MainNav/MainNav";
 
 export interface IHeaderProps {
     heroImage: IImageProps,
@@ -17,7 +17,7 @@ const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
     return (
         <div className={styles['Header']}>
             <div className={styles['Header__MainNavWrapper']}>
-                <MainNav {...mainNavData}/>
+                <MainNav {...mainNavData} />
             </div>
             <div
                 className={classNames(styles['Header__ImageWrapper'])}>
