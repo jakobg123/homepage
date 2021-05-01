@@ -1,4 +1,5 @@
 import styles from './Image.module.scss';
+import classNames from "classnames";
 
 import { IImageProps, IMediaQueries } from '../../types/types';
 
@@ -11,13 +12,14 @@ const Image: React.FC<IImageProps> = ({
     loading = 'lazy',
     focal = { x: '50%', y: '50%' },
     round = false,
-    pTHeight = null,
+    modifier = [],
 }) => {
-    const paddingTop = pTHeight && {paddingTop: pTHeight};
+    const classes = !modifier.length ? styles["Image"] : classNames(modifier.map(x => (
+        [x]
+    )), styles["Image"])
 
     return (
-        <picture className={styles['Image']}
-            style={paddingTop}
+        <picture className={classes}
         >
             {!!mediaQueries?.length &&
                 mediaQueries.map(({ src, minWidth }, index) => (
@@ -36,7 +38,7 @@ const Image: React.FC<IImageProps> = ({
                 style={{ objectPosition: focal.x + ' ' + focal.y, borderRadius: round && "50%" }}
                 className={styles['Image__Image']}
             />
-        </picture>
+        </picture >
     );
 };
 
