@@ -1,25 +1,29 @@
+import { useContext } from "react";
 import classNames from 'classnames';
 import styles from './Internship.module.scss';
 import Icon from "../Icon";
+import ImageAndText from "../ImageAndText";
+
 import { IInternshipData } from "../../types/typesData";
+import { Theme } from "../../containers/StartContainer/StartContainer";
 
 interface IInternship {
-    inView: boolean;
     data: IInternshipData;
 }
 
-const Internship: React.FC<IInternship> = ({ data, inView }) => {
+const Internship: React.FC<IInternship> = ({ data }) => {
+    const lightTheme = useContext(Theme);
 
     return (
         <div
             className={classNames(styles['Internship'], {
-                [styles['Internship--Primary']]: !inView
+                [styles['Internship--Light']]: lightTheme
             })}>
             <div className={styles["Internship__Grid"]}>
                 <h2 id="internship" className={styles['Internship__Subtitle']}>{data.heading}</h2>
                 <div className={styles["Internship__ImageAndTextWrapper"] + " " + styles["Internship__ImageAndTextWrapper--Mobile"]}>
                     <div
-                        className={styles['Internship__Paragraph']}
+                        className={styles['Internship__TextWrapper']}
                         dangerouslySetInnerHTML={{ __html: data.html }}></div>
                     <a href="https://www.frojd.se" className={styles["Internship__FrojdContainer"]}>
                         <span className="sr-only">Till Fröjds hemsida</span>
@@ -28,12 +32,12 @@ const Internship: React.FC<IInternship> = ({ data, inView }) => {
                         </span>
                     </a>
                     <div
-                        className={styles['Internship__Paragraph']}
+                        className={styles['Internship__TextWrapper']}
                         dangerouslySetInnerHTML={{ __html: data.html2 }}></div>
                 </div>
                 <div className={styles["Internship__ImageAndTextWrapper"] + " " + styles["Internship__ImageAndTextWrapper--Desktop"]}>
                     <div
-                        className={styles['Internship__Paragraph']}
+                        className={styles['Internship__TextWrapper']}
                         dangerouslySetInnerHTML={{ __html: data.html + data.html2 }}></div>
                     <a href="https://www.frojd.se" className={styles["Internship__FrojdContainer"]}>
                         <span className="sr-only">Till Fröjds hemsida</span>
@@ -42,9 +46,9 @@ const Internship: React.FC<IInternship> = ({ data, inView }) => {
                         </span>
                     </a>
                 </div>
-                <div
-                    className={styles['Internship__Paragraph']}
-                    dangerouslySetInnerHTML={{ __html: data.html3 + data.html4 }}></div>
+
+                <ImageAndText html={data.html3} imageToLeft />
+                <ImageAndText html={data.html4} />
             </div>
         </div>
     );
