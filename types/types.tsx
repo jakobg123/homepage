@@ -43,7 +43,6 @@ export interface IFocal {
 }
 
 export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-    focal?: IFocal;
     mediaQueries?: IMediaQueries[];
     onLoadFade?: boolean;
     round?: boolean;

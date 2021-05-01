@@ -10,13 +10,18 @@ const Image: React.FC<IImageProps> = ({
     alt,
     mediaQueries,
     loading = 'lazy',
-    focal = { x: '50%', y: '50%' },
     round = false,
     modifier = [],
 }) => {
     const classes = !modifier.length ? styles["Image"] : classNames(modifier.map(x => (
         [x]
-    )), styles["Image"])
+    )), styles["Image"]);
+
+    let imageStyles = {};
+
+    if (round) {
+        imageStyles = { borderRadius: "50%" }
+    }
 
     return (
         <picture className={classes}
@@ -35,7 +40,7 @@ const Image: React.FC<IImageProps> = ({
                 width={width}
                 height={height}
                 loading={loading}
-                style={{ objectPosition: focal.x + ' ' + focal.y, borderRadius: round && "50%" }}
+                style={imageStyles}
                 className={styles['Image__Image']}
             />
         </picture >
