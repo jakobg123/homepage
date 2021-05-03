@@ -22,19 +22,7 @@
     position: relative;
 
     @include media(ms) {
-      padding-top: 55rem;
-    }
-
-    @include media(desktop) {
-      padding-top: 96vh;
-    }
-
-    @include media(xxl) {
-      padding-top: 98vh;
-    }
-
-    @include media(xxxl) {
-      padding-top: 90vh;
+      padding-top: calc((837 / 1440) * 100%);
     }
 
     &::before {
@@ -76,14 +64,10 @@
 
   &__FocalPoint {
     img {
-      object-position: 33% 10% !important;
+      object-position: 33% 10%;
 
       @include media(m) {
-        object-position: 33% 20% !important;
-      }
-
-      @include media(xxl) {
-        object-position: 33% 23% !important;
+        object-position: 33% 0%;
       }
     }
   }
