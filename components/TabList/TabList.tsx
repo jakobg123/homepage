@@ -44,7 +44,6 @@ interface ITabListProps {
     knowledge: IKnowledge[];
     title: string;
     dark?: boolean;
-    nextRef?: (node?: Element) => void;
 }
 
 interface ITabListState {
@@ -73,7 +72,7 @@ class TabList extends PureComponent<ITabListProps, ITabListState> {
     }
 
     render() {
-        const { title, dark = false, nextRef } = this.props;
+        const { title, dark = false } = this.props;
 
         return (
             <div
@@ -84,7 +83,7 @@ class TabList extends PureComponent<ITabListProps, ITabListState> {
                     className={classNames(styles['TabList__CardsContainer'], {
                         [styles['TabList__CardsContainer--Dark']]: dark,
                     })}>
-                    <h4 ref={nextRef} className={styles['TabList__Title']}>{title}</h4>
+                    <h4 className={styles['TabList__Title']}>{title}</h4>
                     <ul className={styles['TabList__List']}>
                         {!!this.props.knowledge.length &&
                             this.props.knowledge.map((item, index) => (

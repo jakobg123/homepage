@@ -3,13 +3,13 @@ import styles from './StartContainer.module.scss';
 import classNames from 'classnames';
 
 import { useState, useEffect } from 'react';
-import dynamic from 'next/dynamic';
 
 import Button from '../../components/Button';
-const Internship = dynamic(() => import('../../components/Internship'));
+import Internship from "../../components/Internship";
 
 import Image from '../../components/Image';
-const Knowledge = dynamic(() => import('../../components/Knowledge'));
+
+import Knowledge from "../../components/Knowledge";
 
 import { IImageProps, IMediaQueries } from '../../types/types';
 import { IKnowledgeData, IStartContainerData } from "../../types/typesData";
@@ -26,28 +26,11 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
     const [ref, inView] = useInView({
         threshold: 0,
     });
-    const [ref2, inViewRef2] = useInView({
-        triggerOnce: true
-    });
-
-    const [showKnowledge, setShowKnowledge] = useState(false);
 
     const [lightTheme, setLightTheme] = useState(false);
 
     useEffect(() => {
-        if (inView && !showKnowledge) {
-            setShowKnowledge(true);
-            lightTheme && setLightTheme(false);
-        }
-
-        if (showKnowledge) {
-            inView ? setLightTheme(false) : setLightTheme(true);
-        }
-
-        if (!inView && !showKnowledge) {
-            !lightTheme && setLightTheme(true);
-        }
-
+        inView ? setLightTheme(false) : setLightTheme(true);
         return (() => setLightTheme(false));
     }, [inView]);
 
@@ -135,11 +118,11 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                     className={classNames(styles['StartContainer__Background'], {
                         [styles['StartContainer__Background--White']]: !inView,
                     })}>
-                    {!!showKnowledge && (
-                        <div className={styles['StartContainer__KnowledgeWrapper']}>
-                            <Knowledge knowledge={knowledge} nextRef={ref2} />
-                        </div>
-                    )}
+
+                    <div className={styles['StartContainer__KnowledgeWrapper']}>
+                        <Knowledge knowledge={knowledge} />
+                    </div>
+
                 </div>
             </div>
             <div
@@ -147,15 +130,13 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                     styles['StartContainer__Block'],
                     styles['StartContainer__Block--Dark']
                 )}>
-                {!!inViewRef2 && (
-                    <div className={styles['StartContainer__InternshipWrapper']}>
-                        <Theme.Provider value={lightTheme}>
-                            <Internship
-                                data={internship}
-                            />
-                        </Theme.Provider>
-                    </div>
-                )}
+                <div className={styles['StartContainer__InternshipWrapper']}>
+                    <Theme.Provider value={lightTheme}>
+                        <Internship
+                            data={internship}
+                        />
+                    </Theme.Provider>
+                </div>
             </div>
         </div>
     );
