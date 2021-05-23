@@ -1,10 +1,10 @@
 import Image from '../Image';
 import MainNav from "../MainNav";
-
+import Hero from "../Hero";
 import styles from './Header.module.scss';
 import classNames from 'classnames';
 
-import { IImageProps } from '../../types/types';
+// import { IImageProps } from '../../types/types';
 import { IMainNavProps } from "../MainNav/MainNav";
 
 export interface IHeaderProps {
@@ -13,19 +13,19 @@ export interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
-
     return (
         <div className={styles['Header']}>
             <div className={styles['Header__MainNavWrapper']}>
                 <MainNav {...mainNavData} />
             </div>
-            <div
+            <Hero heroImage={heroImage} />
+            {/* <div
                 className={classNames(styles['Header__ImageWrapper'])}>
                 <Image
                     {...heroImage}
-                    modifier={[styles["Header__FocalPoint"]]}
+                    modifier={[styles[heroImage.modifierClass]]}
                 />
-            </div>
+            </div> */}
         </div>
     );
 };

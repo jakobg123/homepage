@@ -1,4 +1,4 @@
-import { PureComponent } from 'react';
+import React, { PureComponent } from 'react';
 
 import Header from '../../components/Header';
 import MobileNav from '../../components/MobileNavButton';
@@ -7,22 +7,40 @@ import styles from './BaseContainer.module.scss';
 
 import StartContainer from '../StartContainer';
 
-import {IMainNavProps} from "../../components/MainNav/MainNav";
+import { IMainNavProps } from "../../components/MainNav/MainNav";
 import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
 
-import {ILogoData, IKnowledgeData, IStartContainerData} from "../../types/typesData";
+import { ILogoData, IKnowledgeData, IStartContainerData } from "../../types/typesData";
 import { IHeaderProps } from '../../components/Header/Header';
 import { IFooter } from "../../components/Footer/Footer";
 
-export interface BaseContainerProps {
+import { withRouter, NextRouter } from 'next/router'
+
+import { TargetLinksProvider } from "../../utils/TargetLinks.context";
+
+// export interface BaseContainerProps {
+//     menuData: IMobileNavProps;
+//     knowledgeData?: IKnowledgeData;
+//     startData?: IStartContainerData;
+//     logoData: ILogoData;
+//     footerData: IFooter;
+//     headerData: IHeaderProps;
+//     mainNavData: IMainNavProps;
+// }
+
+interface WithRouterProps {
+    router: NextRouter
+}
+
+interface BaseContainerProps extends WithRouterProps {
     menuData: IMobileNavProps;
-    knowledgeData: IKnowledgeData;
-    startData: IStartContainerData;
+    knowledgeData?: IKnowledgeData;
+    startData?: IStartContainerData;
     logoData: ILogoData;
     footerData: IFooter;
     headerData: IHeaderProps;
     mainNavData: IMainNavProps;
-}
+};
 
 class BaseContainer extends PureComponent<BaseContainerProps> {
     state = {};
@@ -44,7 +62,7 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
                     </div>
                 </header>
                 <main>
-                    <StartContainer knowledge={knowledgeData} data={startData} />
+                    {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
                 </main>
                 <footer className={styles['BaseContainer__Footer']}>
                     <Footer {...footerData} />
@@ -54,4 +72,4 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
     }
 }
 
-export default BaseContainer;
+export default withRouter(BaseContainer);

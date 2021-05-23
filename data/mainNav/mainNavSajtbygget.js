@@ -7,8 +7,7 @@ export default {
         { target: '/#contact', label: 'Kontakt', forceImport: true },
     ],
     logo: {
-        src: '/logoPrimary.svg',
-        // src: '/logo.svg',
+        src: '/logo.svg',
         alt: 'Sajtens logotyp med texten: Jakob Gauffin',
         width: '200',
         height: '40',

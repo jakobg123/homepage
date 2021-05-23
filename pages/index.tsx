@@ -1,6 +1,5 @@
 import { PureComponent } from 'react';
 import Head from 'next/head';
-import { InferGetStaticPropsType } from "next";
 //Data for getStaticProps
 import menuData from '../data/menu.js';
 import knowledgeData from '../data/knowledge.js';
@@ -17,11 +16,11 @@ import { IFooter } from '../components/Footer/Footer.jsx';
 import { IHeaderProps } from '../components/Header/Header.jsx';
 import { IMainNavProps } from '../components/MainNav/MainNav.jsx';
 
-interface IBaseProps {
+export interface IBaseProps {
     baseData: {
         menuData: IMobileNavProps;
-        knowledgeData: IKnowledgeData;
-        startData: IStartContainerData;
+        knowledgeData?: IKnowledgeData;
+        startData?: IStartContainerData;
         logoData: ILogoData;
         footerData: IFooter;
         headerData: IHeaderProps;
