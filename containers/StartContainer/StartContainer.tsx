@@ -15,6 +15,8 @@ import { IImageProps, IMediaQueries } from '../../types/types';
 import { IKnowledgeData, IStartContainerData } from "../../types/typesData";
 import { useInView } from 'react-intersection-observer';
 
+import TargetLinks from "../../utils/TargetLinks.context";
+
 interface IStartContainerProps {
     knowledge: IKnowledgeData;
     data: IStartContainerData;
@@ -66,6 +68,7 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
     return (
         <div className={styles['StartContainer']}>
             <div className={styles['StartContainer__Grid']}>
+                {/* <button style={{ position: "relative", zIndex: 100000, border: "1px solid red" }} onClick={() => forceImportModules()}>ÄNDRA</button> */}
                 <h1 className={styles['StartContainer__Title']}>{heading}</h1>
 
                 <div className={styles['StartContainer__EntryWrapper']}>
@@ -138,7 +141,7 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                     </Theme.Provider>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
