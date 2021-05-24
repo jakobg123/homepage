@@ -15,6 +15,34 @@
     align-items: center;
   }
 
+  &--Construction.MainNav {
+    // @include bgColorOpacity($colorWhite, 0.2);
+    @include bgColorGradient(
+      to bottom,
+      $colorWhite,
+      0.4,
+      0%,
+      $colorWhite,
+      0,
+      50%
+    );
+    transition: all $transitionNormal;
+
+    &:hover {
+      @include bgColorOpacity($colorWhite, 0.9);
+      // @include bgColorOpacity($colorBlack, 0.3);
+      // @include bgColorGradient(
+      //   to bottom,
+      //   $colorWhite,
+      //   0.8,
+      //   0%,
+      //   $colorWhite,
+      //   0.4,
+      //   80%
+      // );
+    }
+  }
+
   &__Logo {
     padding-top: $spacingS;
     display: block;
@@ -63,6 +91,10 @@
     transition: transform $transitionNormal;
     transform: scale(1);
 
+    // .MainNav--Construction & {
+    //   color: $colorPrimary;
+    // }
+
     &::after {
       content: '';
       display: block;
@@ -75,13 +107,26 @@
       @include bgColorOpacity($colorPrimary, 0.5);
       transition: all $transitionNormal;
       transform: rotateX(-90deg) scale(1);
+
+      .MainNav--Construction & {
+        @include bgColorOpacity($colorBlack, 0.5);
+      }
     }
 
     &:hover,
     &:focus {
+      .MainNav--Construction & {
+      }
+
       &::after {
         @include bgColorOpacity($colorPrimary, 1);
         transform: rotateX(-360deg) scale(1.1);
+
+        .MainNav--Construction & {
+          // @include bgColorOpacity($colorBlack, 1);
+          background: none;
+          border: 1px solid $colorBlack;
+        }
       }
     }
   }

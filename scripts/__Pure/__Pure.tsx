@@ -1,7 +1,15 @@
 import styles from "./__Pure.module.scss";
 
-const __Pure = () => {
-  return <div className={styles["__Pure"]}></div>;
+interface I__PureProps {
+
+}
+
+const __Pure: React.FC<I__PureProps> = () => {
+  return (
+    <div className={styles["__Pure"]}>
+
+    </div>
+  );
 };
 
 export default __Pure;

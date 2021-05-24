@@ -68,7 +68,7 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
     return (
         <div className={styles['StartContainer']}>
             <div className={styles['StartContainer__Grid']}>
-                {/* <button style={{ position: "relative", zIndex: 100000, border: "1px solid red" }} onClick={() => forceImportModules()}>ÄNDRA</button> */}
+
                 <h1 className={styles['StartContainer__Title']}>{heading}</h1>
 
                 <div className={styles['StartContainer__EntryWrapper']}>

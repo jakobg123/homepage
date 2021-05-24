@@ -1,15 +1,12 @@
-import {PureComponent} from "react";
+import { PureComponent } from 'react';
+import styles from './__Class.module.scss';
 
-class __Class extends PureComponent{
-    state = {}
+class __Class extends PureComponent {
+  state = {};
 
-    render(){
-        return (
-            <div className="__Class">
-                
-            </div>
-        )
-    }
+  render() {
+    return <div className={styles['__Class']}></div>;
+  }
 }
 
-export default __Class
+export default __Class;

@@ -30,6 +30,10 @@
     img {
       width: 14rem;
 
+      .MainNav--Construction & {
+        width: 10rem;
+      }
+
       @include media(ms) {
         width: 16rem;
       }

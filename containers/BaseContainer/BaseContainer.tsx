@@ -6,6 +6,7 @@ import Footer from '../../components/Footer';
 import styles from './BaseContainer.module.scss';
 
 import StartContainer from '../StartContainer';
+import ConstructionPage from "../ConstructionPage";
 
 import { IMainNavProps } from "../../components/MainNav/MainNav";
 import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
@@ -64,6 +65,8 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
                 </header>
                 <main>
                     {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
+                    <ConstructionPage />
+
                 </main>
                 <footer className={styles['BaseContainer__Footer']}>
                     <Footer {...footerData} />

@@ -1,20 +1,23 @@
 import { useContext } from "react";
 import styles from "./MainNav.module.scss";
 import Link from "next/link";
+import classNames from "classnames";
 
 import { INavLinks, ILogoData } from "../../types/typesData";
 import TargetLinks from "../../utils/TargetLinks.context";
+import HeroImageContext from "../../utils/HeroImage.context";
 
 export interface IMainNavProps {
     links: INavLinks[];
     logo: ILogoData;
 }
 
-
 const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
+    const context = useContext(HeroImageContext);
+    console.log("OUTPUT ÄR ~ file: MainNav.tsx ~ line 17 ~ context", context)
 
     return (
-        <nav className={styles['MainNav']}>
+        <nav className={classNames(styles['MainNav'], { [styles['MainNav--Construction']]: context === "Construction" })}>
             <figure className={styles['MainNav__Logo']} >
                 <img {...logo} />
             </figure>

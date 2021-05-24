@@ -4,10 +4,10 @@ import Head from "next/head";
 import menuData from '../../data/menu.js';
 import knowledgeData from '../../data/knowledge.js';
 import startData from '../../data/startData.js';
-import logoData from "../../data/logo";
+import logoData from "../../data/Logo/logoConstruction";
 import footerData from "../../data/footer";
 import headerData from "../../data/Header/headerConstruction";
-import mainNavData from "../../data/mainNav";
+import mainNavData from "../../data/mainNav/mainNavConstruction";
 
 import BaseContainer from "../../containers/BaseContainer";
 import Meta from "../../components/Meta";
