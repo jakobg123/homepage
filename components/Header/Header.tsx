@@ -1,3 +1,4 @@
+import {useContext} from "react";
 import Image from '../Image';
 import MainNav from "../MainNav";
 import Hero from "../Hero";
@@ -6,6 +7,7 @@ import classNames from 'classnames';
 
 // import { IImageProps } from '../../types/types';
 import { IMainNavProps } from "../MainNav/MainNav";
+import HeroImageContext, { HeroImageProvider } from "../../utils/HeroImage.context";
 
 export interface IHeaderProps {
     heroImage: IImageProps,

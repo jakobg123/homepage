@@ -13,12 +13,21 @@
     padding-top: calc((837 / 1440) * 100%);
   }
 
+  img {
+    object-position: 33% 10%;
+
+    @include media(m) {
+      object-position: 33% 0%;
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;
     // background-image: url('#{$patternPath}topWave_Construction3.svg');
     // background-image: url('#{$patternPath}topWave_Construction3_Black.svg');
     background-image: url('#{$patternPath}topWave.svg');
+
     background-position: bottom;
     background-size: contain;
     background-repeat: no-repeat;
@@ -30,8 +39,20 @@
     width: calc(100% + 2px);
     z-index: 2;
 
-    .Header__ImageWrapper--Construction & {
-      background-image: url('#{$patternPath}topWave_Construction3.svg');
+    }
+    &--Construction.Hero::before {
+      background-image: url('#{$patternPath}topWave_Construction3.svg') !important;
+    }
+
+
+  &--Construction{
+
+    img {
+        object-position: 50% 40%;
+
+        @include media(m) {
+          object-position: 50% 40%;
+        }
     }
   }
 
@@ -51,45 +72,39 @@
       0%,
       rgba(0, 0, 0, 0.01),
       0.1,
-      15%
-    );
-    @include bgColorGradient(
-      to top,
-      $colorPrimary,
-      1,
-      0%,
-      rgba(0, 0, 0, 0.01),
-      0.1,
       45%
     );
-    // @include bgColorGradient(
-    //   to top,
-    //   $colorBlack,
-    //   1,
-    //   0%,
-    //   rgba(0, 0, 0, 0.01),
-    //   0.1,
-    //   15%
-    // );
   }
 
-  &__FocalPoint {
-    img {
-      object-position: 33% 10%;
-
-      @include media(m) {
-        object-position: 33% 0%;
-      }
+    &--Construction.Hero::after{
+        @include bgColorGradient(
+          to top,
+          $colorPrimary,
+          1,
+          0%,
+          rgba(0, 0, 0, 0.01),
+          0.1,
+          15%
+        );
     }
 
-    &--SajtBygget {
-      img {
-        object-position: 50% 20%;
+//   &__FocalPoint {
+//     img {
+//       object-position: 33% 10%;
 
-        @include media(m) {
-          object-position: 50% 20%;
-        }
-      }
-    }
-  }
+//       @include media(m) {
+//         object-position: 33% 0%;
+//       }
+//     }
+
+//     &--Construction {
+//       img {
+//         object-position: 50% 20%;
+
+//         @include media(m) {
+//           object-position: 50% 20%;
+//         }
+//       }
+//     }
+//   }
 }

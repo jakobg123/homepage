@@ -1,11 +1,12 @@
 export default {
     heroImage: {
         src: '/images/temp/construction_orginal.jpg',
-        alt: 'Himmel ovan molnen.',
+        alt: 'Målande.',
         width: 1920,
         height: 1382,
         loading: 'eager',
-        modifierClass: 'Header__FocalPoint--SajtBygget',
+        modifierClass: 'Construction',
+        // modifierClass: 'Hero__FocalPoint--Construction',
         // mediaQueries: [
         //     {
         //         minWidth: 768,

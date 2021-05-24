@@ -1,5 +1,5 @@
 import { PureComponent } from 'react';
-import Head from 'next/head';
+// import Head from 'next/head';
 //Data for getStaticProps
 import menuData from '../data/menu.js';
 import knowledgeData from '../data/knowledge.js';
@@ -10,11 +10,13 @@ import headerData from "../data/header";
 import mainNavData from "../data/mainNav";
 
 import BaseContainer from "../containers/BaseContainer";
+import Meta from "../components/Meta";
 import { IMobileNavProps } from '../components/MobileNavButton/MobileNav.jsx';
 import { IKnowledgeData, ILogoData, IStartContainerData } from '../types/typesData.jsx';
 import { IFooter } from '../components/Footer/Footer.jsx';
 import { IHeaderProps } from '../components/Header/Header.jsx';
 import { IMainNavProps } from '../components/MainNav/MainNav.jsx';
+import HeroImageContext from "../utils/HeroImage.context";
 
 export interface IBaseProps {
     baseData: {
@@ -36,7 +38,8 @@ class Base extends PureComponent<IBaseProps>  {
 
         return (
             <>
-                <Head>
+                <Meta title={"Jakob Gauffin - Frontendutvecklare som vill bygga din webb"} description={"Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."} />
+                {/* <Head>
                     <title>
                         Jakob Gauffin - Frontendutvecklare som vill bygga din webb
                     </title>
@@ -145,10 +148,12 @@ class Base extends PureComponent<IBaseProps>  {
                         name="msapplication-square310x310logo"
                         content="mstile-310x310.png"
                     />
-                </Head>
-                <BaseContainer
-                    {...baseData}
-                />
+                </Head> */}
+                <HeroImageContext.Provider value="Start">
+                    <BaseContainer
+                        {...baseData}
+                    />
+                </HeroImageContext.Provider>
             </>
         );
     }

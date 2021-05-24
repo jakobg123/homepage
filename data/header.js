@@ -5,7 +5,7 @@ export default {
         width: 1440,
         height: 1092,
         loading: 'eager',
-        modifierClass: 'Header__FocalPoint',
+        modifierClass: 'Hero__FocalPoint',
         mediaQueries: [
             {
                 minWidth: 768,

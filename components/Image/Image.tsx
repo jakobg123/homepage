@@ -13,6 +13,7 @@ const Image: React.FC<IImageProps> = ({
     round = false,
     modifier = [],
 }) => {
+    console.log("🚀 ~ file: Image.tsx ~ line 16 ~ modifier", modifier)
     const classes = !modifier.length ? styles["Image"] : classNames(modifier.map(x => (
         [x]
     )), styles["Image"]);

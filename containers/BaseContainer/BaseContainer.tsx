@@ -47,6 +47,7 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
 
     render() {
         const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData } = this.props;
+        console.log("proppsen: ", this.props);
 
         return (
             <div className={styles['BaseContainer']} id="start">
