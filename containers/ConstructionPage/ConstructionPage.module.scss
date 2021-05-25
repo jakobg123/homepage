@@ -2,6 +2,7 @@
 @import '../../styles/extensions.scss';
 
 .ConstructionPage {
+
   &__Grid {
     @extend %grid;
   }

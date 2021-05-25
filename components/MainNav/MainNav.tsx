@@ -14,7 +14,6 @@ export interface IMainNavProps {
 
 const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
     const context = useContext(HeroImageContext);
-    console.log("OUTPUT ÄR ~ file: MainNav.tsx ~ line 17 ~ context", context)
 
     return (
         <nav className={classNames(styles['MainNav'], { [styles['MainNav--Construction']]: context === "Construction" })}>
@@ -50,7 +49,6 @@ const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
 }
 
 const MainNavLink = ({ target, label, forceImport }) => {
-    console.log("OUTPUT ÄR ~ file: MainNav.tsx ~ line 75 ~ MainNavLink ~ forceImport", forceImport);
     const { forceImportModules, showKnowledge, showInternship } = useContext(TargetLinks);
 
     const redirectAfterImport = (target) => {
@@ -63,7 +61,6 @@ const MainNavLink = ({ target, label, forceImport }) => {
     let NavLink: React.FC;
 
     if (!forceImport) {
-        console.log("inne i !forceimport");
         NavLink = () => (
             <Link href={target}>
                 <a className={styles['MainNav__Link']}>{label}</a>
@@ -71,7 +68,6 @@ const MainNavLink = ({ target, label, forceImport }) => {
         )
     } else {
         if (!showKnowledge || !showInternship) {
-            console.log("inne i !showKnowledge");
             NavLink = () => (
                 <button title="http://stackoverflow.com" style={{ cursor: "pointer", background: "none", border: "none" }} className={styles['MainNav__Link']} onClick={() => redirectAfterImport(target)}>{label}</button>
                 // <a style={{ cursor: "pointer" }} className={styles['MainNav__Link']} onClick={() => redirectAfterImport(target)}>{label}</a>

@@ -18,6 +18,8 @@ import { IFooter } from "../../components/Footer/Footer";
 import { withRouter, NextRouter } from 'next/router'
 
 import { TargetLinksProvider } from "../../utils/TargetLinks.context";
+import HeroImageContext from "../../utils/HeroImage.context";
+import classNames from 'classnames';
 
 // export interface BaseContainerProps {
 //     menuData: IMobileNavProps;
@@ -50,14 +52,23 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
         const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData } = this.props;
         console.log("proppsen: ", this.props);
 
+        const context = HeroImageContext.Consumer;
+        // console.log("🚀 ~ file: BaseContainer.tsx ~ line 55 ~ BaseContainer ~ render ~ context", context)
         return (
             <div className={styles['BaseContainer']} id="start">
                 <header className={styles['BaseContainer__Header']}>
-                    <figure className={styles['BaseContainer__Logo']}>
-                        <img
-                            {...logoData}
-                        />
-                    </figure>
+                    <HeroImageContext.Consumer >
+                        {pageContext => {
+                        console.log("🚀 ~ file: BaseContainer.tsx ~ line 61 ~ BaseContainer ~ render ~ props", pageContext)
+                            return (
+                                <figure className={classNames(styles['BaseContainer__Logo'], {[styles["BaseContainer__Logo--Construction"]] : pageContext === "Construction"})}>
+                                    <img
+                                        {...logoData}
+                                    />
+                                </figure>
+                            )
+                        }}
+                    </HeroImageContext.Consumer>
                     <Header {...headerData} mainNavData={mainNavData} />
                     <div className={styles['BaseContainer__StickyContainer']}>
                         <MobileNav {...menuData} />

@@ -16,6 +16,12 @@ const ConstructionPage: React.FC<IConstructionPageProps> = () => {
           <div
             className={styles['ConstructionPage__Preamble']}
           >dssfdsfdsfsd preamlbe</div>
+              <pre>
+                  <span><</span>
+                  <span>p</span>
+                  <span>></span>
+              </pre>
+
           <div className={styles['ConstructionPage__ParagraphPres']}>
             {/* <div className={styles['StartContainer__PresImageWrapper']}>
               <Image {...presImage} mediaQueries={mediaQueries} round />
