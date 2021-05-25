@@ -178,6 +178,23 @@
     }
   }
 
+  &__CodeWrapper{
+    width: 50rem;
+    height: 40rem;
+    border: 1px solid red;
+    overflow: scroll;
+    scrollbar-width: none;
+
+    // &::-webkit-scrollbar {
+    //   width: 0;
+    // }
+  }
+
+  code {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 16px !important;
+  }
+
   &__PresImageWrapper {
     position: relative;
     padding-right: $spacingXl * 2;
