@@ -43,13 +43,14 @@ interface BaseContainerProps extends WithRouterProps {
     footerData: IFooter;
     headerData: IHeaderProps;
     mainNavData: IMainNavProps;
+    constructionPageData: any;
 };
 
 class BaseContainer extends PureComponent<BaseContainerProps> {
     state = {};
 
     render() {
-        const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData } = this.props;
+        const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData } = this.props;
 
         const context = HeroImageContext.Consumer;
 
@@ -74,7 +75,7 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
                 </header>
                 <main>
                     {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
-                    <ConstructionPage />
+                    <ConstructionPage {...constructionPageData} />
 
                 </main>
                 <footer className={styles['BaseContainer__Footer']}>

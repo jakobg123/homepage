@@ -8,6 +8,7 @@ import logoData from "../../data/Logo/logoConstruction";
 import footerData from "../../data/footer";
 import headerData from "../../data/Header/headerConstruction";
 import mainNavData from "../../data/mainNav/mainNavConstruction";
+import constructionPageData from "../../data/ConstructionPage/ConstructionPageData";
 
 import BaseContainer from "../../containers/BaseContainer";
 import Meta from "../../components/Meta";
@@ -46,6 +47,7 @@ export async function getStaticProps() {
                 footerData,
                 headerData,
                 mainNavData,
+                constructionPageData,
             }
         },
     };

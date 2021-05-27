@@ -5,14 +5,14 @@
 .ContentCard {
   display: flex;
   flex-direction: column;
-  padding: $spacingXl $spacingM $spacingL * 2;
-  background-color: $colorWhite;
-  box-shadow: $boxShadowCard;
-  margin-bottom: $spacingXl * 2;
+  //   padding: $spacingXl $spacingM $spacingL * 2;
+  //   background-color: $colorWhite;
+  //   box-shadow: $boxShadowCard;
+  //   margin-bottom: $spacingXl * 2;
 
   @include media(tablet) {
     flex-direction: row;
-    padding: $spacingL * 2 $spacingM $spacingXl * 2;
+    // padding: $spacingL * 2 $spacingM $spacingXl * 2;
   }
 
   &--Reverse {

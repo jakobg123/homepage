@@ -5,12 +5,19 @@ import ContentCard from "../../components/ContentCard";
 import VideoCard from "../../components/VideoCard";
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
 // import { useRef, useEffect } from "react";
+import CardArticle from "../../components/CardArticle";
+
+// import {constructionPageData} from "../../data/ConstructionPage/ConstructionPageData";
+// console.log("🚀 ~ file: ConstructionPage.tsx ~ line 11 ~ constructionPageData", constructionPageData)
 
 interface IConstructionPageProps {
-
+    // pageData: object;
 }
 
-const ConstructionPage: React.FC<IConstructionPageProps> = () => {
+const ConstructionPage: React.FC<IConstructionPageProps> = ({accessibility, design, performance}) => {
+// console.log("🚀 ~ file: ConstructionPage.tsx ~ line 18 ~ propps", props)
+    // const {accessibility, design, performance} = pageData;
+
   //   const ref = useRef(0);
   //   console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 11 ~ ref", ref)
 
@@ -20,7 +27,6 @@ const ConstructionPage: React.FC<IConstructionPageProps> = () => {
 
   //   }, [])
 
-  const code = "<div><h1>hejsan</h1></div>";
 
   const imageCode = `import styles from './Image.module.scss';
 import classNames from "classnames";
@@ -36,8 +42,8 @@ const Image: React.FC<IImageProps> = ({
     round = false,
     modifier = [],
 }) => {
-    const classes = !modifier.length 
-      ? styles["Image"] 
+    const classes = !modifier.length
+      ? styles["Image"]
       : classNames(modifier.map(x => (
         [x]
     )), styles["Image"]);
@@ -108,7 +114,10 @@ export default Image;
           <div
             className={styles['ConstructionPage__Preamble']}
           >dssfdsfdsfsd preamlbe</div>
-          <ContentCard />
+          <CardArticle>
+              <ContentCard code={performance.code.image}/>
+          </CardArticle>
+          {/* <ContentCard /> */}
           {/* <Video containerWidth={50} width={704} height={644} /> */}
           {/* <VideoCard /> */}
           {/* <CodeBox code={imageCode} /> */}
@@ -146,5 +155,17 @@ export default Image;
     </div>
   );
 };
+
+// export async function getStaticProps(props){
+//     console.log("🚀 ~ file: ConstructionPage.tsx ~ line 160 ~ getStaticProps ~ props", props)
+//     console.log("körs den ens");
+//     return {
+//         props:{
+//             constructionPageData
+//             // pageData: {
+//             // }
+//         }
+//     }
+// }
 
 export default ConstructionPage;
