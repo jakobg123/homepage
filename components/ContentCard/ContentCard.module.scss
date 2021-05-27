@@ -5,12 +5,14 @@
 .ContentCard {
   display: flex;
   flex-direction: column;
-  padding: $spacingL $spacingM;
+  padding: $spacingXl $spacingM $spacingL * 2;
   background-color: $colorWhite;
   box-shadow: $boxShadowCard;
+  margin-bottom: $spacingXl * 2;
 
   @include media(tablet) {
     flex-direction: row;
+    padding: $spacingL * 2 $spacingM $spacingXl * 2;
   }
 
   &--Reverse {
@@ -27,7 +29,12 @@
 
     @include media(tablet) {
       flex: 0 0 50%;
-      padding-right: $spacingM;
+      padding-right: $spacingL * 2;
+      padding-left: $spacingXl * 2;
+
+      .ContentCard--Reverse & {
+        padding-left: $spacingL * 2;
+      }
     }
   }
 
@@ -43,7 +50,7 @@
   &__ImageWrapper {
     position: relative;
     flex: 0 0 100%;
-    min-height: 25rem;
+    min-height: 40rem;
 
     @include media(tablet) {
       flex: 0 0 50%;
@@ -58,10 +65,77 @@
 
     @include media(tablet) {
       flex: 0 0 50%;
+      height: 100%;
       padding: 2rem;
       background-color: $colorPrimary;
       box-shadow: $boxShadowCard;
       // border: 1px solid blue;
     }
+  }
+
+  &__VideoTitleWrapper {
+    position: absolute;
+    left: -2rem;
+    top: -2rem;
+    height: 8rem;
+    width: 8rem;
+    background: radial-gradient(
+      circle at bottom right,
+      $colorWhite 40%,
+      $colorPrimary
+    );
+    box-shadow: $boxShadowCard;
+    z-index: 2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .ContentCard--Reverse & {
+      @include media(tablet) {
+        left: calc(100% - 11rem);
+        background: radial-gradient(
+          circle at bottom left,
+          $colorWhite 40%,
+          $colorPrimary
+        );
+      }
+    }
+
+    @include media(tablet) {
+      left: -4rem;
+      top: -3rem;
+      height: 13rem;
+      width: 13rem;
+    }
+  }
+
+  &__VideoTitle {
+    // position: absolute;
+    top: 2rem;
+    left: 2rem;
+    @extend %h3;
+    padding-bottom: $spacingS;
+    // background: $colorBlack;
+    // background: radial-gradient($colorPrimary);
+    // padding: 2rem 5rem 5rem 2rem;
+    // border-bottom-right-radius: 50%;
+    // padding: 5rem;
+    // color: $colorPrimary;
+    color: $colorBlack;
+    z-index: 2;
+
+    // &::after {
+    //   content: '';
+    //   position: absolute;
+    //   left: -50%;
+    //   top: -50%;
+    //   transform: translate(25%, 25%);
+    //   height: 16rem;
+    //   width: 16rem;
+    //   background: $colorBlack;
+    //   z-index: -1;
+    //   border-radius: 50%;
+    // }
   }
 }

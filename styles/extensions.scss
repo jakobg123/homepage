@@ -112,12 +112,12 @@
   padding-bottom: $spacingS;
 
   @include media(desktop) {
-    padding-bottom: $spacingL;
+    padding-bottom: $spacingM;
     font-size: 5.063rem;
   }
 
   @include media(xl) {
-    padding-bottom: $spacingXl;
+    padding-bottom: $spacingL;
   }
 }
 

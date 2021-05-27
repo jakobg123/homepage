@@ -26,13 +26,12 @@ SyntaxHighlighter.registerLanguage('tsx', tsx);
 // hljs.registerLanguage('javascript', javascript);
 // console.log("OUTPUT ÄR ~ file: CodeBox.tsx ~ line 17 ~ hljs", hljs)
 
-interface ICodeBoxProps {
+export interface ICodeBoxProps {
     code: string;
     height?: number;
-    
 }
 
-const CodeBox: React.FC<ICodeBoxProps> = ({ code, height = 35, reverse = false }) => {
+const CodeBox: React.FC<ICodeBoxProps> = ({ code, height = 35 }) => {
     return (
         <div className={styles["CodeBox"]} style={{ height: `${height}rem` }}>
             <SyntaxHighlighter language="tsx" style={nord}>
