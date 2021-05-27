@@ -50,18 +50,16 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
 
     render() {
         const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData } = this.props;
-        console.log("proppsen: ", this.props);
 
         const context = HeroImageContext.Consumer;
-        // console.log("🚀 ~ file: BaseContainer.tsx ~ line 55 ~ BaseContainer ~ render ~ context", context)
+
         return (
             <div className={styles['BaseContainer']} id="start">
                 <header className={styles['BaseContainer__Header']}>
                     <HeroImageContext.Consumer >
                         {pageContext => {
-                        console.log("🚀 ~ file: BaseContainer.tsx ~ line 61 ~ BaseContainer ~ render ~ props", pageContext)
                             return (
-                                <figure className={classNames(styles['BaseContainer__Logo'], {[styles["BaseContainer__Logo--Construction"]] : pageContext === "Construction"})}>
+                                <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: pageContext === "Construction" })}>
                                     <img
                                         {...logoData}
                                     />

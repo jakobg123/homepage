@@ -33,19 +33,55 @@
 }
 
 %textWidth {
-  max-width: 95%;
+  // max-width: 95%;
+  max-width: 62rem;
 
   @include media(ms) {
-    max-width: 85%;
+    // max-width: 85%;
+    max-width: 65rem;
   }
 
   @include media(tablet) {
-    max-width: 70%;
+    // max-width: 70%;
+    max-width: 70rem;
   }
 
   @include media(xl) {
-    max-width: 65%;
+    // max-width: 65%;
+    max-width: 80rem;
   }
+}
+
+%noScrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+%textBlock {
+  // &__Paragraph {
+  h2 {
+    @extend %h2;
+  }
+
+  h3 {
+    @extend %h3;
+  }
+
+  p {
+    @extend %richtext;
+
+    span {
+      display: inline-block;
+    }
+
+    &:last-of-type {
+      padding-bottom: $spacingL * 2;
+    }
+  }
+  // }
 }
 
 %h1 {

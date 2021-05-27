@@ -49,4 +49,5 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     pTHeight?: number;
     modifier?: any[];
     caption?: string;
+    modifierClass?: string;
 }

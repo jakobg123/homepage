@@ -137,25 +137,26 @@
   }
 
   &__Paragraph {
-    h2 {
-      @extend %h2;
-    }
+    @extend %textBlock;
+    // h2 {
+    //   @extend %h2;
+    // }
 
-    h3 {
-      @extend %h3;
-    }
+    // h3 {
+    //   @extend %h3;
+    // }
 
-    p {
-      @extend %richtext;
+    // p {
+    //   @extend %richtext;
 
-      span {
-        display: inline-block;
-      }
+    //   span {
+    //     display: inline-block;
+    //   }
 
-      &:last-of-type {
-        padding-bottom: $spacingL * 2;
-      }
-    }
+    //   &:last-of-type {
+    //     padding-bottom: $spacingL * 2;
+    //   }
+    // }
   }
   &__ParagraphPres {
     @include media(tablet) {

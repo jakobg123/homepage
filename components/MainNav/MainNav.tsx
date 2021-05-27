@@ -48,40 +48,39 @@ const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
     )
 }
 
-const MainNavLink = ({ target, label, forceImport }) => {
-    const { forceImportModules, showKnowledge, showInternship } = useContext(TargetLinks);
+const MainNavLink = ({ target, label }) => {
+    const { showKnowledge, showInternship } = useContext(TargetLinks);
 
-    const redirectAfterImport = (target) => {
-        forceImportModules();
-        setTimeout(() => {
-            window.location.href = target;
-        }, 300);
-    }
+    // const redirectAfterImport = (target) => {
+    //     setTimeout(() => {
+    //         window.location.href = target;
+    //     }, 300);
+    // }
 
     let NavLink: React.FC;
 
-    if (!forceImport) {
-        NavLink = () => (
-            <Link href={target}>
-                <a className={styles['MainNav__Link']}>{label}</a>
-            </Link>
-        )
-    } else {
-        if (!showKnowledge || !showInternship) {
-            NavLink = () => (
-                <button title="http://stackoverflow.com" style={{ cursor: "pointer", background: "none", border: "none" }} className={styles['MainNav__Link']} onClick={() => redirectAfterImport(target)}>{label}</button>
-                // <a style={{ cursor: "pointer" }} className={styles['MainNav__Link']} onClick={() => redirectAfterImport(target)}>{label}</a>
-            )
-        }
-        else {
-            console.log("inne i else");
-            NavLink = () => (
-                <Link href={target}>
-                    <a title="shankjda" className={styles['MainNav__Link']}>{label}</a>
-                </Link>
-            )
-        }
-    }
+    // if (!forceImport) {
+    //     NavLink = () => (
+    //         <Link href={target}>
+    //             <a className={styles['MainNav__Link']}>{label}</a>
+    //         </Link>
+    //     )
+    // } else {
+    //     if (!showKnowledge || !showInternship) {
+    NavLink = () => (
+        <button title="http://stackoverflow.com" style={{ cursor: "pointer", background: "none", border: "none" }} className={styles['MainNav__Link']}>{label}</button>);
+    // <a style={{ cursor: "pointer" }} className={styles['MainNav__Link']} onClick={() => redirectAfterImport(target)}>{label}</a>
+    //     )
+    // }
+    // else {
+    //     console.log("inne i else");
+    //     NavLink = () => (
+    //         <Link href={target}>
+    //             <a title="shankjda" className={styles['MainNav__Link']}>{label}</a>
+    //         </Link>
+    //         )
+    //     }
+    // }
 
     return <NavLink />;
 }

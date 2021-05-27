@@ -1,5 +1,8 @@
 import styles from "./ConstructionPage.module.scss";
 import CodeBox from "../../components/CodeBox";
+import ContentCard from "../../components/ContentCard";
+// import Video from "../../components/Video";
+import VideoCard from "../../components/VideoCard";
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
 // import { useRef, useEffect } from "react";
 
@@ -8,90 +11,91 @@ interface IConstructionPageProps {
 }
 
 const ConstructionPage: React.FC<IConstructionPageProps> = () => {
-//   const ref = useRef(0);
-//   console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 11 ~ ref", ref)
+  //   const ref = useRef(0);
+  //   console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 11 ~ ref", ref)
 
-//   useEffect(() => {
-//     let scrollable = isScrollable(ref.current);
-//     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 14 ~ useEffect ~ scrollable", scrollable)
+  //   useEffect(() => {
+  //     let scrollable = isScrollable(ref.current);
+  //     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 14 ~ useEffect ~ scrollable", scrollable)
 
-//   }, [])
+  //   }, [])
 
   const code = "<div><h1>hejsan</h1></div>";
 
   const imageCode = `import styles from './Image.module.scss';
-    import classNames from "classnames";
+import classNames from "classnames";
+import { IImageProps, IMediaQueries } from '../../types/types';
 
-    import { IImageProps, IMediaQueries } from '../../types/types';
+const Image: React.FC<IImageProps> = ({
+    src,
+    width,
+    height,
+    alt,
+    mediaQueries,
+    loading = 'lazy',
+    round = false,
+    modifier = [],
+}) => {
+    const classes = !modifier.length 
+      ? styles["Image"] 
+      : classNames(modifier.map(x => (
+        [x]
+    )), styles["Image"]);
 
-    const Image: React.FC<IImageProps> = ({
-        src,
-        width,
-        height,
-        alt,
-        mediaQueries,
-        loading = 'lazy',
-        round = false,
-        modifier = [],
-    }) => {
-        const classes = !modifier.length ? styles["Image"] : classNames(modifier.map(x => (
-            [x]
-        )), styles["Image"]);
+    let imageStyles = {};
 
-        let imageStyles = {};
+    if (round) {
+        imageStyles = { borderRadius: "50%" }
+    }
 
-        if (round) {
-            imageStyles = { borderRadius: "50%" }
-        }
+    return (
+        <picture className={classes}
+        >
+            {!!mediaQueries?.length &&
+                mediaQueries.map(({ src, minWidth }, index) => (
+                    <source
+                        key={index}
+                        media={\`(min-width: \${minWidth}px)\`}
+                        srcSet={src}
+                    />
+                ))}
+            <img
+                src={src}
+                alt={alt}
+                width={width}
+                height={height}
+                loading={loading}
+                style={imageStyles}
+                className={styles['Image__Image']}
+            />
+        </picture >
+    );
+};
 
-        return (
-            <picture className={classes}
-            >
-                {!!mediaQueries?.length &&
-                    mediaQueries.map(({ src, minWidth }, index) => (
-                        <source
-                            key={index}
-                            media={\`(min-width: \${minWidth}px)\`}
-                            srcSet={src}
-                        />
-                    ))}
-                <img
-                    src={src}
-                    alt={alt}
-                    width={width}
-                    height={height}
-                    loading={loading}
-                    style={imageStyles}
-                    className={styles['Image__Image']}
-                />
-            </picture >
-        );
-    };
+export default Image;
+`;
 
-    export default Image;
-    `;
+  //   const isScrollable = function (ele) {
+  //     // Compare the height to see if the element has scrollable content
+  //     const hasScrollableContent = ele.scrollHeight > ele.clientHeight;
 
-//   const isScrollable = function (ele) {
-//     // Compare the height to see if the element has scrollable content
-//     const hasScrollableContent = ele.scrollHeight > ele.clientHeight;
+  //     // It's not enough because the element's `overflow-y` style can be set as
+  //     // * `hidden`
+  //     // * `hidden !important`
+  //     // In those cases, the scrollbar isn't shown
+  //     const overflowYStyle = window.getComputedStyle(ele).overflowY;
+  //     const isOverflowHidden = overflowYStyle.indexOf('hidden') !== -1;
 
-//     // It's not enough because the element's `overflow-y` style can be set as
-//     // * `hidden`
-//     // * `hidden !important`
-//     // In those cases, the scrollbar isn't shown
-//     const overflowYStyle = window.getComputedStyle(ele).overflowY;
-//     const isOverflowHidden = overflowYStyle.indexOf('hidden') !== -1;
+  //     return hasScrollableContent && !isOverflowHidden;
+  //   };
 
-//     return hasScrollableContent && !isOverflowHidden;
-//   };
+  //   const scrollFunction = (e) => {
+  //     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 63 ~ scrollFunction ~ e", e.target.parentNode);
+  //     e.target.parentNode.scrollBy(0, 100);
 
-//   const scrollFunction = (e) => {
-//     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 63 ~ scrollFunction ~ e", e.target.parentNode);
-//     e.target.parentNode.scrollBy(0, 100);
-
-//     const res = isScrollable(e.target.parentNode);
-//     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 82 ~ scrollFunction ~ res", res)
-//   }
+  //     const res = isScrollable(e.target.parentNode);
+  //     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 82 ~ scrollFunction ~ res", res)
+  //   }
 
   return (
     <div className={styles["ConstructionPage"]}>
@@ -104,15 +108,19 @@ const ConstructionPage: React.FC<IConstructionPageProps> = () => {
           <div
             className={styles['ConstructionPage__Preamble']}
           >dssfdsfdsfsd preamlbe</div>
-          <CodeBox code={imageCode} />
+          <ContentCard />
+          {/* <Video containerWidth={50} width={704} height={644} /> */}
+          {/* <VideoCard /> */}
+          {/* <CodeBox code={imageCode} /> */}
+
           {/* <div id="codeScroll" className={styles["ConstructionPage__CodeWrapper"]}> */}
-            {/* <button onClick={scrollFunction}>scrolla</button> */}
-            {/* <pre>
+          {/* <button onClick={scrollFunction}>scrolla</button> */}
+          {/* <pre>
               <code>
                 {imageCode}
               </code>
             </pre> */}
-            {/* <CodeBlock
+          {/* <CodeBlock
               text={imageCode}
               language={"jsx"}
               showLineNumbers={true}

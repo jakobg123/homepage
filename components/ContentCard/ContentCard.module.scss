@@ -1,0 +1,67 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.ContentCard {
+  display: flex;
+  flex-direction: column;
+  padding: $spacingL $spacingM;
+  background-color: $colorWhite;
+  box-shadow: $boxShadowCard;
+
+  @include media(tablet) {
+    flex-direction: row;
+  }
+
+  &--Reverse {
+    flex-direction: column-reverse;
+
+    @include media(tablet) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__Text {
+    flex: 0 0 100%;
+    @extend %textBlock;
+
+    @include media(tablet) {
+      flex: 0 0 50%;
+      padding-right: $spacingM;
+    }
+  }
+
+  &__CodeWrapper {
+    flex: 0 0 100%;
+
+    @include media(tablet) {
+      flex: 0 0 50%;
+      // border: 1px solid blue;
+    }
+  }
+
+  &__ImageWrapper {
+    position: relative;
+    flex: 0 0 100%;
+    min-height: 25rem;
+
+    @include media(tablet) {
+      flex: 0 0 50%;
+      // border: 1px solid blue;
+    }
+  }
+
+  &__VideoWrapper {
+    position: relative;
+    flex: 0 0 100%;
+    // width: 50%;
+
+    @include media(tablet) {
+      flex: 0 0 50%;
+      padding: 2rem;
+      background-color: $colorPrimary;
+      box-shadow: $boxShadowCard;
+      // border: 1px solid blue;
+    }
+  }
+}
