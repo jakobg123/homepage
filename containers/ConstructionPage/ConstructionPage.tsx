@@ -11,12 +11,12 @@ import CardArticle from "../../components/CardArticle";
 // console.log("🚀 ~ file: ConstructionPage.tsx ~ line 11 ~ constructionPageData", constructionPageData)
 
 interface IConstructionPageProps {
-    // pageData: object;
+  // pageData: object;
 }
 
-const ConstructionPage: React.FC<IConstructionPageProps> = ({accessibility, design, performance}) => {
-// console.log("🚀 ~ file: ConstructionPage.tsx ~ line 18 ~ propps", props)
-    // const {accessibility, design, performance} = pageData;
+const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, design, performance }) => {
+  // console.log("🚀 ~ file: ConstructionPage.tsx ~ line 18 ~ propps", props)
+  // const {accessibility, design, performance} = pageData;
 
   //   const ref = useRef(0);
   //   console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 11 ~ ref", ref)
@@ -28,80 +28,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({accessibility, desi
   //   }, [])
 
 
-  const imageCode = `import styles from './Image.module.scss';
-import classNames from "classnames";
-import { IImageProps, IMediaQueries } from '../../types/types';
 
-const Image: React.FC<IImageProps> = ({
-    src,
-    width,
-    height,
-    alt,
-    mediaQueries,
-    loading = 'lazy',
-    round = false,
-    modifier = [],
-}) => {
-    const classes = !modifier.length
-      ? styles["Image"]
-      : classNames(modifier.map(x => (
-        [x]
-    )), styles["Image"]);
-
-    let imageStyles = {};
-
-    if (round) {
-        imageStyles = { borderRadius: "50%" }
-    }
-
-    return (
-        <picture className={classes}
-        >
-            {!!mediaQueries?.length &&
-                mediaQueries.map(({ src, minWidth }, index) => (
-                    <source
-                        key={index}
-                        media={\`(min-width: \${minWidth}px)\`}
-                        srcSet={src}
-                    />
-                ))}
-            <img
-                src={src}
-                alt={alt}
-                width={width}
-                height={height}
-                loading={loading}
-                style={imageStyles}
-                className={styles['Image__Image']}
-            />
-        </picture >
-    );
-};
-
-export default Image;
-`;
-
-  //   const isScrollable = function (ele) {
-  //     // Compare the height to see if the element has scrollable content
-  //     const hasScrollableContent = ele.scrollHeight > ele.clientHeight;
-
-  //     // It's not enough because the element's `overflow-y` style can be set as
-  //     // * `hidden`
-  //     // * `hidden !important`
-  //     // In those cases, the scrollbar isn't shown
-  //     const overflowYStyle = window.getComputedStyle(ele).overflowY;
-  //     const isOverflowHidden = overflowYStyle.indexOf('hidden') !== -1;
-
-  //     return hasScrollableContent && !isOverflowHidden;
-  //   };
-
-  //   const scrollFunction = (e) => {
-  //     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 63 ~ scrollFunction ~ e", e.target.parentNode);
-  //     e.target.parentNode.scrollBy(0, 100);
-
-  //     const res = isScrollable(e.target.parentNode);
-  //     console.log("OUTPUT ÄR ~ file: ConstructionPage.tsx ~ line 82 ~ scrollFunction ~ res", res)
-  //   }
 
   return (
     <div className={styles["ConstructionPage"]}>
@@ -115,7 +42,11 @@ export default Image;
             className={styles['ConstructionPage__Preamble']}
           >dssfdsfdsfsd preamlbe</div>
           <CardArticle>
-              <ContentCard code={performance.code.image}/>
+            <ContentCard code={performance.code.image} html={performance.dummyText} />
+            <ContentCard code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
+            <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
+            <ContentCard video={performance.video.desktopPerfEnh} html={performance.dummyText} reverse />
+            <ContentCard image={performance.images.kanban} html={performance.dummyText} />
           </CardArticle>
           {/* <ContentCard /> */}
           {/* <Video containerWidth={50} width={704} height={644} /> */}
