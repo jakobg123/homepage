@@ -27,6 +27,7 @@ export interface IBaseProps {
         footerData: IFooter;
         headerData: IHeaderProps;
         mainNavData: IMainNavProps;
+        constructionPageData: any;
     };
 }
 

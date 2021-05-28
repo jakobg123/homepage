@@ -11,9 +11,11 @@ interface IContentCardProps {
   reverse?: boolean;
   reverseWrap?: boolean;
   html?: string;
-  code?: string;
+//   code?: string;
+  code?: any;
   image?: IImageProps;
-  video?: IVideoProps;
+  video?: any;
+//   video?: IVideoProps;
 }
 
 const ContentCard: React.FC<IContentCardProps> = ({ html, code, image, video, reverse = false, reverseWrap = false }) => {

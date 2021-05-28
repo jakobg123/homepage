@@ -6,12 +6,17 @@ import VideoCard from "../../components/VideoCard";
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
 // import { useRef, useEffect } from "react";
 import CardArticle from "../../components/CardArticle";
+import Carousel from "../../components/Carousel";
 
 // import {constructionPageData} from "../../data/ConstructionPage/ConstructionPageData";
 // console.log("🚀 ~ file: ConstructionPage.tsx ~ line 11 ~ constructionPageData", constructionPageData)
 
 interface IConstructionPageProps {
   // pageData: object;
+  accessibility: any;
+  design: any;
+  performance: any;
+
 }
 
 const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, design, performance }) => {
@@ -41,33 +46,15 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           <div
             className={styles['ConstructionPage__Preamble']}
           >dssfdsfdsfsd preamlbe</div>
-          <CardArticle>
+          <Carousel />
+
+          {/* <CardArticle>
             <ContentCard code={performance.code.image} html={performance.dummyText} />
             <ContentCard code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
             <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
             <ContentCard video={performance.video.desktopPerfEnh} html={performance.dummyText} reverse />
             <ContentCard image={performance.images.kanban} html={performance.dummyText} />
-          </CardArticle>
-          {/* <ContentCard /> */}
-          {/* <Video containerWidth={50} width={704} height={644} /> */}
-          {/* <VideoCard /> */}
-          {/* <CodeBox code={imageCode} /> */}
-
-          {/* <div id="codeScroll" className={styles["ConstructionPage__CodeWrapper"]}> */}
-          {/* <button onClick={scrollFunction}>scrolla</button> */}
-          {/* <pre>
-              <code>
-                {imageCode}
-              </code>
-            </pre> */}
-          {/* <CodeBlock
-              text={imageCode}
-              language={"jsx"}
-              showLineNumbers={true}
-              theme={tomorrowNightBlue}
-              wrapLines
-            /> */}
-          {/* </div> */}
+          </CardArticle> */}
 
           <div className={styles['ConstructionPage__ParagraphPres']}>
             {/* <div className={styles['StartContainer__PresImageWrapper']}>
