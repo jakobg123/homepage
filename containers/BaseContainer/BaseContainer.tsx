@@ -51,7 +51,6 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
 
     render() {
         const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData } = this.props;
-        console.log("🚀 ~ file: BaseContainer.tsx ~ line 54 ~ BaseContainer ~ render ~ constructionPageData", constructionPageData)
 
         const context = HeroImageContext.Consumer;
 

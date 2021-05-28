@@ -1,0 +1,23 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.Modal {
+    @include posFixed;
+    // position: fixed;
+    // width: 100vw;
+    // height: 100vh;
+    // background-color: $colorBlack;
+    @include bgColorOpacity($colorBlack, .9);
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem 15rem;
+
+    &__Content{
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+}

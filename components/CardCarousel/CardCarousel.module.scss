@@ -1,0 +1,59 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.CardCarousel {
+//   border: 1px solid red;
+  height: 50rem;
+  box-shadow: $boxShadowCard;
+  overflow: hidden;
+  border-radius: $radiusCardSmall;
+  transition: transform $transitionNormal;
+  position: relative;
+
+//   &:hover {
+//     transform: scale(1.05);
+//   }
+
+  &__Button{
+      @include posAbsolute;
+      background: none;
+      z-index: 10;
+      border: none;
+
+    //    &+div img{
+    //           transform: scale(1.2);
+    //     }
+
+      &:hover{
+          &+div img{
+              transform: scale(1.09);
+          }
+      }
+  }
+
+  &__ImageWrapper {
+    position: relative;
+    height: 20rem;
+    overflow: hidden;
+
+  }
+
+  &__TextWrapper {
+      box-shadow: $boxShadowCard;
+    background-color: $colorBlack;
+    height: 100%;
+    padding: $spacingM $spacingS;
+
+  }
+
+  &__Title {
+      @extend %h4;
+      color: $colorPrimary;
+  }
+
+  &__Text {
+      color: $colorPrimary;
+      @extend %bodySmall;
+  }
+}
