@@ -20,6 +20,9 @@
 # production
 /build
 
+# sitemap
+sitemap.xml
+
 # misc
 .DS_Store
 *.pem
