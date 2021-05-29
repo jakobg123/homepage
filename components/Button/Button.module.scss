@@ -2,30 +2,56 @@
 @import '../../styles/extensions.scss';
 
 .Button {
-  display: inline-flex;
-  align-items: center;
+  display: inline-block;
   padding: $spacingL $spacingL * 2 $spacingL $spacingM;
-  background-color: $colorPrimary;
+  background-color: $colorSecondary;
   border-radius: $radiusButtonSmall;
   position: relative;
   outline: none;
-  border: 2px solid $colorBlack;
+  color: $colorPrimary;
+  overflow: hidden;
   box-shadow: $boxShadowCardSmall;
   @extend %label;
   font-weight: 900;
   @extend %fontColorBlack;
   text-decoration: none;
   transition: all $transitionNormal;
+  will-change: transform;
+
+  svg {
+    color: $colorPrimary;
+    fill: $colorPrimary;
+  }
+
+  &::after {
+    content: '';
+    @include posAbsolute(0, 80%);
+    will-change: transform;
+    background: radial-gradient(
+      circle at right,
+      $colorSecondaryLight 10%,
+      $colorSecondary
+    );
+    z-index: 5;
+    opacity: 0;
+    transition: all $transitionNormal;
+    // transition: all $transitionMediumSlow;
+  }
 
   &:hover,
   &:focus {
-    background-color: $colorBlack;
-    color: $colorPrimary;
-
-    svg {
-      color: $colorPrimary;
-      fill: $colorPrimary;
+    &::after {
+      transform: translate(-75%, 0);
+      opacity: 1;
     }
+  }
+
+  &__TextWrapper {
+    position: relative;
+    z-index: 10;
+    // display: block;
+    display: inline-flex;
+    align-items: center;
   }
 
   &__IconWrapper {

@@ -1,6 +1,129 @@
 export default {
     accessibility: {},
-    design: {},
+    design: {
+        carouselData: [
+            {
+                id: 1,
+                title: 'title 1',
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                image: {
+                    src: '/images/temp/kanban2_small-min.jpg',
+                    alt: 'Anlagstavla med todo-lappar.',
+                    caption: 'Foto: Paul Hanaoka, unsplash.com',
+                    width: 640,
+                    height: 960,
+                    mediaQueries: [
+                        {
+                            minWidth: 580,
+                            src: '/images/temp/kanban2_medium-min.jpg',
+                        },
+                    ],
+                },
+            },
+            {
+                id: 2,
+                title: 'title 2',
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                image: {
+                    src: '/images/temp/code_small-min.jpg',
+                    alt: 'Laptop med programmeringskod.',
+                    caption: 'Foto: James Harrison, unsplash.com',
+                    width: 1920,
+                    height: 1080,
+                    mediaQueries: [
+                        {
+                            minWidth: 768,
+                            src: '/images/temp/code_large-min.jpg',
+                        },
+                        {
+                            minWidth: 580,
+                            src: '/images/temp/code_medium-min.jpg',
+                        },
+                    ],
+                },
+            },
+            {
+                id: 3,
+                title: 'title 3',
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                image: {
+                    src: '/images/temp/kanban2_small-min.jpg',
+                    alt: 'Anlagstavla med todo-lappar.',
+                    caption: 'Foto: Paul Hanaoka, unsplash.com',
+                    width: 640,
+                    height: 960,
+                    mediaQueries: [
+                        {
+                            minWidth: 580,
+                            src: '/images/temp/kanban2_medium-min.jpg',
+                        },
+                    ],
+                },
+            },
+            {
+                id: 4,
+                title: 'title 3',
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                image: {
+                    src: '/images/temp/code_small-min.jpg',
+                    alt: 'Laptop med programmeringskod.',
+                    caption: 'Foto: James Harrison, unsplash.com',
+                    width: 1920,
+                    height: 1080,
+                    mediaQueries: [
+                        {
+                            minWidth: 768,
+                            src: '/images/temp/code_large-min.jpg',
+                        },
+                        {
+                            minWidth: 580,
+                            src: '/images/temp/code_medium-min.jpg',
+                        },
+                    ],
+                },
+            },
+            {
+                id: 5,
+                title: 'title 5',
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                image: {
+                    src: '/images/temp/kanban2_small-min.jpg',
+                    alt: 'Anlagstavla med todo-lappar.',
+                    caption: 'Foto: Paul Hanaoka, unsplash.com',
+                    width: 640,
+                    height: 960,
+                    mediaQueries: [
+                        {
+                            minWidth: 580,
+                            src: '/images/temp/kanban2_medium-min.jpg',
+                        },
+                    ],
+                },
+            },
+            {
+                id: 6,
+                title: 'title 6',
+                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                image: {
+                    src: '/images/temp/code_small-min.jpg',
+                    alt: 'Laptop med programmeringskod.',
+                    caption: 'Foto: James Harrison, unsplash.com',
+                    width: 1920,
+                    height: 1080,
+                    mediaQueries: [
+                        {
+                            minWidth: 768,
+                            src: '/images/temp/code_large-min.jpg',
+                        },
+                        {
+                            minWidth: 580,
+                            src: '/images/temp/code_medium-min.jpg',
+                        },
+                    ],
+                },
+            },
+        ],
+    },
     performance: {
         images: {
             kanban: {

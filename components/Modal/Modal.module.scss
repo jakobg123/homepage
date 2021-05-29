@@ -4,23 +4,36 @@
 
 .Modal {
   @include posFixed;
-  // position: fixed;
-  // width: 100vw;
-  // height: 100vh;
-  // background-color: $colorBlack;
   @include bgColorOpacity($colorBlack, 0.9);
   justify-content: center;
   align-items: center;
-  padding: 10rem 15rem;
   z-index: -1;
   opacity: 0;
   transition: all $transitionNormal;
   display: none;
+  // @extend %grid;
+  padding-top: 5rem;
+
+  @include media(tablet) {
+    padding: 5rem 7rem;
+  }
+  @include media(xl) {
+    padding: 10rem 15rem;
+  }
+
+  &--Display {
+    display: flex;
+  }
 
   &--Active {
-    display: flex;
     opacity: 1;
     z-index: 11;
+  }
+
+  &__Close {
+    @include posAbsolute(0, 90%);
+    height: 3rem;
+    width: 3rem;
   }
 
   &__Content {

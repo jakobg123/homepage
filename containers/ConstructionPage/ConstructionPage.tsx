@@ -46,7 +46,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           <div
             className={styles['ConstructionPage__Preamble']}
           >dssfdsfdsfsd preamlbe</div>
-          <Carousel />
+          <Carousel carouselData={design.carouselData} />
 
           {/* <CardArticle>
             <ContentCard code={performance.code.image} html={performance.dummyText} />
