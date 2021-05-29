@@ -3,6 +3,8 @@ import Link from 'next/link';
 import styles from './MobileNav.module.scss';
 import classNames from 'classnames';
 
+import {lockBody, unlockBody} from "../../utils/helpers/modal";
+
 import Icon from '../Icon';
 
 import { INavLinks } from "../../types/typesData";
@@ -22,14 +24,16 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
         setTimeout(() => {
             setOpenNav(true)
             slideIn(true)
-            document.body.style.overflow = 'hidden';
+            lockBody();
+            // document.body.style.overflow = 'hidden';
         }, 100)
     }
 
     const close = () => {
         setOpenNav(false)
         slideIn(false)
-        document.body.style.overflow = 'scroll';
+        unlockBody();
+        // document.body.style.overflow = 'scroll';
 
         setTimeout(() => {
             setShowOverlay(false)

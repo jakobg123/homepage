@@ -4,10 +4,12 @@ import { IImageProps } from "../../types/types";
 
 interface ICardCarouselProps {
   image: IImageProps,
-  handleClick: () => void;
+  handleClick: () => boolean;
+  open: boolean;
+  setOpen: () => void;
 }
 
-const CardCarousel: React.FC<ICardCarouselProps> = ({ image, handleClick }) => {
+const CardCarousel: React.FC<ICardCarouselProps> = ({ image, handleClick, open, setOpen }) => {
   // image = {
   //   src: '/images/temp/kanban2_small-min.jpg',
   //   alt: 'Anlagstavla med todo-lappar.',
@@ -24,8 +26,8 @@ const CardCarousel: React.FC<ICardCarouselProps> = ({ image, handleClick }) => {
 
   return (
     <div className={styles["CardCarousel"]}>
-      <button className={styles["CardCarousel__Button"]} onClick={() => handleClick(1)}>
-        
+      <button className={styles["CardCarousel__Button"]} onClick={() => handleClick(open, setOpen)}>
+
       </button>
       <div className={styles["CardCarousel__ImageWrapper"]}>
         <Image {...image} />

@@ -6,6 +6,7 @@ import useWindowSize from "../../utils/Hooks/useWindowSize";
 import CardCarousel from "../CardCarousel";
 import Modal from "../Modal";
 import Image from "../Image";
+import {lockBody, unlockBody} from "../../utils/helpers/modal";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -14,9 +15,26 @@ interface ICarouselProps {
 }
 
 const Carousel: React.FC<ICarouselProps> = () => {
+    const [openModal, setOpenModal] = useState(false)
+    // console.log("🚀 ~ file: Carousel.tsx ~ line 19 ~ openModal", openModal)
 
-  const handleClick = () => {
-    document.body.style.overflow = 'hidden';
+    // const open = () => {
+    //     setOpenModal(true)
+    // };
+
+    // const close = () => {
+    //     setOpenModal(false)
+    // };
+    // useEffect(() => {
+    //     effect
+    //     return () => setOpenModal(false)
+    // }, [open])
+
+  const handleClick = (open, setOpen) => {
+  console.log("🚀 ~ file: Carousel.tsx ~ line 34 ~ handleClick ~ open", open)
+
+      open ? unlockBody() : lockBody();
+      setOpen(!open);
   }
 
   const image = {
@@ -69,11 +87,11 @@ const Carousel: React.FC<ICarouselProps> = () => {
         onSlideChange={() => console.log('slide change')}
         onSwiper={(swiper) => console.log(swiper)}
       >
-        <SwiperSlide><CardCarousel image={image} /></SwiperSlide>
-        <SwiperSlide><CardCarousel image={image} /></SwiperSlide>
-        <SwiperSlide><CardCarousel image={image} /></SwiperSlide>
-        <SwiperSlide><CardCarousel image={image} /></SwiperSlide>
-        <SwiperSlide><CardCarousel image={image} /></SwiperSlide>
+        <SwiperSlide><CardCarousel image={image} handleClick={handleClick} open={openModal} setOpen={setOpenModal}/></SwiperSlide>
+        <SwiperSlide><CardCarousel image={image} handleClick={handleClick} open={openModal} setOpen={setOpenModal}/></SwiperSlide>
+        <SwiperSlide><CardCarousel image={image} handleClick={handleClick} open={openModal} setOpen={setOpenModal}/></SwiperSlide>
+        <SwiperSlide><CardCarousel image={image} handleClick={handleClick} open={openModal} setOpen={setOpenModal}/></SwiperSlide>
+        <SwiperSlide><CardCarousel image={image} handleClick={handleClick} open={openModal} setOpen={setOpenModal}/></SwiperSlide>
 
         {/* <SwiperSlide>{<InfoCard num={1} />}</SwiperSlide>
         <SwiperSlide>{<InfoCard num={2} />}</SwiperSlide>
@@ -89,9 +107,9 @@ const Carousel: React.FC<ICarouselProps> = () => {
         <SwiperSlide>{<InfoCard num={12} />}</SwiperSlide> */}
       </Swiper>
     </div>
-    {/* <Modal>
+    <Modal handleClick={handleClick} open={openModal} setOpen={setOpenModal} >
      <Image {...image} />
-    </Modal>  */}
+    </Modal>
     </>
   );
 };
