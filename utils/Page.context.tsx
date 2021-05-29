@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HeroImage = React.createContext("start");
+const PageContext = React.createContext("start");
 // const HeroImage = React.createContext({
 //     page: "start",
 // });

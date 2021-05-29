@@ -5,18 +5,23 @@
 .ModalContent {
   display: flex;
   flex-direction: column;
+  overflow-y: scroll;
+  @extend %noScrollBar;
+
+  //   border: 1px solid red;
+  height: 100%;
+  //   flex-direction: column;
+  margin: 0 auto;
+  @include media(tablet) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
 
   &__OuterWrapper {
-    // width: 100% !important;
-    // width: 100%;
-    // width: 100%;
-    // height: 50rem;
-    // max-width: 55%;
-    // max-width: 30%;
-    max-height: 50vh !important;
-    overflow: hidden;
-
     @include media(tablet) {
+      @include posAbsolute;
+      z-index: -1;
+      overflow: hidden;
       //   &:host {
       //   width: initial !important;
       //   }
@@ -25,24 +30,29 @@
 
   &__ImageWrapper {
     position: relative;
-    // height: 20rem;
-    // padding-top: 56.25%;
-    // max-height: 50%;
     width: 100%;
-    // max-width: 70rem;
-    // max-width: 50%;
   }
 
   &__TextWrapper {
     position: relative;
-    // z-index: 10000;
+    display: inline-table;
+    max-width: 100%;
     background-color: $colorBlack;
-    padding: $spacingL $spacingXl;
+    // background-color: $colorSecondary;
+    padding: $spacingL $spacingM $spacingL * 2;
+
+    @include media(tablet) {
+      padding: $spacingL $spacingXl $spacingXl * 2;
+      margin-top: 15rem;
+      max-width: 50%;
+    }
   }
+
   &__Title {
     @extend %h2;
     color: $colorPrimary;
   }
+
   &__Text {
     @extend %body;
     color: $colorPrimary;

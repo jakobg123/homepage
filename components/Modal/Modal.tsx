@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./Modal.module.scss";
 import classNames from "classnames";
 import { lockBody, unlockBody } from "../../utils/helpers/modal";
+import Icon from "../Icon";
 
 interface IModalProps {
   open: boolean;
@@ -49,7 +50,7 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
       <div className={styles["Modal__Content"]}>
         {children}
       </div>
-      <button className={styles["Modal__Close"]} onClick={() => setOpen(!open)}>Stäng</button>
+      <button className={styles["Modal__Close"]} onClick={() => setOpen(!open)}><Icon type={"close"}/></button>
     </div>
   );
 };

@@ -4,7 +4,7 @@
 
 .Modal {
   @include posFixed;
-  @include bgColorOpacity($colorBlack, 0.9);
+  @include bgColorOpacity($colorPrimary, 0.98);
   justify-content: center;
   align-items: center;
   z-index: -1;
@@ -12,14 +12,14 @@
   transition: all $transitionNormal;
   display: none;
   // @extend %grid;
-  padding-top: 5rem;
+  padding: 2rem 2rem 2rem;
 
   @include media(tablet) {
     padding: 5rem 7rem;
   }
-  @include media(xl) {
-    padding: 10rem 15rem;
-  }
+  //   @include media(xl) {
+  //     padding: 10rem 15rem;
+  //   }
 
   &--Display {
     display: flex;
@@ -31,14 +31,43 @@
   }
 
   &__Close {
-    @include posAbsolute(0, 90%);
-    height: 3rem;
-    width: 3rem;
+    // @include posAbsolute(5rem, calc(100% - 12rem));
+    position: absolute;
+    top: 5rem;
+    right: 7rem;
+    height: 4rem;
+    width: 4rem;
+    border: none;
+    border-radius: $radiusButtonSmall;
+    background: none;
+    transition: background-color $transitionQuick;
+
+    &:hover,
+    &:focus {
+      background: $colorBlack;
+
+      svg {
+        fill: $colorPrimary;
+      }
+    }
+    // z-index: 100000;
+    svg {
+      height: 100%;
+      width: 100%;
+      fill: $colorBlack;
+      transition: fill $transitionQuick;
+      //   color: $colorPrimary;
+      //   .Modal__Close:hover &,
+      //   .Modal__Close:focus & {
+      //     fill: $colorPrimary;
+      //   }
+    }
   }
 
   &__Content {
     position: relative;
     width: 100%;
+    max-width: 144rem;
     height: 100%;
   }
 }

@@ -74,8 +74,19 @@ class BaseContainer extends PureComponent<BaseContainerProps> {
                     </div>
                 </header>
                 <main>
-                    {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
-                    <ConstructionPage {...constructionPageData} />
+                    <HeroImageContext.Consumer>
+                        {pageContext => {
+                            if(pageContext === "Start"){
+                                return <StartContainer knowledge={knowledgeData} data={startData} />
+                            }
+                            if(pageContext === "Construction"){
+                                return <ConstructionPage {...constructionPageData} />
+                            }
+                        }}
+                    </HeroImageContext.Consumer>
+                    {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />} */}
+                    {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
+                    <ConstructionPage {...constructionPageData} /> */}
 
                 </main>
                 <footer className={styles['BaseContainer__Footer']}>

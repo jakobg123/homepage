@@ -3,6 +3,7 @@ export interface IIconProps {
     | "arrowPrev"
     | "chevronNext"
     | "chevronDown"
+    | "close"
     | "code"
     | "css"
     | "django"

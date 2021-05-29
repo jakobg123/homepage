@@ -6,6 +6,8 @@ const ArrowNext = dynamic(() => import('./icons/minified/arrowNext.svg'));
 const ArrowPrev = dynamic(() => import('./icons/minified/arrowPrev.svg'));
 const ChevronNext = dynamic(() => import('./icons/minified/chevronNext.svg'));
 const ChevronDown = dynamic(() => import('./icons/minified/chevronDown.svg'));
+// const Close = dynamic(() => import('./icons/minified/close.svg'));
+const Close = dynamic(() => import('./icons/minified/close.svg'));
 const Code = dynamic(() => import('./icons/minified/code.svg'));
 const Css = dynamic(() => import('./icons/minified/css.svg'));
 const Django = dynamic(() => import('./icons/minified/django.svg'));
@@ -38,6 +40,7 @@ export const allIcons = {
     arrowPrev: ArrowPrev,
     chevronNext: ChevronNext,
     chevronDown: ChevronDown,
+    close: Close,
     code: Code,
     css: Css,
     django: Django,

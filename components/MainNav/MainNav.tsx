@@ -13,6 +13,7 @@ export interface IMainNavProps {
 }
 
 const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
+console.log("🚀 ~ file: MainNav.tsx ~ line 16 ~ links", links)
     const context = useContext(HeroImageContext);
 
     return (
@@ -60,15 +61,15 @@ const MainNavLink = ({ target, label }) => {
     let NavLink: React.FC;
 
     // if (!forceImport) {
-    //     NavLink = () => (
-    //         <Link href={target}>
-    //             <a className={styles['MainNav__Link']}>{label}</a>
-    //         </Link>
-    //     )
+        NavLink = () => (
+            <Link href={target}>
+                <a className={styles['MainNav__Link']}>{label}</a>
+            </Link>
+        )
     // } else {
     //     if (!showKnowledge || !showInternship) {
-    NavLink = () => (
-        <button title="http://stackoverflow.com" style={{ cursor: "pointer", background: "none", border: "none" }} className={styles['MainNav__Link']}>{label}</button>);
+    // NavLink = () => (
+    //     <button title="http://stackoverflow.com" style={{ cursor: "pointer", background: "none", border: "none" }} className={styles['MainNav__Link']}>{label}</button>);
     // <a style={{ cursor: "pointer" }} className={styles['MainNav__Link']} onClick={() => redirectAfterImport(target)}>{label}</a>
     //     )
     // }
