@@ -6,10 +6,10 @@ import MobileNav from '../../components/MobileNavButton';
 import Footer from '../../components/Footer';
 import styles from './BaseContainer.module.scss';
 
-// import StartContainer from '../StartContainer';
-const StartContainer = dynamic(() => import('../StartContainer'));
-// import ConstructionPage from "../ConstructionPage";
-const ConstructionPage = dynamic(() => import("../ConstructionPage"));
+import StartContainer from '../StartContainer';
+// const StartContainer = dynamic(() => import('../StartContainer'));
+import ConstructionPage from "../ConstructionPage";
+// const ConstructionPage = dynamic(() => import("../ConstructionPage"));
 
 import { IMainNavProps } from "../../components/MainNav/MainNav";
 import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
