@@ -133,13 +133,13 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                     styles['StartContainer__Block'],
                     styles['StartContainer__Block--Dark']
                 )}>
-                <div className={styles['StartContainer__InternshipWrapper']}>
+                {/* <div className={styles['StartContainer__InternshipWrapper']}>
                     <Theme.Provider value={lightTheme}>
                         <Internship
                             data={internship}
                         />
                     </Theme.Provider>
-                </div>
+                </div> */}
             </div>
         </div >
     );
