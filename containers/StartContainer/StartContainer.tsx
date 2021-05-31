@@ -122,9 +122,9 @@ const StartContainer: React.FC<IStartContainerProps> = ({ data, knowledge }) => 
                         [styles['StartContainer__Background--White']]: !inView,
                     })}>
 
-                    <div className={styles['StartContainer__KnowledgeWrapper']}>
+                    {/* <div className={styles['StartContainer__KnowledgeWrapper']}>
                         <Knowledge knowledge={knowledge} />
-                    </div>
+                    </div> */}
 
                 </div>
             </div>
