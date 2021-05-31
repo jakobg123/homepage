@@ -48,13 +48,13 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           >dssfdsfdsfsd preamlbe</div>
           <Carousel carouselData={design.carouselData} />
 
-          {/* <CardArticle>
+          <CardArticle>
             <ContentCard code={performance.code.image} html={performance.dummyText} />
             <ContentCard code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
             <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
             <ContentCard video={performance.video.desktopPerfEnh} html={performance.dummyText} reverse />
             <ContentCard image={performance.images.kanban} html={performance.dummyText} />
-          </CardArticle> */}
+          </CardArticle>
 
           <div className={styles['ConstructionPage__ParagraphPres']}>
             {/* <div className={styles['StartContainer__PresImageWrapper']}>

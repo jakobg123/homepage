@@ -4,7 +4,7 @@ import MainNav from "../MainNav";
 import Hero from "../Hero";
 import styles from './Header.module.scss';
 import classNames from 'classnames';
-
+import ModalContext from "../../utils/context/Modal.context";
 import { IImageProps } from '../../types/types';
 import { IMainNavProps } from "../MainNav/MainNav";
 // import HeroImageContext, { HeroImageProvider } from "../../utils/HeroImage.context";
@@ -15,9 +15,14 @@ export interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
+    const { modalOpen, fadeOutElement, hideElement } = useContext(ModalContext);
+    // const modalContext = useContext(ModalContext);
+    console.log("OUTPUT ÄR ~ file: Header.tsx ~ line 20 ~ modalContext", modalOpen);
+    console.log("OUTPUT ÄR ~ file: Header.tsx ~ line 19 ~ fadeOutElement", fadeOutElement);
+    console.log("OUTPUT ÄR ~ file: Header.tsx ~ line 19 ~ hideElement", hideElement)
     return (
         <div className={styles['Header']}>
-            <div className={styles['Header__MainNavWrapper']}>
+            <div className={classNames(styles['Header__MainNavWrapper'], { [styles['Header__MainNavWrapper--Hide']]: hideElement }, { [styles['Header__MainNavWrapper--Fade']]: fadeOutElement })}>
                 <MainNav {...mainNavData} />
             </div>
             <Hero heroImage={heroImage} />

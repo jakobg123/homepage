@@ -48,7 +48,9 @@
   height: 4rem;
   width: 4rem;
   transition: background-color $transitionQuick;
-  box-shadow: $boxShadowSmall;
+  box-shadow: $boxShadowSmall rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
 
   &:hover,
   &:focus,

@@ -4,8 +4,9 @@ import Link from "next/link";
 import classNames from "classnames";
 
 import { INavLinks, ILogoData } from "../../types/typesData";
-import TargetLinks from "../../utils/TargetLinks.context";
-import HeroImageContext from "../../utils/HeroImage.context";
+// import TargetLinks from "../../utils/TargetLinks.context";
+import PageContext from "../../utils/Page.context";
+import ModalContext from "../../utils/context/Modal.context";
 
 export interface IMainNavProps {
     links: INavLinks[];
@@ -13,11 +14,13 @@ export interface IMainNavProps {
 }
 
 const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
-console.log("🚀 ~ file: MainNav.tsx ~ line 16 ~ links", links)
-    const context = useContext(HeroImageContext);
+    console.log("🚀 ~ file: MainNav.tsx ~ line 16 ~ links", links)
+    const pageContext = useContext(PageContext);
+    // const { modalOpen } = useContext(ModalContext);
+
 
     return (
-        <nav className={classNames(styles['MainNav'], { [styles['MainNav--Construction']]: context === "Construction" })}>
+        <nav className={classNames(styles['MainNav'], { [styles['MainNav--Construction']]: pageContext === "Construction" })}>
             <figure className={styles['MainNav__Logo']} >
                 <img {...logo} />
             </figure>
@@ -50,7 +53,7 @@ console.log("🚀 ~ file: MainNav.tsx ~ line 16 ~ links", links)
 }
 
 const MainNavLink = ({ target, label }) => {
-    const { showKnowledge, showInternship } = useContext(TargetLinks);
+    // const { showKnowledge, showInternship } = useContext(TargetLinks);
 
     // const redirectAfterImport = (target) => {
     //     setTimeout(() => {
@@ -61,11 +64,11 @@ const MainNavLink = ({ target, label }) => {
     let NavLink: React.FC;
 
     // if (!forceImport) {
-        NavLink = () => (
-            <Link href={target}>
-                <a className={styles['MainNav__Link']}>{label}</a>
-            </Link>
-        )
+    NavLink = () => (
+        <Link href={target}>
+            <a className={styles['MainNav__Link']}>{label}</a>
+        </Link>
+    )
     // } else {
     //     if (!showKnowledge || !showInternship) {
     // NavLink = () => (

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import styles from "./Modal.module.scss";
 import classNames from "classnames";
 import { lockBody, unlockBody } from "../../utils/helpers/modal";
 import Icon from "../Icon";
+import ModalContext from "../../utils/context/Modal.context";
 
 interface IModalProps {
   open: boolean;
@@ -13,12 +14,15 @@ interface IModalProps {
 const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
   const [show, setShow] = useState(false);
   const [fadeInModal, setFadeInModal] = useState(false);
+  const { modalOpen, toggleModalOpen } = useContext(ModalContext);
+  console.log("OUTPUT ÄR ~ file: Modal.tsx ~ line 18 ~ modalOpenContext", modalOpen)
 
   useEffect(() => {
 
     if (open) {
       lockBody();
       setShow(true);
+      toggleModalOpen(true);
 
       setTimeout(() => {
         setFadeInModal(true);
@@ -26,6 +30,7 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
 
     } else {
       setFadeInModal(false);
+      toggleModalOpen(false);
       unlockBody();
       setTimeout(() => {
         setShow(false);
@@ -50,7 +55,7 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
       <div className={styles["Modal__Content"]}>
         {children}
       </div>
-      <button className={styles["Modal__Close"]} onClick={() => setOpen(!open)}><Icon type={"close"}/></button>
+      <button className={styles["Modal__Close"]} onClick={() => setOpen(!open)}><Icon type={"close"} /></button>
     </div>
   );
 };

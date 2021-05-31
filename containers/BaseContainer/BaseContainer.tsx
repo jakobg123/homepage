@@ -18,7 +18,8 @@ import { IFooter } from "../../components/Footer/Footer";
 import { withRouter, NextRouter } from 'next/router'
 
 import { TargetLinksProvider } from "../../utils/TargetLinks.context";
-import HeroImageContext from "../../utils/HeroImage.context";
+import PageContext from "../../utils/Page.context";
+import ModalContext from "../../utils/context/Modal.context";
 import classNames from 'classnames';
 
 // export interface BaseContainerProps {
@@ -46,49 +47,125 @@ interface BaseContainerProps extends WithRouterProps {
     constructionPageData: any;
 };
 
-class BaseContainer extends PureComponent<BaseContainerProps> {
-    state = {};
+interface BaseContainerState {
+    modalOpen: boolean;
+    fadeOutElement: boolean;
+    hideElement: boolean;
+    toggleModalOpen: (bool: boolean) => void;
+}
+
+class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState> {
+    // toggleModalOpen: (bool: boolean) => void;
+
+    constructor(props) {
+        super(props);
+
+        // this.toggleModalOpen = (bool: boolean) => {
+        //     console.log("körs den ens???");
+        //     this.setState(state => ({
+        //         modalOpen: bool
+        //     }));
+        // };
+
+        this.state = {
+            modalOpen: false,
+            fadeOutElement: false,
+            hideElement: false,
+            // toggleModalOpen: this.toggleModalOpen,
+            toggleModalOpen: (bool: boolean) => {
+                console.log("körs den ens???");
+                this.setState(state => ({
+                    modalOpen: bool
+                }));
+
+                // if (!bool) {
+                //     this.setState(state => ({
+                //         fadeOutElement: true
+                //     }));
+                //     setTimeout(() => {
+                //         this.setState(state => ({
+                //             modalOpen: true
+                //         }));
+                //     }, 1000)
+                // } else {
+                //     this.setState(state => ({
+                //         modalOpen: false
+                //     }));
+                //     setTimeout(() => {
+                //         this.setState(state => ({
+                //             fadeOutElement: false
+                //         }));
+                //     }, 4000)
+                // }
+            },
+
+        };
+    }
+
+    componentDidUpdate() {
+        console.log("nu uppdaterades den");
+        if (this.state.modalOpen) {
+            this.setState(state => ({
+                fadeOutElement: true
+            }))
+            setTimeout(() => {
+                this.setState(state => ({
+                    hideElement: true
+                }))
+            }, 400)
+        } else {
+            this.setState(state => ({
+                hideElement: false
+            }))
+            setTimeout(() => {
+                this.setState(state => ({
+                    fadeOutElement: false
+                }))
+            }, 100)
+        }
+    }
 
     render() {
         const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData } = this.props;
 
-        const context = HeroImageContext.Consumer;
-
         return (
             <div className={styles['BaseContainer']} id="start">
-                <header className={styles['BaseContainer__Header']}>
-                    <HeroImageContext.Consumer >
-                        {pageContext => {
-                            return (
-                                <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: pageContext === "Construction" })}>
-                                    <img
-                                        {...logoData}
-                                    />
-                                </figure>
-                            )
-                        }}
-                    </HeroImageContext.Consumer>
-                    <Header {...headerData} mainNavData={mainNavData} />
-                    <div className={styles['BaseContainer__StickyContainer']}>
-                        <MobileNav {...menuData} />
-                    </div>
-                </header>
-                <main>
-                    <HeroImageContext.Consumer>
-                        {pageContext => {
-                            if(pageContext === "Start"){
-                                return <StartContainer knowledge={knowledgeData} data={startData} />
-                            }
-                            if(pageContext === "Construction"){
-                                return <ConstructionPage {...constructionPageData} />
-                            }
-                        }}
-                    </HeroImageContext.Consumer>
-                    {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />} */}
-                    {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
+                {/* <ModalContext.Provider value={{ ...this.state }}> */}
+                <ModalContext.Provider value={this.state}>
+                    <header className={styles['BaseContainer__Header']}>
+                        <PageContext.Consumer >
+                            {pageContext => {
+                                return (
+                                    <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: pageContext === "Construction" })}>
+                                        <img
+                                            {...logoData}
+                                        />
+                                    </figure>
+                                )
+                            }}
+                        </PageContext.Consumer>
+                        <Header {...headerData} mainNavData={mainNavData} />
+                        <div className={styles['BaseContainer__StickyContainer']}>
+                            <MobileNav {...menuData} />
+                        </div>
+                    </header>
+                    <main>
+                        <PageContext.Consumer>
+                            {pageContext => {
+                                if (pageContext === "Start") {
+                                    return <StartContainer knowledge={knowledgeData} data={startData} />
+                                }
+                                if (pageContext === "Construction") {
+                                    return <ConstructionPage {...constructionPageData} />
+                                }
+                            }}
+                        </PageContext.Consumer>
+                        {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />} */}
+                        {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
                     <ConstructionPage {...constructionPageData} /> */}
 
-                </main>
+                    </main>
+                </ModalContext.Provider>
                 <footer className={styles['BaseContainer__Footer']}>
                     <Footer {...footerData} />
                 </footer>

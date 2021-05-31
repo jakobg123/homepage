@@ -16,7 +16,7 @@ import { IKnowledgeData, ILogoData, IStartContainerData } from '../types/typesDa
 import { IFooter } from '../components/Footer/Footer.jsx';
 import { IHeaderProps } from '../components/Header/Header.jsx';
 import { IMainNavProps } from '../components/MainNav/MainNav.jsx';
-import HeroImageContext from "../utils/HeroImage.context";
+import PageContext from "../utils/Page.context";
 
 export interface IBaseProps {
     baseData: {
@@ -150,11 +150,11 @@ class Base extends PureComponent<IBaseProps>  {
                         content="mstile-310x310.png"
                     />
                 </Head> */}
-                <HeroImageContext.Provider value="Start">
+                <PageContext.Provider value="Start">
                     <BaseContainer
                         {...baseData}
                     />
-                </HeroImageContext.Provider>
+                </PageContext.Provider>
             </>
         );
     }

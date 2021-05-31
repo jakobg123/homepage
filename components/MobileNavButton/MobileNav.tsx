@@ -1,13 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Link from 'next/link';
 import styles from './MobileNav.module.scss';
 import classNames from 'classnames';
 
-import {lockBody, unlockBody} from "../../utils/helpers/modal";
+import { lockBody, unlockBody } from "../../utils/helpers/modal";
 
 import Icon from '../Icon';
 
 import { INavLinks } from "../../types/typesData";
+import ModalContext from "../../utils/context/Modal.context";
 
 export interface IMobileNavProps {
     mobileMenu: INavLinks[];
@@ -17,6 +18,8 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
     const [openNav, setOpenNav] = useState(false);
     const [showOverlay, setShowOverlay] = useState(false)
     const [drop, setDrop] = useState(false);
+    const { hideElement, fadeOutElement } = useContext(ModalContext);
+    // console.log("OUTPUT ÄR ~ file: MobileNav.tsx ~ line 22 ~ modalContext", modalOpen)
 
     const open = () => {
         setShowOverlay(true)
@@ -52,7 +55,7 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
     };
 
     return (
-        <div className={styles['MobileNav']}>
+        <div className={classNames(styles['MobileNav'], { [styles['MobileNav--Hide']]: hideElement }, { [styles['MobileNav--FadeOut']]: fadeOutElement })}>
             <button
                 aria-expanded={openNav ? 'true' : 'false'}
                 aria-controls="menu"

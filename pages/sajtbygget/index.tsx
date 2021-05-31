@@ -12,7 +12,7 @@ import constructionPageData from "../../data/ConstructionPage/ConstructionPageDa
 
 import BaseContainer from "../../containers/BaseContainer";
 import Meta from "../../components/Meta";
-import HeroImageContext from "../../utils/HeroImage.context";
+import PageContext from "../../utils/Page.context";
 
 import { IBaseProps } from "../index";
 
@@ -25,11 +25,11 @@ class OtherBase extends PureComponent<IBaseProps>  {
         return (
             <>
                 <Meta title={"Sajtbygget - så här gjorde jag webbsidan"} description={"Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."} />
-                <HeroImageContext.Provider value="Construction">
+                <PageContext.Provider value="Construction">
                     <BaseContainer
                         {...baseData}
                     />
-                </HeroImageContext.Provider>
+                </PageContext.Provider>
 
             </>
         );

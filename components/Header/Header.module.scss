@@ -12,6 +12,16 @@
     right: 0;
     width: 100%;
     z-index: 3;
+    opacity: 1;
+    transition: opacity $transitionNormal;
+
+    &--Hide {
+      display: none;
+    }
+
+    &--Fade {
+      opacity: 0;
+    }
   }
 
   &__ImageWrapper {

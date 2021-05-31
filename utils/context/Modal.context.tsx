@@ -1,6 +1,13 @@
-import React from 'react';
+import { createContext } from 'react';
 
-const PageContext = React.createContext("start");
+const ModalContext = createContext({
+    // modalOpenContext: false,
+    // setModalOpenContext: (modalOpenContext) => { }
+    modalOpen: false,
+    fadeOutElement: false,
+    hideElement: false,
+    toggleModalOpen: (bool) => { },
+});
 // const HeroImage = React.createContext({
 //     page: "start",
 // });
@@ -25,4 +32,4 @@ const PageContext = React.createContext("start");
 //     }
 // }
 
-export default PageContext;
+export default ModalContext;

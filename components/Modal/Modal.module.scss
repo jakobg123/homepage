@@ -12,7 +12,7 @@
   transition: all $transitionNormal;
   display: none;
   // @extend %grid;
-  padding: 2rem 2rem 2rem;
+  padding: 6rem 2rem 2rem;
 
   @include media(tablet) {
     padding: 5rem 7rem;
@@ -33,14 +33,19 @@
   &__Close {
     // @include posAbsolute(5rem, calc(100% - 12rem));
     position: absolute;
-    top: 5rem;
-    right: 7rem;
+    top: 1.6rem;
+    right: 1.6rem;
     height: 4rem;
     width: 4rem;
     border: none;
     border-radius: $radiusButtonSmall;
     background: none;
     transition: background-color $transitionQuick;
+
+    @include media(tablet) {
+      top: 5rem;
+      right: 7rem;
+    }
 
     &:hover,
     &:focus {

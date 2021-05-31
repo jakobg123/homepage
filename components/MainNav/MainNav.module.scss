@@ -13,27 +13,40 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    // &--Hide {
+    //   display: none;
+    // }
   }
 
   &--Construction.MainNav {
-    // @include bgColorOpacity($colorWhite, 0.2);
-    @include bgColorGradient(
-      to bottom,
-      $colorWhite,
-      0.4,
-      0%,
-      $colorWhite,
-      0,
-      50%
-    );
-    transition: all $transitionNormal;
+    &::after {
+      content: '';
+      // border: 1px solid red;
+      // @include bgColorOpacity($colorWhite, 0.2);
+      @include posAbsolute(-5rem);
+      height: 200%;
+      @include bgColorGradient(
+        to bottom,
+        $colorPrimary,
+        0.9,
+        0%,
+        $colorWhite,
+        0,
+        80%
+      );
+      transition: all $transitionNormal;
+    }
 
-    &:hover {
-      @include bgColorOpacity($colorWhite, 0.9);
+    // z-index: 50;
+
+    &:hover.MainNav--Construction.MainNav::after {
+      transform: translateY(5rem);
+      // @include bgColorOpacity($colorWhite, 0.9);
       // @include bgColorOpacity($colorBlack, 0.3);
       // @include bgColorGradient(
       //   to bottom,
-      //   $colorWhite,
+      //   $colorSecondaryLight,
       //   0.8,
       //   0%,
       //   $colorWhite,
@@ -42,6 +55,33 @@
       // );
     }
   }
+  // &--Construction.MainNav {
+  //   // @include bgColorOpacity($colorWhite, 0.2);
+  //   @include bgColorGradient(
+  //     to bottom,
+  //     $colorWhite,
+  //     0.4,
+  //     0%,
+  //     $colorWhite,
+  //     0,
+  //     50%
+  //   );
+  //   transition: all $transitionNormal;
+
+  //   &:hover {
+  //     @include bgColorOpacity($colorWhite, 0.9);
+  //     // @include bgColorOpacity($colorBlack, 0.3);
+  //     // @include bgColorGradient(
+  //     //   to bottom,
+  //     //   $colorSecondaryLight,
+  //     //   0.8,
+  //     //   0%,
+  //     //   $colorWhite,
+  //     //   0.4,
+  //     //   80%
+  //     // );
+  //   }
+  // }
 
   &__Logo {
     padding-top: $spacingS;
@@ -115,7 +155,6 @@
 
     &:hover,
     &:focus {
-
       &::after {
         @include bgColorOpacity($colorPrimary, 1);
         transform: rotateX(-360deg) scale(1.1);
