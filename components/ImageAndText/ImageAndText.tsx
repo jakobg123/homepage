@@ -2,7 +2,7 @@ import { useContext } from "react";
 import classNames from 'classnames';
 import styles from "./ImageAndText.module.scss";
 import Image from "../Image";
-import { Theme } from "../../containers/StartContainer/StartContainer";
+import { Theme } from "../../containers/StartPage/StartPage";
 import { IImageProps } from "../../types/types";
 
 interface IImageAndText {

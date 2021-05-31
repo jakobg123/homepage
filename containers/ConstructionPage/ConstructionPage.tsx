@@ -1,12 +1,15 @@
 import styles from "./ConstructionPage.module.scss";
-import CodeBox from "../../components/CodeBox";
-import ContentCard from "../../components/ContentCard";
+import dynamic from "next/dynamic";
+// import CodeBox from "../../components/CodeBox";
+// import ContentCard from "../../components/ContentCard";
+const ContentCard = dynamic(() => import("../../components/ContentCard"));
 // import Video from "../../components/Video";
-import VideoCard from "../../components/VideoCard";
+// import VideoCard from "../../components/VideoCard";
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
 // import { useRef, useEffect } from "react";
 import CardArticle from "../../components/CardArticle";
-import Carousel from "../../components/Carousel";
+const Carousel = dynamic(() => import("../../components/Carousel"));
+// import Carousel from "../../components/Carousel";
 
 // import {constructionPageData} from "../../data/ConstructionPage/ConstructionPageData";
 // console.log("🚀 ~ file: ConstructionPage.tsx ~ line 11 ~ constructionPageData", constructionPageData)
@@ -49,11 +52,21 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           <Carousel carouselData={design.carouselData} />
 
           <CardArticle>
-            <ContentCard code={performance.code.image} html={performance.dummyText} />
-            <ContentCard code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
-            <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
-            <ContentCard video={performance.video.desktopPerfEnh} html={performance.dummyText} reverse />
-            <ContentCard image={performance.images.kanban} html={performance.dummyText} />
+            {true && (
+              <ContentCard code={performance.code.image} html={performance.dummyText} />
+            )}
+            {true && (
+              <ContentCard code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
+            )}
+            {true && (
+              <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
+            )}
+            {true && (
+              <ContentCard video={performance.video.desktopPerfEnh} html={performance.dummyText} reverse />
+            )}
+            {true && (
+              <ContentCard image={performance.images.kanban} html={performance.dummyText} />
+            )}
           </CardArticle>
 
           <div className={styles['ConstructionPage__ParagraphPres']}>

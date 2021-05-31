@@ -5,7 +5,7 @@ import Icon from "../Icon";
 import ImageAndText from "../ImageAndText";
 
 import { IInternshipData } from "../../types/typesData";
-import { Theme } from "../../containers/StartContainer/StartContainer";
+import { Theme } from "../../containers/StartPage/StartPage";
 
 interface IInternship {
     data: IInternshipData;

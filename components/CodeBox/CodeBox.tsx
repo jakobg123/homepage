@@ -1,11 +1,11 @@
 import styles from "./CodeBox.module.scss";
 
-import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
-import { useRef, useEffect } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+// import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
+// import { useRef, useEffect } from "react";
+// import { Swiper, SwiperSlide } from 'swiper/react';
+// import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+// SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 // import highlight from "highlight.js/lib/core";
 
 // import hljs from 'highlight.js';

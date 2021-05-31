@@ -6,15 +6,15 @@ import MobileNav from '../../components/MobileNavButton';
 import Footer from '../../components/Footer';
 import styles from './BaseContainer.module.scss';
 
-import StartContainer from '../StartContainer';
+// import StartContainer from '../StartPage';
 // const StartContainer = dynamic(() => import('../StartContainer'));
-import ConstructionPage from "../ConstructionPage";
+// import ConstructionPage from "../ConstructionPage";
 // const ConstructionPage = dynamic(() => import("../ConstructionPage"));
 
 import { IMainNavProps } from "../../components/MainNav/MainNav";
 import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
 
-import { ILogoData, IKnowledgeData, IStartContainerData } from "../../types/typesData";
+import { ILogoData, IKnowledgeData, IStartPageData } from "../../types/typesData";
 import { IHeaderProps } from '../../components/Header/Header';
 import { IFooter } from "../../components/Footer/Footer";
 
@@ -42,12 +42,13 @@ interface WithRouterProps {
 interface BaseContainerProps extends WithRouterProps {
     menuData: IMobileNavProps;
     knowledgeData?: IKnowledgeData;
-    startData?: IStartContainerData;
+    startData?: IStartPageData;
     logoData: ILogoData;
     footerData: IFooter;
     headerData: IHeaderProps;
     mainNavData: IMainNavProps;
     constructionPageData: any;
+    page: "Start" | "Construction";
 };
 
 interface BaseContainerState {
@@ -129,30 +130,32 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
     }
 
     render() {
-        const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData } = this.props;
+        const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData, page } = this.props;
 
         return (
             <div className={styles['BaseContainer']} id="start">
                 <ModalContext.Provider value={this.state}>
+                    {/* <PageContext.Consumer > */}
                     <header className={styles['BaseContainer__Header']}>
-                        <PageContext.Consumer >
+                        {/* <PageContext.Consumer >
                             {pageContext => {
-                                return (
-                                    <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: pageContext === "Construction" })}>
-                                        <img
-                                            {...logoData}
-                                        />
-                                    </figure>
-                                )
+                                return ( */}
+                        <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
+                            <img
+                                {...logoData}
+                            />
+                        </figure>
+                        {/* )
                             }}
-                        </PageContext.Consumer>
+                        </PageContext.Consumer> */}
                         <Header {...headerData} mainNavData={mainNavData} />
                         <div className={styles['BaseContainer__StickyContainer']}>
                             <MobileNav {...menuData} />
                         </div>
                     </header>
                     <main>
-                        <PageContext.Consumer>
+                        {this.props.children}
+                        {/* <PageContext.Consumer>
                             {pageContext => {
                                 if (pageContext === "Start") {
                                     return <StartContainer knowledge={knowledgeData} data={startData} />
@@ -161,8 +164,9 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
                                     return <ConstructionPage {...constructionPageData} />
                                 }
                             }}
-                        </PageContext.Consumer>
+                        </PageContext.Consumer> */}
                     </main>
+                    {/* </PageContext.Consumer> */}
                 </ModalContext.Provider>
                 <footer className={styles['BaseContainer__Footer']}>
                     <Footer {...footerData} />

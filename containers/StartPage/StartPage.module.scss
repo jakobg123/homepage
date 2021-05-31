@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/extensions.scss';
 
-.StartContainer {
+.StartPage {
   &__Grid {
     @extend %grid;
   }
@@ -50,7 +50,7 @@
     padding-top: $spacingS;
     z-index: 2;
 
-    .StartContainer__Paragraph {
+    .StartPage__Paragraph {
       position: relative;
       z-index: 1;
       padding-bottom: $spacingS;

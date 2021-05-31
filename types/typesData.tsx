@@ -34,7 +34,7 @@ export interface ILogoData {
     height: string;
 }
 
-export interface IStartContainerData {
+export interface IStartPageData {
     heading: string;
     greeting: string;
     preamble: string;

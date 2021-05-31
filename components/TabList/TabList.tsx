@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, memo, useMemo } from 'react';
+import { useState, useEffect, PureComponent, createRef } from 'react';
 
 import Tab from '../Tab';
 import styles from './TabList.module.scss';
@@ -50,87 +50,80 @@ interface ITabListState {
     currentKnowledge: IKnowledge[];
 }
 
-const TabList: React.FC<ITabListProps> = ({ knowledge, title, dark }) => {
-    const [currentKnowledge, setCurrentKnowledge] = useState([]);
-    const prevId = useRef(0);
-    // private prevId: React.MutableRefObject<number>;
+class TabList extends PureComponent<ITabListProps, ITabListState> {
+    private prevId: React.MutableRefObject<number>;
 
-    // constructor(props: ITabListProps) {
-    //     super(props);
-    //     this.prevId = createRef();
-    //     this.state = {
-    //         currentKnowledge: [],
-    //     }
-    // }
+    constructor(props: ITabListProps) {
+        super(props);
+        this.prevId = createRef();
+        this.state = {
+            currentKnowledge: [],
+        }
+    }
 
-    const handleClick = useMemo(() => ((id: number) => {
-        if (prevId.current === id) {
+    handleClick = ((id: number) => {
+
+        if (this.prevId.current === id) {
             return;
         }
-        const info = knowledge.filter((x: { id: number }) => x.id === id);
-        setCurrentKnowledge(info);
-        prevId.current = id;
-    }), [])
-    // const handleClick = useCallback(((id: number) => {
-    //     if (prevId.current === id) {
-    //         return;
-    //     }
-    //     const info = knowledge.filter((x: { id: number }) => x.id === id);
-    //     setCurrentKnowledge(info);
-    //     prevId.current = id;
-    // }), [])
+        const info = this.props.knowledge.filter((x: { id: number }) => x.id === id);
+        this.setState({ currentKnowledge: info });
+        this.prevId.current = id;
+    })
 
-    const knowledgeTabs = useMemo(() => knowledge.map((item, index) => (
-        <li key={index} className={styles['TabList__ListItem']} style={{ zIndex: 1001 - item.id }}>
-            <Tab {...item} dark={dark} onClick={handleClick} key={index} />
-        </li>
-    )), [knowledge]);
+    render() {
+        const { title, dark = false } = this.props;
 
-    return (
-        <div
-            className={classNames(styles['TabList'], {
-                [styles['TabList--Dark']]: dark,
-            })}>
+        return (
             <div
-                className={classNames(styles['TabList__CardsContainer'], {
-                    [styles['TabList__CardsContainer--Dark']]: dark,
+                className={classNames(styles['TabList'], {
+                    [styles['TabList--Dark']]: dark,
                 })}>
-                <h4 className={styles['TabList__Title']}>{title}</h4>
-                <ul className={styles['TabList__List']}>
-                    {!!knowledge.length && knowledgeTabs}
-                </ul>
-            </div>
-            <div
-                className={classNames(styles['TabList__InfoContainer'], {
-                    [styles['TabList__InfoContainer--Dark']]: dark,
-                })}>
-                {!!currentKnowledge.length ? (
-                    <InfoContainer info={currentKnowledge} key={currentKnowledge[0].id} />
-                ) : (
-                    <div
-                        className={classNames(styles['TabList__InfoStartWrapper'], {
-                            [styles['TabList__InfoStartWrapper--Dark']]: dark,
-                        })}>
-                        <p aria-hidden="true" className={styles['TabList__InfoStartText']}>
-                            {' '}
+                <div
+                    className={classNames(styles['TabList__CardsContainer'], {
+                        [styles['TabList__CardsContainer--Dark']]: dark,
+                    })}>
+                    <h4 className={styles['TabList__Title']}>{title}</h4>
+                    <ul className={styles['TabList__List']}>
+                        {!!this.props.knowledge.length &&
+                            this.props.knowledge.map((item, index) => (
+                                <li key={index} className={styles['TabList__ListItem']} style={{ zIndex: 1001 - item.id }}>
+                                    <Tab {...item} dark={dark} onClick={this.handleClick} key={index} />
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+                <div
+                    className={classNames(styles['TabList__InfoContainer'], {
+                        [styles['TabList__InfoContainer--Dark']]: dark,
+                    })}>
+                    {!!this.state.currentKnowledge.length ? (
+                        <InfoContainer info={this.state.currentKnowledge} key={this.state.currentKnowledge[0].id} />
+                    ) : (
+                        <div
+                            className={classNames(styles['TabList__InfoStartWrapper'], {
+                                [styles['TabList__InfoStartWrapper--Dark']]: dark,
+                            })}>
+                            <p aria-hidden="true" className={styles['TabList__InfoStartText']}>
+                                {' '}
                                 Klicka på den teknologi du vill veta mer om.
                             </p>
-                        <div
-                            aria-hidden="true"
-                            className={styles['TabList__InfoStartIconWrapper']}>
-                            {dark ? (
-                                <Icon type={'arrowNext'} color={'Primary'} />
-                            ) : (
-                                <Icon type={'arrowPrev'} color={'Black'} />
-                            )}
+                            <div
+                                aria-hidden="true"
+                                className={styles['TabList__InfoStartIconWrapper']}>
+                                {dark ? (
+                                    <Icon type={'arrowNext'} color={'Primary'} />
+                                ) : (
+                                    <Icon type={'arrowPrev'} color={'Black'} />
+                                )}
+                            </div>
                         </div>
-                    </div>
-                )}
+                    )}
+                </div>
             </div>
-        </div>
-    );
-    // }
+        );
+    }
 
 };
 
-export default memo(TabList);
+export default TabList;

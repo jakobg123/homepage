@@ -28,8 +28,8 @@ const Meta: React.FC<IMetaProps> = ({
                 as="font"
                 crossOrigin=""
             />
-            <link rel="preconnect" href="https://fonts.gstatic.com" />
-            <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"></link>
+            {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
+            <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"></link> */}
             <meta name="google-site-verification" content="tbnaq2fOx_d8yW90nFU4WBYBWkwwfX6tScz3D5Uv-Ik" />
             <meta name="google-site-verification" content="5GoQ3qyH1Rgfuzz33wrb3zCdXe0AjLVK1y7t102UWnw" />
             <meta
