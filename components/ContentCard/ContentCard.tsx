@@ -1,7 +1,7 @@
 import styles from "./ContentCard.module.scss";
 import dynamic from "next/dynamic";
 import classNames from "classnames";
-const CodeBox = dynamic(() => import("../CodeBox"));
+// const CodeBox = dynamic(() => import("../CodeBox"));
 const Image = dynamic(() => import("../Image"));
 const Video = dynamic(() => import("../Video"));
 // import CodeBox from "../CodeBox";
@@ -16,14 +16,14 @@ interface IContentCardProps {
   reverseWrap?: boolean;
   html?: string;
   //   code?: string;
-  code?: any;
+  // code?: any;
   image?: IImageProps;
   video?: any;
   //   video?: IVideoProps;
 }
 
-const ContentCard: React.FC<IContentCardProps> = ({ html, code, image, video, reverse = false, reverseWrap = false }) => {
-  console.log("OUTPUT ÄR ~ file: ContentCard.tsx ~ line 26 ~ code", code)
+const ContentCard: React.FC<IContentCardProps> = ({ html, image, video, reverse = false, reverseWrap = false }) => {
+
 
 
   // html = '<h2>Om webbsidan</h2><p>Webbsidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik 6 månaders LIA(praktik) på <a href="https://www.frojd.se" >digitalbyrån Fröjd</a>.</p><p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.</p><p>Jag kan redan nu avslöja att den är skriven i Typescript i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering. Jag har också ansträngt mig för att få en bra Lighthouse-audit av sajten.</p>';
@@ -64,12 +64,12 @@ const ContentCard: React.FC<IContentCardProps> = ({ html, code, image, video, re
         </div>
       )}
 
-      {!!code && (
+      {/* {!!code && (
         <div className={styles["ContentCard__VideoWrapper"]}>
           <CodeBox code={code.text} height={code.height} />
         </div>
       )
-      }
+      } */}
 
       {!!image && (
         <div className={styles["ContentCard__VideoWrapper"]}>

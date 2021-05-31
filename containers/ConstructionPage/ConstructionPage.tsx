@@ -3,6 +3,7 @@ import dynamic from "next/dynamic";
 // import CodeBox from "../../components/CodeBox";
 // import ContentCard from "../../components/ContentCard";
 const ContentCard = dynamic(() => import("../../components/ContentCard"));
+const CardCode = dynamic(() => import("../../components/CardCode"));
 // import Video from "../../components/Video";
 // import VideoCard from "../../components/VideoCard";
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
@@ -53,10 +54,10 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
 
           <CardArticle>
             {true && (
-              <ContentCard code={performance.code.image} html={performance.dummyText} />
+              <CardCode code={performance.code.image} html={performance.dummyText} />
             )}
             {true && (
-              <ContentCard code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
+              <CardCode code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
             )}
             {true && (
               <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
