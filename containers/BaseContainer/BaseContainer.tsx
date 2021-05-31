@@ -1,12 +1,15 @@
 import React, { PureComponent } from 'react';
+import dynamic from "next/dynamic";
 
 import Header from '../../components/Header';
 import MobileNav from '../../components/MobileNavButton';
 import Footer from '../../components/Footer';
 import styles from './BaseContainer.module.scss';
 
-import StartContainer from '../StartContainer';
-import ConstructionPage from "../ConstructionPage";
+// import StartContainer from '../StartContainer';
+const StartContainer = dynamic(() => import('../StartContainer'));
+// import ConstructionPage from "../ConstructionPage";
+const ConstructionPage = dynamic(() => import("../ConstructionPage"));
 
 import { IMainNavProps } from "../../components/MainNav/MainNav";
 import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
@@ -130,7 +133,6 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
 
         return (
             <div className={styles['BaseContainer']} id="start">
-                {/* <ModalContext.Provider value={{ ...this.state }}> */}
                 <ModalContext.Provider value={this.state}>
                     <header className={styles['BaseContainer__Header']}>
                         <PageContext.Consumer >
@@ -160,10 +162,6 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
                                 }
                             }}
                         </PageContext.Consumer>
-                        {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />} */}
-                        {/* {(!!knowledgeData && !!startData) && <StartContainer knowledge={knowledgeData} data={startData} />}
-                    <ConstructionPage {...constructionPageData} /> */}
-
                     </main>
                 </ModalContext.Provider>
                 <footer className={styles['BaseContainer__Footer']}>
