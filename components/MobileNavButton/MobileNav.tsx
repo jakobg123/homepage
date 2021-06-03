@@ -64,7 +64,12 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
                     styles['MobileNav__Button'],
                     { [styles['MobileNav__Button--Active']]: openNav },
                 )}>
-                <span className="sr-only">{openNav ? 'Stäng meny' : 'Öppna meny'}</span>
+                <span className="sr-only">
+                    {openNav
+                        ? 'Stäng meny'
+                        : 'Öppna meny'
+                    }
+                </span>
                 <span
                     className={classNames(
                         styles['MobileNav__Line'],
@@ -92,7 +97,7 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
                         [styles['MobileNav__Menu--Active']]: openNav,
                         [styles['MobileNav__Menu--Hide']]: !showOverlay,
                     })}>
-                <nav className={styles['MobileNav__Nav']}>
+                <nav className={styles['MobileNav__Nav']} aria-label="huvudnavigation-mobil">
                     <h2
                         className={classNames(styles['MobileNav__NavListTitle'])}>
                         <span className={styles['MobileNav__MenuIconWrapper']} aria-hidden="true" >

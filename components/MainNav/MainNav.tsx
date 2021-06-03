@@ -20,7 +20,7 @@ const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
 
 
     return (
-        <nav className={classNames(styles['MainNav'], { [styles['MainNav--Construction']]: pageContext === "Construction" })}>
+        <nav className={classNames(styles['MainNav'], { [styles['MainNav--Construction']]: pageContext === "Construction" })} aria-label="huvudnavigation-desktop">
             <figure className={styles['MainNav__Logo']} >
                 <img {...logo} />
             </figure>

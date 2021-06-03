@@ -35,12 +35,14 @@ const CardCode: React.FC<ICardCodeProps> = ({ reverse, reverseWrap, code, html }
       </div>
       <div className={styles["CardCode__VideoWrapper"]} >
         {!!inView && (
-          <div className={classNames(styles["CardCode__FadeContainer"], { [styles["CardCode__FadeContainer--Show"]]: !!fadeIn })} >
-            <CodeBox code={code.text} height={code.height} />
-          </div>
+          // <div className={classNames(styles["CardCode__FadeContainer"], { [styles["CardCode__FadeContainer--Show"]]: !!fadeIn })} >
+          // div className={classNames(styles["CardCode__FadeContainer"], { [styles["CardCode__FadeContainer--Show"]]: !!fadeIn })} >
+          < CodeBox code={code.text} height={code.height} fadeIn />
+
+          // </div>
         )}
       </div>
-    </div>
+    </div >
   );
 };
 

@@ -6,12 +6,22 @@
   width: 100%;
   position: relative;
   max-height: 35rem;
+  opacity: 0;
+  transition: all $transitionNormal;
+  transform: translateY(3rem);
+  // transition-delay: 0.3s;
+  will-change: transform;
 
   @include media(tablet) {
     max-height: 100%;
   }
 
   @extend %noScrollbar;
+
+  &--FadeIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
 
   & > pre {
     position: absolute;

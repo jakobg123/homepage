@@ -73,7 +73,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
         <div className={styles['StartPage']}>
             <div className={styles['StartPage__Grid']}>
 
-                <h1 className={styles['StartPage__Title']}>{heading}</h1>
+                <h1 className={styles['StartPage__Title']} >{heading}</h1>
 
                 <div className={styles['StartPage__EntryWrapper']}>
                     <em className={styles['StartPage__Em']}>{greeting}</em>

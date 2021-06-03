@@ -9,6 +9,7 @@ import logoData from "../data/logo";
 import footerData from "../data/footer";
 import headerData from "../data/header";
 import mainNavData from "../data/mainNav";
+import metaData from "../data/Meta/metaStartPage";
 
 import BaseContainer from "../containers/BaseContainer";
 import Meta from "../components/Meta";
@@ -31,6 +32,7 @@ export interface IBaseProps {
         footerData: IFooter;
         headerData: IHeaderProps;
         mainNavData: IMainNavProps;
+        metaData: any;
         constructionPageData: any;
     };
 }
@@ -43,12 +45,12 @@ class Base extends PureComponent<IBaseProps>  {
 
         return (
             <>
-                <Meta title={"Jakob Gauffin - Frontendutvecklare som vill bygga din webb"} description={"Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."} />
+                <Meta {...baseData.metaData} />
                 <PageContext.Provider value="Start">
-                    <BaseContainer
-                        {...baseData} page={"Start"}
-                    >
-                        <StartPage knowledge={baseData.knowledgeData} data={baseData.startData} />
+                    <BaseContainer {...baseData} page={"Start"}>
+                        <StartPage
+                            knowledge={baseData.knowledgeData}
+                            data={baseData.startData} />
                     </BaseContainer>
                 </PageContext.Provider>
             </>
@@ -67,6 +69,7 @@ export async function getStaticProps() {
                 footerData,
                 headerData,
                 mainNavData,
+                metaData
             }
         },
     };

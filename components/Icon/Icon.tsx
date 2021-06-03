@@ -89,7 +89,7 @@ const Icon: React.FC<IIconProps> = ({
     );
 
     return (
-        <span className={classes}>
+        <span aria-hidden={true} className={classes}>
             <Svg />
         </span>
     );

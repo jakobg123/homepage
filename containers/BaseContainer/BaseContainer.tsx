@@ -107,7 +107,6 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
     }
 
     componentDidUpdate() {
-        console.log("nu uppdaterades den");
         if (this.state.modalOpen) {
             this.setState(state => ({
                 fadeOutElement: true
@@ -135,19 +134,12 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
         return (
             <div className={styles['BaseContainer']} id="start">
                 <ModalContext.Provider value={this.state}>
-                    {/* <PageContext.Consumer > */}
                     <header className={styles['BaseContainer__Header']}>
-                        {/* <PageContext.Consumer >
-                            {pageContext => {
-                                return ( */}
                         <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
                             <img
                                 {...logoData}
                             />
                         </figure>
-                        {/* )
-                            }}
-                        </PageContext.Consumer> */}
                         <Header {...headerData} mainNavData={mainNavData} />
                         <div className={styles['BaseContainer__StickyContainer']}>
                             <MobileNav {...menuData} />
@@ -155,18 +147,7 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
                     </header>
                     <main>
                         {this.props.children}
-                        {/* <PageContext.Consumer>
-                            {pageContext => {
-                                if (pageContext === "Start") {
-                                    return <StartContainer knowledge={knowledgeData} data={startData} />
-                                }
-                                if (pageContext === "Construction") {
-                                    return <ConstructionPage {...constructionPageData} />
-                                }
-                            }}
-                        </PageContext.Consumer> */}
                     </main>
-                    {/* </PageContext.Consumer> */}
                 </ModalContext.Provider>
                 <footer className={styles['BaseContainer__Footer']}>
                     <Footer {...footerData} />

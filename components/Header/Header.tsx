@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Image from '../Image';
 import MainNav from "../MainNav";
 import Hero from "../Hero";
 import styles from './Header.module.scss';
@@ -7,7 +6,6 @@ import classNames from 'classnames';
 import ModalContext from "../../utils/context/Modal.context";
 import { IImageProps } from '../../types/types';
 import { IMainNavProps } from "../MainNav/MainNav";
-// import HeroImageContext, { HeroImageProvider } from "../../utils/HeroImage.context";
 
 export interface IHeaderProps {
     heroImage: IImageProps,
@@ -15,24 +13,15 @@ export interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
-    const { modalOpen, fadeOutElement, hideElement } = useContext(ModalContext);
-    // const modalContext = useContext(ModalContext);
-    console.log("OUTPUT ÄR ~ file: Header.tsx ~ line 20 ~ modalContext", modalOpen);
-    console.log("OUTPUT ÄR ~ file: Header.tsx ~ line 19 ~ fadeOutElement", fadeOutElement);
-    console.log("OUTPUT ÄR ~ file: Header.tsx ~ line 19 ~ hideElement", hideElement)
+    const { fadeOutElement, hideElement } = useContext(ModalContext);
     return (
         <div className={styles['Header']}>
-            <div className={classNames(styles['Header__MainNavWrapper'], { [styles['Header__MainNavWrapper--Hide']]: hideElement }, { [styles['Header__MainNavWrapper--Fade']]: fadeOutElement })}>
+            <div className={classNames(styles['Header__MainNavWrapper'],
+                { [styles['Header__MainNavWrapper--Hide']]: hideElement },
+                { [styles['Header__MainNavWrapper--Fade']]: fadeOutElement })}>
                 <MainNav {...mainNavData} />
             </div>
             <Hero heroImage={heroImage} />
-            {/* <div
-                className={classNames(styles['Header__ImageWrapper'])}>
-                <Image
-                    {...heroImage}
-                    modifier={[styles[heroImage.modifierClass]]}
-                />
-            </div> */}
         </div>
     );
 };

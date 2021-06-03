@@ -1,4 +1,6 @@
 import styles from "./CodeBox.module.scss";
+import { useEffect, useState } from "react";
+import classNames from "classnames";
 
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
 // import { useRef, useEffect } from "react";
@@ -29,11 +31,19 @@ SyntaxHighlighter.registerLanguage('tsx', tsx);
 export interface ICodeBoxProps {
     code: string;
     height?: number;
+    fadeIn?: boolean;
 }
 
-const CodeBox: React.FC<ICodeBoxProps> = ({ code, height = 35 }) => {
+const CodeBox: React.FC<ICodeBoxProps> = ({ code, height = 35, fadeIn }) => {
+    const [fadeInCodeBox, setFadeInCodeBox] = useState(false);
+    useEffect(() => {
+        if (fadeIn) {
+            setFadeInCodeBox(true);
+        }
+
+    }, [fadeIn])
     return (
-        <div className={styles["CodeBox"]} style={{ height: `${height}rem` }}>
+        <div className={classNames(styles["CodeBox"], { [styles["CodeBox--FadeIn"]]: fadeInCodeBox })} style={{ height: `${height}rem` }}>
             <SyntaxHighlighter language="tsx" style={nord}>
                 {code}
             </SyntaxHighlighter>

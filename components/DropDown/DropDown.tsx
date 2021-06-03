@@ -3,15 +3,16 @@ import Icon from '../Icon';
 import styles from './DropDown.module.scss';
 import classNames from 'classnames';
 
-interface IDropDownProps{
+interface IDropDownProps {
     html: string;
     dark: boolean;
     // onClick: MouseEvent;
     isExpanded: boolean;
     zIndex: number;
+    type: string;
 }
 
-const DropDown: React.FC<IDropDownProps> = ({ html, dark, isExpanded, zIndex }) => {
+const DropDown: React.FC<IDropDownProps> = ({ html, dark, isExpanded, zIndex, type }) => {
     return (
         <div
             className={classNames(
@@ -31,6 +32,8 @@ const DropDown: React.FC<IDropDownProps> = ({ html, dark, isExpanded, zIndex }) 
                 </span>
             </span>
             <div
+                id={`info-about-${type}`}
+                aria-hidden={isExpanded ? false : true}
                 style={{ zIndex: zIndex }}
                 className={classNames(styles['DropDown__Text'], {
                     [styles['DropDown__Text--Expanded']]: isExpanded,

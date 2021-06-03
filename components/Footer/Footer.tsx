@@ -1,15 +1,15 @@
 import styles from './Footer.module.scss';
-import {IIconProps} from "../../types/types";
+import { IIconProps } from "../../types/types";
 
 import Icon from '../Icon';
 
-export interface IFooter{
-    title: string,
-    text: string,
-    columns: IFooterColumnProps[]
+export interface IFooter {
+  title: string,
+  text: string,
+  columns: IFooterColumnProps[]
 }
 
-const Footer: React.FC<IFooter> = ({title, text, columns}) => {
+const Footer: React.FC<IFooter> = ({ title, text, columns }) => {
   return (
     <div id="contact" className={styles['Footer']}>
       <div className={styles['Footer__Grid']}>
@@ -20,11 +20,11 @@ const Footer: React.FC<IFooter> = ({title, text, columns}) => {
           </strong>
 
           <div className={styles['Footer__ContentWrapper']}>
-              {!!columns.length && (
-                  columns.map((column, index) => (
-                      <FooterColumn key={index} {...column} />
-                  ))
-              )}
+            {!!columns.length && (
+              columns.map((column, index) => (
+                <FooterColumn key={index} {...column} />
+              ))
+            )}
             {/* <FooterColumn
               key={0}
               title={'Skriv på LinkedIn'}
@@ -59,9 +59,9 @@ const Footer: React.FC<IFooter> = ({title, text, columns}) => {
   );
 };
 
-interface IFooterColumnProps{
-    title: string;
-    links: IIconLinkProps[];
+interface IFooterColumnProps {
+  title: string;
+  links: IIconLinkProps[];
 }
 
 const FooterColumn: React.FC<IFooterColumnProps> = ({ title, links = [] }) => {
@@ -82,17 +82,17 @@ const FooterColumn: React.FC<IFooterColumnProps> = ({ title, links = [] }) => {
   );
 };
 
-interface IIconLinkProps{
-    type: IIconProps['type'],
-    label: string,
-    href: string,
+interface IIconLinkProps {
+  type: IIconProps['type'],
+  label: string,
+  href: string,
 }
 
 const IconLink: React.FC<IIconLinkProps> = ({ type, label, href }) => {
   return (
     <div className={styles['IconLink']}>
       <a href={href} className={styles['IconLink__Anchor']}>
-        <span className={styles['IconLink__IconWrapper']} aria-hidden="true">
+        <span className={styles['IconLink__IconWrapper']} >
           <Icon type={type} color={'Primary'} hoverEffect />
         </span>
         {label}
