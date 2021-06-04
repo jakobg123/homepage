@@ -11,8 +11,8 @@ import footerData from "../../data/footer";
 import headerData from "../../data/Header/headerConstruction";
 import mainNavData from "../../data/mainNav/mainNavConstruction";
 import constructionPageData from "../../data/ConstructionPage/ConstructionPageData";
-// import ConstructionPage from "../../containers/ConstructionPage";
-const ConstructionPage = dynamic(() => import("../../containers/ConstructionPage"));
+import ConstructionPage from "../../containers/ConstructionPage";
+// const ConstructionPage = dynamic(() => import("../../containers/ConstructionPage"));
 
 import BaseContainer from "../../containers/BaseContainer";
 import Meta from "../../components/Meta";

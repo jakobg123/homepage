@@ -20,8 +20,8 @@ import { IHeaderProps } from '../components/Header/Header.jsx';
 import { IMainNavProps } from '../components/MainNav/MainNav.jsx';
 import PageContext from "../utils/Page.context";
 // import StartPage from '../containers/StartPage/StartPage.tsx';
-// import StartPage from "../containers/StartPage";
-const StartPage = dynamic(() => import("../containers/StartPage"));
+import StartPage from "../containers/StartPage";
+// const StartPage = dynamic(() => import("../containers/StartPage"));
 
 export interface IBaseProps {
     baseData: {

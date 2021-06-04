@@ -35,11 +35,22 @@ import classNames from 'classnames';
 //     mainNavData: IMainNavProps;
 // }
 
-interface WithRouterProps {
-    router: NextRouter
-}
+// interface WithRouterProps {
+//     router: NextRouter
+// }
 
-interface BaseContainerProps extends WithRouterProps {
+// interface BaseContainerProps extends WithRouterProps {
+//     menuData: IMobileNavProps;
+//     knowledgeData?: IKnowledgeData;
+//     startData?: IStartPageData;
+//     logoData: ILogoData;
+//     footerData: IFooter;
+//     headerData: IHeaderProps;
+//     mainNavData: IMainNavProps;
+//     constructionPageData: any;
+//     page: "Start" | "Construction";
+// };
+interface BaseContainerProps {
     menuData: IMobileNavProps;
     knowledgeData?: IKnowledgeData;
     startData?: IStartPageData;
@@ -157,4 +168,5 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
     }
 }
 
-export default withRouter(BaseContainer);
+// export default withRouter(BaseContainer);
+export default BaseContainer;
