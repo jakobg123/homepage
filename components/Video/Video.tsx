@@ -1,9 +1,10 @@
 import styles from "./Video.module.scss";
 
 export interface IVideoProps {
-    width: number;
-    height: number;
-    src: string;
+  width: number;
+  height: number;
+  src: string;
+  title?: string;
 }
 
 const Video: React.FC<IVideoProps> = ({ width, height, src }) => {
@@ -14,7 +15,7 @@ const Video: React.FC<IVideoProps> = ({ width, height, src }) => {
       <div className={styles["Video__Wrapper"]}>
         <video className={styles["Video__Content"]} src={src}
           playsInline={true}
-        //   autoPlay={true}
+          //   autoPlay={true}
           muted={true}
           loop={true}
           controls={true}

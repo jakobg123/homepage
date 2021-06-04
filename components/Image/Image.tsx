@@ -1,7 +1,7 @@
 import styles from './Image.module.scss';
 import classNames from "classnames";
 
-import { IImageProps, IMediaQueries } from '../../types/types';
+import { IImageProps } from '../../types/types';
 
 const Image: React.FC<IImageProps> = ({
     src,
@@ -13,9 +13,11 @@ const Image: React.FC<IImageProps> = ({
     round = false,
     modifier = [],
 }) => {
-    const classes = !modifier.length ? styles["Image"] : classNames(modifier.map(x => (
-        [x]
-    )), styles["Image"]);
+    const classes = !modifier.length
+        ? styles["Image"]
+        : classNames(modifier.map(x => (
+            [x]
+        )), styles["Image"]);
 
     let imageStyles = {};
 
