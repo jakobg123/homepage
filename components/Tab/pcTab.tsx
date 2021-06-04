@@ -62,12 +62,12 @@ class Tab extends PureComponent<ITabProps> {
                     </div>
                     {!!html && (
                         <div className={styles['Tab__DropDownWrapper']}>
-                            <DropDown
+                            {/* <DropDown
                                 zIndex={1001 - id}
                                 html={html}
                                 dark={dark}
                                 isExpanded={this.state.isExpanded}
-                            />
+                            /> */}
                         </div>
                     )}
                 </div>
