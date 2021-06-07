@@ -20,17 +20,17 @@
       margin-top: -13rem;
     }
 
-    @include media(tablet) {
-      margin-top: -15rem;
-    }
+    // @include media(tablet) {
+    //   margin-top: -15rem;
+    // }
 
-    @include media(desktop) {
-      margin-top: -21rem;
-    }
+    // @include media(desktop) {
+    //   margin-top: -21rem;
+    // }
 
-    @include media(xl) {
-      margin-top: -27rem;
-    }
+    // @include media(xl) {
+    //   margin-top: -27rem;
+    // }
   }
 
   &__EntryWrapper {
@@ -39,38 +39,34 @@
   }
 
   &__Block {
-    background-color: $colorWhite;
+    background-color: $colorPrimary;
+
+    &--Dark {
+      background-color: $colorBlack;
+      // color: $colorPrimary;
+      // a {
+      //   color: $colorPrimary !important;
+      // }
+    }
   }
 
-  &__CtaWrapper {
+  &__DesignWrapper {
     @extend %grid;
     position: relative;
     height: 100%;
     width: 100%;
-    padding-top: $spacingS;
+    padding-top: $spacingXl * 2;
     z-index: 2;
-
-    .StartContainer__Paragraph {
-      position: relative;
-      z-index: 1;
-      padding-bottom: $spacingS;
-
-      p {
-        padding-bottom: $spacingL !important;
-      }
-
-      @include media(tablet) {
-        padding-bottom: $spacingM;
-      }
-      @include media(xl) {
-        padding-bottom: $spacingL;
-      }
-    }
+    // @extend %internshipTextBlock;
+    // * {
+    //   color: $colorPrimary !important;
+    // }
 
     &::after {
       content: '';
       position: absolute;
-      background-image: url('#{$patternPath}bottomWave.svg');
+      background-image: url('#{$patternPath}topWave_Construction_Design3.svg');
+      // background-image: url('#{$patternPath}topWave_Construction_Design2.svg');
       background-position: top;
       background-size: contain;
       background-repeat: no-repeat;
@@ -80,7 +76,49 @@
       height: 50rem;
       width: calc(100% + 2px);
       z-index: 0;
+
+      .ConstructionPage__Block--Accessibility & {
+        background-image: url('#{$patternPath}topWave_Construction_Accessibility.svg');
+      }
     }
+  }
+
+  &__Paragraph {
+    position: relative;
+    z-index: 3;
+    padding-bottom: $spacingS;
+    // @extend %regularText;
+
+    // p {
+    //   padding-bottom: $spacingL !important;
+    // }
+
+    // .ConstructionPage__Block--Dark & {
+    //   * {
+    //     color: $colorPrimary !important;
+    //   }
+    // }
+
+    @include media(tablet) {
+      padding-bottom: $spacingM;
+    }
+    @include media(xl) {
+      padding-bottom: $spacingL;
+    }
+  }
+
+  &__Block--Accessibility h2 {
+    padding-top: 8rem;
+  }
+
+  &__CarouselWrapper {
+    padding: 4rem 0;
+  }
+
+  &__CarouselTitle {
+    @extend %h2;
+    @extend %fontColor;
+    padding-bottom: $spacingXl;
   }
 
   &__ButtonWrapper {

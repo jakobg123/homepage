@@ -1,6 +1,7 @@
 import styles from "./CardCarousel.module.scss";
 import Image from "../Image";
 import { IImageProps } from "../../types/types";
+import classNames from "classnames";
 
 interface ICardCarouselProps {
   image: IImageProps,
@@ -11,19 +12,23 @@ interface ICardCarouselProps {
   title: string;
   text: string;
   setModalContent: (id) => void;
+  dark: boolean;
 }
 
-const CardCarousel: React.FC<ICardCarouselProps> = ({ id, title, text, image, onClick, open, setOpen, setModalContent }) => {
+const CardCarousel: React.FC<ICardCarouselProps> = ({ id, title, text, image, onClick, open, setOpen, setModalContent, dark = false }) => {
+  console.log("OUTPUT ÄR ~ file: CardCarousel.tsx ~ line 19 ~ text", text.length)
+  const truncatedText = text.length > 150 ? text.slice(0, 150) : text;
+
   return (
-    <div className={styles["CardCarousel"]}>
+    <div className={classNames(styles["CardCarousel"], { [styles["CardCarousel--Dark"]]: dark })}>
       <button className={styles["CardCarousel__Button"]} onClick={() => onClick(id, open, setOpen, setModalContent)}>
       </button>
       <div className={styles["CardCarousel__ImageWrapper"]}>
         <Image {...image} />
       </div>
       <div className={styles["CardCarousel__TextWrapper"]}>
-        <h3 className={styles["CardCarousel__Title"]}>{title}</h3>
-        <p className={styles["CardCarousel__Text"]}>{text}</p>
+        <h4 className={styles["CardCarousel__Title"]}>{title}</h4>
+        <p className={styles["CardCarousel__Text"]}>{truncatedText + "..."}</p>
       </div>
     </div>
   );

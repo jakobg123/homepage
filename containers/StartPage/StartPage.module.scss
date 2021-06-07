@@ -176,6 +176,10 @@
       z-index: 10;
       @extend %richtext;
     }
+
+    a {
+      @extend %linkLight;
+    }
   }
 
   &__PresImageWrapper {

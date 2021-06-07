@@ -20,9 +20,23 @@
 
   &__TextWrapper {
     @extend %internshipTextBlock;
+    display: flex;
+    flex-direction: column;
 
-    #{$root}--Light & {
-      @extend %themeColor;
+    img {
+      width: 100%;
+      height: auto;
+      padding-top: $spacingXl;
+    }
+
+    .ImageAndText--Light & {
+      // border: 1px solid red;
+      // @extend %fontColorBlack;
+      color: $colorBlack !important;
+      a {
+        @extend %linkLight;
+      }
+      // @extend %themeColor;
     }
   }
 
@@ -69,6 +83,11 @@
     min-width: 100%;
     text-align: right;
     margin: $spacingXs 0;
+    @extend %fontColor;
+
+    #{$root}--Light & {
+      @extend %fontColorBlack;
+    }
 
     .ImageAndText--Left & {
       @include media(tablet) {

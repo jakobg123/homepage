@@ -48,7 +48,8 @@
     z-index: 2;
   }
   &--Construction.Hero::before {
-    background-image: url('#{$patternPath}topWave_Construction3.svg') !important;
+    // background-image: url('#{$patternPath}topWave_Construction3.svg') !important;
+    background-image: url('#{$patternPath}topWave_Construction4.svg') !important;
   }
 
   &--Construction {

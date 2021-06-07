@@ -1,125 +1,101 @@
 export default {
-    accessibility: {},
+    accessibility: {
+        code: {
+            headings: {
+                height: 50,
+                text: `<h1>Huvudrubrik</h1>
+
+    <h2>Underrubrik</h2>
+
+        <h3>Underrubrik till h2</h3>
+
+            <h4>Underrubrik till h3</h4>
+
+                <h5>Underrubrik till h4</h5>
+
+    <h2>Underrubrik</h2>
+
+        <h3>Underrubrik till h2</h3>
+        
+            <h4>Underrubrik till h3</h4>
+    
+    <h2>Underrubrik</h2>
+
+        <h3>Underrubrik till h2</h3>
+`,
+            },
+            burger: {
+                height: 70,
+                text: `<button 
+    aria-expanded={openNav ? 'true' : 'false'}
+    aria-controls="menu"
+    onClick={handleMobileNav}
+        className={classNames(
+            styles['MobileNav__Button'],
+            { [styles['MobileNav__Button--Active']]: openNav },
+        )}>
+        <span className="sr-only">
+            {openNav
+                ? 'Stäng meny'
+                : 'Öppna meny'
+            }
+        </span>
+        <span
+            className={classNames(
+                styles['MobileNav__Line'])}>...</span>
+</button>
+<div
+    id="menu"
+    aria-hidden={openNav ? 'false' : 'true'}
+    className={classNames(styles['MobileNav__Menu'],
+        {
+            [styles['MobileNav__Menu--Active']]: openNav,
+            [styles['MobileNav__Menu--Hide']]: !showOverlay,
+        })}>
+    <nav className={styles['MobileNav__Nav']} aria-label="huvudnavigation-mobil">
+        ...
+    </nav>
+</div>
+`,
+            },
+        },
+    },
     design: {
         carouselData: [
             {
                 id: 1,
-                title: 'title 1',
-                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                title: 'SVG:er',
+                text: 'SVG - Scalable vector graphic - är ett uitmärkt grafikformat att använda för webb. Grafiken kan ta upp mycket yta och vara responsiv, samtidigt som filerna är minimala vilket är bra för snabba sidladdningar. Jag gjorde ett flertal SVG-element som jag senare fäste i pseudoelement med CSS:en som, för en nybörjare, är ganska svårt, speciellt med att få till en bra responsivitet.',
                 image: {
-                    src: '/images/temp/kanban2_small-min.jpg',
-                    alt: 'Anlagstavla med todo-lappar.',
-                    caption: 'Foto: Paul Hanaoka, unsplash.com',
-                    width: 640,
-                    height: 960,
-                    mediaQueries: [
-                        {
-                            minWidth: 580,
-                            src: '/images/temp/kanban2_medium-min.jpg',
-                        },
-                    ],
+                    src: '/images/temp/svgs.jpg',
+                    alt: 'Fyra grafiska SVG-element jag använt på sajten.',
+                    width: 669,
+                    height: 835,
+                    mediaQueries: [],
                 },
             },
             {
                 id: 2,
-                title: 'title 2',
-                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                title: 'Typografi',
+                text: 'Jag fastnade för typsnittet “Quicksand”, som är ett sans-serif-typsnitt. Det har en hög “x-height” vilket gör den lättläst. Rubriknivåerna satte jag efter typskalorna: Perfect fifth för desktop-, och Perfect fourth för mobilläge.',
                 image: {
-                    src: '/images/temp/code_small-min.jpg',
-                    alt: 'Laptop med programmeringskod.',
-                    caption: 'Foto: James Harrison, unsplash.com',
-                    width: 1920,
-                    height: 1080,
-                    mediaQueries: [
-                        {
-                            minWidth: 768,
-                            src: '/images/temp/code_large-min.jpg',
-                        },
-                        {
-                            minWidth: 580,
-                            src: '/images/temp/code_medium-min.jpg',
-                        },
-                    ],
+                    src: '/images/temp/TypeScale.jpg',
+                    alt: 'Typskala: "Perfect Fourth" för typsnittet Quicksand',
+                    width: 1274,
+                    height: 598,
+                    mediaQueries: [],
                 },
             },
             {
                 id: 3,
-                title: 'title 3',
-                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
+                title: 'Bildkomprimering',
+                text: 'Att ha lagom stora bilder är viktigt för att få en snabb sajt. Oftast är det just bilderna som tar upp merdelen av en hemsidas totala datamängd. Därav är alla bilder i jpeg-format, som ger relativt små filer. WebP är ett modernt alternativ, men browserstödet är inte lika brett som för jpeg, så jag har skippat WebP. Jag har komprimerat bilderna efter dess container-storlekar på hemsidan, både för hand, i programmet Gimp, men också automatiskt på compressjpeg.com. Bildernas filstorlekar har generellt reducerats med ca. 90%.',
                 image: {
-                    src: '/images/temp/kanban2_small-min.jpg',
-                    alt: 'Anlagstavla med todo-lappar.',
-                    caption: 'Foto: Paul Hanaoka, unsplash.com',
-                    width: 640,
-                    height: 960,
-                    mediaQueries: [
-                        {
-                            minWidth: 580,
-                            src: '/images/temp/kanban2_medium-min.jpg',
-                        },
-                    ],
-                },
-            },
-            {
-                id: 4,
-                title: 'title 3',
-                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
-                image: {
-                    src: '/images/temp/code_small-min.jpg',
-                    alt: 'Laptop med programmeringskod.',
-                    caption: 'Foto: James Harrison, unsplash.com',
-                    width: 1920,
-                    height: 1080,
-                    mediaQueries: [
-                        {
-                            minWidth: 768,
-                            src: '/images/temp/code_large-min.jpg',
-                        },
-                        {
-                            minWidth: 580,
-                            src: '/images/temp/code_medium-min.jpg',
-                        },
-                    ],
-                },
-            },
-            {
-                id: 5,
-                title: 'title 5',
-                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
-                image: {
-                    src: '/images/temp/kanban2_small-min.jpg',
-                    alt: 'Anlagstavla med todo-lappar.',
-                    caption: 'Foto: Paul Hanaoka, unsplash.com',
-                    width: 640,
-                    height: 960,
-                    mediaQueries: [
-                        {
-                            minWidth: 580,
-                            src: '/images/temp/kanban2_medium-min.jpg',
-                        },
-                    ],
-                },
-            },
-            {
-                id: 6,
-                title: 'title 6',
-                text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae doloremque earum, alias inventore modi officia numquam suscipit, adipisci voluptatibus, consectetur est temporibus id dignissimos quod.',
-                image: {
-                    src: '/images/temp/code_small-min.jpg',
-                    alt: 'Laptop med programmeringskod.',
-                    caption: 'Foto: James Harrison, unsplash.com',
-                    width: 1920,
-                    height: 1080,
-                    mediaQueries: [
-                        {
-                            minWidth: 768,
-                            src: '/images/temp/code_large-min.jpg',
-                        },
-                        {
-                            minWidth: 580,
-                            src: '/images/temp/code_medium-min.jpg',
-                        },
-                    ],
+                    src: '/images/temp/compressjpg.jpg',
+                    alt: 'Skärmdump från compressjpg där bilden har reducerats med 89%.',
+                    width: 1298,
+                    height: 828,
+                    mediaQueries: [],
                 },
             },
         ],

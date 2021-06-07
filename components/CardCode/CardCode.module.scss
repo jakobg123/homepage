@@ -35,10 +35,17 @@
     & p:last-child {
       padding-bottom: $spacingL !important;
     }
+
     @include media(tablet) {
       flex: 0 0 50%;
       padding-right: $spacingL * 2;
       padding-left: $spacingXl * 2;
+
+      .CardCode--NoBorder & {
+        padding-left: 0;
+        flex: 1 1 50%;
+        padding: 0;
+      }
 
       & p:last-child {
         padding-bottom: 0 !important;
@@ -64,6 +71,18 @@
     flex: 0 0 100%;
     padding-bottom: $spacingL;
     min-height: 60rem;
+
+    .CardCode--NoBorder & {
+      min-height: 100%;
+      padding: 0;
+      margin-left: 6rem;
+      flex: 1 1 50%;
+    }
+
+    .CardCode--Reverse.CardCode--NoBorder & {
+      margin-left: 0;
+      margin-right: 6rem;
+    }
     // width: 50%;
 
     @include media(tablet) {

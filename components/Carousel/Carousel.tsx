@@ -12,9 +12,10 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 interface ICarouselProps {
   carouselData: any[];
+  dark?: boolean;
 }
 
-const Carousel: React.FC<ICarouselProps> = ({ carouselData }) => {
+const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
   const [openModal, setOpenModal] = useState(false);
   const [modalContent, setModalContent] = useState(null);
 
@@ -148,7 +149,7 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData }) => {
 
   return (
     <>
-      <div className={styles["Carousel"]}>
+      <div className={(styles["Carousel"])}>
         <Swiper
           spaceBetween={30}
           slidesPerView={1}
@@ -175,7 +176,7 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData }) => {
         // onSwiper={(swiper) => console.log(swiper)}
         >
           {!!carouselData?.length && carouselData.map(data => (
-            <SwiperSlide key={data.id}><CardCarousel {...data} onClick={onClick} open={openModal} setOpen={setOpenModal} setModalContent={setModalContent} /></SwiperSlide>
+            <SwiperSlide key={data.id}><CardCarousel {...data} onClick={onClick} open={openModal} setOpen={setOpenModal} setModalContent={setModalContent} dark={dark} /></SwiperSlide>
           ))}
         </Swiper>
       </div>
@@ -185,10 +186,6 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData }) => {
             .filter(data => data.id === modalContent)
             .map(content => (
               <ModalContent {...content} />
-              // <div className={styles["InfoCard"]}>
-
-              //   <Image key={content.id} {...content.image} />
-              // </div>
             ))
         )
         }

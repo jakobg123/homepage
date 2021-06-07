@@ -10,9 +10,10 @@ interface ICardCodeProps {
   reverseWrap?: boolean;
   code?: any;
   html?: string;
+  noBorder?: boolean;
 }
 
-const CardCode: React.FC<ICardCodeProps> = ({ reverse, reverseWrap, code, html }) => {
+const CardCode: React.FC<ICardCodeProps> = ({ reverse, reverseWrap, code, html, noBorder }) => {
   const [fadeIn, setFadeIn] = useState(false);
 
   const { ref, inView, entry } = useInView({
@@ -29,7 +30,8 @@ const CardCode: React.FC<ICardCodeProps> = ({ reverse, reverseWrap, code, html }
   return (
     <div ref={ref} className={classNames(styles["CardCode"], {
       [styles["CardCode--Reverse"]]: reverse,
-      [styles["CardCode--ReverseWrap"]]: reverseWrap
+      [styles["CardCode--ReverseWrap"]]: reverseWrap,
+      [styles["CardCode--NoBorder"]]: noBorder
     })}>
       <div className={styles["CardCode__Text"]} dangerouslySetInnerHTML={{ __html: html }}>
       </div>

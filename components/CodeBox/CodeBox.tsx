@@ -32,6 +32,7 @@ export interface ICodeBoxProps {
     code: string;
     height?: number;
     fadeIn?: boolean;
+    noBorder?: boolean;
 }
 
 const CodeBox: React.FC<ICodeBoxProps> = ({ code, height = 35, fadeIn }) => {
@@ -43,7 +44,9 @@ const CodeBox: React.FC<ICodeBoxProps> = ({ code, height = 35, fadeIn }) => {
 
     }, [fadeIn])
     return (
-        <div className={classNames(styles["CodeBox"], { [styles["CodeBox--FadeIn"]]: fadeInCodeBox })} style={{ height: `${height}rem` }}>
+        <div className={classNames(styles["CodeBox"], { [styles["CodeBox--FadeIn"]]: fadeInCodeBox })} style={{
+            height: `${height}rem`
+        }}>
             <SyntaxHighlighter language="tsx" style={nord}>
                 {code}
             </SyntaxHighlighter>
