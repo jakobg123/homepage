@@ -146,7 +146,8 @@ class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState
             <div className={styles['BaseContainer']} id="start">
                 <ModalContext.Provider value={this.state}>
                     <header className={styles['BaseContainer__Header']}>
-                        <figure className={classNames(styles['BaseContainer__Logo'], { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
+                        <figure className={classNames(styles['BaseContainer__Logo'],
+                            { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
                             <img
                                 {...logoData}
                             />
