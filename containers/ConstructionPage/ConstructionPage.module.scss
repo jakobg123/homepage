@@ -41,12 +41,12 @@
   &__Block {
     background-color: $colorPrimary;
 
+    &--White {
+      background-color: $colorWhite;
+    }
+
     &--Dark {
       background-color: $colorBlack;
-      // color: $colorPrimary;
-      // a {
-      //   color: $colorPrimary !important;
-      // }
     }
   }
 
@@ -79,6 +79,11 @@
 
       .ConstructionPage__Block--Accessibility & {
         background-image: url('#{$patternPath}topWave_Construction_Accessibility.svg');
+      }
+
+      .ConstructionPage__Block--Optimization & {
+        background-image: url('#{$patternPath}topWave_Construction_Optimization2.svg');
+        // background-image: url('#{$patternPath}topWave_Construction_Optimization.svg');
       }
     }
   }

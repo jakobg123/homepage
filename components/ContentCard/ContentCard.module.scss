@@ -39,6 +39,7 @@
     & p:last-child {
       padding-bottom: $spacingL !important;
     }
+
     @include media(tablet) {
       flex: 0 0 50%;
       padding-right: $spacingL * 2;

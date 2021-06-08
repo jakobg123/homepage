@@ -46,7 +46,7 @@ const Image: React.FC<IImageProps> = ({
                 width={width}
                 height={height}
                 loading={loading}
-                style={imageStyles}
+                style={!!Object.keys(imageStyles).length ? imageStyles : focal}
                 className={styles['Image__Image']}
             />
         </picture >

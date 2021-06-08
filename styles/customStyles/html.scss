@@ -1,0 +1,33 @@
+@import '../extensions.scss';
+@import '../variables.scss';
+@import '../mixins.scss';
+
+.h2_size {
+  font-size: 3.157rem !important;
+  @extend %heading;
+  @extend %textWidth;
+  padding-bottom: $spacingS;
+
+  @include media(desktop) {
+    padding-bottom: $spacingM;
+    font-size: 5.063rem !important;
+  }
+
+  @include media(xl) {
+    padding-bottom: $spacingL;
+  }
+}
+
+.h3_size {
+  font-size: 2.369rem !important;
+  @extend %heading;
+  padding-bottom: $spacingM;
+
+  @include media(desktop) {
+    font-size: 3.375rem !important;
+  }
+
+  @include media(xl) {
+    padding-bottom: $spacingM;
+  }
+}

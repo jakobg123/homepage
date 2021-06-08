@@ -11,6 +11,7 @@ import ImageAndText from "../../components/ImageAndText";
 // import { useRef, useEffect } from "react";
 import CardArticle from "../../components/CardArticle";
 const Carousel = dynamic(() => import("../../components/Carousel"));
+import EntryCentered from "../../components/EntryCentered";
 // import Carousel from "../../components/Carousel";
 
 // import {constructionPageData} from "../../data/ConstructionPage/ConstructionPageData";
@@ -109,13 +110,15 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Dark']}>
 
         <div className={styles['ConstructionPage__DesignWrapper']}>
+          <EntryCentered dark text={`<p>För att pusha mina kunskaper i styling valde jag tidigt att bryta med den mer traditionella, fyrkantiga layouten.</p><p>Därför har bl.a. text puttats utanför dess “container”, gradienter lagts ovanpå bilder och vågiga SVG-element placerats över kanter.</p><p>Designen kanske bara är världens näst snyggaste, men till mitt försvar - jag är ingen designer.</p>`} title={"Design"} />
+
           <div className={styles['ConstructionPage__Paragraph']}>
             {/* <h2>Design</h2>
             <p>Jag ville ha en färgprofil med rena, matchande och naturliga färger. Därför sökte jag efter bilder med bra färgpaletter på <a href="https://www.unsplash.com">unsplash.com</a> som har en stor bildbank man kan använda sig av.</p>
             <p>Jag fastnade för denna bild och extraherade fram ett första färgtema med hjälp av <a href="https://color.adobe.com/sv/create/image">Adobe Color</a></p> */}
             <ImageAndText html={`<h2>Design</h2>
             <p>Jag ville ha en färgprofil med rena, matchande och naturliga färger. Därför sökte jag efter bilder med bra färgpaletter på <a href="https://www.unsplash.com">unsplash.com</a> som har en stor bildbank man kan använda sig av.</p><p>Jag fastnade för den här ljusa bilden och extraherade sedan fram ett  färgtema med hjälp av <a href="https://color.adobe.com/sv/create/image">Adobe Color</a>.</p><img src="${imagesDesign[1].src}" width="${imagesDesign[1].width}" height="${imagesDesign[1].height}" alt="${imagesDesign[1].alt}" />`} image={imagesDesign[0]} />
-            <ImageAndText imageToLeft html={`<h3>Kontraster</h3>
+            <ImageAndText imageToLeft html={`<h3 class="h2_size">Kontraster</h3>
             <p>För att uppfylla WCAG:s direktiv om tillgänglighet på webben, skall färger minst ha en kontrastratio på 3:1, men den generella rekommendationen är minst 4.5:1.</p><p>Därför kontrollerade jag att huvudfärgerna uppfyllde detta, vilket de gör med råge.</p>`} image={imagesDesign[2]} />
           </div>
           {/* <div className={styles['ConstructionPage__Grid']}> */}
@@ -128,23 +131,28 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         </div>
 
       </div>
-      <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Accessibility']}>
+      <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--White'] + " " + styles['ConstructionPage__Block--Accessibility']}>
+
 
         <div className={styles['ConstructionPage__DesignWrapper']}>
-          <div className={styles['ConstructionPage__Paragraph']}><h2>Tillgänglighet</h2>
-            <p>Tillgänglighetsanpassning är ett omfattande arbete och jag har haft det i åtanke när jag byggt sajten. Med det sagt så finns det ännu en del anpassningar att göra, nedan är ett axplock av det jag har gjort.</p>
+          <EntryCentered text={`Tillgänglighetsanpassning är ett omfattande arbete och jag har haft det i åtanke när jag byggt sajten. Med det sagt så finns det ännu en del anpassningar att göra, nedan är ett axplock av det jag har gjort.`} title={"Tillgänglighet"} />
 
-            <ImageAndText light html={`<h3>Semantik</h3>
+
+          <div className={styles['ConstructionPage__Paragraph']}>
+            {/* <h2>Tillgänglighet</h2>
+            <p>Tillgänglighetsanpassning är ett omfattande arbete och jag har haft det i åtanke när jag byggt sajten. Med det sagt så finns det ännu en del anpassningar att göra, nedan är ett axplock av det jag har gjort.</p> */}
+
+            <ImageAndText light html={`<h3 class="h2_size">Semantik</h3>
             <p>Alla HTML-element (förutom &lt;div&gt; och &lt;span&gt;) har en semantisk betydelse, vilket innebär att de berättar vad för betydelse i sammanhanget dess innehåll har. Det är viktigt att skriva semantisk korrekt HTML, delvis för personer som förlitar sig på skärmläsare, men också för SEO:n då sökmotorers indexering utgår ifrån den semantiska uppmärkningen.</p><p>Jag har sett till att alla sidor har en &lt;header&gt;, &lt;main&gt; och &lt;footer&gt; eftersom de elementen beskriver basstrukturen på sidan.</p>`}
               image={imagesAccessibility[0]}
             />
-            <CardCode noBorder reverse code={accessibility.code.headings} html={`<h3>Rubriknivåer</h3>
+            <CardCode noBorder reverse code={accessibility.code.headings} html={`<h3 class="h2_size">Rubriknivåer</h3>
             <p>Varje sida har ett h1-element (högsta rubriknivån) sedan ligger följande rubriker i hierarkisk ordning, som baseras på om rubriken är en underrubrik till ett annat stycke eller bör vara en ny rubrik. Man hoppar aldrig över en nivå, d.v.s. går från h1 till h3. Bilden illustrerar hur rubrikhierarkin bör märkas upp för en sida.</p><p>I övrigt har allt innehåll en adekvat HTML-tagg, d.v.s. en &lt;p&gt;- innehåller löptext, &lt;img&gt; innehåller en bild o.s.v.</p>`} />
-            <CardCode noBorder code={accessibility.code.burger} html={`<h3>Markup för hamburgaren</h3>
+            <CardCode noBorder code={accessibility.code.burger} html={`<h3 class="h2_size">Markup för hamburgaren</h3>
             <p>Eftersom vissa användare förlitar sig helt på skärmläsare är det viktigt att knappar som styr flikar och dolda element har kopplad markup. 
             Ett sådant exempel är “hamburgaren” - knappen som öppnar menyn i mobilläge.
             I koden för knappen, framgår det i aria-controls vilket element som triggas. Knappen styr elementet med id=”menu”. Markupen anger också om knappen är aktiverad eller ej via aria-expanded, som sätts huruvida statevariabeln openNav är true eller false. Elementet med id=”menu” är också gömd för skärmläsaren, så länge värdet aria-hidden är true. Elementet bör vara gömt eftersom användaren inte skall höra/få tillgång till menyalternativen när menyn inte är öppnad.</p>`} />
-            <ImageAndText light imageToLeft html={`<h3>Sr-only</h3>
+            <ImageAndText light imageToLeft html={`<h3 class="h2_size">Sr-only</h3>
             <p>En annan viktig detalj är klassen “sr-only”, vars CSS visuellt döljer innehållet, men skärmläsaren kommer fortfarande läsa upp det. Eftersom hamburgerknappen inte anger vad som sker när man klickar på den, måste dess roll förtydligas med en sr-only-text - “Öppna meny”/”Stäng meny”.</p><p>En ikon ger bara en mening för den som kan se den, därför måste ikonens betydelse alltid finnas med i text, för att vara tillgänglig för alla.</p>`}
               image={imagesAccessibility[1]}
             />
@@ -155,36 +163,49 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
             <p>Varje sida har ett h1-element (högsta rubriknivån) sedan ligger följande rubriker i hierarkisk ordning, som baseras på om rubriken är en underrubrik till ett annat stycke eller bör vara en ny rubrik. Man hoppar aldrig över en nivå, d.v.s. går från h1 till h3. Bilden illustrerar hur rubrikhierarkin bör märkas upp för en sida.</p><p>I övrigt har allt innehåll en adekvat HTML-tagg, d.v.s. en &lt;p&gt;- innehåller löptext, &lt;img&gt; innehåller en bild o.s.v.</p>`} image={imagesDesign[2]} /> */}
           </div>
           {/* <div className={styles['ConstructionPage__Grid']}> */}
-          <div className={styles['ConstructionPage__CarouselWrapper']}>
+          {/* <div className={styles['ConstructionPage__CarouselWrapper']}>
 
             <h3 className={styles['ConstructionPage__CarouselTitle']}>Mer om stylingen</h3>
             <Carousel carouselData={design.carouselData} />
-          </div>
+          </div> */}
           {/* </div> */}
         </div>
 
       </div>
+      <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Optimization']}>
+        <div className={styles['ConstructionPage__DesignWrapper']}>
+          <EntryCentered text={`<p>Core Web Vitals är ett kvalitetsinitiativ från Google som mäter hur väl en sajt presterar utifrån olika parametrar.</p><p>Fr.o.m. mitten av juni 2021 kommer CWV-värdet vägas in i sajtens SEO-ranking.</p><p>Därför är det extra viktigt att sajten har bra prestanda.</p>`} title={"Optimering"} />
+          {/* <div className={styles['ConstructionPage__Grid']}> */}
+          <CardArticle>
+            {/* <CardCode code={performance.code.image} html={performance.text.html1} /> */}
+            <ContentCard image={performance.images.lighthouse} html={performance.text.html1} />
+            {true && (
+              <CardCode reverse code={performance.code.image} html={performance.text.imageHtml} />
+            )}
+            {/* {true && (
+              <CardCode code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
+            )} */}
+            {true && (
+              <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.text.perfHtml1} />
+            )}
+            {true && (
+              <ContentCard video={performance.video.desktopPerfEnh} html={performance.text.perfHtml2} reverse />
+            )}
+            {true && (
+              <ContentCard image={performance.images.bundleBefore} html={performance.text.perfHtml3} />
 
+            )}
+            <ContentCard reverse image={performance.images.bundleAfter} html={performance.text.perfHtml4} />
+            <ContentCard image={performance.images.webpackBefore} html={performance.text.perfHtml5} />
+            <ContentCard reverse image={performance.images.webpackAfter} html={performance.text.perfHtml6} />
 
-      <CardArticle>
-        {true && (
-          <CardCode code={performance.code.image} html={performance.dummyText} />
-        )}
-        {true && (
-          <CardCode code={performance.code.image} html={performance.dummyText} reverse reverseWrap />
-        )}
-        {true && (
-          <ContentCard video={performance.video.desktopWithoutPerfEnh} html={performance.dummyText} />
-        )}
-        {true && (
-          <ContentCard video={performance.video.desktopPerfEnh} html={performance.dummyText} reverse />
-        )}
-        {true && (
-          <ContentCard image={performance.images.kanban} html={performance.dummyText} />
-        )}
-      </CardArticle>
-
-
+          </CardArticle>
+          {/* </div> */}
+        </div>
+      </div>
+      <div className={styles['ConstructionPage__Grid']}>
+        <EntryCentered text={"<p>sadasas</p>"} title={"...och om planeterna står rätt och vädret tillåter..."} />
+      </div>
       <div className={styles['ConstructionPage__ParagraphPres']}>
         {/* <div className={styles['StartContainer__PresImageWrapper']}>
               <Image {...presImage} mediaQueries={mediaQueries} round />

@@ -53,6 +53,13 @@ const ContentCard: React.FC<IContentCardProps> = ({
           {!!code && <CodeBox {...code} />}
           {!!image && (
             <div className={styles['ContentCard__ImageWrapper']}>
+              {!!image.title && (
+                <span className={styles['ContentCard__VideoTitleWrapper']}>
+                  <h3 className={styles['ContentCard__VideoTitle']}>
+                    {image.title}
+                  </h3>
+                </span>
+              )}
               <Image {...image} />
             </div>
           )}
