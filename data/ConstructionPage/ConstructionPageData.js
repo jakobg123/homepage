@@ -112,7 +112,7 @@ export default {
     performance: {
         images: {
             bundleBefore: {
-                src: '/images/temp/bundleBeforePerfEnh_411x400.jpg',
+                src: '/images/temp/bundleBeforePerfEnh_411x400-min.jpg',
                 alt: 'Javascript-bundlarna innan optimering. Sajtbyggets totala JS är 145kb.',
                 width: 760,
                 height: 400,
