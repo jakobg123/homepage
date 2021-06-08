@@ -39,11 +39,21 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
   //   }, [])
   const imagesDesign = [
     {
-      src: '/images/temp/design_1_original.jpg',
+      src: '/images/temp/design_411x400-min.jpg',
       alt: 'Ljus, vit bild av flaska och växt.',
-      width: 1920,
-      height: 1280,
-      caption: "Foto: Deanna Alys, från unsplash.com"
+      width: 600,
+      height: 400,
+      caption: "Foto: Deanna Alys, från unsplash.com",
+      mediaQueries: [
+        {
+          minWidth: 768,
+          src: '/images/temp/design_618x500-min.jpg',
+        },
+        {
+          minWidth: 460,
+          src: '/images/temp/design_720x400-min.jpg',
+        },
+      ],
     },
     {
       src: '/images/temp/colors.JPG',
@@ -52,19 +62,39 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       height: 137,
     },
     {
-      src: '/images/temp/contrastPrimaryBlack_original.JPG',
+      src: '/images/temp/contrastPrimaryBlack_411x400-min.jpg',
       alt: 'Kontroll av kontrast mellan primär och mörk färg. Kontrastratiot är 12:67:1 vilket uppfyller WCAG:s krav.',
-      width: 725,
-      height: 654,
+      width: 443,
+      height: 400,
+      mediaQueries: [
+        {
+          minWidth: 768,
+          src: '/images/temp/contrastPrimaryBlack_618x500-min.jpg',
+        },
+        {
+          minWidth: 460,
+          src: '/images/temp/contrastPrimaryBlack_720x400-min.jpg',
+        },
+      ],
     },
   ]
   const imagesAccessibility = [
     {
-      src: '/images/temp/accessibility_original.jpg',
+      src: '/images/temp/accessibility_411x400-min.jpg',
       alt: 'En person som använder hjälpmedel för datorn.',
-      width: 1920,
-      height: 1440,
-      caption: "Foto: Sigmund, från unsplash.com"
+      width: 533,
+      height: 400,
+      caption: "Foto: Sigmund, från unsplash.com",
+      mediaQueries: [
+        {
+          minWidth: 768,
+          src: '/images/temp/accessibility_618x500-min.jpg',
+        },
+        {
+          minWidth: 460,
+          src: '/images/temp/accessibility_720x400-min.jpg',
+        },
+      ],
     },
     {
       src: '/images/temp/burgerInDOM.JPG',

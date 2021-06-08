@@ -91,11 +91,20 @@ export default {
                 title: 'Bildkomprimering',
                 text: 'Att ha lagom stora bilder är viktigt för att få en snabb sajt. Oftast är det just bilderna som tar upp merdelen av en hemsidas totala datamängd. Därav är alla bilder i jpeg-format, som ger relativt små filer. WebP är ett modernt alternativ, men browserstödet är inte lika brett som för jpeg, så jag har skippat WebP. Jag har komprimerat bilderna efter dess container-storlekar på hemsidan, både för hand, i programmet Gimp, men också automatiskt på compressjpeg.com. Bildernas filstorlekar har generellt reducerats med ca. 90%.',
                 image: {
-                    src: '/images/temp/compressjpg.JPG',
-                    alt: 'Skärmdump från compressjpg där bilden har reducerats med 89%.',
-                    width: 1298,
-                    height: 828,
-                    mediaQueries: [],
+                    src: '/images/temp/compressjpg_411x400-min.jpg',
+                    alt: 'Skärmdump från compressjpg där bilden har reducerats i storlek med 89%.',
+                    width: 627,
+                    height: 400,
+                    mediaQueries: [
+                        {
+                            minWidth: 768,
+                            src: '/images/temp/compressjpg_618x500-min.jpg',
+                        },
+                        {
+                            minWidth: 460,
+                            src: '/images/temp/compressjpg_720x400-min.jpg.jpg',
+                        },
+                    ],
                 },
             },
         ],
@@ -103,53 +112,98 @@ export default {
     performance: {
         images: {
             bundleBefore: {
-                src: '/images/temp/bundleBeforePerfEnh.JPG',
-                alt: 'Anlagstavla med todo-lappar.',
-                width: 1001,
-                height: 527,
-                mediaQueries: [],
+                src: '/images/temp/bundleBeforePerfEnh_411x400.jpg',
+                alt: 'Javascript-bundlarna innan optimering. Sajtbyggets totala JS är 145kb.',
+                width: 760,
+                height: 400,
+                mediaQueries: [
+                    {
+                        minWidth: 768,
+                        src: '/images/temp/bundleBeforePerfEnh_618x500-min.jpg',
+                    },
+                    {
+                        minWidth: 460,
+                        src: '/images/temp/bundleBeforePerfEnh_720x400-min.jpg',
+                    },
+                ],
                 title: 'Före',
                 x: 0,
                 y: 0,
             },
             bundleAfter: {
-                src: '/images/temp/bundleAfterPerfEnh.JPG',
-                alt: 'Anlagstavla med todo-lappar.',
-                width: 1008,
-                height: 498,
-                mediaQueries: [],
+                src: '/images/temp/bundleAfterPerfEnh_411x400-min.jpg',
+                alt: 'Javascript-bundlarna efter optimering. Sajtbyggets totala JS är 78.1kb',
+                width: 810,
+                height: 400,
+                mediaQueries: [
+                    {
+                        minWidth: 768,
+                        src: '/images/temp/bundleAfterPerfEnh_618x500-min.jpg',
+                    },
+                    {
+                        minWidth: 460,
+                        src: '/images/temp/bundleAfterPerfEnh_720x400-min.jpg',
+                    },
+                ],
                 x: 0,
                 y: 0,
                 title: 'Efter',
             },
             webpackBefore: {
-                src: '/images/temp/webpackBefore.JPG',
-                alt: 'Anlagstavla med todo-lappar.',
-                width: 1008,
-                height: 498,
-                mediaQueries: [],
+                src: '/images/temp/webpackBefore_411x400-min.jpg',
+                alt: 'Webpack Bundle Analyzers visuella representation av sidans js innan optimering. Ett fåtal stora paket står för majoriteten av den totala datamängden.',
+                width: 795,
+                height: 400,
+                mediaQueries: [
+                    {
+                        minWidth: 768,
+                        src: '/images/temp/webpackBefore_618x500-min.jpg',
+                    },
+                    {
+                        minWidth: 460,
+                        src: '/images/temp/webpackBefore_720x400-min.jpg',
+                    },
+                ],
                 x: 0,
                 y: 0,
                 title: 'Före',
             },
             webpackAfter: {
-                src: '/images/temp/webpackAfter.JPG',
-                alt: 'Anlagstavla med todo-lappar.',
-                width: 1008,
-                height: 498,
-                mediaQueries: [],
+                src: '/images/temp/webpackAfter_411x400-min.jpg',
+                alt: 'Webpack Bundle Analyzers visuella representation av sidans js efter optimering. Stora paket som tidigare låg i huvudbundlen är nu isolerade.',
+                width: 792,
+                height: 400,
+                mediaQueries: [
+                    {
+                        minWidth: 768,
+                        src: '/images/temp/webpackAfter_618x500-min.jpg',
+                    },
+                    {
+                        minWidth: 460,
+                        src: '/images/temp/webpackAfter_720x400-min.jpg',
+                    },
+                ],
                 x: 0,
                 y: 0,
                 title: 'Efter',
             },
             lighthouse: {
-                src: '/images/temp/lighthouseAnkraMobile.jpg',
+                src: '/images/temp/lighthouseAnkraMobile_411x400-min.jpg',
                 alt: 'Ett ganska dåligt Lighthouseresultat.',
-                width: 905,
-                height: 991,
+                width: 411,
+                height: 450,
                 y: '0',
                 x: '50',
-                mediaQueries: [],
+                mediaQueries: [
+                    {
+                        minWidth: 768,
+                        src: '/images/temp/lighthouseAnkraMobile_618x500-min.jpg',
+                    },
+                    {
+                        minWidth: 460,
+                        src: '/images/temp/lighthouseAnkraMobile_720x400-min.jpg',
+                    },
+                ],
             },
         },
         video: {
