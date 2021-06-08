@@ -204,19 +204,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         </div>
       </div>
       <div className={styles['ConstructionPage__Grid']}>
-        <EntryCentered text={"<p>sadasas</p>"} title={"...och om planeterna står rätt och vädret tillåter..."} />
-      </div>
-      <div className={styles['ConstructionPage__ParagraphPres']}>
-        {/* <div className={styles['StartContainer__PresImageWrapper']}>
-              <Image {...presImage} mediaQueries={mediaQueries} round />
-            </div> */}
-        <h2>Om webbsidan</h2>
-        <p>Webbsidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik 6 månaders LIA(praktik) på{' '}<a href="https://www.frojd.se">digitalbyrån Fröjd</a>.
-        </p>
-        <p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.
-        </p>
-        <p>Jag kan redan nu avslöja att den är skriven i Typescript i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering. Jag har också ansträngt mig för att få ett bra Lighthouse-resultat av sajten.
-        </p>
+        <EntryCentered text={"<p>Bild av sidans lighthouseresultat.</p>"} title={"...och om planeterna står rätt och vädret tillåter..."} />
       </div>
 
     </div>

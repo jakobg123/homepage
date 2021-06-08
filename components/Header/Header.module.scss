@@ -99,19 +99,19 @@
 
   &__FocalPoint {
     img {
-      object-position: 33% 10%;
+      object-position: 33% 10% !important;
 
       @include media(m) {
-        object-position: 33% 0%;
+        object-position: 33% 0% !important;
       }
     }
 
     &--SajtBygget {
       img {
-        object-position: 50% 20%;
+        object-position: 50% 20% !important;
 
         @include media(m) {
-          object-position: 50% 20%;
+          object-position: 50% 20% !important;
         }
       }
     }

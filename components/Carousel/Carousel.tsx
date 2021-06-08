@@ -154,7 +154,10 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
           spaceBetween={30}
           slidesPerView={1}
           lazy={true}
-          navigation
+          navigation={{
+            nextEl: ".slideNext",
+            prevEl: ".slidePrev"
+          }}
           pagination={{ clickable: true }}
           breakpoints={
             {
@@ -178,6 +181,8 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
           {!!carouselData?.length && carouselData.map(data => (
             <SwiperSlide key={data.id}><CardCarousel {...data} onClick={onClick} open={openModal} setOpen={setOpenModal} setModalContent={setModalContent} dark={dark} /></SwiperSlide>
           ))}
+          <button className="slideNext"></button>
+          <button className="slidePrev"></button>
         </Swiper>
       </div>
       <Modal open={openModal} setOpen={setOpenModal} >
