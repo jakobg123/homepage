@@ -1,0 +1,109 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.CardCode {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: $spacingXl * 2;
+
+  @include media(tablet) {
+    flex-direction: row;
+    // padding: $spacingL * 2 $spacingM $spacingXl * 2;
+  }
+
+  &--Reverse {
+    flex-direction: column-reverse;
+
+    @include media(tablet) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--ReverseWrap {
+    flex-direction: column;
+
+    @include media(tablet) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &__Text {
+    flex: 0 0 100%;
+    @extend %textBlock;
+
+    & p:last-child {
+      padding-bottom: $spacingL !important;
+    }
+
+    @include media(tablet) {
+      flex: 0 0 50%;
+      padding-right: $spacingL * 2;
+      padding-left: $spacingXl * 2;
+
+      .CardCode--NoBorder & {
+        padding-left: 0;
+        flex: 1 1 50%;
+        padding: 0;
+      }
+
+      & p:last-child {
+        padding-bottom: 0 !important;
+      }
+
+      .ContentCard--Reverse & {
+        padding-left: $spacingL * 2;
+      }
+    }
+  }
+
+  //   &__CodeWrapper {
+  //     flex: 0 0 100%;
+
+  //     @include media(tablet) {
+  //       flex: 0 0 50%;
+  //       // border: 1px solid blue;
+  //     }
+  //   }
+
+  &__VideoWrapper {
+    position: relative;
+    flex: 0 0 100%;
+    padding-bottom: $spacingL;
+    min-height: 60rem;
+
+    .CardCode--NoBorder & {
+      min-height: 100%;
+      padding: 0;
+      margin-left: 6rem;
+      flex: 1 1 50%;
+    }
+
+    .CardCode--Reverse.CardCode--NoBorder & {
+      margin-left: 0;
+      margin-right: 6rem;
+    }
+    // width: 50%;
+
+    @include media(tablet) {
+      flex: 0 0 50%;
+      height: 100%;
+      padding: 2rem;
+      background-color: $colorPrimary;
+      box-shadow: $boxShadowCard;
+      // border: 1px solid blue;
+    }
+  }
+
+  &__FadeContainer {
+    opacity: 0;
+    transform: translateY(5rem);
+    transition: all $transitionNormal;
+    will-change: transform;
+    transition-delay: 1.5s;
+  }
+  &__FadeContainer--Show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,148 @@
+@import '../mixins.scss';
+@import '../variables.scss';
+
+.swiper-container {
+  position: relative;
+}
+
+.swiper-slide {
+  transition: opacity 0.3s ease-in-out;
+}
+
+.swiper-slide-prev,
+.swiper-slide-next,
+.swiper-slide {
+  opacity: 0;
+}
+
+.swiper-slide-active,
+.swiper-slide-next,
+.swiper-slide-next + .swiper-slide {
+  opacity: 1;
+}
+
+.swiper-pagination {
+  bottom: -3.5rem !important;
+  text-align: left;
+
+  @media screen and (min-width: 768px) {
+    text-align: center;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1);
+  @include bgColorOpacity($colorSecondary, 0.9);
+}
+
+.swiper-pagination-bullet-active {
+  transform: scale(1.3);
+  background-color: $colorSecondaryLight;
+}
+
+.slidePrev,
+.slideNext {
+  position: absolute;
+  top: auto;
+  right: 0%;
+  bottom: -6rem;
+  background-color: $colorSecondary;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  transition: background-color $transitionQuick;
+  box-shadow: $boxShadowSmall rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @media screen and (min-width: 768px) {
+      background-color: $colorSecondaryLight;
+    }
+  }
+
+  &::after {
+    content: '';
+    background: url('/icons/minified/chevronNext.svg');
+    height: 50%;
+    width: 50%;
+    margin-left: 0.2rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  @media screen and (min-width: 768px) {
+    top: -6rem;
+  }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: auto;
+  bottom: -5rem;
+  background-color: $colorSecondary;
+  border-radius: 50%;
+  height: 4rem;
+  width: 4rem;
+  transition: background-color $transitionQuick;
+  box-shadow: $boxShadowSmall rgba(0, 0, 0, 0.3);
+  outline: none;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    @media screen and (min-width: 768px) {
+      background-color: $colorSecondaryLight;
+    }
+  }
+
+  &::after {
+    content: '';
+    background: url('/icons/minified/chevronNext.svg');
+    height: 50%;
+    width: 50%;
+    margin-left: 0.2rem;
+  }
+
+  @media screen and (min-width: 768px) {
+    top: -3rem;
+  }
+}
+
+.slidePrev {
+  left: calc(100% - 9.5rem);
+  // top: 28%;
+  // left: 26%;
+
+  &::after {
+    top: 28%;
+    left: 26%;
+    // background-position: 45% 50%;
+    transform: rotate(180deg);
+    margin-left: -0.2rem;
+  }
+}
+
+.swiper-button-prev {
+  left: calc(100% - 9.5rem);
+  top: 28%;
+  left: 26%;
+
+  &::after {
+    // background-position: 45% 50%;
+    transform: rotate(180deg);
+    margin-left: -0.2rem;
+  }
+}
+
+.swiper-container {
+  overflow: visible;
+}

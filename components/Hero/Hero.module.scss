@@ -1,0 +1,126 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.Hero {
+  height: 0;
+  padding-top: 35rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &--Construction.Hero {
+    padding-top: 30rem;
+  }
+
+  @include media(ms) {
+    padding-top: calc((837 / 1440) * 100%);
+
+    &--Construction.Hero {
+      padding-top: calc((700 / 1440) * 100%);
+    }
+  }
+
+  img {
+    object-position: 33% 10%;
+
+    @include media(m) {
+      object-position: 33% 0%;
+    }
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    // background-image: url('#{$patternPath}topWave_Construction3.svg');
+    // background-image: url('#{$patternPath}topWave_Construction3_Black.svg');
+    background-image: url('#{$patternPath}topWave.svg');
+
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+    bottom: -1px;
+    right: -1px;
+    left: -1px;
+    height: 100%;
+    min-height: 29rem;
+    width: calc(100% + 2px);
+    z-index: 2;
+  }
+  &--Construction.Hero::before {
+    // background-image: url('#{$patternPath}topWave_Construction3.svg') !important;
+    background-image: url('#{$patternPath}topWave_Construction4.svg') !important;
+  }
+
+  &--Construction {
+    img {
+      object-position: 0% 25%;
+
+      @include media(m) {
+        object-position: 50% 25%;
+      }
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1;
+
+    @include bgColorGradient(
+      to top,
+      $colorPrimary,
+      1,
+      0%,
+      rgba(0, 0, 0, 0.01),
+      0.1,
+      45%
+    );
+  }
+
+  &--Construction.Hero::after {
+    background: none;
+    // @include bgColorGradient(
+    //   to top,
+    //   $colorPrimary,
+    //   0,
+    //   0%,
+    //   rgba(0, 0, 0, 0.01),
+    //   0,
+    //   15%
+    // );
+    // @include bgColorGradient(
+    //   to top,
+    //   $colorPrimary,
+    //   1,
+    //   0%,
+    //   rgba(0, 0, 0, 0.01),
+    //   0.1,
+    //   15%
+    // );
+  }
+
+  //   &__FocalPoint {
+  //     img {
+  //       object-position: 33% 10%;
+
+  //       @include media(m) {
+  //         object-position: 33% 0%;
+  //       }
+  //     }
+
+  //     &--Construction {
+  //       img {
+  //         object-position: 50% 20%;
+
+  //         @include media(m) {
+  //           object-position: 50% 20%;
+  //         }
+  //       }
+  //     }
+  //   }
+}

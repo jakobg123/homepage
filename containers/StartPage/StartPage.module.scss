@@ -1,7 +1,7 @@
 @import '../../styles/variables.scss';
 @import '../../styles/extensions.scss';
 
-.StartContainer {
+.StartPage {
   &__Grid {
     @extend %grid;
   }
@@ -11,7 +11,7 @@
     @extend %titleWidth;
     margin-top: -8rem;
     position: relative;
-    z-index: 5;
+    z-index: 2;
     position: relative;
     word-break: break-word;
     hyphens: manual;
@@ -50,7 +50,7 @@
     padding-top: $spacingS;
     z-index: 2;
 
-    .StartContainer__Paragraph {
+    .StartPage__Paragraph {
       position: relative;
       z-index: 1;
       padding-bottom: $spacingS;
@@ -137,25 +137,26 @@
   }
 
   &__Paragraph {
-    h2 {
-      @extend %h2;
-    }
+    @extend %textBlock;
+    // h2 {
+    //   @extend %h2;
+    // }
 
-    h3 {
-      @extend %h3;
-    }
+    // h3 {
+    //   @extend %h3;
+    // }
 
-    p {
-      @extend %richtext;
+    // p {
+    //   @extend %richtext;
 
-      span {
-        display: inline-block;
-      }
+    //   span {
+    //     display: inline-block;
+    //   }
 
-      &:last-of-type {
-        padding-bottom: $spacingL * 2;
-      }
-    }
+    //   &:last-of-type {
+    //     padding-bottom: $spacingL * 2;
+    //   }
+    // }
   }
   &__ParagraphPres {
     @include media(tablet) {
@@ -174,6 +175,10 @@
       position: relative;
       z-index: 10;
       @extend %richtext;
+    }
+
+    a {
+      @extend %linkLight;
     }
   }
 

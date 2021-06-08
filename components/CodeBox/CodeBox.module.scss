@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.CodeBox {
+  width: 100%;
+  position: relative;
+  max-height: 35rem;
+  opacity: 0;
+  transition: all $transitionNormal;
+  transform: translateY(3rem);
+  // transition-delay: 0.3s;
+  will-change: transform;
+
+  @include media(tablet) {
+    max-height: 100%;
+  }
+
+  @extend %noScrollbar;
+
+  &--FadeIn {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  & > pre {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @extend %noScrollbar;
+    height: 100%;
+    width: 100%;
+    margin: 0 !important;
+    padding: 1rem 0 0 1rem;
+    font-size: 0;
+
+    & span {
+      font-size: 1.2rem !important;
+
+      @include media(tablet) {
+        font-size: 1.6rem !important;
+      }
+    }
+  }
+  & > span {
+    @extend %noScrollbar;
+    height: 100%;
+  }
+}

@@ -13,7 +13,75 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+
+    // &--Hide {
+    //   display: none;
+    // }
   }
+
+  &--Construction.MainNav {
+    &::after {
+      content: '';
+      // border: 1px solid red;
+      // @include bgColorOpacity($colorWhite, 0.2);
+      @include posAbsolute(-5rem);
+      height: 200%;
+      @include bgColorGradient(
+        to bottom,
+        $colorPrimary,
+        0.9,
+        0%,
+        $colorWhite,
+        0,
+        80%
+      );
+      transition: all $transitionNormal;
+    }
+
+    // z-index: 50;
+
+    &:hover.MainNav--Construction.MainNav::after {
+      transform: translateY(5rem);
+      // @include bgColorOpacity($colorWhite, 0.9);
+      // @include bgColorOpacity($colorBlack, 0.3);
+      // @include bgColorGradient(
+      //   to bottom,
+      //   $colorSecondaryLight,
+      //   0.8,
+      //   0%,
+      //   $colorWhite,
+      //   0.4,
+      //   80%
+      // );
+    }
+  }
+  // &--Construction.MainNav {
+  //   // @include bgColorOpacity($colorWhite, 0.2);
+  //   @include bgColorGradient(
+  //     to bottom,
+  //     $colorWhite,
+  //     0.4,
+  //     0%,
+  //     $colorWhite,
+  //     0,
+  //     50%
+  //   );
+  //   transition: all $transitionNormal;
+
+  //   &:hover {
+  //     @include bgColorOpacity($colorWhite, 0.9);
+  //     // @include bgColorOpacity($colorBlack, 0.3);
+  //     // @include bgColorGradient(
+  //     //   to bottom,
+  //     //   $colorSecondaryLight,
+  //     //   0.8,
+  //     //   0%,
+  //     //   $colorWhite,
+  //     //   0.4,
+  //     //   80%
+  //     // );
+  //   }
+  // }
 
   &__Logo {
     padding-top: $spacingS;
@@ -63,6 +131,10 @@
     transition: transform $transitionNormal;
     transform: scale(1);
 
+    // .MainNav--Construction & {
+    //   color: $colorPrimary;
+    // }
+
     &::after {
       content: '';
       display: block;
@@ -75,6 +147,10 @@
       @include bgColorOpacity($colorPrimary, 0.5);
       transition: all $transitionNormal;
       transform: rotateX(-90deg) scale(1);
+
+      .MainNav--Construction & {
+        @include bgColorOpacity($colorBlack, 0.5);
+      }
     }
 
     &:hover,
@@ -82,6 +158,11 @@
       &::after {
         @include bgColorOpacity($colorPrimary, 1);
         transform: rotateX(-360deg) scale(1.1);
+
+        .MainNav--Construction & {
+          background: none;
+          border: 1px solid $colorBlack;
+        }
       }
     }
   }

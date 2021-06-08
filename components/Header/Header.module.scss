@@ -12,6 +12,16 @@
     right: 0;
     width: 100%;
     z-index: 3;
+    opacity: 1;
+    transition: opacity $transitionNormal;
+
+    &--Hide {
+      display: none;
+    }
+
+    &--Fade {
+      opacity: 0;
+    }
   }
 
   &__ImageWrapper {
@@ -28,6 +38,8 @@
     &::before {
       content: '';
       position: absolute;
+      // background-image: url('#{$patternPath}topWave_Construction3.svg');
+      // background-image: url('#{$patternPath}topWave_Construction3_Black.svg');
       background-image: url('#{$patternPath}topWave.svg');
       background-position: bottom;
       background-size: contain;
@@ -39,6 +51,11 @@
       min-height: 29rem;
       width: calc(100% + 2px);
       z-index: 2;
+
+      .Header__ImageWrapper--Construction & {
+        // background-image: url('#{$patternPath}topWave_Construction3.svg');
+        // background-image: url('#{$patternPath}topWave_Construction4.svg');
+      }
     }
 
     &::after {
@@ -57,17 +74,45 @@
         0%,
         rgba(0, 0, 0, 0.01),
         0.1,
-        65%
+        15%
       );
+      @include bgColorGradient(
+        to top,
+        $colorPrimary,
+        1,
+        0%,
+        rgba(0, 0, 0, 0.01),
+        0.1,
+        45%
+      );
+      // @include bgColorGradient(
+      //   to top,
+      //   $colorBlack,
+      //   1,
+      //   0%,
+      //   rgba(0, 0, 0, 0.01),
+      //   0.1,
+      //   15%
+      // );
     }
   }
 
   &__FocalPoint {
     img {
-      object-position: 33% 10%;
+      object-position: 33% 10% !important;
 
       @include media(m) {
-        object-position: 33% 0%;
+        object-position: 33% 0% !important;
+      }
+    }
+
+    &--SajtBygget {
+      img {
+        object-position: 50% 20% !important;
+
+        @include media(m) {
+          object-position: 50% 20% !important;
+        }
       }
     }
   }

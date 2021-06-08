@@ -1,8 +1,10 @@
 export default {
     links: [
-        { target: '#technology', label: 'Teknologier' },
-        { target: '#internship', label: 'Praktik' },
-        { target: '#contact', label: 'Kontakt' },
+        { target: '/', label: 'Hem' },
+        { target: '/sajtbygget', label: 'Sajtbygget' },
+        { target: '/#technology', label: 'Teknologier' },
+        { target: '/#internship', label: 'Praktik' },
+        { target: '/#contact', label: 'Kontakt' },
     ],
     logo: {
         src: '/logoPrimary.svg',

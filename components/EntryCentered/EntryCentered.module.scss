@@ -1,0 +1,30 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.EntryCentered {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: $spacingBlock 0;
+  position: relative;
+  z-index: 1;
+
+  &__Title {
+    @extend %h1;
+    text-align: center;
+    .EntryCentered--Dark & {
+      color: $colorPrimary;
+    }
+  }
+
+  &__Text {
+    @extend %preamble;
+    text-align: center;
+
+    .EntryCentered--Dark & {
+      color: $colorPrimary;
+    }
+  }
+}

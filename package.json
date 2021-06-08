@@ -5,17 +5,28 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "new": "node scripts/newComponent.js new",
+    "analyze": "cross-env ANALYZE=true next build",
+    "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+    "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^10.2.3",
     "@svgr/webpack": "^5.5.0",
     "classnames": "^2.2.6",
+    "commander": "^7.2.0",
+    "cross-env": "^7.0.3",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.1.7",
     "next": "10.0.7",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-intersection-observer": "^8.31.0",
     "react-lazyload": "^3.2.0",
-    "sass": "^1.32.8"
+    "react-syntax-highlighter": "^15.4.3",
+    "sass": "^1.32.8",
+    "swiper": "^6.6.2"
   },
   "devDependencies": {
     "@types/classnames": "^2.2.11",

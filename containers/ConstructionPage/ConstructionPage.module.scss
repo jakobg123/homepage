@@ -1,0 +1,321 @@
+@import '../../styles/variables.scss';
+@import '../../styles/extensions.scss';
+
+.ConstructionPage {
+  &__Grid {
+    @extend %grid;
+  }
+
+  &__Title {
+    @extend %h1;
+    @extend %titleWidth;
+    margin-top: -8rem;
+    position: relative;
+    z-index: 2;
+    position: relative;
+    word-break: break-word;
+    hyphens: manual;
+
+    @include media(ms) {
+      margin-top: -13rem;
+    }
+
+    // @include media(tablet) {
+    //   margin-top: -15rem;
+    // }
+
+    // @include media(desktop) {
+    //   margin-top: -21rem;
+    // }
+
+    // @include media(xl) {
+    //   margin-top: -27rem;
+    // }
+  }
+
+  &__EntryWrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__Block {
+    background-color: $colorPrimary;
+
+    &--White {
+      background-color: $colorWhite;
+    }
+
+    &--Dark {
+      background-color: $colorBlack;
+    }
+  }
+
+  &__DesignWrapper {
+    @extend %grid;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding-top: $spacingXl * 2;
+    z-index: 2;
+    // @extend %internshipTextBlock;
+    // * {
+    //   color: $colorPrimary !important;
+    // }
+
+    &::after {
+      content: '';
+      position: absolute;
+      background-image: url('#{$patternPath}topWave_Construction_Design3.svg');
+      // background-image: url('#{$patternPath}topWave_Construction_Design2.svg');
+      background-position: top;
+      background-size: contain;
+      background-repeat: no-repeat;
+      top: -1px;
+      right: -1px;
+      left: -1px;
+      height: 50rem;
+      width: calc(100% + 2px);
+      z-index: 0;
+
+      .ConstructionPage__Block--Accessibility & {
+        background-image: url('#{$patternPath}topWave_Construction_Accessibility.svg');
+      }
+
+      .ConstructionPage__Block--Optimization & {
+        background-image: url('#{$patternPath}topWave_Construction_Optimization2.svg');
+        // background-image: url('#{$patternPath}topWave_Construction_Optimization.svg');
+      }
+    }
+  }
+
+  &__Paragraph {
+    position: relative;
+    z-index: 3;
+    padding-bottom: $spacingS;
+    // @extend %regularText;
+
+    // p {
+    //   padding-bottom: $spacingL !important;
+    // }
+
+    // .ConstructionPage__Block--Dark & {
+    //   * {
+    //     color: $colorPrimary !important;
+    //   }
+    // }
+
+    @include media(tablet) {
+      padding-bottom: $spacingM;
+    }
+    @include media(xl) {
+      padding-bottom: $spacingL;
+    }
+  }
+
+  &__Block--Accessibility h2 {
+    padding-top: 8rem;
+  }
+
+  &__CarouselWrapper {
+    padding: 4rem 0;
+  }
+
+  &__CarouselTitle {
+    @extend %h2;
+    @extend %fontColor;
+    padding-bottom: $spacingXl;
+  }
+
+  &__ButtonWrapper {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__TextWrapper {
+    @extend %grid;
+    position: relative;
+    z-index: 5;
+    padding-top: $spacingBlock;
+  }
+
+  &__Background {
+    @extend %grid;
+    transition: background-color 1s ease-in-out;
+    will-change: transform;
+    background-color: $colorWhite;
+    z-index: 1;
+
+    &--White {
+      background-color: $colorWhite;
+    }
+    &--Black {
+      background-color: $colorBlack;
+    }
+  }
+
+  &__Subtitle,
+  &__Em {
+    @extend %h2;
+    display: block;
+  }
+
+  &__Em {
+    padding-bottom: $spacingXl;
+
+    @include media(desktop) {
+      padding-bottom: $spacingL * 2;
+    }
+  }
+
+  &__Line {
+    padding-top: $spacingBlock;
+    width: 100%;
+    &--Dark {
+      background-color: $colorWhiteBackground;
+    }
+  }
+
+  &__Preamble {
+    @extend %preamble;
+  }
+
+  &__Paragraph {
+    h2 {
+      @extend %h2;
+    }
+
+    h3 {
+      @extend %h3;
+    }
+
+    p {
+      @extend %richtext;
+
+      span {
+        display: inline-block;
+      }
+
+      &:last-of-type {
+        padding-bottom: $spacingL * 2;
+      }
+    }
+  }
+  &__ParagraphPres {
+    @include media(tablet) {
+      max-width: 90%;
+    }
+
+    @include media(desktop) {
+      max-width: 100%;
+    }
+
+    h2 {
+      @extend %h2;
+    }
+
+    p {
+      position: relative;
+      z-index: 10;
+      @extend %richtext;
+    }
+  }
+
+  &__CodeWrapper {
+    width: 100%;
+    height: 60rem;
+    border: 1px solid red;
+    overflow-y: scroll;
+    // scrollbar-width: 1rem;
+
+    // span {
+    //   display: inline-block;
+    // }
+    // overflow-y: scroll;
+    // * {
+    //   overflow-y: scroll !important;
+    // }
+
+    // &::-webkit-scrollbar {
+    //   width: 0;
+    // }
+  }
+
+  code {
+    font-family: 'Fira Code', monospace !important;
+    font-size: 16px !important;
+  }
+
+  &__PresImageWrapper {
+    position: relative;
+    padding-right: $spacingXl * 2;
+    height: 13rem;
+    width: 13rem;
+    border-radius: 50%;
+    shape-outside: circle();
+    object-fit: cover;
+    float: right;
+    border: 5px solid $colorWhite;
+    box-shadow: $boxShadowCard;
+    z-index: 5;
+
+    @include media(ms) {
+      height: 20rem;
+      width: 20rem;
+    }
+    @include media(desktop) {
+      height: 25rem;
+      width: 25rem;
+    }
+    @include media(xl) {
+      height: 35rem;
+      width: 35rem;
+      top: -5rem;
+    }
+
+    &::after {
+      content: '';
+      top: 0;
+      right: 0;
+      width: 25rem;
+      height: 25rem;
+      border-radius: 50%;
+      position: absolute;
+      z-index: -1;
+    }
+  }
+
+  &__ButtonWave {
+    margin-top: -2px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    width: 100%;
+    padding-top: 15rem;
+    height: 0;
+    z-index: 2;
+    background-color: $colorWhiteBackground;
+
+    @include media(tablet) {
+      margin-top: -2px;
+      padding-top: 20rem;
+    }
+    @include media(desktop) {
+      padding-top: 26rem;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background-image: url('#{$patternPath}waveBlue6.svg');
+      background-position: top;
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: 1;
+    }
+  }
+}

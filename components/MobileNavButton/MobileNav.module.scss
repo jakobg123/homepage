@@ -6,6 +6,16 @@
   width: 100%;
   position: relative;
   display: block;
+  opacity: 1;
+  transition: opacity $transitionNormal;
+
+  &--Hide {
+    display: none;
+  }
+
+  &--FadeOut {
+    opacity: 0;
+  }
 
   @include media(tablet) {
     display: none;
@@ -24,21 +34,34 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: $radiusButtonSmall;
-    box-shadow: $boxShadowCard;
-    background-color: $colorPrimary;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+    // box-shadow: $boxShadowCard;
+    background: radial-gradient(
+      circle,
+      $colorSecondaryLight 0.5%,
+      $colorSecondary
+    );
     outline: none;
     z-index: 2000;
     transition: all $transitionNormal;
 
     &--Active {
-      background-color: $colorBlack;
+      // background-color: $colorBlack;
+      background: radial-gradient(
+        circle,
+        $colorSecondaryLight 10.5%,
+        $colorSecondary
+      );
+      transform: scale(1.25);
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
     }
   }
 
   &__Line {
     height: 2px;
     width: 100%;
-    background-color: $colorBlack;
+    background-color: $colorPrimary;
+    // background-color: $colorBlack;
     border-radius: 2px;
     transition: all $transitionNormal;
     transform: rotate(0deg);

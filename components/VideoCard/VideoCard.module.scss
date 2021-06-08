@@ -1,0 +1,21 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.VideoCard {
+  // border: 1px solid red;
+  padding: 2rem;
+  background-color: $colorWhite;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__Wrapper {
+    width: 50%;
+    flex: 1 1 100%;
+
+    @include media(tablet) {
+      flex: 1 1 50%;
+    }
+  }
+}

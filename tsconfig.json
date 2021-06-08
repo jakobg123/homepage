@@ -18,7 +18,7 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "noImplicitAny": true
+    "noImplicitAny": false
   },
   "include": [
     "next-env.d.ts",
@@ -29,7 +29,7 @@
     "components/Icon/Icon.jsx",
     "components/Header/Header.jsx",
     "containers/StartContainer/StartContainer.jsx"
-  ],
+, "utils/Hooks/useFullScreenStatus.jsx"  ],
   "exclude": [
     "node_modules"
   ]

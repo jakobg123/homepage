@@ -61,7 +61,7 @@ class TabList extends PureComponent<ITabListProps, ITabListState> {
         }
     }
 
-    handleClick = (id: number) => {
+    handleClick = ((id: number) => {
 
         if (this.prevId.current === id) {
             return;
@@ -69,7 +69,7 @@ class TabList extends PureComponent<ITabListProps, ITabListState> {
         const info = this.props.knowledge.filter((x: { id: number }) => x.id === id);
         this.setState({ currentKnowledge: info });
         this.prevId.current = id;
-    }
+    })
 
     render() {
         const { title, dark = false } = this.props;

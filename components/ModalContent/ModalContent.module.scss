@@ -1,0 +1,60 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  @extend %noScrollBar;
+
+  //   border: 1px solid red;
+  height: 100%;
+  //   flex-direction: column;
+  margin: 0 auto;
+  @include media(tablet) {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  &__OuterWrapper {
+    @include media(tablet) {
+      @include posAbsolute;
+      z-index: -1;
+      overflow: hidden;
+      //   &:host {
+      //   width: initial !important;
+      //   }
+    }
+  }
+
+  &__ImageWrapper {
+    position: relative;
+    width: 100%;
+  }
+
+  &__TextWrapper {
+    position: relative;
+    display: inline-table;
+    max-width: 100%;
+    background-color: $colorBlack;
+    // background-color: $colorSecondary;
+    padding: $spacingL $spacingM $spacingL * 2;
+
+    @include media(tablet) {
+      padding: $spacingL $spacingXl $spacingXl * 2;
+      margin-top: 15rem;
+      max-width: 50%;
+    }
+  }
+
+  &__Title {
+    @extend %h2;
+    color: $colorPrimary;
+  }
+
+  &__Text {
+    @extend %body;
+    color: $colorPrimary;
+  }
+}

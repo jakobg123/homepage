@@ -20,6 +20,14 @@
   }
 }
 
+%noScrollBar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
 %preambleWidth {
   max-width: 95%;
 
@@ -33,19 +41,83 @@
 }
 
 %textWidth {
-  max-width: 95%;
+  // max-width: 95%;
+  max-width: 62rem;
 
   @include media(ms) {
-    max-width: 85%;
+    // max-width: 85%;
+    max-width: 65rem;
   }
 
   @include media(tablet) {
-    max-width: 70%;
+    // max-width: 70%;
+    max-width: 70rem;
   }
 
   @include media(xl) {
-    max-width: 65%;
+    // max-width: 65%;
+    max-width: 80rem;
   }
+}
+
+%noScrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+%textBlock {
+  // &__Paragraph {
+  h2 {
+    @extend %h2;
+  }
+
+  h3 {
+    @extend %h3;
+  }
+
+  h4 {
+    @extend %h4;
+  }
+
+  p {
+    @extend %richtext;
+
+    span {
+      display: inline-block;
+    }
+
+    &:last-of-type {
+      padding-bottom: $spacingL * 2;
+    }
+  }
+  // }
+}
+
+%textBlockDark {
+  // &__Paragraph {
+  h2 {
+    @extend %h2;
+  }
+
+  h3 {
+    @extend %h3;
+  }
+
+  p {
+    @extend %richtext;
+
+    span {
+      display: inline-block;
+    }
+
+    &:last-of-type {
+      padding-bottom: $spacingL * 2;
+    }
+  }
+  // }
 }
 
 %h1 {
@@ -76,12 +148,12 @@
   padding-bottom: $spacingS;
 
   @include media(desktop) {
-    padding-bottom: $spacingL;
+    padding-bottom: $spacingM;
     font-size: 5.063rem;
   }
 
   @include media(xl) {
-    padding-bottom: $spacingXl;
+    padding-bottom: $spacingL;
   }
 }
 
@@ -136,14 +208,30 @@
   }
 }
 
+%linkLight {
+  color: $colorBlack;
+  &:hover,
+  &:focus {
+    color: $linkHover;
+  }
+}
+
+%linkDark {
+  color: $colorPrimary;
+  &:hover,
+  &:focus {
+    color: $linkHoverLight;
+  }
+}
+
 %links {
   a {
-    color: $colorBlack;
+    // color: $colorBlack;
     transition: color $transitionQuick;
-    &:hover,
-    &:focus {
-      color: $linkHover;
-    }
+    // &:hover,
+    // &:focus {
+    // color: $linkHover;
+    // }
   }
 }
 
@@ -250,6 +338,26 @@
   }
 }
 
+%regularText {
+  transition: all $transitionNormal;
+  @extend %richtext;
+  // color: $colorPrimary;
+
+  p:last-of-type {
+    padding-bottom: 0;
+  }
+
+  a {
+    transition: all $transitionNormal;
+    color: $colorPrimary;
+
+    &:hover,
+    &:focus {
+      color: $linkHoverLight;
+    }
+  }
+}
+
 %internshipTextBlock {
   flex: 1 1 50%;
   transition: all $transitionNormal;
@@ -313,7 +421,7 @@
   line-height: 1.26;
   font-family: $font;
   word-break: break-word;
-  @extend %fontColorBlack;
+  // @extend %fontColorBlack;
 }
 
 %p {
@@ -322,6 +430,6 @@
   line-height: 1.6;
   font-family: $font;
   word-break: break-word;
-  @extend %fontColorBlack;
+  // @extend %fontColorBlack;
   @extend %textWidth;
 }

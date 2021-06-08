@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.CardArticle {
+  padding: $spacingXl $spacingM $spacingL * 2;
+  background-color: $colorWhite;
+  box-shadow: $boxShadowCard;
+  margin-bottom: $spacingXl * 2;
+
+  @include media(tablet) {
+    padding: $spacingL * 2 $spacingM $spacingXl * 2;
+  }
+}

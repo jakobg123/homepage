@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/extensions.scss';
+
+.Carousel {
+  margin-bottom: $spacingXl * 2;
+  overflow: visible;
+}
+
+.InfoCard {
+  height: 100%;
+  background: mediumaquamarine;
+  color: black;
+  font-size: 10rem;
+  padding: 10rem 3rem;
+}

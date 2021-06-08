@@ -2,9 +2,9 @@ import Link from "next/link";
 import styles from "./Button.module.scss";
 import Icon from "../Icon";
 import React from "react";
-import {IIconProps} from "../../types/types";
+import { IIconProps } from "../../types/types";
 
-const IconWrapper: React.FC<{icon: IIconProps["type"]}> = ({icon}) => {
+const IconWrapper: React.FC<{ icon: IIconProps["type"] }> = ({ icon }) => {
     return (
         <span aria-hidden="true" className={styles["Button__IconWrapper"]}>
             <Icon type={icon} color={"Black"} hoverEffect />
@@ -26,25 +26,31 @@ const Button: React.FC<IButtonProps> = ({ label, icon, href, onClick = null, chi
 
     if (!href) {
         ButtonThing = () => (
-            <button type="button" className={styles["Button"]} onClick={onClick}>{label}{children}</button>
+            <button type="button" className={styles["Button"]} onClick={onClick}><span className={styles["Button__TextWrapper"]}>
+                {label}{children}
+            </span></button>
         )
     }
     else if ("http" === href.substring(0, 4)) {
         ButtonThing = ({ children }) => (
-            <a href={href} className={styles["Button"]} >{label}{children}</a>
+            <a href={href} className={styles["Button"]} ><span className={styles["Button__TextWrapper"]}>
+                {label}{children}
+            </span></a>
         )
     }
     else {
         ButtonThing = () => (
             <Link href={href}>
-                <a className={styles["Button"]}>{label}{children}</a>
+                <a className={styles["Button"]}><span className={styles["Button__TextWrapper"]}>
+                    {label}{children}
+                </span></a>
             </Link>
         )
     }
 
     return (
         <ButtonThing>
-                {!!icon && <IconWrapper icon={icon} /> }
+            {!!icon && <IconWrapper icon={icon} />}
         </ButtonThing>
     )
 }

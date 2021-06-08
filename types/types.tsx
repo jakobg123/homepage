@@ -3,6 +3,7 @@ export interface IIconProps {
     | "arrowPrev"
     | "chevronNext"
     | "chevronDown"
+    | "close"
     | "code"
     | "css"
     | "django"
@@ -49,4 +50,9 @@ export interface IImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     pTHeight?: number;
     modifier?: any[];
     caption?: string;
+    modifierClass?: string;
+    width?: number;
+    height?: number;
+    x?: string;
+    y?: string;
 }

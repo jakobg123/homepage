@@ -1,7 +1,7 @@
 import styles from './Image.module.scss';
 import classNames from "classnames";
 
-import { IImageProps, IMediaQueries } from '../../types/types';
+import { IImageProps } from '../../types/types';
 
 const Image: React.FC<IImageProps> = ({
     src,
@@ -12,15 +12,21 @@ const Image: React.FC<IImageProps> = ({
     loading = 'lazy',
     round = false,
     modifier = [],
-}) => {
-    const classes = !modifier.length ? styles["Image"] : classNames(modifier.map(x => (
-        [x]
-    )), styles["Image"]);
+    x = "50",
+    y = "50",
 
+}) => {
+    const classes = !modifier.length
+        ? styles["Image"]
+        : classNames(modifier.map(x => (
+            [x]
+        )), styles["Image"]);
+
+    const focal = { objectPosition: `${x}% ${y}%` };
     let imageStyles = {};
 
     if (round) {
-        imageStyles = { borderRadius: "50%" }
+        imageStyles = { ...focal, borderRadius: "50%" }
     }
 
     return (
@@ -40,7 +46,7 @@ const Image: React.FC<IImageProps> = ({
                 width={width}
                 height={height}
                 loading={loading}
-                style={imageStyles}
+                style={!Object.keys(imageStyles).length && !modifier.length ? focal : imageStyles}
                 className={styles['Image__Image']}
             />
         </picture >

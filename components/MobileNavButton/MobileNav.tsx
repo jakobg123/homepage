@@ -1,11 +1,14 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import Link from 'next/link';
 import styles from './MobileNav.module.scss';
 import classNames from 'classnames';
 
+import { lockBody, unlockBody } from "../../utils/helpers/modal";
+
 import Icon from '../Icon';
 
 import { INavLinks } from "../../types/typesData";
+import ModalContext from "../../utils/context/Modal.context";
 
 export interface IMobileNavProps {
     mobileMenu: INavLinks[];
@@ -15,6 +18,8 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
     const [openNav, setOpenNav] = useState(false);
     const [showOverlay, setShowOverlay] = useState(false)
     const [drop, setDrop] = useState(false);
+    const { hideElement, fadeOutElement } = useContext(ModalContext);
+    // console.log("OUTPUT ÄR ~ file: MobileNav.tsx ~ line 22 ~ modalContext", modalOpen)
 
     const open = () => {
         setShowOverlay(true)
@@ -22,14 +27,16 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
         setTimeout(() => {
             setOpenNav(true)
             slideIn(true)
-            document.body.style.overflow = 'hidden';
+            lockBody();
+            // document.body.style.overflow = 'hidden';
         }, 100)
     }
 
     const close = () => {
         setOpenNav(false)
         slideIn(false)
-        document.body.style.overflow = 'scroll';
+        unlockBody();
+        // document.body.style.overflow = 'scroll';
 
         setTimeout(() => {
             setShowOverlay(false)
@@ -48,7 +55,7 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
     };
 
     return (
-        <div className={styles['MobileNav']}>
+        <div className={classNames(styles['MobileNav'], { [styles['MobileNav--Hide']]: hideElement }, { [styles['MobileNav--FadeOut']]: fadeOutElement })}>
             <button
                 aria-expanded={openNav ? 'true' : 'false'}
                 aria-controls="menu"
@@ -57,7 +64,12 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
                     styles['MobileNav__Button'],
                     { [styles['MobileNav__Button--Active']]: openNav },
                 )}>
-                <span className="sr-only">{openNav ? 'Stäng meny' : 'Öppna meny'}</span>
+                <span className="sr-only">
+                    {openNav
+                        ? 'Stäng meny'
+                        : 'Öppna meny'
+                    }
+                </span>
                 <span
                     className={classNames(
                         styles['MobileNav__Line'],
@@ -85,7 +97,7 @@ const MobileNav: React.FC<IMobileNavProps> = ({ mobileMenu }) => {
                         [styles['MobileNav__Menu--Active']]: openNav,
                         [styles['MobileNav__Menu--Hide']]: !showOverlay,
                     })}>
-                <nav className={styles['MobileNav__Nav']}>
+                <nav className={styles['MobileNav__Nav']} aria-label="huvudnavigation-mobil">
                     <h2
                         className={classNames(styles['MobileNav__NavListTitle'])}>
                         <span className={styles['MobileNav__MenuIconWrapper']} aria-hidden="true" >
