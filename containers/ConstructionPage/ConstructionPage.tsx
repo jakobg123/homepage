@@ -45,13 +45,13 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       caption: "Foto: Deanna Alys, från unsplash.com"
     },
     {
-      src: '/images/temp/colors.jpg',
+      src: '/images/temp/colors.JPG',
       alt: 'De slutgiltiga färgvalen: Primär, Sekundär, Vit, Svart, Hover med ljus bakgrund, Hover med mörk bakgrund.',
       width: 606,
       height: 137,
     },
     {
-      src: '/images/temp/contrastPrimaryBlack_original.jpg',
+      src: '/images/temp/contrastPrimaryBlack_original.JPG',
       alt: 'Kontroll av kontrast mellan primär och mörk färg. Kontrastratiot är 12:67:1 vilket uppfyller WCAG:s krav.',
       width: 725,
       height: 654,
@@ -66,7 +66,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       caption: "Foto: Sigmund, från unsplash.com"
     },
     {
-      src: '/images/temp/burgerInDOM.jpg',
+      src: '/images/temp/burgerInDOM.JPG',
       alt: 'Hamburgerknappen i DOM:en i browsern. Man ser att sr-onlyklassen har "Öppna meny" i sig.',
       width: 460,
       height: 315,

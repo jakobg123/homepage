@@ -67,7 +67,7 @@ export default {
                 title: 'SVG:er',
                 text: 'SVG - Scalable vector graphic - är ett uitmärkt grafikformat att använda för webb. Grafiken kan ta upp mycket yta och vara responsiv, samtidigt som filerna är minimala vilket är bra för snabba sidladdningar. Jag gjorde ett flertal SVG-element som jag senare fäste i pseudoelement med CSS:en som, för en nybörjare, är ganska svårt, speciellt med att få till en bra responsivitet.',
                 image: {
-                    src: '/images/temp/svgs.jpg',
+                    src: '/images/temp/svgs.JPG',
                     alt: 'Fyra grafiska SVG-element jag använt på sajten.',
                     width: 669,
                     height: 835,
@@ -79,7 +79,7 @@ export default {
                 title: 'Typografi',
                 text: 'Jag fastnade för typsnittet “Quicksand”, som är ett sans-serif-typsnitt. Det har en hög “x-height” vilket gör den lättläst. Rubriknivåerna satte jag efter typskalorna: Perfect fifth för desktop-, och Perfect fourth för mobilläge.',
                 image: {
-                    src: '/images/temp/TypeScale.jpg',
+                    src: '/images/temp/TypeScale.JPG',
                     alt: 'Typskala: "Perfect Fourth" för typsnittet Quicksand',
                     width: 1274,
                     height: 598,
@@ -91,7 +91,7 @@ export default {
                 title: 'Bildkomprimering',
                 text: 'Att ha lagom stora bilder är viktigt för att få en snabb sajt. Oftast är det just bilderna som tar upp merdelen av en hemsidas totala datamängd. Därav är alla bilder i jpeg-format, som ger relativt små filer. WebP är ett modernt alternativ, men browserstödet är inte lika brett som för jpeg, så jag har skippat WebP. Jag har komprimerat bilderna efter dess container-storlekar på hemsidan, både för hand, i programmet Gimp, men också automatiskt på compressjpeg.com. Bildernas filstorlekar har generellt reducerats med ca. 90%.',
                 image: {
-                    src: '/images/temp/compressjpg.jpg',
+                    src: '/images/temp/compressjpg.JPG',
                     alt: 'Skärmdump från compressjpg där bilden har reducerats med 89%.',
                     width: 1298,
                     height: 828,
