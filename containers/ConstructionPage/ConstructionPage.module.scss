@@ -318,4 +318,16 @@
       z-index: 1;
     }
   }
+
+  &__LighthouseImageWrapper {
+    position: relative;
+    width: 100%;
+    padding-top: calc(1031 / 1920 * 100%);
+    margin-top: -$spacingXl * 2;
+    margin-bottom: $spacingBlock;
+    // padding-top: 56.25%;
+    img {
+      object-position: 100% 0%;
+    }
+  }
 }

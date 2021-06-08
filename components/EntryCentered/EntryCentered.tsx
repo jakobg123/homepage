@@ -11,7 +11,7 @@ const EntryCentered: React.FC<IEntryCenteredProps> = ({ title, text, dark = fals
   return (
     <div className={classNames(styles["EntryCentered"], { [styles["EntryCentered--Dark"]]: dark })}>
       <h2 className={styles["EntryCentered__Title"]}>{title}</h2>
-      <div className={styles["EntryCentered__Text"]} dangerouslySetInnerHTML={{ __html: text }} />
+      {!!text && <div className={styles["EntryCentered__Text"]} dangerouslySetInnerHTML={{ __html: text }} />}
       {/* <p className={styles["EntryCentered__Text"]}>{text}</p> */}
     </div>
   );

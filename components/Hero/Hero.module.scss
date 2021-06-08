@@ -104,23 +104,23 @@
     // );
   }
 
-  //   &__FocalPoint {
-  //     img {
-  //       object-position: 33% 10%;
+  &__FocalPoint {
+    img {
+      object-position: 33% 10% !important;
 
-  //       @include media(m) {
-  //         object-position: 33% 0%;
-  //       }
-  //     }
+      @include media(m) {
+        object-position: 33% 0% !important;
+      }
+    }
 
-  //     &--Construction {
-  //       img {
-  //         object-position: 50% 20%;
+    &--Construction {
+      img {
+        object-position: 50% 20%;
 
-  //         @include media(m) {
-  //           object-position: 50% 20%;
-  //         }
-  //       }
-  //     }
-  //   }
+        @include media(m) {
+          object-position: 50% 20%;
+        }
+      }
+    }
+  }
 }

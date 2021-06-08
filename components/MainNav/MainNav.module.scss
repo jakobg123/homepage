@@ -86,6 +86,8 @@
   &__Logo {
     padding-top: $spacingS;
     display: block;
+    position: relative;
+    z-index: 3;
 
     img {
       width: 16rem;

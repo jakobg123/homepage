@@ -5,6 +5,7 @@ import dynamic from "next/dynamic";
 const ContentCard = dynamic(() => import("../../components/ContentCard"));
 const CardCode = dynamic(() => import("../../components/CardCode"));
 import ImageAndText from "../../components/ImageAndText";
+import Image from "../../components/Image";
 // import Video from "../../components/Video";
 // import VideoCard from "../../components/VideoCard";
 // import { CodeBlock, tomorrowNightBlue } from "react-code-blocks";
@@ -77,7 +78,25 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         },
       ],
     },
-  ]
+  ];
+
+  const lighthouseImage = {
+    src: '/images/temp/lighthouseSajtbygget.JPG',
+    alt: 'En Lighthousemätning med högsta poäng.',
+    width: 1920,
+    height: 1031,
+    mediaQueries: [
+      {
+        minWidth: 768,
+        src: '/images/temp/lighthouseSajtbygget.JPG',
+      },
+      {
+        minWidth: 460,
+        src: '/images/temp/lighthouseSajtbygget.JPG',
+      },
+    ],
+  };
+
   const imagesAccessibility = [
     {
       src: '/images/temp/accessibility_411x400-min.jpg',
@@ -234,7 +253,10 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         </div>
       </div>
       <div className={styles['ConstructionPage__Grid']}>
-        <EntryCentered text={"<p>Bild av sidans lighthouseresultat.</p>"} title={"...och om planeterna står rätt och vädret tillåter..."} />
+        <EntryCentered title={"...och om planeterna står rätt och vädret tillåter..."} />
+        <div className={styles['ConstructionPage__LighthouseImageWrapper']}>
+          <Image {...lighthouseImage} />
+        </div>
       </div>
 
     </div>
