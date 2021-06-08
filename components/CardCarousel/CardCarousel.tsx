@@ -21,7 +21,7 @@ const CardCarousel: React.FC<ICardCarouselProps> = ({ id, title, text, image, on
 
   return (
     <div className={classNames(styles["CardCarousel"], { [styles["CardCarousel--Dark"]]: dark })}>
-      <button className={styles["CardCarousel__Button"]} onClick={() => onClick(id, open, setOpen, setModalContent)}>
+      <button className={styles["CardCarousel__Button"]} onClick={() => onClick(id, open, setOpen, setModalContent)}><span className="sr-only">Läs mer om + {title}</span>
       </button>
       <div className={styles["CardCarousel__ImageWrapper"]}>
         <Image {...image} />
