@@ -7,14 +7,14 @@
   }
 
   &__Title {
-    @extend %h1;
-    @extend %titleWidth;
+    @extend %pageTitle;
+    // @extend %h1;
+    // @extend %titleWidth;
+    // z-index: 2;
+    // position: relative;
+    // word-break: break-word;
+    // hyphens: manual;
     margin-top: -8rem;
-    position: relative;
-    z-index: 2;
-    position: relative;
-    word-break: break-word;
-    hyphens: manual;
 
     @include media(ms) {
       margin-top: -13rem;
@@ -42,45 +42,47 @@
     background-color: $colorWhite;
   }
 
-  &__CtaWrapper {
-    @extend %grid;
-    position: relative;
-    height: 100%;
-    width: 100%;
+  &__WaveWrapper {
+    @extend %waveWrapper;
     padding-top: $spacingS;
-    z-index: 2;
-
-    .StartPage__Paragraph {
-      position: relative;
-      z-index: 1;
-      padding-bottom: $spacingS;
-
-      p {
-        padding-bottom: $spacingL !important;
-      }
-
-      @include media(tablet) {
-        padding-bottom: $spacingM;
-      }
-      @include media(xl) {
-        padding-bottom: $spacingL;
-      }
-    }
+    // @extend %grid;
+    // position: relative;
+    // height: 100%;
+    // width: 100%;
+    // z-index: 2;
 
     &::after {
-      content: '';
-      position: absolute;
       background-image: url('#{$patternPath}bottomWave.svg');
-      background-position: top;
-      background-size: contain;
-      background-repeat: no-repeat;
-      top: -1px;
-      right: -1px;
-      left: -1px;
-      height: 50rem;
-      width: calc(100% + 2px);
-      z-index: 0;
+      // content: '';
+      // position: absolute;
+      // background-position: top;
+      // background-size: contain;
+      // background-repeat: no-repeat;
+      // top: -1px;
+      // right: -1px;
+      // left: -1px;
+      // height: 50rem;
+      // width: calc(100% + 2px);
+      // z-index: 0;
     }
+  }
+
+  &__Paragraph {
+    position: relative;
+    z-index: 1;
+    @extend %paragraphPaddingBottom;
+    // padding-bottom: $spacingS;
+
+    // p {
+    //   padding-bottom: $spacingL !important;
+    // }
+
+    // @include media(tablet) {
+    //   padding-bottom: $spacingM;
+    // }
+    // @include media(xl) {
+    //   padding-bottom: $spacingL;
+    // }
   }
 
   &__ButtonWrapper {
@@ -117,20 +119,21 @@
   }
 
   &__Em {
-    padding-bottom: $spacingXl;
+    @extend %emPaddingBottom;
+    // padding-bottom: $spacingXl;
 
-    @include media(desktop) {
-      padding-bottom: $spacingL * 2;
-    }
+    // @include media(desktop) {
+    //   padding-bottom: $spacingL * 2;
+    // }
   }
 
-  &__Line {
-    padding-top: $spacingBlock;
-    width: 100%;
-    &--Dark {
-      background-color: $colorWhiteBackground;
-    }
-  }
+  // &__Line {
+  //   padding-top: $spacingBlock;
+  //   width: 100%;
+  //   &--Dark {
+  //     background-color: $colorWhiteBackground;
+  //   }
+  // }
 
   &__Preamble {
     @extend %preamble;
@@ -159,27 +162,28 @@
     // }
   }
   &__ParagraphPres {
-    @include media(tablet) {
-      max-width: 90%;
-    }
+    @extend %paragraphPres;
+    // @include media(tablet) {
+    //   max-width: 90%;
+    // }
 
-    @include media(desktop) {
-      max-width: 100%;
-    }
+    // @include media(desktop) {
+    //   max-width: 100%;
+    // }
 
-    h2 {
-      @extend %h2;
-    }
+    // h2 {
+    //   @extend %h2;
+    // }
 
-    p {
-      position: relative;
-      z-index: 10;
-      @extend %richtext;
-    }
+    // p {
+    //   position: relative;
+    //   z-index: 10;
+    //   @extend %richtext;
+    // }
 
-    a {
-      @extend %linkLight;
-    }
+    // a {
+    //   @extend %linkLight;
+    // }
   }
 
   &__PresImageWrapper {
@@ -221,38 +225,38 @@
     }
   }
 
-  &__ButtonWave {
-    margin-top: -2px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    width: 100%;
-    padding-top: 15rem;
-    height: 0;
-    z-index: 2;
-    background-color: $colorWhiteBackground;
+  // &__ButtonWave {
+  //   margin-top: -2px;
+  //   position: relative;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: baseline;
+  //   width: 100%;
+  //   padding-top: 15rem;
+  //   height: 0;
+  //   z-index: 2;
+  //   background-color: $colorWhiteBackground;
 
-    @include media(tablet) {
-      margin-top: -2px;
-      padding-top: 20rem;
-    }
-    @include media(desktop) {
-      padding-top: 26rem;
-    }
+  //   @include media(tablet) {
+  //     margin-top: -2px;
+  //     padding-top: 20rem;
+  //   }
+  //   @include media(desktop) {
+  //     padding-top: 26rem;
+  //   }
 
-    &::after {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background-image: url('#{$patternPath}waveBlue6.svg');
-      background-position: top;
-      background-size: cover;
-      background-repeat: no-repeat;
-      z-index: 1;
-    }
-  }
+  //   &::after {
+  //     content: '';
+  //     position: absolute;
+  //     top: -2px;
+  //     left: -2px;
+  //     right: -2px;
+  //     bottom: -2px;
+  //     background-image: url('#{$patternPath}waveBlue6.svg');
+  //     background-position: top;
+  //     background-size: cover;
+  //     background-repeat: no-repeat;
+  //     z-index: 1;
+  //   }
+  // }
 }

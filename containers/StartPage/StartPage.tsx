@@ -101,7 +101,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                     styles['StartPage__Block'],
                     styles['StartPage__Block--White']
                 )}>
-                <div className={styles['StartPage__CtaWrapper']}>
+                <div className={styles['StartPage__WaveWrapper']}>
                     <div
                         className={styles['StartPage__Paragraph']}
                         dangerouslySetInnerHTML={{ __html: ctaText }}></div>

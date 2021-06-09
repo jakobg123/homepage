@@ -141,24 +141,26 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         <h1 className={styles['ConstructionPage__Title']}>Sajtbygget</h1>
 
         <div className={styles['ConstructionPage__EntryWrapper']}>
-          <em className={styles['ConstructionPage__Em']}>Bakgrund</em>
+          <em className={styles['ConstructionPage__Em']}>Så här gjordes webbsidan</em>
           <div
             className={styles['ConstructionPage__Preamble']}
-          ><p>Hemsidan är ett sidoprojekt som påbörjades Februari 2021. Idéen var att ha ett större projekt som lärde mig mer webbutveckling och samtidigt öka chansen att få jobb efter utbildningen. Som tur är fungerade det! Jag har både lärt mig mer och fått ett jobb. 🤓🔥🚀</p></div>
-          <div className={styles['ConstructionPage__ParagraphPres']}>
+          >
+            <p>Jag har valt att göra sajten i Next.js, som är ett ramverk med många fördelar. Bl.a. får man React-kod SSR, vilket ger snabba sidladdningar.</p>
+            <p>Mycket av koden är i Typescript eftersom jag ville lära mig det, och stylingen är skriven i SCSS enligt Block__Element--Modifier-praxis (BEM).</p>
 
-            <h2>Så här gjordes sajten</h2>
+          </div>
+          {/* <div className={styles['ConstructionPage__ParagraphPres']}>
             <p>Jag har valt att göra sajten i ramverket Next.js. Det är ett fullstack-ramverk med många fördelar. Bl.a. kodar man vanlig React, men Next renderar koden på servern, istället för på klienten som en SPA gör. All markup i HTML-dokumentet är alltså redan med när det når klienten, som gör att browsern direkt kan ladda in CSS och JS vilket ger snabbare initiala sidladdningar som bl.a. är bra för sidans SEO.</p>
             <p>Typescript ville jag lära mig så därför är sajten mestadels skriven i det. Dessutom underlättar TS för framtida utveckling då kodbasen blir lättare att sätta sig in i när man ser vilka typer och strukturer som används.</p>
             <p>
               Stylingen är gjord med preprocessorn SCSS och är skriven enligt Block__Element--Modifier-praxis (BEM).</p>
-          </div>
+          </div> */}
 
         </div>
       </div>
       <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Dark']}>
 
-        <div className={styles['ConstructionPage__DesignWrapper']}>
+        <div className={styles['ConstructionPage__WaveWrapper']}>
           <EntryCentered dark text={`<p>För att pusha mina kunskaper i styling valde jag tidigt att bryta med den mer traditionella, fyrkantiga layouten.</p><p>Därför har bl.a. text puttats utanför dess “container”, gradienter lagts ovanpå bilder och vågiga SVG-element placerats över kanter.</p><p>Designen kanske bara är världens näst snyggaste, men till mitt försvar - jag är ingen designer.</p>`} title={"Design"} />
 
           <div className={styles['ConstructionPage__Paragraph']}>
@@ -183,7 +185,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--White'] + " " + styles['ConstructionPage__Block--Accessibility']}>
 
 
-        <div className={styles['ConstructionPage__DesignWrapper']}>
+        <div className={styles['ConstructionPage__WaveWrapper']}>
           <EntryCentered text={`Tillgänglighetsanpassning är ett omfattande arbete och jag har haft det i åtanke när jag byggt sajten. Med det sagt så finns det ännu en del anpassningar att göra, nedan är ett axplock av det jag har gjort.`} title={"Tillgänglighet"} />
 
 
@@ -222,7 +224,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
 
       </div>
       <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Optimization']}>
-        <div className={styles['ConstructionPage__DesignWrapper']}>
+        <div className={styles['ConstructionPage__WaveWrapper']}>
           <EntryCentered text={`<p>Core Web Vitals är ett kvalitetsinitiativ från Google som mäter hur väl en sajt presterar utifrån olika parametrar.</p><p>Fr.o.m. mitten av juni 2021 kommer CWV-värdet vägas in i sajtens SEO-ranking.</p><p>Därför är det extra viktigt att sajten har bra prestanda.</p>`} title={"Optimering"} />
           {/* <div className={styles['ConstructionPage__Grid']}> */}
           <CardArticle>

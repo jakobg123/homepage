@@ -311,6 +311,8 @@
 
   p {
     padding-bottom: $spacingL;
+    letter-spacing: 0px;
+    line-height: 1.6;
 
     @include media(desktop) {
       padding-bottom: $spacingXl;
@@ -417,7 +419,8 @@
 
 %heading {
   font-weight: 900;
-  letter-spacing: 1.25px;
+  // letter-spacing: 1.25px;
+  letter-spacing: 0.5px;
   line-height: 1.26;
   font-family: $font;
   word-break: break-word;
@@ -426,10 +429,87 @@
 
 %p {
   font-weight: 700;
-  letter-spacing: 1.25px;
+  letter-spacing: 1px;
+  // letter-spacing: 1.25px;
   line-height: 1.6;
   font-family: $font;
   word-break: break-word;
   // @extend %fontColorBlack;
   @extend %textWidth;
+}
+
+%pageTitle {
+  @extend %h1;
+  @extend %titleWidth;
+  z-index: 2;
+  position: relative;
+  word-break: break-word;
+  hyphens: manual;
+}
+
+%waveWrapper {
+  @extend %grid;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    // background-image: url('#{$patternPath}topWave_Construction_Design3.svg');
+    // background-image: url('#{$patternPath}topWave_Construction_Design2.svg');
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: -1px;
+    right: -1px;
+    left: -1px;
+    height: 50rem;
+    width: calc(100% + 2px);
+    z-index: 0;
+  }
+}
+
+%paragraphPaddingBottom {
+  padding-bottom: $spacingS;
+
+  @include media(tablet) {
+    padding-bottom: $spacingM;
+  }
+  @include media(xl) {
+    padding-bottom: $spacingL;
+  }
+}
+
+%emPaddingBottom {
+  padding-bottom: $spacingM;
+
+  @include media(desktop) {
+    padding-bottom: $spacingL;
+  }
+}
+
+%paragraphPres {
+  @include media(tablet) {
+    max-width: 90%;
+  }
+
+  @include media(desktop) {
+    max-width: 100%;
+  }
+
+  h2 {
+    @extend %h2;
+  }
+
+  p {
+    position: relative;
+    z-index: 10;
+    @extend %richtext;
+  }
+
+  a {
+    @extend %linkLight;
+  }
 }
