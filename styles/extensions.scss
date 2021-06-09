@@ -429,7 +429,7 @@
 
 %p {
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: 1.2px;
   // letter-spacing: 1.25px;
   line-height: 1.6;
   font-family: $font;
@@ -513,3 +513,9 @@
     @extend %linkLight;
   }
 }
+
+// %code {
+// font-family: 'Fira Code' !important;
+// font-size: 16px;
+// letter-spacing: 0.5px;
+// }

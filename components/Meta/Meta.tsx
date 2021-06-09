@@ -5,11 +5,13 @@ import Head from "next/head";
 interface IMetaProps {
     title: string;
     description: string;
+    // page?: string;
 }
 
 const Meta: React.FC<IMetaProps> = ({
     title,
     description,
+    // page = "start",
 }) => {
 
 
@@ -24,10 +26,16 @@ const Meta: React.FC<IMetaProps> = ({
             />
             <link
                 rel="preload"
-                href="/fonts/QuicksandLatin/quicksand-v22-latin-regular.woff2"
+                href="/fonts/Quicksand2/Quicksand-Regular.woff2"
                 as="font"
                 crossOrigin=""
             />
+            {/* {page === "construction" && (<link
+                rel="preload"
+                href="/fonts/FiraCode/FiraCode-Regular.woff2"
+                as="font"
+                crossOrigin=""
+            />)} */}
             {/* <link rel="preconnect" href="https://fonts.gstatic.com" />
             <link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet"></link> */}
             <meta name="google-site-verification" content="tbnaq2fOx_d8yW90nFU4WBYBWkwwfX6tScz3D5Uv-Ik" />
