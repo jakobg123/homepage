@@ -9,10 +9,10 @@
 
   @include media(tablet) {
     flex-direction: row;
-    padding-bottom: $spacingXl;
+    padding-bottom: $spacingBlock + $spacingL * 2;
 
     &:last-of-type {
-      padding-bottom: $spacingL * 2;
+      padding-bottom: 0;
     }
   }
 
@@ -26,7 +26,12 @@
     // @extend %internshipTextBlock;
     @extend %textBlock;
     display: flex;
+    flex: 1 1 100%;
     flex-direction: column;
+
+    @include media(tablet) {
+      padding-bottom: 0;
+    }
 
     img {
       width: 100%;
@@ -40,6 +45,16 @@
       color: $colorBlack !important;
       a {
         @extend %linkLight;
+      }
+      // @extend %themeColor;
+    }
+    .ImageAndText--Dark & {
+      // border: 1px solid red;
+      // @extend %fontColorBlack;
+      color: $colorPrimary;
+      a {
+        // @extend %linkLightHover;
+        @extend %linkDark;
       }
       // @extend %themeColor;
     }
@@ -62,7 +77,7 @@
 
   &__Figure {
     position: relative;
-    flex: 1 1 50%;
+    flex: 1 1 100%;
     display: flex;
     flex-direction: column;
 

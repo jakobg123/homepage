@@ -3,7 +3,8 @@
 @import '../../styles/extensions.scss';
 
 .Carousel {
-  margin-bottom: $spacingXl * 2;
+  //   margin-bottom: $spacingXl * 2;
+  padding-bottom: $spacingBlock;
   overflow: visible;
 }
 

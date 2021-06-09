@@ -13,6 +13,7 @@
 
   @include media(tablet) {
     flex-direction: row;
+    padding-bottom: $spacingBlock;
     // padding: $spacingL * 2 $spacingM $spacingXl * 2;
   }
 
@@ -35,6 +36,7 @@
   &__Text {
     flex: 0 0 100%;
     @extend %textBlock;
+    padding-bottom: 0;
 
     & p:last-child {
       padding-bottom: $spacingL !important;

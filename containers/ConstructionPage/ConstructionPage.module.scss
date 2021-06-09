@@ -48,11 +48,24 @@
     &--Dark {
       background-color: $colorBlack;
     }
+
+    &--Accessibility {
+      padding-bottom: $spacingL * 2;
+    }
   }
 
   &__WaveWrapper {
     @extend %waveWrapper;
-    padding-top: $spacingXl * 2;
+    padding-top: $spacingBlock * 2;
+
+    &--Design {
+      padding-top: $spacingBlock * 3;
+    }
+
+    &--Optimization {
+      padding-top: $spacingBlock * 4;
+    }
+    // @extend %blockSpacing;
     // position: relative;
     // height: 100%;
     // width: 100%;
@@ -100,11 +113,11 @@
   }
 
   &__Block--Accessibility h2 {
-    padding-top: 8rem;
+    // padding-top: 8rem;
   }
 
   &__CarouselWrapper {
-    padding: 4rem 0;
+    // padding: 4rem;
   }
 
   &__CarouselTitle {
@@ -153,6 +166,7 @@
 
   &__Preamble {
     @extend %preamble;
+    padding-bottom: $spacingBlock;
   }
 
   &__Paragraph {

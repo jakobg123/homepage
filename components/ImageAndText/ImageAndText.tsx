@@ -18,7 +18,7 @@ const ImageAndText: React.FC<IImageAndText> = ({ html, imageToLeft = false, imag
     const lightTheme = useContext(Theme);
 
     return (
-        <div className={classNames(styles["ImageAndText"], { [styles["ImageAndText--Left"]]: imageToLeft }, { [styles["ImageAndText--Light"]]: lightTheme || light })}>
+        <div className={classNames(styles["ImageAndText"], { [styles["ImageAndText--Left"]]: imageToLeft }, { [styles["ImageAndText--Light"]]: lightTheme || light }, { [styles["ImageAndText--Dark"]]: dark })}>
             <div
                 className={styles['ImageAndText__TextWrapper']}
                 dangerouslySetInnerHTML={{ __html: html }}></div>
