@@ -5,7 +5,8 @@
 .ContentCard {
   display: flex;
   flex-direction: column;
-  padding-bottom: $spacingXl * 2;
+  // padding-bottom: $spacingXl * 2;
+  padding-bottom: 0;
   //   padding: $spacingXl $spacingM $spacingL * 2;
   //   background-color: $colorWhite;
   //   box-shadow: $boxShadowCard;
@@ -14,6 +15,10 @@
   @include media(tablet) {
     flex-direction: row;
     padding-bottom: $spacingBlock;
+
+    &:last-of-type {
+      padding-bottom: 0;
+    }
     // padding: $spacingL * 2 $spacingM $spacingXl * 2;
   }
 
@@ -36,16 +41,17 @@
   &__Text {
     flex: 0 0 100%;
     @extend %textBlock;
-    padding-bottom: 0;
+    padding-bottom: $spacingXl;
 
-    & p:last-child {
-      padding-bottom: $spacingL !important;
-    }
+    // & p:last-child {
+    //   padding-bottom: $spacingL !important;
+    // }
 
     @include media(tablet) {
       flex: 0 0 50%;
       padding-right: $spacingL * 2;
       padding-left: $spacingXl * 2;
+      padding-bottom: 0;
 
       & p:last-child {
         padding-bottom: 0 !important;
@@ -81,7 +87,7 @@
   &__MediaWrapper {
     position: relative;
     flex: 0 0 100%;
-    padding-bottom: $spacingL;
+    padding-bottom: $spacingXl;
     // width: 50%;
 
     @include media(tablet) {

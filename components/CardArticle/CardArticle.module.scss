@@ -9,6 +9,7 @@
   margin-bottom: $spacingXl * 2;
 
   @include media(tablet) {
-    padding: $spacingL * 2 $spacingM $spacingXl * 2;
+    // padding: $spacingL * 2 $spacingM $spacingXl * 2;
+    padding: $spacingL * 2 $spacingM $spacingBlock + $spacingL * 2;
   }
 }

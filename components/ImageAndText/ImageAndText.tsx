@@ -11,14 +11,15 @@ interface IImageAndText {
     image: IImageProps;
     dark?: boolean;
     light?: boolean;
+    reverseWrap?: boolean;
 }
 
-const ImageAndText: React.FC<IImageAndText> = ({ html, imageToLeft = false, image, dark = false, light = false }) => {
+const ImageAndText: React.FC<IImageAndText> = ({ html, imageToLeft = false, image, dark = false, light = false, reverseWrap = false }) => {
     console.log("OUTPUT ÄR ~ file: ImageAndText.tsx ~ line 17 ~ light", light)
     const lightTheme = useContext(Theme);
 
     return (
-        <div className={classNames(styles["ImageAndText"], { [styles["ImageAndText--Left"]]: imageToLeft }, { [styles["ImageAndText--Light"]]: lightTheme || light }, { [styles["ImageAndText--Dark"]]: dark })}>
+        <div className={classNames(styles["ImageAndText"], { [styles["ImageAndText--Left"]]: imageToLeft }, { [styles["ImageAndText--ReverseWrap"]]: reverseWrap }, { [styles["ImageAndText--Light"]]: lightTheme || light }, { [styles["ImageAndText--Dark"]]: dark })}>
             <div
                 className={styles['ImageAndText__TextWrapper']}
                 dangerouslySetInnerHTML={{ __html: html }}></div>

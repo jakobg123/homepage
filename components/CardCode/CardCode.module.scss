@@ -5,11 +5,12 @@
 .CardCode {
   display: flex;
   flex-direction: column;
-  padding-bottom: $spacingXl * 2;
+  // padding-bottom: $spacingXl * 2;
 
   @include media(tablet) {
     flex-direction: row;
-    padding-bottom: $spacingBlock + $spacingL * 2;
+    // padding-bottom: $spacingBlock + $spacingL * 2;
+    padding-bottom: $spacingBlock;
   }
 
   &--Reverse {
@@ -33,7 +34,7 @@
     @extend %textBlock;
 
     & p:last-child {
-      padding-bottom: $spacingL !important;
+      // padding-bottom: $spacingL !important;
     }
 
     @include media(tablet) {
@@ -66,22 +67,36 @@
   //     }
   //   }
 
-  &__VideoWrapper {
+  &__CodeWrapper {
     position: relative;
     flex: 0 0 100%;
     padding-bottom: $spacingL;
-    min-height: 60rem;
+    padding-bottom: $spacingXl;
+    min-height: 0;
+
+    @include media(tablet) {
+      min-height: 60rem;
+    }
 
     .CardCode--NoBorder & {
+      background-color: none;
       min-height: 100%;
-      padding: 0;
-      margin-left: 6rem;
+      margin-left: 0;
+      // padding: 0;
+      // padding-bottom: 0;
       flex: 1 1 50%;
+
+      @include media(tablet) {
+        margin-left: 6rem;
+      }
     }
 
     .CardCode--Reverse.CardCode--NoBorder & {
-      margin-left: 0;
-      margin-right: 6rem;
+      margin: 0;
+      @include media(tablet) {
+        margin-left: 0;
+        margin-right: 6rem;
+      }
     }
     // width: 50%;
 
@@ -89,6 +104,7 @@
       flex: 0 0 50%;
       height: 100%;
       padding: 2rem;
+
       background-color: $colorPrimary;
       box-shadow: $boxShadowCard;
       // border: 1px solid blue;

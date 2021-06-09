@@ -49,21 +49,44 @@
       background-color: $colorBlack;
     }
 
-    &--Accessibility {
-      padding-bottom: $spacingL * 2;
-    }
+    // &--Accessibility {
+    // padding-bottom: $spacingL * 2;
+    // }
   }
 
   &__WaveWrapper {
     @extend %waveWrapper;
-    padding-top: $spacingBlock * 2;
+    padding-top: $spacingBlock + $spacingL;
+
+    @include media(tablet) {
+      padding-top: $spacingBlock * 2;
+    }
 
     &--Design {
-      padding-top: $spacingBlock * 3;
+      padding-top: $spacingBlock + $spacingL;
+      padding-bottom: $spacingBlock;
+
+      @include media(tablet) {
+        padding-top: $spacingBlock * 3;
+        padding-bottom: $spacingBlock * 2;
+      }
+    }
+
+    &--Accessibility {
+      // padding-bottom: $spacingBlock + $spacingL * 2;
+      padding-bottom: $spacingBlock;
+
+      @include media(tablet) {
+        padding-bottom: $spacingBlock * 3;
+      }
     }
 
     &--Optimization {
-      padding-top: $spacingBlock * 4;
+      padding-top: $spacingBlock * 2;
+
+      @include media(tablet) {
+        padding-top: $spacingBlock * 3;
+      }
     }
     // @extend %blockSpacing;
     // position: relative;
@@ -102,6 +125,7 @@
     z-index: 3;
     // @extend %paragraphPaddingBottom;
     @extend %textBlock;
+    padding-bottom: $spacingBlock + 2;
     // padding-bottom: $spacingS;
 
     // @include media(tablet) {
@@ -308,12 +332,56 @@
   //   }
   // }
 
+  &__Lighthouse {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 0 0 $spacingBlock + $spacingL;
+    position: relative;
+    z-index: 1;
+
+    @include media(tablet) {
+      padding: 0 0 $spacingBlock + $spacingL * 2;
+    }
+    // padding: $spacingXl * 2;
+
+    // &__Text {
+    //   @extend %preamble;
+    //   padding-bottom: 0;
+    //   text-align: center;
+
+    //   .EntryCentered--Dark & {
+    //     color: $colorPrimary;
+    //   }
+    // }
+  }
+
+  &__LighthouseTitle {
+    @extend %h1;
+    padding-bottom: $spacingXl;
+    text-align: center;
+    .EntryCentered--Dark & {
+      color: $colorPrimary;
+    }
+  }
+
+  &__OuterImageWrapper {
+    // border: 1px solid red;
+    width: 80%;
+    max-width: 100rem;
+    height: auto;
+    box-shadow: $boxShadowMedium;
+  }
+
   &__LighthouseImageWrapper {
     position: relative;
     width: 100%;
     padding-top: calc(1031 / 1920 * 100%);
-    margin-top: -$spacingXl * 2;
-    margin-bottom: $spacingBlock;
+    height: 0;
+    // width: 75rem;
+    // margin-top: -$spacingXl * 2;
+    // padding-bottom: $spacingBlock;
     // padding-top: 56.25%;
     img {
       object-position: 100% 0%;

@@ -101,7 +101,8 @@
 
   &__TextWrapper {
     @extend %grid;
-    @extend %blockSpacing;
+    // @extend %blockSpacing;
+    padding-top: $spacingBlock;
     position: relative;
     z-index: 5;
     // padding-top: $spacingBlock;

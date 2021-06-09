@@ -35,7 +35,7 @@ const CardCode: React.FC<ICardCodeProps> = ({ reverse, reverseWrap, code, html, 
     })}>
       <div className={styles["CardCode__Text"]} dangerouslySetInnerHTML={{ __html: html }}>
       </div>
-      <div className={styles["CardCode__VideoWrapper"]} >
+      <div className={styles["CardCode__CodeWrapper"]} >
         {!!inView && (
           // <div className={classNames(styles["CardCode__FadeContainer"], { [styles["CardCode__FadeContainer--Show"]]: !!fadeIn })} >
           // div className={classNames(styles["CardCode__FadeContainer"], { [styles["CardCode__FadeContainer--Show"]]: !!fadeIn })} >
