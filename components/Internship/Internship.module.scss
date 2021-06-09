@@ -4,7 +4,7 @@
 .Internship {
   $root: &;
   padding-top: $spacingXl;
-  padding-bottom: $spacingBlock;
+  padding-bottom: $spacingL * 2;
   background-color: $colorBlack;
   transition: all $transitionSlow;
   @extend %fontColor;
@@ -12,11 +12,11 @@
 
   @include media(desktop) {
     padding-top: $spacingBlock;
+    padding-bottom: $spacingBlock;
     margin-top: -2px;
   }
 
   &--Light {
-    @extend %fontColorBlack;
     background-color: $colorPrimary;
   }
 
@@ -52,7 +52,7 @@
     padding-top: 70%;
     flex: 1 1 50%;
     position: relative;
-    margin-bottom: $spacingL;
+    margin-bottom: $spacingXl;
 
     @include media(s) {
       padding-top: 60%;
@@ -60,7 +60,7 @@
 
     @include media(ms) {
       padding-top: 45%;
-      width: 85%;
+      // width: 85%;
     }
 
     @include media(tablet) {
@@ -82,6 +82,7 @@
   }
 
   &__Subtitle {
+    // transition: all $transitionSlow;
     transition: all $transitionNormal;
     @extend %h2;
     display: block;
@@ -93,15 +94,40 @@
   }
 
   &__TextWrapper {
-    @extend %internshipTextBlock;
+    // @extend %internshipTextBlock;
+    @extend %textBlock;
+    @extend %aTagLinkDark;
+    transition: color $transitionNormal;
+    padding-bottom: $spacingXl;
+
+    @include media(tablet) {
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+
+    // p {
+    //   transition: color $transitionNormal !important;
+    // }
+
+    a {
+      transition: color $transitionNormal;
+    }
 
     .Internship__ImageAndTextWrapper--Desktop & {
       display: block;
       width: 50%;
     }
 
-    #{$root}--Light & {
-      @extend %themeColor;
+    .Internship--Light & {
+      @extend %aTagLinkLight;
+      color: $colorBlack;
+
+      // @extend %aTagLight;
+      // a {
+      //   color: $linkHover;
+      // }
+      // @extend %themeColor;
     }
   }
 }

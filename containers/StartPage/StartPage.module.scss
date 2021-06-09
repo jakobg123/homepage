@@ -70,7 +70,16 @@
   &__Paragraph {
     position: relative;
     z-index: 1;
-    @extend %paragraphPaddingBottom;
+    // @extend %paragraphPaddingBottom;
+    @extend %textBlock;
+
+    // &:last-of-type {
+    //   padding-bottom: 0;
+    // }
+
+    &--Git {
+      padding-bottom: $spacingXl;
+    }
     // padding-bottom: $spacingS;
 
     // p {
@@ -92,9 +101,10 @@
 
   &__TextWrapper {
     @extend %grid;
+    @extend %blockSpacing;
     position: relative;
     z-index: 5;
-    padding-top: $spacingBlock;
+    // padding-top: $spacingBlock;
   }
 
   &__Background {
@@ -140,7 +150,6 @@
   }
 
   &__Paragraph {
-    @extend %textBlock;
     // h2 {
     //   @extend %h2;
     // }

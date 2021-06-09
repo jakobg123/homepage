@@ -87,7 +87,8 @@
   &__Paragraph {
     position: relative;
     z-index: 3;
-    @extend %paragraphPaddingBottom;
+    // @extend %paragraphPaddingBottom;
+    @extend %textBlock;
     // padding-bottom: $spacingS;
 
     // @include media(tablet) {
@@ -155,7 +156,6 @@
   }
 
   &__Paragraph {
-    @extend %textBlock;
     // h2 {
     //   @extend %h2;
     // }

@@ -69,6 +69,16 @@
 }
 
 %textBlock {
+  padding-bottom: $spacingXl;
+
+  @include media(tablet) {
+    padding-bottom: $spacingL * 2;
+  }
+
+  // &:last-of-type {
+  //   padding-bottom: 0;
+  // }
+
   // &__Paragraph {
   h2 {
     @extend %h2;
@@ -90,7 +100,8 @@
     }
 
     &:last-of-type {
-      padding-bottom: $spacingL * 2;
+      // padding-bottom: $spacingL * 2;
+      padding-bottom: 0;
     }
   }
   // }
@@ -145,10 +156,10 @@
   font-size: 3.157rem;
   @extend %heading;
   @extend %textWidth;
-  padding-bottom: $spacingS;
+  // padding-bottom: $spacingS;
+  padding-bottom: $spacingM;
 
   @include media(desktop) {
-    padding-bottom: $spacingM;
     font-size: 5.063rem;
   }
 
@@ -167,7 +178,7 @@
   }
 
   @include media(xl) {
-    padding-bottom: $spacingM;
+    padding-bottom: $spacingMl;
   }
 }
 
@@ -193,10 +204,11 @@
   font-size: 1.777rem;
   @extend %p;
   @extend %links;
-  padding-bottom: $spacingL;
+
+  // padding-bottom: $spacingM;
 
   p {
-    padding-bottom: $spacingL;
+    // padding-bottom: $spacingMl;
   }
 
   em {
@@ -206,6 +218,14 @@
   @include media(desktop) {
     font-size: 2.25rem;
   }
+}
+
+%aTagLinkLight a {
+  @extend %linkLight;
+}
+
+%aTagLinkDark a {
+  @extend %linkDark;
 }
 
 %linkLight {
@@ -227,7 +247,7 @@
 %links {
   a {
     // color: $colorBlack;
-    transition: color $transitionQuick;
+
     // &:hover,
     // &:focus {
     // color: $linkHover;
@@ -265,9 +285,9 @@
 %bodySmall {
   font-size: 1.333rem;
   @extend %p;
-  p {
-    padding-bottom: $spacingM;
-  }
+  // p {
+  //   padding-bottom: $spacingM;
+  // }
 
   @include media(desktop) {
     font-size: 1.5rem;
@@ -302,20 +322,40 @@
   }
 }
 
+%blockSpacing {
+  padding-top: $spacingL * 2;
+  padding-bottom: $spacingL * 2;
+
+  @include media(tablet) {
+    padding-top: $spacingBlock;
+    padding-bottom: $spacingBlock;
+    // padding: $spacingBlock 0;
+  }
+}
+
 %strong {
 }
 
 %preamble {
   @extend %h3;
   @extend %preambleWidth;
+  padding-bottom: $spacingXl;
+
+  @include media(tablet) {
+    padding-bottom: $spacingL * 2;
+  }
 
   p {
-    padding-bottom: $spacingL;
+    padding-bottom: $spacingS;
     letter-spacing: 0px;
     line-height: 1.6;
 
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+
     @include media(desktop) {
-      padding-bottom: $spacingXl;
+      padding-bottom: $spacingM;
     }
   }
 }
@@ -331,6 +371,25 @@
 %themeColor {
   color: $colorBlack;
 
+  a {
+    color: $colorBlack;
+    &:hover,
+    &:focus {
+      color: $linkHover;
+    }
+  }
+}
+%linkHoverDark {
+  a {
+    color: $colorPrimary;
+    &:hover,
+    &:focus {
+      color: $linkHover;
+    }
+  }
+}
+
+%linkHoverLight {
   a {
     color: $colorBlack;
     &:hover,
@@ -382,20 +441,27 @@
 }
 
 %grid {
-  padding: 0 $spacingM;
+  padding-left: $spacingM;
+  padding-right: $spacingM;
 
   @include media(tablet) {
-    padding: 0 $spacingL;
+    // padding: 0 $spacingL;
+    padding-left: $spacingL;
+    padding-right: $spacingL;
   }
 
   @include media(desktop) {
     margin: 0 auto;
-    padding: 0 $spacingL * 2;
+    // padding: 0 $spacingL * 2;
+    padding-left: $spacingL * 2;
+    padding-right: $spacingL * 2;
   }
 
   @include media(xl) {
     margin: 0 auto;
-    padding: 0 $spacingL * 3;
+    // padding: 0 $spacingL * 3;
+    padding-left: $spacingL * 3;
+    padding-right: $spacingL * 3;
     max-width: 144rem;
   }
 }
@@ -436,6 +502,12 @@
   word-break: break-word;
   // @extend %fontColorBlack;
   @extend %textWidth;
+
+  padding-bottom: $spacingSm;
+
+  @include media(tablet) {
+    padding-bottom: $spacingM;
+  }
 }
 
 %pageTitle {

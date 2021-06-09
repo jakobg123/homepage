@@ -103,7 +103,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                 )}>
                 <div className={styles['StartPage__WaveWrapper']}>
                     <div
-                        className={styles['StartPage__Paragraph']}
+                        className={styles['StartPage__Paragraph'] + " " + styles['StartPage__Paragraph--Git']}
                         dangerouslySetInnerHTML={{ __html: ctaText }}></div>
                     <div className={styles['StartPage__ButtonWrapper']}>
                         <Button label={cta.label} icon={cta.icon} href={cta.href} />

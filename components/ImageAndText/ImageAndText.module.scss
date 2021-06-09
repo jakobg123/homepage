@@ -5,11 +5,15 @@
   $root: &;
   display: flex;
   flex-direction: column;
-  padding-bottom: $spacingM;
+  padding-bottom: $spacingXl;
 
   @include media(tablet) {
     flex-direction: row;
     padding-bottom: $spacingXl;
+
+    &:last-of-type {
+      padding-bottom: $spacingL * 2;
+    }
   }
 
   &--Left {
@@ -19,7 +23,8 @@
   }
 
   &__TextWrapper {
-    @extend %internshipTextBlock;
+    // @extend %internshipTextBlock;
+    @extend %textBlock;
     display: flex;
     flex-direction: column;
 
@@ -84,6 +89,7 @@
     text-align: right;
     margin: $spacingXs 0;
     @extend %fontColor;
+    padding-bottom: 0;
 
     #{$root}--Light & {
       @extend %fontColorBlack;

@@ -51,7 +51,7 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
             </div>
             <div className={styles['Tab__TextAndDropDownWrapper']}>
                 <div className={styles['Tab__TextWrapper']}>
-                    <h3 className={styles['Tab__Title']}>{title}</h3>
+                    <h5 className={styles['Tab__Title']}>{title}</h5>
                     <p className={styles['Tab__Knowledge']}>
                         <strong
                             className={classNames(styles['Tab__Knowledge--Strong'], {
