@@ -74,19 +74,19 @@ export default {
                     mediaQueries: [
                         {
                             minWidth: 1280,
-                            src: '/images/temp/figma_900-1280_large-min.jpg',
+                            src: '/images/temp/figma_900-1280_large-min.JPG',
                         },
                         {
                             minWidth: 1024,
-                            src: '/images/temp/figma_680-768_mediumSmall-min.jpg',
+                            src: '/images/temp/figma_680-768_mediumSmall-min.JPG',
                         },
                         {
                             minWidth: 768,
-                            src: '/images/temp/figma_435-1024_medium-min.jpg',
+                            src: '/images/temp/figma_435-1024_medium-min.JPG',
                         },
                         {
                             minWidth: 460,
-                            src: '/images/temp/figma_680-768_mediumSmall-min.jpg',
+                            src: '/images/temp/figma_680-768_mediumSmall-min.JPG',
                         },
                     ],
                 },
