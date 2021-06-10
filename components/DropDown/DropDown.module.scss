@@ -42,6 +42,17 @@
   &__IconWrapper {
     width: $spacingL;
   }
+
+  &__Text[aria-hidden='true'] {
+    // display: none !important;
+    visibility: hidden;
+  }
+
+  &__Text[aria-hidden='false'] {
+    visibility: visible;
+    // display: block !important;
+  }
+
   &__Text {
     background-color: $colorWhite;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
@@ -50,7 +61,7 @@
     transform: scaleY(0);
     transform-origin: top;
     transition: $transitionQuick;
-    padding: $spacingM $spacingXl 0 $spacingM;
+    padding: $spacingS $spacingXl $spacingM $spacingM;
     margin: 0;
     position: absolute;
     top: calc(100% - 4px);

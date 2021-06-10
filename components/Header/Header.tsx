@@ -13,7 +13,7 @@ export interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
-    const { fadeOutElement, hideElement, passContentToModal } = useContext(ModalContext);
+    const { fadeOutElement, hideElement } = useContext(ModalContext);
     // passContentToModal("hejsanmodalen");
 
     return (

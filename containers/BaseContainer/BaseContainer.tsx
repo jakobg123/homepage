@@ -62,6 +62,7 @@ interface BaseContainerProps {
     mainNavData: IMainNavProps;
     constructionPageData: any;
     page: "Start" | "Construction";
+    children?: React.ReactNode;
 };
 
 interface BaseContainerState {
@@ -71,6 +72,7 @@ interface BaseContainerState {
     toggleModalOpen: (bool: boolean) => void;
     passContentToModal: (content: any) => void;
     modalContent: any[];
+
 }
 
 const BaseContainer: React.FC<BaseContainerProps> = ({
