@@ -168,6 +168,25 @@
   }
 }
 
+%cardTitle {
+  font-size: 1.777rem;
+  @extend %heading;
+
+  @include media(desktop) {
+    font-size: 3.375rem;
+    padding-bottom: $spacingM;
+  }
+}
+
+%cardText {
+  font-size: 1.777rem;
+  @extend %p;
+
+  @include media(desktop) {
+    font-size: 2.25rem;
+  }
+}
+
 %h3 {
   font-size: 2.369rem;
   @extend %heading;

@@ -4,7 +4,9 @@
 
 .CardCarousel {
   //   border: 1px solid red;
-  height: 45rem;
+
+  height: 35rem;
+
   box-shadow: $boxShadowCard;
   overflow: hidden;
   border-radius: $radiusCardSmall;
@@ -13,6 +15,9 @@
   max-width: 45rem;
   margin: 0 auto;
 
+  @include media(tablet) {
+    height: 50rem;
+  }
   // @include media(tablet) {
   // }
 
@@ -39,15 +44,22 @@
 
   &__ImageWrapper {
     position: relative;
-    height: 20rem;
+    // height: 20rem;
     overflow: hidden;
+    height: 55%;
+
+    @include media(tablet) {
+      height: 45%;
+    }
+
+    // @include media
   }
 
   &__TextWrapper {
     box-shadow: $boxShadowCard;
     background-color: $colorBlack;
     height: 100%;
-    padding: $spacingM $spacingL;
+    padding: $spacingM $spacingL $spacingM;
 
     .CardCarousel--Dark & {
       background-color: $colorPrimary;
@@ -55,9 +67,9 @@
   }
 
   &__Title {
-    @extend %h4;
+    @extend %cardTitle;
+    padding-bottom: $spacingS;
     color: $colorPrimary;
-    margin-bottom: $spacingM;
 
     .CardCarousel--Dark & {
       color: $colorBlack;
@@ -66,7 +78,13 @@
 
   &__Text {
     color: $colorPrimary;
-    @extend %bodySmall;
+    // @extend %richtext;
+    // @extend %bodySmall;
+    @extend %cardText;
+
+    // @include media(tablet) {
+    //   @extend %p;
+    // }
 
     .CardCarousel--Dark & {
       color: $colorBlack;

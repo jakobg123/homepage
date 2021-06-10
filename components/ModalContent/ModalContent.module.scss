@@ -7,6 +7,9 @@
   flex-direction: column;
   overflow-y: scroll;
   @extend %noScrollBar;
+  position: relative;
+
+  // max-width: 144rem;
   // width: calc(100% - 50px);
 
   //   border: 1px solid red;
@@ -16,16 +19,43 @@
   @include media(tablet) {
     flex-direction: row;
     justify-content: flex-end;
+    max-width: 60%;
+
+    &--Portrait {
+      // max-width: 50%;
+    }
+
+    &--TextAndImage {
+      max-width: 100%;
+    }
   }
 
   &__OuterWrapper {
     margin: 0 auto;
     width: 100%;
 
+    // display: flex;
+    // max-height: 80%;
+
     @include media(tablet) {
       @include posAbsolute;
       z-index: -1;
       overflow: hidden;
+
+      .ModalContent--Portrait & {
+        width: 80%;
+      }
+
+      .ModalContent--TextAndImage & {
+        position: relative;
+      }
+      .ModalContent--TextAndImage.ModalContent--Portrait & {
+        width: 40%;
+      }
+
+      // .ModalContent--Portrait & {
+      //   width: 40%;
+      // }
 
       //   &:host {
       //   width: initial !important;
@@ -37,20 +67,36 @@
     position: relative;
     width: 100%;
     margin: 0 auto;
+    // border: 1px solid red;
   }
 
   &__TextWrapper {
     position: relative;
-    display: inline-table;
+    // display: inline-table;
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
-    background-color: $colorBlack;
+    // background-color: $colorBlack;
     // background-color: $colorSecondary;
-    padding: $spacingL $spacingM $spacingL * 2;
 
     @include media(tablet) {
-      padding: $spacingL $spacingXl $spacingXl * 2;
-      margin-top: 15rem;
+      // padding: $spacingL $spacingXl $spacingXl * 2;
+      margin-top: 10%;
       max-width: 50%;
+      left: -5rem;
+    }
+  }
+
+  &__InnerTextWrapper {
+    background-color: $colorBlack;
+    padding: $spacingL $spacingM $spacingL * 2;
+    // border: 1px solid red;
+    box-shadow: $boxShadowCard;
+    // box-shadow: 0px 2px 20px black;
+
+    @include media(tablet) {
+      // padding: $spacingL $spacingXl $spacingXl * 2;
+      padding: $spacingL $spacingXl $spacingXl;
     }
   }
 

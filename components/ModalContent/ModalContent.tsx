@@ -2,6 +2,7 @@ import styles from "./ModalContent.module.scss";
 import Image from "../Image";
 import { IImageProps } from "../../types/types";
 import useWindowSize from "../../utils/Hooks/useWindowSize";
+import classNames from "classnames";
 
 interface IModalContentProps {
   image?: IImageProps;
@@ -10,6 +11,9 @@ interface IModalContentProps {
 }
 
 const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
+  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ title", title)
+  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ text", text)
+  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ image", image)
   const [screenWidth] = useWindowSize();
   console.log("🚀 ~ file: ModalContent.tsx ~ line 14 ~ screenWidth", screenWidth)
   // console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 14 ~ screenWidth", screenWidth)
@@ -21,11 +25,19 @@ const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
     imageWidthAndPosition = { width: "90%" }
   }
 
+  const portrait: boolean = image.width < image.height;
+
   const styling = { paddingTop: `${image.height / image.width * 100}%` };
+
+  let bothTextAndImage = title || text ? styles["ModalContent--TextAndImage"] : "";
   // const styling = (!title || !text) ? { paddingTop: `95%` } : { paddingTop: `${image.height / image.width * 100}%` }
 
   return (
-    <div className={styles["ModalContent"]}>
+    <div className={classNames(styles["ModalContent"],
+      { [styles["ModalContent--TextAndImage"]]: !!title || !!text },
+      { [styles["ModalContent--Portrait"]]: portrait }
+    )
+    }>
       <div className={styles["ModalContent__OuterWrapper"]}
       // style={imageWidthAndPosition}
       >
@@ -36,8 +48,10 @@ const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
         </div>
       </div >
       {(!!title || !!text) && <div className={styles["ModalContent__TextWrapper"]}>
-        {!!title && <h2 className={styles["ModalContent__Title"]}>{title}</h2>}
-        {!!text && <p className={styles["ModalContent__Text"]}>{text}</p>}
+        <div className={styles["ModalContent__InnerTextWrapper"]}>
+          {!!title && <h2 className={styles["ModalContent__Title"]}>{title}</h2>}
+          {!!text && <p className={styles["ModalContent__Text"]}>{text}</p>}
+        </div>
       </div>}
     </div >
   );

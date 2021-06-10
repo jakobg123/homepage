@@ -120,7 +120,8 @@ const BaseContainer: React.FC<BaseContainerProps> = ({
                 <Footer {...footerData} />
             </footer>
             <Modal setOpen={setModalOpen} open={modalOpen}>
-                {(!!modalContent.image || !!modalContent.text || !!modalContent.title) && <ModalContent image={modalContent.image} />}
+                {(!!modalContent.image || !!modalContent.text || !!modalContent.title) && <ModalContent {...modalContent} />}
+                {/* {(!!modalContent.image || !!modalContent.text || !!modalContent.title) && <ModalContent image={modalContent.image} />} */}
             </Modal>
         </div>
     )

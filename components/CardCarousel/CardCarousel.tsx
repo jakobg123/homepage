@@ -16,7 +16,7 @@ interface ICardCarouselProps {
 }
 
 const CardCarousel: React.FC<ICardCarouselProps> = ({ id, title, text, image, onClick, open, setOpen, setModalContent, dark = false }) => {
-  const truncatedText = text.length > 150 ? text.slice(0, 150) : text;
+  const truncatedText = text?.length > 150 ? text.slice(0, 100) : text;
 
   return (
     <div className={classNames(styles["CardCarousel"], { [styles["CardCarousel--Dark"]]: dark })}>

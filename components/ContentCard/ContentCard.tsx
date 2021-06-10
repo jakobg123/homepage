@@ -18,6 +18,7 @@ interface IContentCardProps {
   image?: IImageProps;
   video?: IVideoProps;
   code?: ICodeBoxProps;
+  originalDimension?: boolean;
 }
 
 const ContentCard: React.FC<IContentCardProps> = ({
@@ -26,7 +27,9 @@ const ContentCard: React.FC<IContentCardProps> = ({
   video,
   reverse = false,
   reverseWrap = false,
+  originalDimension = false,
 }) => {
+  console.log("OUTPUT ÄR ~ file: ContentCard.tsx ~ line 32 ~ originalDimension", originalDimension)
   const { setModalContent } = useContext(ModalContext);
 
   return (
@@ -62,7 +65,7 @@ const ContentCard: React.FC<IContentCardProps> = ({
                   </h3>
                 </span>
               )}
-              <Image {...image} />
+              <Image {...image} originalDimension={originalDimension} />
             </div>
           )}
         </div>

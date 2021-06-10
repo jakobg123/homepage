@@ -368,10 +368,14 @@
 
   &__OuterImageWrapper {
     // border: 1px solid red;
-    width: 80%;
+    width: 100%;
     max-width: 100rem;
     height: auto;
     box-shadow: $boxShadowMedium;
+
+    @include media(tablet) {
+      width: 80%;
+    }
   }
 
   &__LighthouseImageWrapper {

@@ -73,13 +73,15 @@
   }
 
   &__ImageWrapper {
-    position: relative;
+    // position: relative;
     flex: 0 0 100%;
-    min-height: 40rem;
+    // min-height: 40rem;
+    display: flex;
+    flex-direction: column;
 
     @include media(tablet) {
       flex: 0 0 50%;
-      min-height: 50rem;
+      // min-height: 50rem;
       // border: 1px solid blue;
     }
   }
@@ -104,36 +106,47 @@
     position: absolute;
     left: -2rem;
     top: -2rem;
-    height: 8rem;
-    width: 8rem;
+    height: 6rem;
+    width: 6rem;
     background: radial-gradient(
       circle at bottom right,
-      $colorWhite 40%,
-      $colorPrimary
+      $colorSecondary 60%,
+      $colorSecondaryLight
     );
+    // background: radial-gradient(
+    //   circle at bottom right,
+    //   $colorWhite 40%,
+    //   $colorPrimary
+    // );
     box-shadow: $boxShadowCard;
     z-index: 2;
-    border-radius: 50%;
+    border-radius: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    .ContentCard--Reverse & {
-      @include media(tablet) {
-        left: calc(100% - 11rem);
-        background: radial-gradient(
-          circle at bottom left,
-          $colorWhite 40%,
-          $colorPrimary
-        );
-      }
+    @include media(tablet) {
+      left: -2.5rem;
+      top: -2rem;
+      height: 8rem;
+      width: 8rem;
     }
 
-    @include media(tablet) {
-      left: -4rem;
-      top: -3rem;
-      height: 13rem;
-      width: 13rem;
+    .ContentCard--Reverse & {
+      @include media(tablet) {
+        // left: 2.5rem;
+        left: calc(100% - 5.5rem);
+        background: radial-gradient(
+          circle at bottom left,
+          $colorSecondary 60%,
+          $colorSecondaryLight
+        );
+        // background: radial-gradient(
+        //   circle at bottom left,
+        //   $colorWhite 40%,
+        //   $colorPrimary
+        // );
+      }
     }
   }
 
@@ -141,15 +154,15 @@
     // position: absolute;
     top: 2rem;
     left: 2rem;
-    @extend %h3;
+    @extend %h4;
     padding-bottom: $spacingS;
     // background: $colorBlack;
     // background: radial-gradient($colorPrimary);
     // padding: 2rem 5rem 5rem 2rem;
     // border-bottom-right-radius: 50%;
     // padding: 5rem;
-    // color: $colorPrimary;
-    color: $colorBlack;
+    color: $colorPrimary;
+    // color: $colorBlack;
     z-index: 2;
 
     // &::after {

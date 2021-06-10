@@ -1,5 +1,5 @@
 import styles from "./Carousel.module.scss";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useContext } from "react";
 import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import useWindowSize from "../../utils/Hooks/useWindowSize";
@@ -7,6 +7,7 @@ import CardCarousel from "../CardCarousel";
 import Modal from "../Modal";
 import Image from "../Image";
 import ModalContent from "../ModalContent";
+import ModalContext from "../../utils/context/Modal.context";
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -16,14 +17,19 @@ interface ICarouselProps {
 }
 
 const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
+  const { setModalContent } = useContext(ModalContext)
   const [openModal, setOpenModal] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
+  // const [modalContent, setModalContent] = useState(null);
 
   const onClick = (id, open, setOpen, setModalContent) => {
     setModalContent(id);
     setOpen(!open);
   }
 
+  const handleClick = (content) => {
+    console.log("OUTPUT ÄR ~ file: Carousel.tsx ~ line 28 ~ handleClick ~ content", content)
+
+  }
   // const carouselData = [
   //   {
   //     id: 1,
@@ -154,10 +160,11 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
           spaceBetween={30}
           slidesPerView={1}
           lazy={true}
-          navigation={{
-            nextEl: ".slideNext",
-            prevEl: ".slidePrev"
-          }}
+          navigation
+          // navigation={{
+          //   nextEl: ".slideNext",
+          //   prevEl: ".slidePrev"
+          // }}
           pagination={{ clickable: true }}
           breakpoints={
             {
@@ -179,10 +186,11 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
         // onSwiper={(swiper) => console.log(swiper)}
         >
           {!!carouselData?.length && carouselData.map(data => (
-            <SwiperSlide key={data.id}><CardCarousel {...data} onClick={onClick} open={openModal} setOpen={setOpenModal} setModalContent={setModalContent} dark={dark} /></SwiperSlide>
+            // <SwiperSlide key={data.id}><CardCarousel {...data} onClick={onClick} open={openModal} setOpen={setOpenModal} setModalContent={setModalContent} dark={dark} /></SwiperSlide>
+            <SwiperSlide key={data.id}><CardCarousel {...data} onClick={() => setModalContent({ image: data.image, title: data.title, text: data.text })} open={openModal} setOpen={setOpenModal} setModalContent={setModalContent} dark={dark} /></SwiperSlide>
           ))}
-          <button className="slideNext"></button>
-          <button className="slidePrev"></button>
+          {/* <button className="slideNext"></button>
+          <button className="slidePrev"></button> */}
         </Swiper>
       </div>
       {/* <Modal open={openModal} setOpen={setOpenModal} >

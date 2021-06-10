@@ -13,9 +13,10 @@ interface IImageAndText {
     dark?: boolean;
     light?: boolean;
     reverseWrap?: boolean;
+    originalDimension?: boolean;
 }
 
-const ImageAndText: React.FC<IImageAndText> = ({ html, imageToLeft = false, image, dark = false, light = false, reverseWrap = false }) => {
+const ImageAndText: React.FC<IImageAndText> = ({ html, imageToLeft = false, image, dark = false, light = false, reverseWrap = false, originalDimension = false }) => {
     const lightTheme = useContext(Theme);
     const { setModalContent } = useContext(ModalContext);
 
@@ -30,7 +31,9 @@ const ImageAndText: React.FC<IImageAndText> = ({ html, imageToLeft = false, imag
 
                 <Image
                     {...image}
-                    modifier={[styles['ImageAndText__ImageWrapper']]} />
+                    modifier={[styles['ImageAndText__ImageWrapper']]}
+                    originalDimension={originalDimension}
+                />
 
                 <figcaption className={styles['ImageAndText__Caption']}>{image.caption}</figcaption>
             </figure>

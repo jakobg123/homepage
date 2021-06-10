@@ -179,7 +179,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
             <p>Jag fastnade för denna bild och extraherade fram ett första färgtema med hjälp av <a href="https://color.adobe.com/sv/create/image">Adobe Color</a></p> */}
           <ImageAndText dark html={`<h3 class="h2_size">Färg</h3>
             <p>Jag ville ha en färgprofil med rena, matchande och naturliga färger. Därför sökte jag efter bilder med bra färgpaletter på <a href="https://www.unsplash.com">unsplash.com</a> som har en stor bildbank man kan använda sig av.</p><p>Jag fastnade för den här ljusa bilden och extraherade sedan fram ett  färgtema med hjälp av <a href="https://color.adobe.com/sv/create/image">Adobe Color</a>.</p><img src="${imagesDesign[1].src}" width="${imagesDesign[1].width}" height="${imagesDesign[1].height}" alt="${imagesDesign[1].alt}" />`} image={imagesDesign[0]} />
-          <ImageAndText dark imageToLeft html={`<h3 class="h2_size">Kontraster</h3>
+          <ImageAndText originalDimension dark imageToLeft html={`<h3 class="h2_size">Kontraster</h3>
             <p>För att uppfylla WCAG:s direktiv om tillgänglighet på webben, skall färger minst ha en kontrastratio på 3:1, men den generella rekommendationen är minst 4.5:1.</p><p>Därför kontrollerade jag att huvudfärgerna uppfyllde detta, vilket de gör med råge.</p>`} image={imagesDesign[2]} />
           {/* </div> */}
           {/* <div className={styles['ConstructionPage__Grid']}> */}
@@ -203,7 +203,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           {/* <h2>Tillgänglighet</h2>
             <p>Tillgänglighetsanpassning är ett omfattande arbete och jag har haft det i åtanke när jag byggt sajten. Med det sagt så finns det ännu en del anpassningar att göra, nedan är ett axplock av det jag har gjort.</p> */}
 
-          <ImageAndText reverseWrap light html={`<h3 class="h2_size">Semantik</h3>
+          <ImageAndText originalDimension reverseWrap light html={`<h3 class="h2_size">Semantik</h3>
             <p>Alla HTML-element (förutom &lt;div&gt; och &lt;span&gt;) har en semantisk betydelse, vilket innebär att de berättar vad för betydelse i sammanhanget dess innehåll har. Det är viktigt att skriva semantisk korrekt HTML, delvis för personer som förlitar sig på skärmläsare, men också för SEO:n då sökmotorers indexering utgår ifrån den semantiska uppmärkningen.</p><p>Jag har sett till att alla sidor har en &lt;header&gt;, &lt;main&gt; och &lt;footer&gt; eftersom de elementen beskriver basstrukturen på sidan.</p>`}
             image={imagesAccessibility[0]}
           />
@@ -213,7 +213,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
             <p>Eftersom vissa användare förlitar sig helt på skärmläsare är det viktigt att knappar som styr flikar och dolda element har kopplad markup.
             Ett sådant exempel är “hamburgaren” - knappen som öppnar menyn i mobilläge.
             I koden för knappen, framgår det i aria-controls vilket element som triggas. Knappen styr elementet med id=”menu”. Markupen anger också om knappen är aktiverad eller ej via aria-expanded, som sätts huruvida statevariabeln openNav är true eller false. Elementet med id=”menu” är också gömd för skärmläsaren, så länge värdet aria-hidden är true. Elementet bör vara gömt eftersom användaren inte skall höra/få tillgång till menyalternativen när menyn inte är öppnad.</p>`} />
-          <ImageAndText light imageToLeft html={`<h3 class="h2_size">Sr-only</h3>
+          <ImageAndText originalDimension light imageToLeft html={`<h3 class="h2_size">Sr-only</h3>
             <p>En annan viktig detalj är klassen “sr-only”, vars CSS visuellt döljer innehållet, men skärmläsaren kommer fortfarande läsa upp det. Eftersom hamburgerknappen inte anger vad som sker när man klickar på den, måste dess roll förtydligas med en sr-only-text - “Öppna meny”/”Stäng meny”.</p><p>En ikon ger bara en mening för den som kan se den, därför måste ikonens betydelse alltid finnas med i text, för att vara tillgänglig för alla.</p>`}
             image={imagesAccessibility[1]}
           />
@@ -239,7 +239,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           {/* <div className={styles['ConstructionPage__Grid']}> */}
           <CardArticle>
             {/* <CardCode code={performance.code.image} html={performance.text.html1} /> */}
-            <ContentCard image={performance.images.lighthouse} html={performance.text.html1} />
+            <ContentCard originalDimension image={performance.images.lighthouse} html={performance.text.html1} />
             {true && (
               <CardCode reverse reverseWrap code={performance.code.image} html={performance.text.imageHtml} />
             )}
@@ -253,12 +253,12 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
               <ContentCard reverseWrap video={performance.video.desktopPerfEnh} html={performance.text.perfHtml2} reverse />
             )}
             {true && (
-              <ContentCard image={performance.images.bundleBefore} html={performance.text.perfHtml3} />
+              <ContentCard originalDimension image={performance.images.bundleBefore} html={performance.text.perfHtml3} />
 
             )}
-            <ContentCard reverse image={performance.images.bundleAfter} html={performance.text.perfHtml4} />
-            <ContentCard image={performance.images.webpackBefore} html={performance.text.perfHtml5} />
-            <ContentCard reverse image={performance.images.webpackAfter} html={performance.text.perfHtml6} />
+            <ContentCard originalDimension reverse image={performance.images.bundleAfter} html={performance.text.perfHtml4} />
+            <ContentCard originalDimension image={performance.images.webpackBefore} html={performance.text.perfHtml5} />
+            <ContentCard originalDimension reverse image={performance.images.webpackAfter} html={performance.text.perfHtml6} />
 
           </CardArticle>
           {/* </div> */}

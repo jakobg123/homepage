@@ -14,9 +14,11 @@ const Image: React.FC<IImageProps> = ({
     modifier = [],
     x = "50",
     y = "50",
+    originalDimension = false,
 
 }) => {
-    const classes = !modifier.length
+    console.log("OUTPUT ÄR ~ file: Image.tsx ~ line 20 ~ originalDimension", originalDimension)
+    const classes = !modifier.length || originalDimension
         ? styles["Image"]
         : classNames(modifier.map(x => (
             [x]
@@ -29,8 +31,11 @@ const Image: React.FC<IImageProps> = ({
         imageStyles = { ...focal, borderRadius: "50%" }
     }
 
+    const dimension: { position: any, paddingTop: string } = !!originalDimension ? { position: `relative`, paddingTop: `${height / width * 100}%` } : { position: ``, paddingTop: `0` };
+
     return (
         <picture className={classes}
+            style={dimension}
         >
             {!!mediaQueries?.length &&
                 mediaQueries.map(({ src, minWidth }, index) => (
