@@ -185,7 +185,7 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
           <button className="slidePrev"></button>
         </Swiper>
       </div>
-      <Modal open={openModal} setOpen={setOpenModal} >
+      {/* <Modal open={openModal} setOpen={setOpenModal} >
         {!!modalContent && (
           carouselData
             .filter(data => data.id === modalContent)
@@ -194,7 +194,7 @@ const Carousel: React.FC<ICarouselProps> = ({ carouselData, dark = false }) => {
             ))
         )
         }
-      </Modal>
+      </Modal> */}
     </>
   );
 };

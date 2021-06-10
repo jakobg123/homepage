@@ -16,9 +16,6 @@ const Image: React.FC<IImageProps> = ({
     y = "50",
 
 }) => {
-    console.log("OUTPUT ÄR ~ file: Image.tsx ~ line 19 ~ src", src)
-    console.log("OUTPUT ÄR ~ file: Image.tsx ~ line 19 ~ modifier", modifier)
-    console.log("OUTPUT ÄR ~ file: Image.tsx ~ line 19 ~ modifier", modifier.length)
     const classes = !modifier.length
         ? styles["Image"]
         : classNames(modifier.map(x => (

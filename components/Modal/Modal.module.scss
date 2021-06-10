@@ -12,7 +12,7 @@
   transition: all $transitionNormal;
   display: none;
   // @extend %grid;
-  padding: 6rem 2rem 2rem;
+  padding: 5rem 2rem 2rem;
 
   @include media(tablet) {
     padding: 5rem 7rem;
@@ -27,7 +27,7 @@
 
   &--Active {
     opacity: 1;
-    z-index: 11;
+    z-index: 2001;
   }
 
   &__Close {
@@ -35,8 +35,8 @@
     position: absolute;
     top: 1.6rem;
     right: 1.6rem;
-    height: 4rem;
-    width: 4rem;
+    height: 3rem;
+    width: 3rem;
     border: none;
     border-radius: $radiusButtonSmall;
     background: none;
@@ -71,7 +71,8 @@
 
   &__Content {
     position: relative;
-    width: 100%;
+    // width: 100%;
+    width: calc(100% - 50px);
     max-width: 144rem;
     height: 100%;
   }

@@ -7,6 +7,7 @@
   flex-direction: column;
   overflow-y: scroll;
   @extend %noScrollBar;
+  // width: calc(100% - 50px);
 
   //   border: 1px solid red;
   height: 100%;
@@ -18,10 +19,14 @@
   }
 
   &__OuterWrapper {
+    margin: 0 auto;
+    width: 100%;
+
     @include media(tablet) {
       @include posAbsolute;
       z-index: -1;
       overflow: hidden;
+
       //   &:host {
       //   width: initial !important;
       //   }
@@ -31,6 +36,7 @@
   &__ImageWrapper {
     position: relative;
     width: 100%;
+    margin: 0 auto;
   }
 
   &__TextWrapper {

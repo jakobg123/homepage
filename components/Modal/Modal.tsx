@@ -7,14 +7,14 @@ import ModalContext from "../../utils/context/Modal.context";
 
 interface IModalProps {
   open: boolean;
-  setOpen: (boolean) => void;
+  setOpen?: (boolean) => void;
   // handleClick: (open, setOpen) => void;
 }
 
 const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
   const [show, setShow] = useState(false);
   const [fadeInModal, setFadeInModal] = useState(false);
-  const { modalOpen, toggleModalOpen } = useContext(ModalContext);
+  const { modalOpen } = useContext(ModalContext);
   console.log("OUTPUT ÄR ~ file: Modal.tsx ~ line 18 ~ modalOpenContext", modalOpen)
 
   useEffect(() => {
@@ -22,7 +22,7 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
     if (open) {
       lockBody();
       setShow(true);
-      toggleModalOpen(true);
+      // toggleModalOpen(true);
 
       setTimeout(() => {
         setFadeInModal(true);
@@ -30,7 +30,7 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
 
     } else {
       setFadeInModal(false);
-      toggleModalOpen(false);
+      // toggleModalOpen(false);
       unlockBody();
       setTimeout(() => {
         setShow(false);
@@ -55,6 +55,7 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
       <div className={styles["Modal__Content"]}>
         {children}
       </div>
+      {/* <button className={styles["Modal__Close"]} onClick={() => toggleModalOpen(!open)}><Icon type={"close"} /><span className="sr-only">Stäng modalfönstret</span></button> */}
       <button className={styles["Modal__Close"]} onClick={() => setOpen(!open)}><Icon type={"close"} /></button>
     </div>
   );

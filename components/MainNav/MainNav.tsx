@@ -14,7 +14,6 @@ export interface IMainNavProps {
 }
 
 const MainNav: React.FC<IMainNavProps> = ({ links, logo }) => {
-    console.log("🚀 ~ file: MainNav.tsx ~ line 16 ~ links", links)
     const pageContext = useContext(PageContext);
     // const { modalOpen } = useContext(ModalContext);
 

@@ -6,7 +6,10 @@ const ModalContext = createContext({
     modalOpen: false,
     fadeOutElement: false,
     hideElement: false,
-    toggleModalOpen: (bool) => { },
+    // toggleModalOpen: (bool) => { },
+    // passContentToModal: (any) => { },
+    setModalContent: (any) => { },
+
 });
 // const HeroImage = React.createContext({
 //     page: "start",

@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useState, useEffect, useContext, memo } from 'react';
 import dynamic from "next/dynamic";
 
 import Header from '../../components/Header';
@@ -24,6 +24,8 @@ import { TargetLinksProvider } from "../../utils/TargetLinks.context";
 import PageContext from "../../utils/Page.context";
 import ModalContext from "../../utils/context/Modal.context";
 import classNames from 'classnames';
+import Modal from "../../components/Modal";
+import ModalContent from "../../components/ModalContent";
 
 // export interface BaseContainerProps {
 //     menuData: IMobileNavProps;
@@ -67,107 +69,190 @@ interface BaseContainerState {
     fadeOutElement: boolean;
     hideElement: boolean;
     toggleModalOpen: (bool: boolean) => void;
+    passContentToModal: (content: any) => void;
+    modalContent: any[];
 }
 
-class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState> {
-    // toggleModalOpen: (bool: boolean) => void;
+const BaseContainer: React.FC<BaseContainerProps> = ({
+    menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData, page, children }) => {
+    const [modalOpen, setModalOpen] = useState(false);
+    console.log("OUTPUT ÄR ~ file: BaseContainer.tsx ~ line 79 ~ modalOpen", modalOpen)
+    const [toggleModalOpen, setToggleModalOpen] = useState(false);
+    const [fadeOutElement, setFadeOutElement] = useState(false);
+    const [hideElement, setHideElement] = useState(false);
+    const [modalContent, setModalContent] = useState({ image: null, text: "", title: "" });
+    console.log("OUTPUT ÄR ~ file: BaseContainer.tsx ~ line 84 ~ modalContent", modalContent)
 
-    constructor(props) {
-        super(props);
+    const modalState = { modalOpen, setModalOpen, toggleModalOpen, setToggleModalOpen, fadeOutElement, setFadeOutElement, hideElement, setHideElement, modalContent, setModalContent };
 
-        // this.toggleModalOpen = (bool: boolean) => {
-        //     console.log("körs den ens???");
-        //     this.setState(state => ({
-        //         modalOpen: bool
-        //     }));
-        // };
-
-        this.state = {
-            modalOpen: false,
-            fadeOutElement: false,
-            hideElement: false,
-            // toggleModalOpen: this.toggleModalOpen,
-            toggleModalOpen: (bool: boolean) => {
-                console.log("körs den ens???");
-                this.setState(state => ({
-                    modalOpen: bool
-                }));
-
-                // if (!bool) {
-                //     this.setState(state => ({
-                //         fadeOutElement: true
-                //     }));
-                //     setTimeout(() => {
-                //         this.setState(state => ({
-                //             modalOpen: true
-                //         }));
-                //     }, 1000)
-                // } else {
-                //     this.setState(state => ({
-                //         modalOpen: false
-                //     }));
-                //     setTimeout(() => {
-                //         this.setState(state => ({
-                //             fadeOutElement: false
-                //         }));
-                //     }, 4000)
-                // }
-            },
-
-        };
-    }
-
-    componentDidUpdate() {
-        if (this.state.modalOpen) {
-            this.setState(state => ({
-                fadeOutElement: true
-            }))
-            setTimeout(() => {
-                this.setState(state => ({
-                    hideElement: true
-                }))
-            }, 400)
-        } else {
-            this.setState(state => ({
-                hideElement: false
-            }))
-            setTimeout(() => {
-                this.setState(state => ({
-                    fadeOutElement: false
-                }))
-            }, 100)
+    useEffect(() => {
+        if (Object.values(modalContent).some(x => x !== null && x !== '')) {
+            setModalOpen(true);
         }
-    }
 
-    render() {
-        const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData, page } = this.props;
+        return () => {
+            setModalOpen(false);
+        }
+    }, [modalContent])
 
-        return (
-            <div className={styles['BaseContainer']} id="start">
-                <ModalContext.Provider value={this.state}>
-                    <header className={styles['BaseContainer__Header']}>
-                        <figure className={classNames(styles['BaseContainer__Logo'],
-                            { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
-                            <img
-                                {...logoData}
-                            />
-                        </figure>
-                        <Header {...headerData} mainNavData={mainNavData} />
-                        <div className={styles['BaseContainer__StickyContainer']}>
-                            <MobileNav {...menuData} />
-                        </div>
-                    </header>
-                    <main>
-                        {this.props.children}
-                    </main>
-                </ModalContext.Provider>
-                <footer className={styles['BaseContainer__Footer']}>
-                    <Footer {...footerData} />
-                </footer>
-            </div>
-        );
-    }
+    return (
+        <div className={styles['BaseContainer']} id="start">
+            <ModalContext.Provider value={modalState}>
+                <header className={styles['BaseContainer__Header']}>
+                    <figure className={classNames(styles['BaseContainer__Logo'],
+                        { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
+                        <img
+                            {...logoData}
+                        />
+                    </figure>
+                    <Header {...headerData} mainNavData={mainNavData} />
+                    <div className={styles['BaseContainer__StickyContainer']}>
+                        <MobileNav {...menuData} />
+                    </div>
+                </header>
+                <main>
+                    {children}
+                </main>
+            </ModalContext.Provider>
+            <footer className={styles['BaseContainer__Footer']}>
+                <Footer {...footerData} />
+            </footer>
+            <Modal setOpen={setModalOpen} open={modalOpen}>
+                {(!!modalContent.image || !!modalContent.text || !!modalContent.title) && <ModalContent image={modalContent.image} />}
+            </Modal>
+        </div>
+    )
 }
+
+// class BaseContainer extends PureComponent<BaseContainerProps, BaseContainerState> {
+//     // toggleModalOpen: (bool: boolean) => void;
+
+//     constructor(props) {
+//         super(props);
+
+//         // this.toggleModalOpen = (bool: boolean) => {
+//         //     console.log("körs den ens???");
+//         //     this.setState(state => ({
+//         //         modalOpen: bool
+//         //     }));
+//         // };
+
+//         this.state = {
+//             modalOpen: false,
+//             fadeOutElement: false,
+//             hideElement: false,
+//             modalContent: [],
+//             // toggleModalOpen: this.toggleModalOpen,
+//             toggleModalOpen: (bool: boolean) => {
+//                 console.log("körs den ens???");
+//                 this.setState(state => ({
+//                     modalOpen: bool
+//                 }));
+
+
+//                 // if (!bool) {
+//                 //     this.setState(state => ({
+//                 //         fadeOutElement: true
+//                 //     }));
+//                 //     setTimeout(() => {
+//                 //         this.setState(state => ({
+//                 //             modalOpen: true
+//                 //         }));
+//                 //     }, 1000)
+//                 // } else {
+//                 //     this.setState(state => ({
+//                 //         modalOpen: false
+//                 //     }));
+//                 //     setTimeout(() => {
+//                 //         this.setState(state => ({
+//                 //             fadeOutElement: false
+//                 //         }));
+//                 //     }, 4000)
+//                 // }
+//             },
+//             passContentToModal: (content: any) => {
+//                 console.log("OUTPUT ÄR ~ file: BaseContainer.tsx ~ line 120 ~ BaseContainer ~ constructor ~ content", content)
+//                 // console.log("innan");
+//                 // console.log(this.state.modalOpen);
+//                 // this.setState(state => ({
+//                 //     modalOpen: true
+//                 // }));
+//                 // console.log("efter");
+//                 // console.log(this.state.modalOpen);
+//                 if (content) {
+//                     this.setState(state => ({ modalContent: [content] }));
+//                 }
+
+
+//             },
+
+//         };
+//     }
+
+//     componentDidUpdate() {
+//         if (!!this.state.modalContent.length) {
+//             console.log("den är inte tom");
+//             this.setState(state => ({
+//                 modalOpen: true
+//             }));
+//         } else {
+//             console.log("den är tom");
+//         }
+
+//         if (this.state.modalOpen) {
+//             this.setState(state => ({
+//                 fadeOutElement: true
+//             }))
+//             setTimeout(() => {
+//                 this.setState(state => ({
+//                     hideElement: true
+//                 }))
+//             }, 400)
+//         } else {
+//             this.setState(state => ({
+//                 hideElement: false
+//             }))
+//             setTimeout(() => {
+//                 this.setState(state => ({
+//                     fadeOutElement: false
+//                 }))
+//             }, 100)
+//         }
+//     }
+
+//     render() {
+//         const { menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData, page } = this.props;
+
+//         return (
+//             <div className={styles['BaseContainer']} id="start">
+//                 <ModalContext.Provider value={this.state}>
+//                     <header className={styles['BaseContainer__Header']}>
+//                         <button onClick={() => this.state.toggleModalOpen(!this.state.modalOpen)}>klicka på mig</button>
+//                         <figure className={classNames(styles['BaseContainer__Logo'],
+//                             { [styles["BaseContainer__Logo--Construction"]]: page === "Construction" })}>
+//                             <img
+//                                 {...logoData}
+//                             />
+//                         </figure>
+//                         <Header {...headerData} mainNavData={mainNavData} />
+//                         <div className={styles['BaseContainer__StickyContainer']}>
+//                             <MobileNav {...menuData} />
+//                         </div>
+//                     </header>
+//                     <main>
+//                         {this.props.children}
+//                     </main>
+//                 </ModalContext.Provider>
+//                 <footer className={styles['BaseContainer__Footer']}>
+//                     <Footer {...footerData} />
+//                 </footer>
+//                 <Modal setOpen={this.state.toggleModalOpen} open={this.state.modalOpen}>
+//                     {!!this.state.modalContent.length && <ModalContent image={this.state.modalContent[0]} />}
+//                 </Modal>
+//             </div>
+//         );
+//     }
+// }
 
 // export default withRouter(BaseContainer);
-export default BaseContainer;
+export default memo(BaseContainer);

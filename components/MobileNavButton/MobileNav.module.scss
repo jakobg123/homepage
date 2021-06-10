@@ -34,8 +34,8 @@
     align-items: center;
     justify-content: space-evenly;
     border-radius: $radiusButtonSmall;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
-    // box-shadow: $boxShadowCard;
+    // box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: $boxShadowCard;
     background: radial-gradient(
       circle,
       $colorSecondaryLight 0.5%,

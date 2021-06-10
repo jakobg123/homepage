@@ -4,9 +4,9 @@ import { IImageProps } from "../../types/types";
 import useWindowSize from "../../utils/Hooks/useWindowSize";
 
 interface IModalContentProps {
-  image: IImageProps;
-  text: string;
-  title: string;
+  image?: IImageProps;
+  text?: string;
+  title?: string;
 }
 
 const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
@@ -15,25 +15,30 @@ const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
   // console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 14 ~ screenWidth", screenWidth)
   // let imageWidth = image.width > image.height ? { width: "55%" } : { width: "30%" };
   let imageWidthAndPosition = {};
-  if (screenWidth >= 768) {
+  if ((title || text) && screenWidth >= 768) {
     imageWidthAndPosition = image.width > image.height ? { width: "55%" } : { width: "30%", left: "25%" }
   } else {
-    imageWidthAndPosition = { width: "100%" }
+    imageWidthAndPosition = { width: "90%" }
   }
+
+  const styling = { paddingTop: `${image.height / image.width * 100}%` };
+  // const styling = (!title || !text) ? { paddingTop: `95%` } : { paddingTop: `${image.height / image.width * 100}%` }
 
   return (
     <div className={styles["ModalContent"]}>
-      <div className={styles["ModalContent__OuterWrapper"]} style={imageWidthAndPosition}>
+      <div className={styles["ModalContent__OuterWrapper"]}
+      // style={imageWidthAndPosition}
+      >
         <div className={styles["ModalContent__ImageWrapper"]}
-          style={{ paddingTop: `${image.height / image.width * 100}%` }}
+          style={styling}
         >
           <Image {...image} />
         </div>
       </div >
-      <div className={styles["ModalContent__TextWrapper"]}>
-        <h2 className={styles["ModalContent__Title"]}>{title}</h2>
-        <p className={styles["ModalContent__Text"]}>{text}</p>
-      </div>
+      {(!!title || !!text) && <div className={styles["ModalContent__TextWrapper"]}>
+        {!!title && <h2 className={styles["ModalContent__Title"]}>{title}</h2>}
+        {!!text && <p className={styles["ModalContent__Text"]}>{text}</p>}
+      </div>}
     </div >
   );
 };

@@ -26,7 +26,6 @@ const CardCode: React.FC<ICardCodeProps> = ({ reverse, reverseWrap, code, html, 
     return () => setFadeIn(false);
   }, [inView])
 
-  console.log("OUTPUT ÄR ~ file: CardCode.tsx ~ line 16 ~ inView", inView)
   return (
     <div ref={ref} className={classNames(styles["CardCode"], {
       [styles["CardCode--Reverse"]]: reverse,

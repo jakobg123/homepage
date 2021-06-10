@@ -16,7 +16,6 @@ interface ICardCarouselProps {
 }
 
 const CardCarousel: React.FC<ICardCarouselProps> = ({ id, title, text, image, onClick, open, setOpen, setModalContent, dark = false }) => {
-  console.log("OUTPUT ÄR ~ file: CardCarousel.tsx ~ line 19 ~ text", text.length)
   const truncatedText = text.length > 150 ? text.slice(0, 150) : text;
 
   return (

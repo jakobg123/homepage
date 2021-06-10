@@ -1,5 +1,6 @@
 import styles from "./ConstructionPage.module.scss";
 import dynamic from "next/dynamic";
+import { useContext } from "react";
 // import CodeBox from "../../components/CodeBox";
 // import ContentCard from "../../components/ContentCard";
 const ContentCard = dynamic(() => import("../../components/ContentCard"));
@@ -13,6 +14,7 @@ import Image from "../../components/Image";
 import CardArticle from "../../components/CardArticle";
 const Carousel = dynamic(() => import("../../components/Carousel"));
 import EntryCentered from "../../components/EntryCentered";
+import ModalContext from "../../utils/context/Modal.context";
 // import Carousel from "../../components/Carousel";
 
 // import {constructionPageData} from "../../data/ConstructionPage/ConstructionPageData";
@@ -27,6 +29,7 @@ interface IConstructionPageProps {
 }
 
 const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, design, performance }) => {
+  const { setModalContent } = useContext(ModalContext);
   // console.log("🚀 ~ file: ConstructionPage.tsx ~ line 18 ~ propps", props)
   // const {accessibility, design, performance} = pageData;
 
@@ -266,7 +269,9 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
 
         <div className={styles['ConstructionPage__Lighthouse']}>
           <h2 className={styles['ConstructionPage__LighthouseTitle']}>...och om planeterna står rätt och vädret tillåter...</h2>
-          <div className={styles['ConstructionPage__OuterImageWrapper']}>
+          <div className={styles['ConstructionPage__OuterImageWrapper']}
+            onClick={() => setModalContent({ image: lighthouseImage })}
+          >
             <div className={styles['ConstructionPage__LighthouseImageWrapper']}>
               <Image {...lighthouseImage} />
             </div>

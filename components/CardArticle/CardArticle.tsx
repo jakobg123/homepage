@@ -3,11 +3,10 @@ interface ICardArticleProps {
 
 }
 
-const CardArticle: React.FC<ICardArticleProps> = ({children}) => {
+const CardArticle: React.FC<ICardArticleProps> = ({ children }) => {
   return (
     <div className={styles["CardArticle"]}>
-        {children}
-        {/* <ContentCard /> */}
+      {children}
     </div>
   );
 };

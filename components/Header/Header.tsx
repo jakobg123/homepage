@@ -13,7 +13,9 @@ export interface IHeaderProps {
 }
 
 const Header: React.FC<IHeaderProps> = ({ heroImage, mainNavData }) => {
-    const { fadeOutElement, hideElement } = useContext(ModalContext);
+    const { fadeOutElement, hideElement, passContentToModal } = useContext(ModalContext);
+    // passContentToModal("hejsanmodalen");
+
     return (
         <div className={styles['Header']}>
             <div className={classNames(styles['Header__MainNavWrapper'],
