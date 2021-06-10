@@ -2,7 +2,6 @@ import { useContext } from "react";
 import styles from './ContentCard.module.scss';
 import dynamic from 'next/dynamic';
 import classNames from 'classnames';
-const CodeBox = dynamic(() => import('../CodeBox'));
 const Image = dynamic(() => import('../Image'));
 const Video = dynamic(() => import('../Video'));
 import ModalContext from "../../utils/context/Modal.context";
@@ -27,7 +26,6 @@ const ContentCard: React.FC<IContentCardProps> = ({
   video,
   reverse = false,
   reverseWrap = false,
-  code,
 }) => {
   const { setModalContent } = useContext(ModalContext);
 
@@ -41,7 +39,7 @@ const ContentCard: React.FC<IContentCardProps> = ({
         className={styles['ContentCard__Text']}
         dangerouslySetInnerHTML={{ __html: html }}></div>
 
-      {(!!video || !!code || !!image) && (
+      {(!!video || !!image) && (
         <div className={styles['ContentCard__MediaWrapper']} >
           {!!video && (
             <>
@@ -55,7 +53,6 @@ const ContentCard: React.FC<IContentCardProps> = ({
               <Video {...video} />
             </>
           )}
-          {!!code && <CodeBox {...code} />}
           {!!image && (
             <div className={styles['ContentCard__ImageWrapper']} onClick={() => setModalContent({ image: image })}>
               {!!image.title && (
