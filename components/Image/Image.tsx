@@ -17,7 +17,6 @@ const Image: React.FC<IImageProps> = ({
     originalDimension = false,
 
 }) => {
-    console.log("OUTPUT ÄR ~ file: Image.tsx ~ line 20 ~ originalDimension", originalDimension)
     const classes = !modifier.length || originalDimension
         ? styles["Image"]
         : classNames(modifier.map(x => (

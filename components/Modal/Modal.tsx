@@ -15,7 +15,6 @@ const Modal: React.FC<IModalProps> = ({ children, open, setOpen }) => {
   const [show, setShow] = useState(false);
   const [fadeInModal, setFadeInModal] = useState(false);
   const { modalOpen } = useContext(ModalContext);
-  console.log("OUTPUT ÄR ~ file: Modal.tsx ~ line 18 ~ modalOpenContext", modalOpen)
 
   useEffect(() => {
 

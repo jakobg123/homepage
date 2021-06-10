@@ -141,7 +141,11 @@
   }
 
   &__CarouselWrapper {
-    // padding: 4rem;
+    padding-top: $spacingL;
+
+    @include media(tablet) {
+      padding-top: 4rem;
+    }
   }
 
   &__CarouselTitle {

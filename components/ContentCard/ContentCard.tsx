@@ -29,7 +29,6 @@ const ContentCard: React.FC<IContentCardProps> = ({
   reverseWrap = false,
   originalDimension = false,
 }) => {
-  console.log("OUTPUT ÄR ~ file: ContentCard.tsx ~ line 32 ~ originalDimension", originalDimension)
   const { setModalContent } = useContext(ModalContext);
 
   return (
@@ -64,8 +63,7 @@ const ContentCard: React.FC<IContentCardProps> = ({
                     {image.title}
                   </h3>
                 </span>
-              )}
-              <Image {...image} originalDimension={originalDimension} />
+              )}<Image {...image} originalDimension={originalDimension} />
             </div>
           )}
         </div>

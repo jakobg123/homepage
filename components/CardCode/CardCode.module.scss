@@ -93,11 +93,12 @@
       min-height: 100%;
       margin-left: 0;
       padding: 0;
-      // padding-bottom: 0;
+      padding-bottom: $spacingXl;
       flex: 1 1 50%;
 
       @include media(tablet) {
         margin-left: 6rem;
+        padding-bottom: 0;
       }
     }
 

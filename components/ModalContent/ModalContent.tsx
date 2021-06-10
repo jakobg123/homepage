@@ -12,12 +12,7 @@ interface IModalContentProps {
 }
 
 const ModalContent: React.FC<IModalContentProps> = ({ image, text, title, fullSize = false }) => {
-  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ title", title)
-  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ text", text)
-  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ image", image)
   const [screenWidth] = useWindowSize();
-  console.log("🚀 ~ file: ModalContent.tsx ~ line 14 ~ screenWidth", screenWidth)
-  // console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 14 ~ screenWidth", screenWidth)
   // let imageWidth = image.width > image.height ? { width: "55%" } : { width: "30%" };
   let imageWidthAndPosition = {};
   if ((title || text) && screenWidth >= 768) {
@@ -32,7 +27,6 @@ const ModalContent: React.FC<IModalContentProps> = ({ image, text, title, fullSi
 
   let bothTextAndImage = title || text ? styles["ModalContent--TextAndImage"] : "";
   // const styling = (!title || !text) ? { paddingTop: `95%` } : { paddingTop: `${image.height / image.width * 100}%` }
-  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 43 ~ fullSize", fullSize)
 
   return (
     <div className={classNames(styles["ModalContent"],

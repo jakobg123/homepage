@@ -144,14 +144,14 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         <h1 className={styles['ConstructionPage__Title']}>Sajtbygget</h1>
 
         {/* <div className={styles['ConstructionPage__Em']}> */}
-        <em className={styles['ConstructionPage__Em']}><p>Här står det mer om hur jag gjort när jag byggt sajten.</p></em>
+        <em className={styles['ConstructionPage__Em']}><p>Hur sajten har skapats</p></em>
         {/* <h2>Här får man en inblick i hur jag byggt webbsidan</h2> */}
         <div
           className={styles['ConstructionPage__Preamble']}
         >
           {/* <h2>Här får man en inblick i hur jag byggde webbsidan.</h2> */}
           {/* <p>Här står det mer om hur jag gjort när jag byggt sajten.</p> */}
-          <p>Sidan handlar i stort sett om hur jag arbetat med 3 delar: <a href="#design">design</a>, <a href="#accessibility">tillgänglighet</a> och <a href="#optimization">optimering</a>.</p>
+          <p>Sidan handlar i stort sett om hur jag arbetat med 3 områden: <a href="#design">design</a>, <a href="#accessibility">tillgänglighet</a> och <a href="#optimization">optimering</a>.</p>
           <p>För den som undrar så består den s.k. "tech-stacken" av Next.js -  skriven i TypeScript och SCSS.</p>
           <p>Hoppas du finner nåt som är intressant för dig.</p>
           <p>/Jakob</p>

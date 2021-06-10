@@ -78,12 +78,10 @@ interface BaseContainerState {
 const BaseContainer: React.FC<BaseContainerProps> = ({
     menuData, knowledgeData, startData, logoData, footerData, headerData, mainNavData, constructionPageData, page, children }) => {
     const [modalOpen, setModalOpen] = useState(false);
-    console.log("OUTPUT ÄR ~ file: BaseContainer.tsx ~ line 79 ~ modalOpen", modalOpen)
     const [toggleModalOpen, setToggleModalOpen] = useState(false);
     const [fadeOutElement, setFadeOutElement] = useState(false);
     const [hideElement, setHideElement] = useState(false);
     const [modalContent, setModalContent] = useState({ image: null, text: "", title: "" });
-    console.log("OUTPUT ÄR ~ file: BaseContainer.tsx ~ line 84 ~ modalContent", modalContent)
 
     const modalState = { modalOpen, setModalOpen, toggleModalOpen, setToggleModalOpen, fadeOutElement, setFadeOutElement, hideElement, setHideElement, modalContent, setModalContent };
 
@@ -174,7 +172,6 @@ const BaseContainer: React.FC<BaseContainerProps> = ({
 //                 // }
 //             },
 //             passContentToModal: (content: any) => {
-//                 console.log("OUTPUT ÄR ~ file: BaseContainer.tsx ~ line 120 ~ BaseContainer ~ constructor ~ content", content)
 //                 // console.log("innan");
 //                 // console.log(this.state.modalOpen);
 //                 // this.setState(state => ({
