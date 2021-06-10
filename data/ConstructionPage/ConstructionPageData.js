@@ -67,7 +67,7 @@ export default {
                 title: 'Figma',
                 text: 'Eftersom sidan är tänkt att demonstrera mina kunskaper inom webb, var det viktigt att ha med vanligt förekommande moduler, såsom bilder, knappar, text och grafiska element. Jag har arbetat i designprogrammet Figma (fantastiskt program) med att skissa upp design, layout och grafik.',
                 image: {
-                    src: '/images/temp/figma_370-460_small-min.jpg',
+                    src: '/images/temp/figma_370-460_small-min.JPG',
                     alt: 'Fyra grafiska SVG-element jag använt på sajten.',
                     width: 370,
                     height: 200,
