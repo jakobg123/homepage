@@ -24,6 +24,9 @@ const Image: React.FC<IImageProps> = ({
             [x]
         )), styles["Image"]);
 
+    // y = "35";
+    // x = "10"
+
     let focal = !!modifier.length ? {} : { objectPosition: `${x}% ${y}%` };
     let imageStyles = {};
 

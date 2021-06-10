@@ -7,7 +7,7 @@ import { IIconProps } from "../../types/types";
 const IconWrapper: React.FC<{ icon: IIconProps["type"] }> = ({ icon }) => {
     return (
         <span aria-hidden="true" className={styles["Button__IconWrapper"]}>
-            <Icon type={icon} color={"Black"} hoverEffect />
+            <Icon type={icon} color={"Primary"} hoverEffect />
         </span>
     )
 }
@@ -42,7 +42,7 @@ const Button: React.FC<IButtonProps> = ({ label, icon, href, onClick = null, chi
         ButtonThing = () => (
             <Link href={href}>
                 <a className={styles["Button"]}><span className={styles["Button__TextWrapper"]}>
-                    {label}{children}
+                    {label}<IconWrapper icon={icon} />
                 </span></a>
             </Link>
         )

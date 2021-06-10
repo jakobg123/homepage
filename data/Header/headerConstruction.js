@@ -6,6 +6,8 @@ export default {
         height: 1038,
         loading: 'eager',
         modifierClass: 'Construction',
+        x: '50',
+        y: '28',
         // modifierClass: 'Hero__FocalPoint--Construction',
         mediaQueries: [
             {

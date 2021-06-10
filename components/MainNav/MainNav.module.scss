@@ -29,11 +29,11 @@
       @include bgColorGradient(
         to bottom,
         $colorPrimary,
-        0.9,
+        1,
         0%,
         $colorWhite,
         0,
-        80%
+        90%
       );
       transition: all $transitionNormal;
     }

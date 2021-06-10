@@ -64,6 +64,35 @@ export default {
         carouselData: [
             {
                 id: 1,
+                title: 'Figma',
+                text: 'Eftersom sidan är tänkt att demonstrera mina kunskaper inom webb, var det viktigt att ha med vanligt förekommande moduler, såsom bilder, knappar, text och grafiska element. Jag har arbetat i designprogrammet Figma (fantastiskt program) med att skissa upp design, layout och grafik.',
+                image: {
+                    src: '/images/temp/figma_370-460_small-min.jpg',
+                    alt: 'Fyra grafiska SVG-element jag använt på sajten.',
+                    width: 370,
+                    height: 200,
+                    mediaQueries: [
+                        {
+                            minWidth: 1280,
+                            src: '/images/temp/figma_900-1280_large-min.jpg',
+                        },
+                        {
+                            minWidth: 1024,
+                            src: '/images/temp/figma_680-768_mediumSmall-min.jpg',
+                        },
+                        {
+                            minWidth: 768,
+                            src: '/images/temp/figma_435-1024_medium-min.jpg',
+                        },
+                        {
+                            minWidth: 460,
+                            src: '/images/temp/figma_680-768_mediumSmall-min.jpg',
+                        },
+                    ],
+                },
+            },
+            {
+                id: 2,
                 title: 'SVG:er',
                 text: 'SVG - Scalable vector graphic - är ett uitmärkt grafikformat att använda för webb. Grafiken kan ta upp mycket yta och vara responsiv, samtidigt som filerna är minimala vilket är bra för snabba sidladdningar. Jag gjorde ett flertal SVG-element som jag senare fäste i pseudoelement med CSS:en som, för en nybörjare, är ganska svårt, speciellt med att få till en bra responsivitet.',
                 image: {
@@ -75,7 +104,7 @@ export default {
                 },
             },
             {
-                id: 2,
+                id: 3,
                 title: 'Typografi',
                 text: 'Jag fastnade för typsnittet “Quicksand”, som är ett sans-serif-typsnitt. Det har en hög “x-height” vilket gör den lättläst. Rubriknivåerna satte jag efter typskalorna: Perfect fifth för desktop-, och Perfect fourth för mobilläge.',
                 image: {
@@ -87,7 +116,7 @@ export default {
                 },
             },
             {
-                id: 3,
+                id: 4,
                 title: 'Bildkomprimering',
                 text: 'Att ha lagom stora bilder är viktigt för att få en snabb sajt. Oftast är det just bilderna som tar upp merdelen av en hemsidas totala datamängd. Därav är alla bilder i jpeg-format, som ger relativt små filer. WebP är ett modernt alternativ, men browserstödet är inte lika brett som för jpeg, så jag har skippat WebP. Jag har komprimerat bilderna efter dess container-storlekar på hemsidan, både för hand, i programmet Gimp, men också automatiskt på compressjpeg.com. Bildernas filstorlekar har generellt reducerats med ca. 90%.',
                 image: {

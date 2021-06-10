@@ -8,9 +8,10 @@ interface IModalContentProps {
   image?: IImageProps;
   text?: string;
   title?: string;
+  fullSize?: boolean;
 }
 
-const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
+const ModalContent: React.FC<IModalContentProps> = ({ image, text, title, fullSize = false }) => {
   console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ title", title)
   console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ text", text)
   console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 13 ~ image", image)
@@ -31,11 +32,13 @@ const ModalContent: React.FC<IModalContentProps> = ({ image, text, title }) => {
 
   let bothTextAndImage = title || text ? styles["ModalContent--TextAndImage"] : "";
   // const styling = (!title || !text) ? { paddingTop: `95%` } : { paddingTop: `${image.height / image.width * 100}%` }
+  console.log("OUTPUT ÄR ~ file: ModalContent.tsx ~ line 43 ~ fullSize", fullSize)
 
   return (
     <div className={classNames(styles["ModalContent"],
       { [styles["ModalContent--TextAndImage"]]: !!title || !!text },
-      { [styles["ModalContent--Portrait"]]: portrait }
+      { [styles["ModalContent--Portrait"]]: portrait },
+      { [styles["ModalContent--FullSize"]]: fullSize }
     )
     }>
       <div className={styles["ModalContent__OuterWrapper"]}

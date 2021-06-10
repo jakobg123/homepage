@@ -85,7 +85,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                             <Image {...presImage} mediaQueries={mediaQueries} round />
                         </div>
                         <h2>Om webbsidan</h2>
-                        <p>Webbsidan har jag byggt för att showcase:a lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. består av en lärorik 6 månaders LIA(praktik) på{' '}<a href="https://www.frojd.se">digitalbyrån Fröjd</a>.
+                        <p>Här får man se lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. bestått av en lärorik 6 månaders LIA(praktik) på <a href="https://www.frojd.se" >digitalbyrån Fröjd</a>.
                         </p>
                         <p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.
                         </p>
@@ -107,6 +107,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                         dangerouslySetInnerHTML={{ __html: ctaText }}></div>
                     <div className={styles['StartPage__ButtonWrapper']}>
                         <Button label={cta.label} icon={cta.icon} href={cta.href} />
+                        {/* <Button label={"Sajtbygget"} icon={"arrowNext"} href={"/sajtbygget"} /> */}
                     </div>
                 </div>
                 <div

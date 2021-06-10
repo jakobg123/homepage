@@ -144,16 +144,21 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         <h1 className={styles['ConstructionPage__Title']}>Sajtbygget</h1>
 
         {/* <div className={styles['ConstructionPage__Em']}> */}
-        {/* <em className={styles['ConstructionPage__Em']}>Så här gjordes webbsidan</em> */}
+        <em className={styles['ConstructionPage__Em']}><p>Här står det mer om hur jag gjort när jag byggt sajten.</p></em>
         {/* <h2>Här får man en inblick i hur jag byggt webbsidan</h2> */}
         <div
           className={styles['ConstructionPage__Preamble']}
         >
           {/* <h2>Här får man en inblick i hur jag byggde webbsidan.</h2> */}
-          <p>Hemsidan är ett sidoprojekt som påbörjades Februari 2021. Idéen var att ha ett större projekt som lärde mig mer webbutveckling och samtidigt öka chansen att få jobb efter utbildningen. Som tur är fungerade det! Jag har både lärt mig mer och fått ett jobb. 🤓🔥🚀</p>
+          {/* <p>Här står det mer om hur jag gjort när jag byggt sajten.</p> */}
+          <p>Sidan handlar i stort sett om hur jag arbetat med 3 delar: <a href="#design">design</a>, <a href="#accessibility">tillgänglighet</a> och <a href="#optimization">optimering</a>.</p>
+          <p>För den som undrar så består den s.k. "tech-stacken" av Next.js -  skriven i TypeScript och SCSS.</p>
+          <p>Hoppas du finner nåt som är intressant för dig.</p>
+          <p>/Jakob</p>
+
           {/* <h2 className="h2_size">Tech-stacken</h2>
           <p>Sajten är byggd i Next.js, som är ett ramverk med många fördelar. Bl.a. får man React-kod SSR, vilket ger snabba sidladdningar.</p>
-          <p>Mycket av koden är i Typescript och stylingen är skriven i SCSS.</p> */}
+          <p>Mycket av koden är i Typescript och stylingen är skriven i SCSS.</p>
 
         </div>
         <div className={styles['ConstructionPage__Paragraph']}>
@@ -161,16 +166,16 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
           <p>Sajten är byggd i Next.js, som är ett ramverk med många fördelar. Bl.a. får man React-kod SSR, vilket ger snabba sidladdningar.</p>
 
           {/* <p>Jag har valt att göra sajten i ramverket Next.js. Det är ett fullstack-ramverk med många fördelar. Bl.a. kodar man vanlig React, men Next renderar koden på servern, istället för på klienten som en SPA gör. All markup i HTML-dokumentet är alltså redan med när det når klienten, som gör att browsern direkt kan ladda in CSS och JS vilket ger snabbare initiala sidladdningar som bl.a. är bra för sidans SEO.</p> */}
-          <p>Jag valde att att skriva i Typescript, eftersom jag ville lära mig det. Dessutom underlättar TS för framtida utveckling då kodbasen blir lättare att sätta sig in.</p>
+          {/* <p>Jag valde att att skriva i Typescript, eftersom jag ville lära mig det. Dessutom underlättar TS för framtida utveckling då kodbasen blir lättare att sätta sig in.</p>
           <p>
-            Stylingen är för övrigt gjord med preprocessorn SCSS och är skriven enligt Block__Element--Modifier-praxis (BEM).</p>
+            Stylingen är för övrigt gjord med preprocessorn SCSS och är skriven enligt Block__Element--Modifier-praxis (BEM).</p> */}
         </div>
 
         {/* </div> */}
       </div>
       <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Dark']}>
 
-        <div className={styles['ConstructionPage__WaveWrapper'] + " " + styles['ConstructionPage__WaveWrapper--Design']}>
+        <div id="design" className={styles['ConstructionPage__WaveWrapper'] + " " + styles['ConstructionPage__WaveWrapper--Design']}>
           <EntryCentered dark text={`<p>För att pusha mina kunskaper i styling valde jag tidigt att bryta med den mer traditionella, fyrkantiga layouten.</p><p>Därför har bl.a. text puttats utanför dess “container”, gradienter lagts ovanpå bilder och vågiga SVG-element placerats över kanter.</p><p>Designen kanske bara är världens näst snyggaste, men till mitt försvar - jag är ingen designer.</p>`} title={"Design"} />
 
           {/* <div className={styles['ConstructionPage__Paragraph']}> */}
@@ -195,7 +200,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--White'] + " " + styles['ConstructionPage__Block--Accessibility']}>
 
 
-        <div className={styles['ConstructionPage__WaveWrapper'] + " " + styles['ConstructionPage__WaveWrapper--Accessibility']}>
+        <div id="accessibility" className={styles['ConstructionPage__WaveWrapper'] + " " + styles['ConstructionPage__WaveWrapper--Accessibility']}>
           <EntryCentered text={`<p>Tillgänglighetsanpassning är ett omfattande arbete och jag har haft det i åtanke när jag byggt sajten.</p><p>Med det sagt så finns det ännu en del anpassningar att göra, nedan är ett axplock av det jag har gjort.</p>`} title={"Tillgänglighet"} />
 
 
@@ -233,7 +238,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         </div>
 
       </div>
-      <div className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Optimization']}>
+      <div id="optimization" className={styles['ConstructionPage__Block'] + " " + styles['ConstructionPage__Block--Optimization']}>
         <div className={styles['ConstructionPage__WaveWrapper'] + " " + styles['ConstructionPage__WaveWrapper--Optimization']}>
           <EntryCentered text={`<p>Core Web Vitals är ett kvalitetsinitiativ från Google som mäter hur väl en sajt presterar utifrån olika parametrar.</p><p>Fr.o.m. mitten av juni 2021 kommer CWV-värdet vägas in i sajtens SEO-ranking.</p><p>Därför är det extra viktigt att sajten har bra prestanda.</p>`} title={"Optimering"} />
           {/* <div className={styles['ConstructionPage__Grid']}> */}
@@ -270,7 +275,7 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
         <div className={styles['ConstructionPage__Lighthouse']}>
           <h2 className={styles['ConstructionPage__LighthouseTitle']}>...och om planeterna står rätt och vädret tillåter...</h2>
           <div className={styles['ConstructionPage__OuterImageWrapper']}
-            onClick={() => setModalContent({ image: lighthouseImage })}
+            onClick={() => setModalContent({ image: lighthouseImage, fullSize: true })}
           >
             <div className={styles['ConstructionPage__LighthouseImageWrapper']}>
               <Image {...lighthouseImage} />

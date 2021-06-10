@@ -179,7 +179,8 @@
 }
 
 %cardText {
-  font-size: 1.777rem;
+  // font-size: 1.777rem;
+  font-size: 1.333rem;
   @extend %p;
 
   @include media(desktop) {
@@ -358,6 +359,11 @@
 %preamble {
   @extend %h3;
   @extend %preambleWidth;
+  // @extend %linkLight;
+  a {
+    // @extend %aTagLinkLight;
+    @extend %linkLight;
+  }
   padding-bottom: $spacingXl;
 
   @include media(tablet) {

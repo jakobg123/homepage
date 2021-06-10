@@ -22,7 +22,11 @@
     max-width: 60%;
 
     &--Portrait {
-      // max-width: 50%;
+      max-width: 50%;
+    }
+
+    &--FullSize {
+      max-width: 95%;
     }
 
     &--TextAndImage {

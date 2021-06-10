@@ -6,6 +6,8 @@ export default {
         height: 1092,
         loading: 'eager',
         modifierClass: 'Hero__FocalPoint',
+        x: '33',
+        y: '0',
         mediaQueries: [
             {
                 minWidth: 768,

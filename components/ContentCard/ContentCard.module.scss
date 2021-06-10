@@ -136,11 +136,11 @@
       @include media(tablet) {
         // left: 2.5rem;
         left: calc(100% - 5.5rem);
-        background: radial-gradient(
-          circle at bottom left,
-          $colorSecondary 60%,
-          $colorSecondaryLight
-        );
+        // background: radial-gradient(
+        //   circle at bottom left,
+        //   $colorSecondary 60%,
+        //   $colorSecondaryLight
+        // );
         // background: radial-gradient(
         //   circle at bottom left,
         //   $colorWhite 40%,
