@@ -131,7 +131,7 @@ export default {
                         },
                         {
                             minWidth: 460,
-                            src: '/images/temp/compressjpg_720x400-min.jpg.jpg',
+                            src: '/images/temp/compressjpg_720x400-min.jpg',
                         },
                     ],
                 },
