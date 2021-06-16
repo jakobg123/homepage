@@ -96,11 +96,16 @@ export default {
                 title: 'SVG:er',
                 text: 'SVG - Scalable vector graphic - är ett uitmärkt grafikformat att använda för webb. Grafiken kan ta upp mycket yta och vara responsiv, samtidigt som filerna är minimala vilket är bra för snabba sidladdningar. Jag gjorde ett flertal SVG-element som jag senare fäste i pseudoelement med CSS:en som, för en nybörjare, är ganska svårt, speciellt med att få till en bra responsivitet.',
                 image: {
-                    src: '/images/temp/svgs.JPG',
+                    src: '/images/temp/svgs_360_270x340-min.webp',
                     alt: 'Fyra grafiska SVG-element jag använt på sajten.',
                     width: 669,
                     height: 835,
-                    mediaQueries: [],
+                    mediaQueries: [
+                        {
+                            minWidth: 460,
+                            src: '/images/temp/svgs_768_630x790-min.webp',
+                        },
+                ],
                 },
             },
             {
@@ -108,11 +113,16 @@ export default {
                 title: 'Typografi',
                 text: 'Jag fastnade för typsnittet “Quicksand”, som är ett sans-serif-typsnitt. Det har en hög “x-height” vilket gör den lättläst. Rubriknivåerna satte jag efter typskalorna: Perfect fifth för desktop-, och Perfect fourth för mobilläge.',
                 image: {
-                    src: '/images/temp/TypeScale.JPG',
+                    src: '/images/temp/TypeScale_360_435x-min.webp',
                     alt: 'Typskala: "Perfect Fourth" för typsnittet Quicksand',
                     width: 1274,
                     height: 598,
-                    mediaQueries: [],
+                    mediaQueries: [
+                        {
+                            minWidth: 460,
+                            src: '/images/temp/TypeScale_460_740x-min.webp',
+                        },
+                ],
                 },
             },
             {

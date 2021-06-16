@@ -60,10 +60,16 @@ const ConstructionPage: React.FC<IConstructionPageProps> = ({ accessibility, des
       ],
     },
     {
-      src: '/images/temp/colors.JPG',
+      src: '/images/temp/colors_360_428x128-min.webp',
       alt: 'De slutgiltiga färgvalen: Primär, Sekundär, Vit, Svart, Hover med ljus bakgrund, Hover med mörk bakgrund.',
       width: 606,
       height: 137,
+      mediaQueries: [
+        {
+          minWidth: 460,
+          src: '/images/temp/colors_460_734x198-min.webp',
+        },
+      ],
     },
     {
       src: '/images/temp/contrastPrimaryBlack_411x400-min.jpg',
