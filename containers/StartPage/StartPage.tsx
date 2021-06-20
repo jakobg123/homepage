@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button';
 import Internship from "../../components/Internship";
+import ButtonImage from "../../components/ButtonImage";
 // const Internship = dynamic(() => import("../../components/Internship"));
 
 import Image from '../../components/Image';
@@ -79,8 +80,11 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                     <em className={styles['StartPage__Em']}>{greeting}</em>
                     <div
                         className={styles['StartPage__Preamble']}
-                        dangerouslySetInnerHTML={{ __html: preamble }}></div>
+                        dangerouslySetInnerHTML={{ __html: preamble }}>
+                        </div>
+
                     <div className={styles['StartPage__ParagraphPres']}>
+
                         <div className={styles['StartPage__PresImageWrapper']}>
                             <Image {...presImage} mediaQueries={mediaQueries} round />
                         </div>
@@ -91,6 +95,9 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                         </p>
                         <p>Jag kan redan nu avslöja att den är skriven i Typescript i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering. Jag har också ansträngt mig för att få ett bra Lighthouse-resultat av sajten.
                         </p>
+                        <div className={styles['StartPage__ButtonImageWrapper']}>
+                            <ButtonImage />
+                        </div>
                     </div>
                 </div>
             </div>
