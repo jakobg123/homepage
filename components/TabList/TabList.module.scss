@@ -68,7 +68,7 @@
     @extend %h2;
     @extend %fontColorBlack;
     max-width: 95%;
-
+    
     .TabList--Dark & {
       @extend %fontColor;
     }
@@ -85,6 +85,10 @@
     opacity: 0;
     transition: all $transitionNormal;
     transform: translateY(10rem);
+
+    a{
+      @extend %linkLight;
+    }
 
     @include media(desktop) {
       font-size: 2.25rem;

@@ -7,7 +7,8 @@ import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button';
 import Internship from "../../components/Internship";
-import ButtonImage from "../../components/ButtonImage";
+const ButtonImage = dynamic(() => import("../../components/ButtonImage"));
+// import ButtonImage from "../../components/ButtonImage";
 // const Internship = dynamic(() => import("../../components/Internship"));
 
 import Image from '../../components/Image';
@@ -48,6 +49,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
         entryText,
         ctaText,
         cta,
+        cta2,
         technologies,
         internship,
     } = data;
@@ -88,16 +90,22 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                         <div className={styles['StartPage__PresImageWrapper']}>
                             <Image {...presImage} mediaQueries={mediaQueries} round />
                         </div>
-                        <h2>Om webbsidan</h2>
+
+                        <div
+                        className={styles['StartPage__ParagraphPres']}
+                        dangerouslySetInnerHTML={{ __html: entryText }}>
+                        </div>
+                        {/* <h2>Om webbsidan</h2>
                         <p>Här får man se lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. bestått av en lärorik 6 månaders LIA(praktik) på <a href="https://www.frojd.se" >digitalbyrån Fröjd</a>.
                         </p>
                         <p>Sajten är fortfarande under uppbyggnad, men kommer snart ha mer innehåll så att du kan läsa om <em>hur</em> jag byggt den.
                         </p>
                         <p>Jag kan redan nu avslöja att den är skriven i Typescript i Next.js och jag arbetar även med tillgänglighetsanpassning och prestandaoptimering. Jag har också ansträngt mig för att få ett bra Lighthouse-resultat av sajten.
-                        </p>
-                        <div className={styles['StartPage__ButtonImageWrapper']}>
+                        </p> */}
+                        
+                    </div>
+                    <div className={styles['StartPage__ButtonImageWrapper']}>
                             <ButtonImage />
-                        </div>
                     </div>
                 </div>
             </div>
@@ -113,8 +121,10 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                         className={styles['StartPage__Paragraph'] + " " + styles['StartPage__Paragraph--Git']}
                         dangerouslySetInnerHTML={{ __html: ctaText }}></div>
                     <div className={styles['StartPage__ButtonWrapper']}>
+                        <Button label={cta2.label} icon={cta2.icon} href={cta2.href} type={cta2.type} />
                         <Button label={cta.label} icon={cta.icon} href={cta.href} />
-                        {/* <Button label={"Sajtbygget"} icon={"arrowNext"} href={"/sajtbygget"} /> */}
+                        {/* <Button label={"Mitt skol-repo"} icon={"arrowNext"} href={"/sajtbygget"} type={"Secondary"}/> */}
+                        {/* <Button label={"Sajtens repo"} icon={"arrowNext"} href={"/sajtbygget"} /> */}
                     </div>
                 </div>
                 <div

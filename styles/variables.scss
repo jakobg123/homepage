@@ -10,7 +10,7 @@ $colorPrimaryBlueLight: #001542;
 $colorPrimaryBlue: #000d29;
 $colorSecondaryYellow: #fffb0f;
 
-$colorWhite: #fafafa;
+// $colorWhite: #fafafa;
 $colorWhiteBackground: #dcdcdc;
 
 $colorGrey-1: #dcdcdc;
@@ -62,6 +62,7 @@ $radiusCardSmall: $spacingXs;
 
 //BOX SHADOW
 $boxShadowCard: 1px 1px 4px rgba(0, 0, 0, 0.3);
+$boxShadowCardHover: 1px 1px 10px rgba(0, 0, 0, 0.1);
 $boxShadowCardWhite: 1px 1px 4px rgba(255, 255, 255, 0.3);
 $boxShadowCardSmall: 0px 0px 4px rgba(0, 0, 0, 0.5);
 $boxShadowCardSmallWhite: 0px 0px 4px rgba(255, 255, 255, 0.5);

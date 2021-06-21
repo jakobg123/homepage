@@ -45,6 +45,7 @@
   &__WaveWrapper {
     @extend %waveWrapper;
     padding-top: $spacingS;
+    padding-bottom: $spacingL;
     // @extend %grid;
     // position: relative;
     // height: 100%;
@@ -72,13 +73,23 @@
     z-index: 1;
     // @extend %paragraphPaddingBottom;
     @extend %textBlock;
+    a{
+      @extend %linkLight;
+    }
 
     // &:last-of-type {
     //   padding-bottom: 0;
     // }
 
     &--Git {
-      padding-bottom: $spacingXl;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: $spacingL;
+
+      @include media(tablet){
+        padding-bottom: $spacingL * 2;
+      }
     }
     // padding-bottom: $spacingS;
 
@@ -97,6 +108,29 @@
   &__ButtonWrapper {
     position: relative;
     z-index: 2;
+    // border: 1px solid red;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+
+    a:last-of-type{
+      margin-bottom: $spacingL;
+    }
+
+    @include media(tablet){
+      flex-direction: row;
+
+      a:last-of-type{
+        margin-bottom: 0;
+      }
+
+      a:first-of-type{
+        display: inline-block;
+        margin-right: $spacingXl;
+      }
+    }
+
   }
 
   &__TextWrapper {
@@ -236,7 +270,16 @@
   }
 
   &__ButtonImageWrapper {
-    padding-bottom: $spacingXl;
+    margin: $spacingXl auto;
+    // padding-bottom: $spacingXl;
+    // border: 1px solid red;
+    max-width: 70rem;
+    display: flex;
+    align-items: center;
+
+    @include media(tablet){
+      margin: $spacingBlock auto;
+    }
   }
 
   // &__ButtonWave {

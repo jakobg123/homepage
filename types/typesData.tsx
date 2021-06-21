@@ -45,6 +45,12 @@ export interface IStartPageData {
         icon: IIconProps['type'];
         href: string;
     };
+    cta2: {
+        label: string;
+        icon: IIconProps['type'];
+        href: string;
+        type?: "Primary" | "Secondary" 
+    };
     technologies: {
         heading: string;
         html: string;

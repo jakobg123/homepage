@@ -3,6 +3,7 @@ import styles from "./Button.module.scss";
 import Icon from "../Icon";
 import React from "react";
 import { IIconProps } from "../../types/types";
+import classNames from "classnames";
 
 const IconWrapper: React.FC<{ icon: IIconProps["type"] }> = ({ icon }) => {
     return (
@@ -18,22 +19,23 @@ interface IButtonProps {
     href?: string;
     onClick?: () => void;
     children?: React.ReactNode;
+    type?: "Primary" | "Secondary"
 }
 
-const Button: React.FC<IButtonProps> = ({ label, icon, href, onClick = null, children }) => {
+const Button: React.FC<IButtonProps> = ({ label, icon, href, onClick = null, children, type = "Primary" }) => {
 
     let ButtonThing: React.FC;
 
     if (!href) {
         ButtonThing = () => (
-            <button type="button" className={styles["Button"]} onClick={onClick}><span className={styles["Button__TextWrapper"]}>
+            <button type="button" className={classNames(styles["Button"], {[styles["Button--Secondary"]]: type === "Secondary"})} onClick={onClick}><span className={styles["Button__TextWrapper"]}>
                 {label}{children}
             </span></button>
         )
     }
     else if ("http" === href.substring(0, 4)) {
         ButtonThing = ({ children }) => (
-            <a href={href} className={styles["Button"]} ><span className={styles["Button__TextWrapper"]}>
+            <a href={href} className={classNames(styles["Button"], {[styles["Button--Secondary"]]: type === "Secondary"})} ><span className={styles["Button__TextWrapper"]}>
                 {label}{children}
             </span></a>
         )
@@ -41,7 +43,7 @@ const Button: React.FC<IButtonProps> = ({ label, icon, href, onClick = null, chi
     else {
         ButtonThing = () => (
             <Link href={href}>
-                <a className={styles["Button"]}><span className={styles["Button__TextWrapper"]}>
+                <a className={classNames(styles["Button"], {[styles["Button--Secondary"]]: type === "Secondary"})}><span className={styles["Button__TextWrapper"]}>
                     {label}<IconWrapper icon={icon} />
                 </span></a>
             </Link>

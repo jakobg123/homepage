@@ -35,14 +35,41 @@
     z-index: 5;
     opacity: 0;
     transition: all $transitionNormal;
+
+    // .Button--Secondary.& {
+    //   background: transparent;
+    // }
+
+    
     // transition: all $transitionMediumSlow;
   }
+
+  // .Button--Secondary.Button::after{
+  //   background: none !important;
+  // }
 
   &:hover,
   &:focus {
     &::after {
       transform: translate(-75%, 0);
       opacity: 1;
+    }
+  }
+
+  &--Secondary{
+    // border: 1px solid red;
+    background-color: transparent;
+    // outline: 3px solid $colorSecondary;
+    box-shadow: inset 0px 0px 0px 3px $colorSecondary;
+    color: $colorSecondary;
+
+    svg {
+      color: $colorSecondary;
+      fill: $colorSecondary;
+    }
+
+    &.Button::after {
+      background: transparent;
     }
   }
 
