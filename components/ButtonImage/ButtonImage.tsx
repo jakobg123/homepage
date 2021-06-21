@@ -13,35 +13,55 @@ interface IButtonImageProps {
 
 const tempImage = {
   // src: '/images/temp/temp.jpg',
-  src: '/images/temp/ctaImage13.jpg',
-  alt: 'Ljus, vit bild av flaska och växt.',
+  src: '/images/temp/ctaImage13_390x291.webp',
+  alt: 'Del av sidan "sajtbygget", delen handlar om sidans design.',
   width: 700,
   height: 400,
-  caption: "Foto: Deanna Alys, från unsplash.com",
+  x: "90",
+  y: "50",
   mediaQueries: [
+    {
+        minWidth: 768,
+        src: '/images/temp/ctaImage13_700x400.webp',
+      },
+      {
+        minWidth: 460,
+        src: '/images/temp/ctaImage13_700x525.webp',
+      },
   ],
 };
 const tempImage2 = {
-  src: '/images/temp/ctaImage22.jpg',
-  // src: '/images/temp/temp2.jpg',
-  alt: 'Ljus, vit bild av flaska och växt.',
-  width: 1920,
-  height: 1280,
-  caption: "Foto: Deanna Alys, från unsplash.com",
+  src: '/images/temp/ctaImage2_390x291.webp',
+  // src: '/images/temp/temp2.webp',
+  alt: 'Del av sidan "sajtbygget", delen handlar om sidans tillgänglighetsanpassning.',
+  width: 700,
+  height: 400,
   mediaQueries: [
+    {
+        minWidth: 768,
+        src: '/images/temp/ctaImage2_700x400.webp',
+      },
+      {
+        minWidth: 460,
+        src: '/images/temp/ctaImage2_700x525.webp',
+      },
   ],
 };
 const tempImage3 = {
-  src: '/images/temp/ctaImage33.jpg',
-  // src: '/images/temp/ctaImage32.jpg',
-  // src: '/images/temp/ctaImage1.jpg',
-  // src: '/images/temp/temp3.jpg',
-  alt: 'Ljus, vit bild av flaska och växt.',
-  width: 1920,
-  height: 1280,
-  caption: "Foto: Deanna Alys, från unsplash.com",
-  mediaQueries: [
-  ],
+    src: '/images/temp/ctaImage3_390x291.webp',
+    alt: 'Del av sidan "sajtbygget", delen handlar om optimering av sidan.',
+    width: 700,
+    height: 400,
+    mediaQueries: [
+      {
+          minWidth: 768,
+          src: '/images/temp/ctaImage3_700x400.webp',
+        },
+        {
+          minWidth: 460,
+          src: '/images/temp/ctaImage3_700x525.webp',
+        },
+    ],
 };
 
 const array = [
@@ -62,7 +82,7 @@ const ButtonImage: React.FC<IButtonImageProps> = ({imageArray = array, href="/sa
       }, 5000)
     }, [active]);
 
-    
+
 
       const props = useSpring({
           to: {r: 0, posX: -2, posY: 0},
@@ -103,8 +123,8 @@ const ButtonImage: React.FC<IButtonImageProps> = ({imageArray = array, href="/sa
       // onMouseEnter={() => setHovered(true)}
       // onMouseLeave={() => setHovered(false)}
       >
-      
-      
+
+
       <animated.div
           style={{scale}}
           className={styles["ButtonImage__Content"] + " " + styles["ButtonImage__Content--Desktop"]}

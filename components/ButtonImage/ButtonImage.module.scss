@@ -10,124 +10,121 @@
   position: relative;
   // overflow: hidden;
 
-  
-  &__Content{
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  cursor: pointer;
-  display: block;
-  box-shadow: $boxShadowCard;
-  transition: box-shadow $transitionSlow;
-  will-change: transform;
-  padding-top: 75.25%;
+  &__Content {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    box-shadow: $boxShadowCard;
+    transition: box-shadow $transitionSlow;
+    will-change: transform;
+    padding-top: 75%;
 
-  @include media(tablet){
-    padding-top: 56.25%;
-  }
-
-  &--Desktop{
-    display: none;
-    @include media(tablet){
-      display: block;
+    @include media(tablet) {
+      padding-top: 56.25%;
     }
-  }
 
-  &--Mobile{
-    @include media(tablet){
+    &--Desktop {
       display: none;
+      @include media(tablet) {
+        display: block;
+      }
     }
-  }
 
-  &:hover:not(.ButtonImage__Content--Mobile) {
-    box-shadow: $boxShadowCardHover;
+    &--Mobile {
+      @include media(tablet) {
+        display: none;
+      }
+    }
+
+    &:hover:not(.ButtonImage__Content--Mobile) {
+      box-shadow: $boxShadowCardHover;
+
+      &::before {
+        transform: scale(1.2) translate(7%, -15%);
+      }
+      &::after {
+        transform: scale(1) translate(-24%, 30%) rotate(-15deg);
+      }
+    }
+
+    &--Mobile.ButtonImage__Content::before {
+      transform: scale(1.3) translate(18%, -15%);
+    }
 
     &::before {
-      transform: scale(1.2) translate(7%, -15%);
+      content: '';
+      // content: url('#{$patternPath}ctaWaveRight.svg');
+      // border: 10px solid blue;
+      position: absolute;
+      bottom: -10%;
+      left: -10%;
+      width: 100%;
+      height: 100%;
+      // min-height: 20rem;
+      // background-image: url('#{$patternPath}ctaWaveRight.svg');
+      // background-image: url('#{$patternPath}ctaWaveBlackLB.svg');
+      // background-image: url('#{$patternPath}ctaWavePrimaryLB.svg');
+      // background-image: url('#{$patternPath}ctaWaveWhiteLB.svg');
+      background-image: url('#{$patternPath}ctaWaveWhiteLBDS.svg');
+      z-index: 3;
+      display: block;
+      background-position: bottom left;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: scale(0.9) translate(5%, 0%);
+      // transform: scale(.8) translate(0%, 5%);
+      will-change: transform;
+      transition: all $transitionNormal;
+
+      // border: 1px solid red;
+
+      // &:hover {
+      //   transform: scale(1);
+      //   transform: translate(9%, -10%) !important;
+      //   border: 10px solid red;
+      // }
+      // border: 1px solid red;
+
+      //   background-image: url('#{$patternPath}topWave.svg');
     }
+
     &::after {
-      transform: scale(1) translate(-24%, 30%) rotate(-15deg);
+      content: '';
+      // content: url('#{$patternPath}ctaWaveRight.svg');
+      // border: 10px solid blue;
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+      width: 100%;
+      height: 100%;
+      // min-height: 20rem;
+      // background-image: url('#{$patternPath}ctaWaveRight.svg');
+      // background-image: url('#{$patternPath}ctaWaveSecRT3.svg');
+      background-image: url('#{$patternPath}ctaWaveSecRT3DS.svg');
+      z-index: 3;
+      display: block;
+      background-position: top right;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transition: all $transitionNormal;
+      // transform: scale(1);
+
+      @include media(s) {
+        bottom: 15%;
+        left: 15%;
+        // transform: scale(.5);
+      }
+      @include media(tablet) {
+        bottom: 30%;
+        left: 30%;
+        transform: scale(0.5);
+      }
     }
   }
 
-  &--Mobile.ButtonImage__Content::before{
-    transform: scale(1.3) translate(18%, -15%);
-  }
-
-  &::before {
-    content: '';
-    // content: url('#{$patternPath}ctaWaveRight.svg');
-    // border: 10px solid blue;
-    position: absolute;
-    bottom: -10%;
-    left: -10%;
-    width: 100%;
-    height: 100%;
-    // min-height: 20rem;
-    // background-image: url('#{$patternPath}ctaWaveRight.svg');
-    // background-image: url('#{$patternPath}ctaWaveBlackLB.svg');
-    // background-image: url('#{$patternPath}ctaWavePrimaryLB.svg');
-    // background-image: url('#{$patternPath}ctaWaveWhiteLB.svg');
-    background-image: url('#{$patternPath}ctaWaveWhiteLBDS.svg');
-    z-index: 3;
-    display: block;
-    background-position: bottom left;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transform: scale(.9) translate(5%, 0%);
-    // transform: scale(.8) translate(0%, 5%);
-    will-change: transform;
-    transition: all $transitionNormal;
-
-    
-    // border: 1px solid red;
-
-    // &:hover {
-    //   transform: scale(1);
-    //   transform: translate(9%, -10%) !important;
-    //   border: 10px solid red;
-    // }
-    // border: 1px solid red;
-
-    //   background-image: url('#{$patternPath}topWave.svg');
-  }
-
-  &::after{
-    content: '';
-    // content: url('#{$patternPath}ctaWaveRight.svg');
-    // border: 10px solid blue;
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    width: 100%;
-    height: 100%;
-    // min-height: 20rem;
-    // background-image: url('#{$patternPath}ctaWaveRight.svg');
-    // background-image: url('#{$patternPath}ctaWaveSecRT3.svg');
-    background-image: url('#{$patternPath}ctaWaveSecRT3DS.svg');
-    z-index: 3;
-    display: block;
-    background-position: top right;
-    background-size: contain;
-    background-repeat: no-repeat;
-    transition: all $transitionNormal;
-    // transform: scale(1);
-
-    @include media(s){
-      bottom: 15%;
-      left: 15%;
-      // transform: scale(.5);
-    }
-    @include media(tablet){
-      bottom: 30%;
-      left: 30%;
-      transform: scale(.5);
-    }
-  }
-
-  }
-
-  &__Link{
+  &__Link {
     position: absolute;
     top: 0;
     left: 0;
@@ -141,10 +138,10 @@
     text-decoration: none;
     // border: 1px solid green;
 
-    &:visited, 
-    &:focus, 
-    &:active, 
-    &:hover{
+    &:visited,
+    &:focus,
+    &:active,
+    &:hover {
       color: $colorBlack !important;
     }
 
@@ -153,105 +150,99 @@
     // }
   }
 
-  &__LinkTextWrapper{
+  &__LinkTextWrapper {
     position: relative;
     transition: all $transitionNormal;
     // border: 1px solid red;
-    
+
     display: flex;
     flex-direction: column;
     transform: translate(0, -40%);
     // border: 1px solid red;
-    
+
     padding-left: $spacingM;
-    
+
     width: 75%;
-    @include media(xs){
+    @include media(xs) {
       transform: translate(0, -10%);
       width: 65%;
       padding-bottom: $spacingXl;
     }
-    
-    @include media(s){
+
+    @include media(s) {
       transform: translate(0, -10%);
       width: 65%;
       padding-bottom: $spacingS;
     }
 
-    @include media(ms){
+    @include media(ms) {
       transform: translate(0, -10%);
       width: 55%;
       padding-bottom: $spacingL;
       padding-left: $spacingXl;
     }
-    
 
-    @include media(tablet){
+    @include media(tablet) {
       padding-left: $spacingXl;
       width: 45%;
       transform: translate(0, 25%);
     }
 
-    .ButtonImage__Content--Desktop:hover &{
+    .ButtonImage__Content--Desktop:hover & {
       transform: translate(0, -10%);
     }
   }
 
-  &__LinkText{
-    
+  &__LinkText {
     @extend %h2;
     color: $colorBlack !important;
-    
-    
-    @include media(xs){
+
+    @include media(xs) {
       padding-bottom: $spacingS;
       display: block;
     }
-    
-    @include media(tablet){
+
+    @include media(tablet) {
       padding-bottom: $spacingM;
     }
-    
-    
-    &--Active{
+
+    &--Active {
       @extend %bodySmall;
       display: none;
       color: $colorBlack !important;
-      
-      @include media(s){
+
+      @include media(s) {
         padding-bottom: $spacingS;
         display: block;
       }
-      
-      .ButtonImage__Content--Desktop &{
+
+      .ButtonImage__Content--Desktop & {
         transition: all $transitionQuick;
         opacity: 0;
       }
 
-      .ButtonImage__Content:hover &{
+      .ButtonImage__Content:hover & {
         opacity: 1;
       }
     }
-
   }
-
 
   // picture{
   //   &:last-child{
   //     opacity: 0;
   //   }
   // }
-  
-  &__ImageWrapper{
+
+  &__ImageWrapper {
     transition: opacity $transitionSlow;
     opacity: 0;
-    
-    &--Active{
+
+    &--Active {
       opacity: 1;
     }
   }
 
-  &__Arrow{
+  &__Arrow {
     // transform: translate(-2rem, 0);
     transition: transform $transitionNormal;
     position: absolute;
@@ -265,11 +256,11 @@
     // border: 1px solid yellow;
     z-index: 4;
 
-    .ButtonImage__Content--Desktop:hover &{
+    .ButtonImage__Content--Desktop:hover & {
       // width: 8rem;
       transform: scale(4.5);
       // transform: scale(4.5) translate(-1rem, .5rem);
-      
+
       // height: 5rem;
     }
   }
