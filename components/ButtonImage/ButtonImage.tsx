@@ -173,7 +173,7 @@ const ButtonImage: React.FC<IButtonImageProps> = ({imageArray = array, href="/sa
               </a>
             </Link>
             {!!imageArray?.length && imageArray.map((image, idx)  => (
-              <div aria-hidden="true" className={classNames(styles["ButtonImage__ImageWrapper"], {[styles["ButtonImage__ImageWrapper--Active"]] : active === idx })}>
+              <div key={idx} aria-hidden="true" className={classNames(styles["ButtonImage__ImageWrapper"], {[styles["ButtonImage__ImageWrapper--Active"]] : active === idx })}>
                 <Image {...image} />
               </div>
             ))}

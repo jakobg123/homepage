@@ -7,11 +7,11 @@
   src: local(''),
     // url('/fonts/Quicksand2/Quicksand-Regular.eot?#iefix')
     //   format('embedded-opentype'),
-    // /* IE6-IE8 */ url('/fonts/Quicksand2/Quicksand-Regular.woff2')
-    /* IE6-IE8 */ url('/fonts/Quicksand2/quicksand-regular-webfont.woff2')
+    /* IE6-IE8 */ url('/fonts/Quicksand2/Quicksand-Regular.woff2')
+    // /* IE6-IE8 */ url('/fonts/Quicksand2/quicksand-regular-webfont.woff2')
       format('woff2'),
-    /* Super Modern Browsers */ url('/fonts/quicksand-regular-webfont.woff')
-    // /* Super Modern Browsers */ url('/fonts/Quicksand2/Quicksand-Regular.woff')
+    // /* Super Modern Browsers */ url('/fonts/quicksand-regular-webfont.woff')
+    /* Super Modern Browsers */ url('/fonts/Quicksand2/Quicksand-Regular.woff')
       format('woff'),
     /* Modern Browsers */ url('/fonts/Quicksand2/Quicksand-Regular.ttf')
       format('truetype');
