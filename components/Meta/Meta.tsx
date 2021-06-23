@@ -28,7 +28,8 @@ const Meta: React.FC<IMetaProps> = ({
                 rel="preload"
                 href="/fonts/Quicksand2/Quicksand-Regular.woff2"
                 as="font"
-                crossOrigin=""
+                type="font/woff2"
+                crossOrigin="anonymous"
             />
             {/* {page === "construction" && (<link
                 rel="preload"
