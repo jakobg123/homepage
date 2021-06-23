@@ -26,7 +26,8 @@ const Meta: React.FC<IMetaProps> = ({
             />
             <link
                 rel="preload"
-                href="/fonts/Quicksand2/Quicksand-Regular.woff2"
+                href="/fonts/Quicksand2/quicksand-regular-webfont.woff2"
+                // href="/fonts/Quicksand2/Quicksand-Regular.woff2"
                 as="font"
                 type="font/woff2"
                 crossOrigin="anonymous"
