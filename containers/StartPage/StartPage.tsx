@@ -2,12 +2,14 @@ import React from "react";
 import styles from './StartPage.module.scss';
 import classNames from 'classnames';
 import dynamic from "next/dynamic";
+import useWindowSize from "../../utils/Hooks/useWindowSize";
 
 import { useState, useEffect } from 'react';
 
 import Button from '../../components/Button';
 import Internship from "../../components/Internship";
 const ButtonImage = dynamic(() => import("../../components/ButtonImage"));
+const ButtonImageMobile = dynamic(() => import("../../components/ButtonImageMobile"));
 // import ButtonImage from "../../components/ButtonImage";
 // const Internship = dynamic(() => import("../../components/Internship"));
 
@@ -36,6 +38,9 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
     });
 
     const [lightTheme, setLightTheme] = useState(false);
+
+    const [screenWidth] = useWindowSize();
+    console.log("🚀 ~ file: StartPage.tsx ~ line 42 ~ screenWidth", screenWidth)
 
     useEffect(() => {
         inView ? setLightTheme(false) : setLightTheme(true);
@@ -105,7 +110,12 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                         
                     </div>
                     <div className={styles['StartPage__ButtonImageWrapper']}>
+                        {screenWidth > 767 ? (
                             <ButtonImage />
+                            ) : (
+                            <ButtonImageMobile />
+                        )
+                    }
                     </div>
                 </div>
             </div>

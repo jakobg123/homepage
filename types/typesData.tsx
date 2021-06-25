@@ -12,7 +12,7 @@ export interface IInternshipData {
 export interface IKnowledge {
     type: IIconProps['type'];
     title: string;
-    number: string | number;
+    number: number;
     html: string;
     id: number;
 }

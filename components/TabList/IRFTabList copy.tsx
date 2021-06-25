@@ -6,16 +6,12 @@ import classNames from 'classnames';
 import Icon from '../Icon';
 import { IKnowledge } from "../../types/typesData";
 
-
-
 interface IInfoContainerProps {
     info: IKnowledge[];
 }
 
 const InfoContainer: React.FC<IInfoContainerProps> = ({ info }) => {
     const [show, setShow] = useState(false);
-    
-    
 
     useEffect(() => {
         if (show) {
@@ -57,8 +53,6 @@ interface ITabListState {
 const TabList: React.FC<ITabListProps> = ({title, dark = false, knowledge}) => {
     const [currentKnowledge, setCurrentKnowledge] = useState([]);
     const prevId = useRef<number>();
-    
-    // console.log("🚀 ~ file: TabList.tsx ~ line 17 ~ windowSize", windowSize)
     // private prevId: React.MutableRefObject<number>;
 
     // constructor(props: ITabListProps) {

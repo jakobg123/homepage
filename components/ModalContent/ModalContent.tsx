@@ -21,9 +21,9 @@ const ModalContent: React.FC<IModalContentProps> = ({ image, text, title, fullSi
     imageWidthAndPosition = { width: "90%" }
   }
 
-  const portrait: boolean = image.width < image.height;
+  const portrait: boolean = image && image.width < image.height;
 
-  const styling = { paddingTop: `${image.height / image.width * 100}%` };
+  const styling = image && { paddingTop: `${image.height / image.width * 100}%` };
 
   let bothTextAndImage = title || text ? styles["ModalContent--TextAndImage"] : "";
   // const styling = (!title || !text) ? { paddingTop: `95%` } : { paddingTop: `${image.height / image.width * 100}%` }

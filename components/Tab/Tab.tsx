@@ -1,27 +1,35 @@
-import { memo, useState, useMemo } from 'react';
+import { memo, useState, useMemo, useContext } from 'react';
 import DropDown from '../DropDown';
 import styles from './Tab.module.scss';
 import Icon from '../Icon';
 import classNames from 'classnames';
+import ModalContext from "../../utils/context/Modal.context";
 
 import { IIconProps } from "../../types/types";
 
 interface ITabProps {
     type: IIconProps['type'];
-    number: number | string;
+    number: number;
     html: string;
     title: string;
     dark: boolean;
     id: number;
-    onClick: (id: number) => void;
+    onClick?: (id: number) => void;
+    mobile?: boolean;
 }
 
-const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick }) => {
+const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick, mobile = false }) => {
     const [isExpanded, setIsExpanded] = useState(false)
     const handleOnClick = (id: number) => {
+        if(mobile){
+            setModalContent({title: type, text: html});
+            return;
+        }
+
         setIsExpanded(!isExpanded);
-        onClick(id);
+        onClick && onClick(id);
     }
+    const { setModalContent } = useContext(ModalContext);
 
     const icon = useMemo(() => (
         <Icon type={type}
@@ -62,7 +70,7 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
                         /10
                         </p>
                 </div>
-                {!!html && (
+                {/* {!!html && (
                     <div className={styles['Tab__DropDownWrapper']}>
                         <DropDown
                             zIndex={1001 - id}
@@ -72,7 +80,7 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
                             type={type}
                         />
                     </div>
-                )}
+                )} */}
             </div>
         </div>
     );
