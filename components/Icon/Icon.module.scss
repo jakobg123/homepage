@@ -29,6 +29,16 @@
     fill: $colorPrimary;
   }
 
+  &--Secondary svg {
+    color: $colorSecondary;
+    fill: $colorSecondary;
+  }
+
+  &--SecondaryLight svg {
+    color: $colorSecondaryLight;
+    fill: $colorSecondaryLight;
+  }
+
   &--Black svg {
     color: $colorBlack;
     fill: $colorBlack;

@@ -3,13 +3,9 @@
 @import '../../styles/extensions.scss';
 
 .ButtonImage {
-  // border: 1px solid yellow;
-  // padding-top: 56.25%;
   width: 100%;
-
   position: relative;
   will-change: transform;
-  // overflow: hidden;
 
   &__Content {
     position: relative;

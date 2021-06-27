@@ -15,6 +15,7 @@ import { IMainNavProps } from "../../components/MainNav/MainNav";
 import { IMobileNavProps } from '../../components/MobileNavButton/MobileNav';
 
 import { ILogoData, IKnowledgeData, IStartPageData } from "../../types/typesData";
+import { IIconProps } from "../../types/types";
 import { IHeaderProps } from '../../components/Header/Header';
 import { IFooter } from "../../components/Footer/Footer";
 
@@ -81,7 +82,7 @@ const BaseContainer: React.FC<BaseContainerProps> = ({
     const [toggleModalOpen, setToggleModalOpen] = useState(false);
     const [fadeOutElement, setFadeOutElement] = useState(false);
     const [hideElement, setHideElement] = useState(false);
-    const [modalContent, setModalContent] = useState({ image: null, text: "", title: "" });
+    const [modalContent, setModalContent] = useState({ image: null, text: "", title: "", html: "", icon: "" });
 
     const modalState = { modalOpen, setModalOpen, toggleModalOpen, setToggleModalOpen, fadeOutElement, setFadeOutElement, hideElement, setHideElement, modalContent, setModalContent };
 
@@ -118,7 +119,7 @@ const BaseContainer: React.FC<BaseContainerProps> = ({
                 <Footer {...footerData} />
             </footer>
             <Modal setOpen={setModalOpen} open={modalOpen}>
-                {(!!modalContent.image || !!modalContent.text || !!modalContent.title) && <ModalContent {...modalContent} />}
+                {(!!modalContent.image || !!modalContent.text || !!modalContent.title || !!modalContent.html || !!modalContent.icon) && <ModalContent {...modalContent} />}
                 {/* {(!!modalContent.image || !!modalContent.text || !!modalContent.title) && <ModalContent image={modalContent.image} />} */}
             </Modal>
         </div>

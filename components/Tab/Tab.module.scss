@@ -201,6 +201,35 @@
     }
   }
 
+  &__ReadMoreWrapper{
+    // border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: $spacingS;
+  }
+
+  &__ReadMoreText{
+    @extend %h4;
+    color: $colorSecondary;
+    padding-bottom: 0;
+    
+    &--Light{
+      color: $colorSecondaryLight;
+    }
+
+    // border: 1px solid red;
+    // display: flex;
+  }
+
+  &__ReadMoreIconWrapper{
+    // border: 1px solid red;
+    display: flex;
+    width: 2.5rem;
+    margin-left: $spacingS;
+    padding-top: 3px;
+  }
+
   &__Height {
     height: 12rem;
     width: 12rem;

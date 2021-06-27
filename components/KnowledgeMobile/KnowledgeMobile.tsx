@@ -46,13 +46,13 @@ interface ITabListProps {
     dark?: boolean;
 }
 
-interface ITabListState {
-    currentKnowledge: IKnowledge[];
-}
+// interface ITabListState {
+//     currentKnowledge: IKnowledge[];
+// }
 
 const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledge}) => {
-    const [currentKnowledge, setCurrentKnowledge] = useState([]);
-    const prevId = useRef<number>();
+    // const [currentKnowledge, setCurrentKnowledge] = useState([]);
+    // const prevId = useRef<number>();
     
     // const handleClick = ((id: number) => {
 
@@ -88,14 +88,14 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
                             ))}
                     </ul>
                 </div>
-                <div
+                {/* <div
                     className={classNames(styles['TabList__InfoContainer'], {
                         [styles['TabList__InfoContainer--Dark']]: dark,
-                    })}>
+                    })}> */}
                     {/* {!!currentKnowledge.length ? (
                         <InfoContainer info={currentKnowledge} key={currentKnowledge[0].id} />
                     ) : ( */}
-                        <div
+                        {/* <div
                             className={classNames(styles['TabList__InfoStartWrapper'], {
                                 [styles['TabList__InfoStartWrapper--Dark']]: dark,
                             })}>
@@ -112,9 +112,9 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
                                     <Icon type={'arrowPrev'} color={'Black'} />
                                 )}
                             </div>
-                        </div>
+                        </div> */}
                     {/* )} */}
-                </div>
+                {/* </div> */}
             </div>
         );
 

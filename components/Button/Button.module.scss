@@ -64,8 +64,8 @@
     color: $colorSecondary;
 
     svg {
-      color: $colorSecondary;
-      fill: $colorSecondary;
+      color: $colorSecondary !important;
+      fill: $colorSecondary !important;
     }
 
     &.Button::after {

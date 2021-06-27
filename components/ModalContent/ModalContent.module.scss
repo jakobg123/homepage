@@ -73,6 +73,17 @@
     margin: 0 auto;
     // border: 1px solid red;
   }
+  
+  &__IconWrapper{
+    // border: 1px solid red;
+    // max-height: 25%;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    padding-bottom: $spacingL;
+    max-width: 50%;
+    margin: 0 auto;
+  }
 
   &__TextWrapper {
     position: relative;
@@ -112,5 +123,11 @@
   &__Text {
     @extend %body;
     color: $colorPrimary;
+
+    a{
+      @extend %linkDark;
+    }
   }
+
+  
 }

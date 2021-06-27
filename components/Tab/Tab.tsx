@@ -20,16 +20,19 @@ interface ITabProps {
 
 const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick, mobile = false }) => {
     const [isExpanded, setIsExpanded] = useState(false)
-    const handleOnClick = (id: number) => {
+    const { setModalContent } = useContext(ModalContext);
+
+    const handleOnClick = (id: number, type: IIconProps['type']) => {
         if(mobile){
-            setModalContent({title: type, text: html});
+            // setModalContent({title: type, text: html});
+            setModalContent({title: title, html: html, icon: type});
             return;
         }
 
         setIsExpanded(!isExpanded);
         onClick && onClick(id);
     }
-    const { setModalContent } = useContext(ModalContext);
+    
 
     const icon = useMemo(() => (
         <Icon type={type}
@@ -43,7 +46,7 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
         <div className={classNames(styles['Tab'], { [styles['Tab--Dark']]: dark })}>
             <button
                 className={styles['Tab__Button']}
-                onClick={() => handleOnClick(id)}
+                onClick={() => handleOnClick(id, type)}
                 aria-expanded={isExpanded ? true : false}
                 aria-controls={`info-about-${type}`}>
 
@@ -69,6 +72,16 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
                         </strong>
                         /10
                         </p>
+                </div>
+                <div aria-hidden={true} className={styles['Tab__ReadMoreWrapper']}>
+                    <div className={classNames(styles['Tab__ReadMoreText'], {[styles['Tab__ReadMoreText--Light']]: dark})}>
+                            Läs mer
+                    </div>                        
+                    <div className={styles['Tab__ReadMoreIconWrapper']}>
+                        <Icon type={"arrowNext"}
+                            color={dark ? "SecondaryLight" : "Secondary"}
+                        />
+                    </div>                        
                 </div>
                 {/* {!!html && (
                     <div className={styles['Tab__DropDownWrapper']}>

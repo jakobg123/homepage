@@ -28,7 +28,7 @@ export interface IIconProps {
     | "typescript"
     | "wagtail"
     | "wordpress";
-    color?: "White" | "Black" | "Yellow" | "Primary";
+    color?: "White" | "Black" | "Yellow" | "Primary" | "Secondary" | "SecondaryLight";
     modifier?: any[];
     hoverEffect?: boolean;
 }

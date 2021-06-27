@@ -42,6 +42,14 @@
     background: none;
     transition: background-color $transitionQuick;
 
+    svg {
+      height: 100%;
+      width: 100%;
+      fill: $colorBlack !important;
+      color: $colorBlack !important;
+      transition: fill $transitionQuick;
+    }
+
     @include media(tablet) {
       top: 5rem;
       right: 7rem;
@@ -52,20 +60,8 @@
       background: $colorBlack;
 
       svg {
-        fill: $colorPrimary;
+        fill: $colorPrimary !important;
       }
-    }
-    // z-index: 100000;
-    svg {
-      height: 100%;
-      width: 100%;
-      fill: $colorBlack;
-      transition: fill $transitionQuick;
-      //   color: $colorPrimary;
-      //   .Modal__Close:hover &,
-      //   .Modal__Close:focus & {
-      //     fill: $colorPrimary;
-      //   }
     }
   }
 
