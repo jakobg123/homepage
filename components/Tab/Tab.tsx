@@ -30,7 +30,6 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
 
     const handleOnClick = (id: number, type: IIconProps['type']) => {
         if(mobile){
-            // setModalContent({title: type, text: html});
             setModalContent({title: title, html: html, icon: type});
             return;
         }
