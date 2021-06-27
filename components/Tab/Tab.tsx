@@ -1,9 +1,10 @@
 import { memo, useState, useMemo, useContext } from 'react';
-import DropDown from '../DropDown';
+// import DropDown from '../DropDown';
 import styles from './Tab.module.scss';
 import Icon from '../Icon';
 import classNames from 'classnames';
 import ModalContext from "../../utils/context/Modal.context";
+import { useInView } from 'react-intersection-observer';
 
 import { IIconProps } from "../../types/types";
 
@@ -16,11 +17,16 @@ interface ITabProps {
     id: number;
     onClick?: (id: number) => void;
     mobile?: boolean;
+    showIcon?: boolean;
 }
 
-const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick, mobile = false }) => {
+const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick, mobile = false, showIcon = false }) => {
     const [isExpanded, setIsExpanded] = useState(false)
     const { setModalContent } = useContext(ModalContext);
+    // const { ref, inView, entry } = useInView({
+    //     threshold: 0.05,
+    //     triggerOnce: true,
+    // });
 
     const handleOnClick = (id: number, type: IIconProps['type']) => {
         if(mobile){
@@ -32,7 +38,7 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
         setIsExpanded(!isExpanded);
         onClick && onClick(id);
     }
-    
+
 
     const icon = useMemo(() => (
         <Icon type={type}
@@ -58,7 +64,8 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
             <span
                 className={styles['Tab__Overlay']}></span>
             <div className={styles['Tab__IconWrapper']}>
-                {icon}
+                {(!!mobile && !!showIcon) && icon}
+                {!mobile && icon}
             </div>
             <div className={styles['Tab__TextAndDropDownWrapper']}>
                 <div className={styles['Tab__TextWrapper']}>
@@ -76,12 +83,12 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
                 <div aria-hidden={true} className={styles['Tab__ReadMoreWrapper']}>
                     <div className={classNames(styles['Tab__ReadMoreText'], {[styles['Tab__ReadMoreText--Light']]: dark})}>
                             Läs mer
-                    </div>                        
+                    </div>
                     <div className={styles['Tab__ReadMoreIconWrapper']}>
                         <Icon type={"arrowNext"}
                             color={dark ? "SecondaryLight" : "Secondary"}
                         />
-                    </div>                        
+                    </div>
                 </div>
                 {/* {!!html && (
                     <div className={styles['Tab__DropDownWrapper']}>

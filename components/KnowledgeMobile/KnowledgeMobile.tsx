@@ -5,6 +5,7 @@ import styles from './KnowledgeMobile.module.scss';
 import classNames from 'classnames';
 import Icon from '../Icon';
 import { IKnowledge } from "../../types/typesData";
+import { useInView } from 'react-intersection-observer';
 
 // interface IInfoContainerProps {
 //     info: IKnowledge[];
@@ -12,7 +13,7 @@ import { IKnowledge } from "../../types/typesData";
 
 // const InfoContainer: React.FC<IInfoContainerProps> = ({ info }) => {
 //     const [show, setShow] = useState(false);
-    
+
 //     useEffect(() => {
 //         if (show) {
 //             setShow(false);
@@ -51,9 +52,14 @@ interface ITabListProps {
 // }
 
 const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledge}) => {
+    const { ref, inView, entry } = useInView({
+        threshold: 0.05,
+        triggerOnce: true,
+    });
+    console.log("🚀 ~ file: KnowledgeMobile.tsx ~ line 56 ~ inView", inView)
     // const [currentKnowledge, setCurrentKnowledge] = useState([]);
     // const prevId = useRef<number>();
-    
+
     // const handleClick = ((id: number) => {
 
     //     if (prevId.current === id) {
@@ -66,6 +72,7 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
 
         return (
             <div
+                ref={ref}
                 className={classNames(styles['TabList'], {
                     [styles['TabList--Dark']]: dark,
                 })}>
@@ -78,11 +85,12 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
                         {!!knowledge.length &&
                             knowledge.map((item, index) => (
                                 <li key={index} className={styles['TabList__ListItem']} style={{ zIndex: 1001 - item.id }}>
-                                    <Tab 
-                                      {...item} 
-                                      dark={dark} 
+                                    <Tab
+                                      {...item}
+                                      dark={dark}
                                       // onClick={handleClick}
-                                      mobile 
+                                      mobile
+                                      showIcon={inView}
                                       key={index} />
                                 </li>
                             ))}
