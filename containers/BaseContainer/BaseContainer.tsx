@@ -72,8 +72,14 @@ interface BaseContainerState {
     hideElement: boolean;
     toggleModalOpen: (bool: boolean) => void;
     passContentToModal: (content: any) => void;
-    modalContent: any[];
+}
 
+interface IModalContentBaseContainerProps {
+        image: any;
+        title: string;
+        text: string;
+        html: string;
+        icon?: IIconProps["type"];
 }
 
 const BaseContainer: React.FC<BaseContainerProps> = ({
@@ -82,7 +88,7 @@ const BaseContainer: React.FC<BaseContainerProps> = ({
     const [toggleModalOpen, setToggleModalOpen] = useState(false);
     const [fadeOutElement, setFadeOutElement] = useState(false);
     const [hideElement, setHideElement] = useState(false);
-    const [modalContent, setModalContent] = useState({ image: null, text: "", title: "", html: "", icon: "" });
+    const [modalContent, setModalContent] = useState<IModalContentBaseContainerProps>({ image: null, text: "", title: "", html: "" });
 
     const modalState = { modalOpen, setModalOpen, toggleModalOpen, setToggleModalOpen, fadeOutElement, setFadeOutElement, hideElement, setHideElement, modalContent, setModalContent };
 

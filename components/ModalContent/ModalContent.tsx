@@ -12,7 +12,7 @@ interface IModalContentProps {
   title?: string;
   fullSize?: boolean;
   html?: string;
-  type?: IIconProps["type"];
+  icon?: IIconProps["type"];
 }
 
 const ModalContent: React.FC<IModalContentProps> = ({ image, text, title, fullSize = false, html, icon, }) => {
