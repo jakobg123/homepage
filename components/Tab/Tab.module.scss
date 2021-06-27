@@ -207,6 +207,10 @@
     align-items: center;
     justify-content: flex-end;
     padding-bottom: $spacingS;
+
+    @include media(desktop){
+      display: none;
+    }
   }
 
   &__ReadMoreText{
