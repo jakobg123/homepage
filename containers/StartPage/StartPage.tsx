@@ -35,6 +35,7 @@ export const Theme = React.createContext<boolean>(false);
 const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
     const [ref, inView] = useInView({
         threshold: 0,
+        triggerOnce: true,
     });
     
     const [lightTheme, setLightTheme] = useState(false);
