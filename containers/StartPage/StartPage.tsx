@@ -23,7 +23,7 @@ import { IImageProps, IMediaQueries } from '../../types/types';
 import { IKnowledgeData, IStartPageData } from "../../types/typesData";
 import { useInView } from 'react-intersection-observer';
 
-import TargetLinks from "../../utils/TargetLinks.context";
+// import TargetLinks from "../../utils/TargetLinks.context";
 
 interface IStartPageProps {
     knowledge: IKnowledgeData;
@@ -40,7 +40,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
     const [lightTheme, setLightTheme] = useState(false);
 
     const [screenWidth] = useWindowSize();
-    console.log("🚀 ~ file: StartPage.tsx ~ line 42 ~ screenWidth", screenWidth)
+    // console.log("🚀 ~ file: StartPage.tsx ~ line 42 ~ screenWidth", screenWidth)
 
     useEffect(() => {
         inView ? setLightTheme(false) : setLightTheme(true);

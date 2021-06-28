@@ -19,10 +19,10 @@ import { IIconProps } from "../../types/types";
 import { IHeaderProps } from '../../components/Header/Header';
 import { IFooter } from "../../components/Footer/Footer";
 
-import { withRouter, NextRouter } from 'next/router'
+// import { withRouter, NextRouter } from 'next/router'
 
-import { TargetLinksProvider } from "../../utils/TargetLinks.context";
-import PageContext from "../../utils/Page.context";
+// import { TargetLinksProvider } from "../../utils/TargetLinks.context";
+// import PageContext from "../../utils/Page.context";
 import ModalContext from "../../utils/context/Modal.context";
 import classNames from 'classnames';
 import Modal from "../../components/Modal";
