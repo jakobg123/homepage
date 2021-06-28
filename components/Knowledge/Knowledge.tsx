@@ -10,21 +10,23 @@ import useWindowSize from "../../utils/Hooks/useWindowSize";
 
 interface IKnowledgeProps {
     knowledge: IKnowledgeData;
+    screenWidth: number;
 }
 
-const Knowledge: React.FC<IKnowledgeProps> = ({ knowledge }) => {
+const Knowledge: React.FC<IKnowledgeProps> = ({ knowledge, screenWidth }) => {
     const { ref, inView, entry } = useInView({
         threshold: 0.05,
         triggerOnce: true,
     });
-    const windowSize = useWindowSize();
-    const winWidth = windowSize[0];
-    const winHeight = windowSize[1];
+    
+    // const windowSize = useWindowSize();
+    // const winWidth = windowSize[0];
+    // const winHeight = windowSize[1];
 
     return (
         <div className={styles['Knowledge']}>
 
-            {winWidth >= 1024 ? (
+            {screenWidth >= 1024 ? (
                 <>
                 <TabList knowledge={knowledge.frontend} title={'Frontend'} />
 

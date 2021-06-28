@@ -1,10 +1,12 @@
 import { memo, useState, useMemo, useContext } from 'react';
+import dynamic from "next/dynamic";
 // import DropDown from '../DropDown';
 import styles from './Tab.module.scss';
+// const Icon = dynamic(() => import('../Icon'));
 import Icon from '../Icon';
 import classNames from 'classnames';
 import ModalContext from "../../utils/context/Modal.context";
-import { useInView } from 'react-intersection-observer';
+// import { useInView } from 'react-intersection-observer';
 
 import { IIconProps } from "../../types/types";
 
@@ -21,6 +23,7 @@ interface ITabProps {
 }
 
 const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick, mobile = false, showIcon = false }) => {
+console.log("🚀 ~ file: Tab.tsx ~ line 26 ~ showIcon", showIcon)
     const [isExpanded, setIsExpanded] = useState(false)
     const { setModalContent } = useContext(ModalContext);
     // const { ref, inView, entry } = useInView({
@@ -84,9 +87,9 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
                             Läs mer
                     </div>
                     <div className={styles['Tab__ReadMoreIconWrapper']}>
-                        <Icon type={"arrowNext"}
+                        {!!showIcon && (<Icon type={"arrowNext"}
                             color={dark ? "SecondaryLight" : "Secondary"}
-                        />
+                        />)}
                     </div>
                 </div>
                 {/* {!!html && (
@@ -106,3 +109,4 @@ const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick
 };
 
 export default memo(Tab);
+

@@ -56,7 +56,6 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
         threshold: 0.05,
         triggerOnce: true,
     });
-    console.log("🚀 ~ file: KnowledgeMobile.tsx ~ line 56 ~ inView", inView)
     // const [currentKnowledge, setCurrentKnowledge] = useState([]);
     // const prevId = useRef<number>();
 
@@ -82,7 +81,7 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
                     })}>
                     <h4 className={styles['TabList__Title']}>{title}</h4>
                     <ul className={styles['TabList__List']}>
-                        {!!knowledge.length &&
+                        {(!!inView && !!knowledge.length) &&
                             knowledge.map((item, index) => (
                                 <li key={index} className={styles['TabList__ListItem']} style={{ zIndex: 1001 - item.id }}>
                                     <Tab
@@ -90,7 +89,8 @@ const KnowledgeMobile: React.FC<ITabListProps> = ({title, dark = false, knowledg
                                       dark={dark}
                                       // onClick={handleClick}
                                       mobile
-                                      showIcon={inView}
+                                    //   showIcon={inView}
+                                      showIcon={true}
                                       key={index} />
                                 </li>
                             ))}

@@ -36,11 +36,11 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
     const [ref, inView] = useInView({
         threshold: 0,
     });
-
+    
     const [lightTheme, setLightTheme] = useState(false);
 
     const [screenWidth] = useWindowSize();
-    // console.log("🚀 ~ file: StartPage.tsx ~ line 42 ~ screenWidth", screenWidth)
+    // const mobileViewport = screenWidth < 768 ? true : false;
 
     useEffect(() => {
         inView ? setLightTheme(false) : setLightTheme(true);
@@ -110,10 +110,10 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                         
                     </div>
                     <div className={styles['StartPage__ButtonImageWrapper']}>
-                        {screenWidth > 767 ? (
-                            <ButtonImage />
-                            ) : (
+                        {screenWidth < 768 ? (
                             <ButtonImageMobile />
+                            ) : (
+                            <ButtonImage />
                         )
                     }
                     </div>
@@ -155,7 +155,12 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                     })}>
 
                     <div className={styles['StartPage__KnowledgeWrapper']}>
-                        <Knowledge knowledge={knowledge} />
+                        {(screenWidth < 768 && !!inView) && (
+                            <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
+                        )}
+                        {(screenWidth >= 768) && (
+                            <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
+                        )}
                     </div>
 
                 </div>
