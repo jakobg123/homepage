@@ -1,0 +1,511 @@
+.StartPage__Title {
+  max-width: 95%;
+}
+
+@media (min-width: 640px) {
+  .StartPage__Title {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .StartPage__Title {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Title {
+    max-width: 100%;
+  }
+}
+
+.StartPage__Preamble {
+  max-width: 95%;
+}
+
+@media (min-width: 640px) {
+  .StartPage__Preamble {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Preamble {
+    max-width: 75%;
+  }
+}
+
+.StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em, .StartPage__Paragraph p, .StartPage__ParagraphPres p {
+  max-width: 62rem;
+}
+
+@media (min-width: 640px) {
+  .StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em, .StartPage__Paragraph p, .StartPage__ParagraphPres p {
+    max-width: 65rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em, .StartPage__Paragraph p, .StartPage__ParagraphPres p {
+    max-width: 70rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em, .StartPage__Paragraph p, .StartPage__ParagraphPres p {
+    max-width: 80rem;
+  }
+}
+
+.StartPage__Paragraph {
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .StartPage__Paragraph {
+    padding-bottom: 48px;
+  }
+}
+
+.StartPage__Paragraph p span {
+  display: inline-block;
+}
+
+.StartPage__Paragraph p:last-of-type {
+  padding-bottom: 0;
+}
+
+.StartPage__Title {
+  font-size: 4.209rem;
+  padding-bottom: 24px;
+  font-weight: 400;
+}
+
+@media (min-width: 500px) {
+  .StartPage__Title {
+    font-size: 5.063rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Title {
+    font-size: 7.594rem;
+    padding-bottom: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__Title {
+    font-size: 8.5rem;
+    padding-bottom: 48px;
+  }
+}
+
+.StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em {
+  font-size: 3.157rem;
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em {
+    font-size: 5.063rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em {
+    padding-bottom: 24px;
+  }
+}
+
+.StartPage__Paragraph h3, .StartPage__Preamble {
+  font-size: 2.369rem;
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Paragraph h3, .StartPage__Preamble {
+    font-size: 3.375rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__Paragraph h3, .StartPage__Preamble {
+    padding-bottom: 20px;
+  }
+}
+
+.StartPage__Paragraph h4 {
+  font-size: 1.777rem;
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Paragraph h4 {
+    font-size: 2.25rem;
+  }
+}
+
+.StartPage__Paragraph p, .StartPage__ParagraphPres p {
+  font-size: 1.777rem;
+}
+
+.StartPage__Paragraph p em, .StartPage__ParagraphPres p em {
+  font-style: italic;
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Paragraph p, .StartPage__ParagraphPres p {
+    font-size: 2.25rem;
+  }
+}
+
+.StartPage__Preamble a, .StartPage__ParagraphPres a, .StartPage__Paragraph a {
+  color: #232622;
+}
+
+.StartPage__Preamble a:hover, .StartPage__ParagraphPres a:hover, .StartPage__Paragraph a:hover, .StartPage__Preamble a:focus, .StartPage__ParagraphPres a:focus, .StartPage__Paragraph a:focus {
+  color: #bf3918;
+}
+
+.StartPage__Preamble {
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .StartPage__Preamble {
+    padding-bottom: 48px;
+  }
+}
+
+.StartPage__Preamble p {
+  padding-bottom: 8px;
+  letter-spacing: 0px;
+  line-height: 1.6;
+}
+
+.StartPage__Preamble p:last-of-type {
+  padding-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Preamble p {
+    padding-bottom: 16px;
+  }
+}
+
+.StartPage__WaveWrapper, .StartPage__Grid, .StartPage__TextWrapper, .StartPage__Background {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .StartPage__WaveWrapper, .StartPage__Grid, .StartPage__TextWrapper, .StartPage__Background {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__WaveWrapper, .StartPage__Grid, .StartPage__TextWrapper, .StartPage__Background {
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__WaveWrapper, .StartPage__Grid, .StartPage__TextWrapper, .StartPage__Background {
+    margin: 0 auto;
+    padding-left: 72px;
+    padding-right: 72px;
+    max-width: 144rem;
+  }
+}
+
+.StartPage__Title, .StartPage__Paragraph h2, .StartPage__ParagraphPres h2, .StartPage__Subtitle, .StartPage__Em, .StartPage__Paragraph h3, .StartPage__Preamble, .StartPage__Paragraph h4 {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.26;
+  font-family: "Quicksand", sans-serif;
+  word-break: break-word;
+}
+
+.StartPage__Paragraph p, .StartPage__ParagraphPres p {
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  font-family: "Quicksand", sans-serif;
+  word-break: break-word;
+  padding-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .StartPage__Paragraph p, .StartPage__ParagraphPres p {
+    padding-bottom: 16px;
+  }
+}
+
+.StartPage__Title {
+  z-index: 2;
+  position: relative;
+  word-break: break-word;
+  -webkit-hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
+}
+
+.StartPage__WaveWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.StartPage__WaveWrapper::after {
+  content: '';
+  position: absolute;
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -1px;
+  right: -1px;
+  left: -1px;
+  height: 50rem;
+  width: calc(100% + 2px);
+  z-index: 0;
+}
+
+.StartPage__Em {
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Em {
+    padding-bottom: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .StartPage__ParagraphPres {
+    max-width: 90%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__ParagraphPres {
+    max-width: 100%;
+  }
+}
+
+.StartPage__ParagraphPres p {
+  position: relative;
+  z-index: 10;
+}
+
+.StartPage__Title {
+  margin-top: -8rem;
+}
+
+@media (min-width: 500px) {
+  .StartPage__Title {
+    margin-top: -11rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .StartPage__Title {
+    margin-top: -13rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .StartPage__Title {
+    margin-top: -15rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__Title {
+    margin-top: -21rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__Title {
+    margin-top: -27rem;
+  }
+}
+
+.StartPage__EntryWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.StartPage__Block {
+  background-color: #f2f2f2;
+}
+
+.StartPage__WaveWrapper {
+  padding-top: 8px;
+  padding-bottom: 24px;
+}
+
+.StartPage__WaveWrapper::after {
+  background-image: url("/patterns/bottomWave.svg");
+}
+
+.StartPage__Paragraph {
+  position: relative;
+  z-index: 1;
+}
+
+.StartPage__Paragraph--Git {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .StartPage__Paragraph--Git {
+    padding-bottom: 48px;
+  }
+}
+
+.StartPage__ButtonWrapper {
+  position: relative;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.StartPage__ButtonWrapper a:last-of-type {
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .StartPage__ButtonWrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .StartPage__ButtonWrapper a:last-of-type {
+    margin-bottom: 0;
+  }
+  .StartPage__ButtonWrapper a:first-of-type {
+    display: inline-block;
+    margin-right: 32px;
+  }
+}
+
+.StartPage__TextWrapper {
+  padding-top: 72px;
+  position: relative;
+  z-index: 5;
+}
+
+.StartPage__Background {
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
+  will-change: transform;
+  background-color: #f2f2f2;
+  z-index: 1;
+}
+
+.StartPage__Background--White {
+  background-color: #f2f2f2;
+}
+
+.StartPage__Background--Black {
+  background-color: #232622;
+}
+
+.StartPage__Subtitle, .StartPage__Em {
+  display: block;
+}
+
+.StartPage__PresImageWrapper {
+  position: relative;
+  padding-right: 64px;
+  height: 13rem;
+  width: 13rem;
+  border-radius: 50%;
+  shape-outside: circle();
+  -o-object-fit: cover;
+     object-fit: cover;
+  float: right;
+  border: 5px solid #f2f2f2;
+  -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+@media (min-width: 640px) {
+  .StartPage__PresImageWrapper {
+    height: 20rem;
+    width: 20rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .StartPage__PresImageWrapper {
+    height: 25rem;
+    width: 25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .StartPage__PresImageWrapper {
+    height: 35rem;
+    width: 35rem;
+    top: -5rem;
+  }
+}
+
+.StartPage__PresImageWrapper::after {
+  content: '';
+  top: 0;
+  right: 0;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.StartPage__ButtonImageWrapper {
+  margin: 32px auto;
+  max-width: 70rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 768px) {
+  .StartPage__ButtonImageWrapper {
+    margin: 72px auto;
+  }
+}

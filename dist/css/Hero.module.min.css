@@ -1,0 +1,88 @@
+.Hero {
+  height: 0;
+  padding-top: 25rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.Hero--Construction.Hero {
+  padding-top: 35rem;
+}
+
+@media (min-width: 420px) {
+  .Hero {
+    padding-top: 29rem;
+  }
+}
+
+@media (min-width: 500px) {
+  .Hero {
+    padding-top: 37rem;
+  }
+}
+
+@media (min-width: 640px) {
+  .Hero {
+    padding-top: calc((837 / 1440) * 100%);
+  }
+  .Hero--Construction.Hero {
+    padding-top: calc((800 / 1440) * 100%);
+  }
+}
+
+.Hero img {
+  -o-object-position: 33% 10%;
+     object-position: 33% 10%;
+}
+
+.Hero::before {
+  content: '';
+  position: absolute;
+  background-image: url("/patterns/topWave.svg");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  bottom: -1px;
+  right: -1px;
+  left: -1px;
+  height: 100%;
+  min-height: 29rem;
+  width: calc(100% + 2px);
+  z-index: 2;
+}
+
+.Hero--Construction.Hero::before {
+  background-image: url("/patterns/topWave_Construction13.svg") !important;
+}
+
+.Hero--Construction img {
+  -o-object-position: 0% 25%;
+     object-position: 0% 25%;
+}
+
+.Hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  z-index: 1;
+  background: -webkit-gradient(linear, left bottom, left top, from(#f2e8df), color-stop(45%, rgba(0, 0, 0, 0.1)));
+  background: linear-gradient(to top, #f2e8df 0%, rgba(0, 0, 0, 0.1) 45%);
+}
+
+.Hero--Construction.Hero::after {
+  background: none;
+}
+
+.Hero__FocalPoint img {
+  -o-object-position: 33% 10% !important;
+     object-position: 33% 10% !important;
+}
+
+.Hero__FocalPoint--Construction img {
+  -o-object-position: 50% 20%;
+     object-position: 50% 20%;
+}

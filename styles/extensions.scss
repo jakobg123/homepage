@@ -223,7 +223,7 @@
 %richtext {
   font-size: 1.777rem;
   @extend %p;
-  @extend %links;
+  //   @extend %links;
 
   // padding-bottom: $spacingM;
 
@@ -265,14 +265,14 @@
 }
 
 %links {
-  a {
-    // color: $colorBlack;
+  //   a {
+  // color: $colorBlack;
 
-    // &:hover,
-    // &:focus {
-    // color: $linkHover;
-    // }
-  }
+  // &:hover,
+  // &:focus {
+  // color: $linkHover;
+  // }
+  //   }
 }
 
 %knowledgeTitle {

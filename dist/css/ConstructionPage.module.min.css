@@ -1,0 +1,476 @@
+.ConstructionPage__Title {
+  max-width: 95%;
+}
+
+@media (min-width: 640px) {
+  .ConstructionPage__Title {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Title {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Title {
+    max-width: 100%;
+  }
+}
+
+.ConstructionPage__Preamble {
+  max-width: 95%;
+}
+
+@media (min-width: 640px) {
+  .ConstructionPage__Preamble {
+    max-width: 85%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Preamble {
+    max-width: 75%;
+  }
+}
+
+.ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em, .ConstructionPage__Paragraph p {
+  max-width: 62rem;
+}
+
+@media (min-width: 640px) {
+  .ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em, .ConstructionPage__Paragraph p {
+    max-width: 65rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em, .ConstructionPage__Paragraph p {
+    max-width: 70rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em, .ConstructionPage__Paragraph p {
+    max-width: 80rem;
+  }
+}
+
+.ConstructionPage__Paragraph {
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Paragraph {
+    padding-bottom: 48px;
+  }
+}
+
+.ConstructionPage__Paragraph p span {
+  display: inline-block;
+}
+
+.ConstructionPage__Paragraph p:last-of-type {
+  padding-bottom: 0;
+}
+
+.ConstructionPage__Title, .ConstructionPage__LighthouseTitle {
+  font-size: 4.209rem;
+  padding-bottom: 24px;
+  font-weight: 400;
+}
+
+@media (min-width: 500px) {
+  .ConstructionPage__Title, .ConstructionPage__LighthouseTitle {
+    font-size: 5.063rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Title, .ConstructionPage__LighthouseTitle {
+    font-size: 7.594rem;
+    padding-bottom: 32px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ConstructionPage__Title, .ConstructionPage__LighthouseTitle {
+    font-size: 8.5rem;
+    padding-bottom: 48px;
+  }
+}
+
+.ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em {
+  font-size: 3.157rem;
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em {
+    font-size: 5.063rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em {
+    padding-bottom: 24px;
+  }
+}
+
+.ConstructionPage__Paragraph h3, .ConstructionPage__Preamble {
+  font-size: 2.369rem;
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Paragraph h3, .ConstructionPage__Preamble {
+    font-size: 3.375rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ConstructionPage__Paragraph h3, .ConstructionPage__Preamble {
+    padding-bottom: 20px;
+  }
+}
+
+.ConstructionPage__Paragraph h4 {
+  font-size: 1.777rem;
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Paragraph h4 {
+    font-size: 2.25rem;
+  }
+}
+
+.ConstructionPage__Paragraph p {
+  font-size: 1.777rem;
+}
+
+.ConstructionPage__Paragraph p em {
+  font-style: italic;
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Paragraph p {
+    font-size: 2.25rem;
+  }
+}
+
+.ConstructionPage__Preamble a {
+  color: #232622;
+}
+
+.ConstructionPage__Preamble a:hover, .ConstructionPage__Preamble a:focus {
+  color: #bf3918;
+}
+
+.ConstructionPage__Preamble {
+  padding-bottom: 32px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Preamble {
+    padding-bottom: 48px;
+  }
+}
+
+.ConstructionPage__Preamble p {
+  padding-bottom: 8px;
+  letter-spacing: 0px;
+  line-height: 1.6;
+}
+
+.ConstructionPage__Preamble p:last-of-type {
+  padding-bottom: 0;
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Preamble p {
+    padding-bottom: 16px;
+  }
+}
+
+.ConstructionPage__CarouselTitle {
+  color: #f2e8df;
+}
+
+.ConstructionPage__WaveWrapper, .ConstructionPage__Grid {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__WaveWrapper, .ConstructionPage__Grid {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__WaveWrapper, .ConstructionPage__Grid {
+    margin: 0 auto;
+    padding-left: 48px;
+    padding-right: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ConstructionPage__WaveWrapper, .ConstructionPage__Grid {
+    margin: 0 auto;
+    padding-left: 72px;
+    padding-right: 72px;
+    max-width: 144rem;
+  }
+}
+
+.ConstructionPage__Title, .ConstructionPage__LighthouseTitle, .ConstructionPage__Paragraph h2, .ConstructionPage__CarouselTitle, .ConstructionPage__Subtitle, .ConstructionPage__Em, .ConstructionPage__Paragraph h3, .ConstructionPage__Preamble, .ConstructionPage__Paragraph h4 {
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  line-height: 1.26;
+  font-family: "Quicksand", sans-serif;
+  word-break: break-word;
+}
+
+.ConstructionPage__Paragraph p {
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  line-height: 1.6;
+  font-family: "Quicksand", sans-serif;
+  word-break: break-word;
+  padding-bottom: 12px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Paragraph p {
+    padding-bottom: 16px;
+  }
+}
+
+.ConstructionPage__Title {
+  z-index: 2;
+  position: relative;
+  word-break: break-word;
+  -webkit-hyphens: manual;
+      -ms-hyphens: manual;
+          hyphens: manual;
+}
+
+.ConstructionPage__WaveWrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.ConstructionPage__WaveWrapper::after {
+  content: '';
+  position: absolute;
+  background-position: top;
+  background-size: contain;
+  background-repeat: no-repeat;
+  top: -1px;
+  right: -1px;
+  left: -1px;
+  height: 50rem;
+  width: calc(100% + 2px);
+  z-index: 0;
+}
+
+.ConstructionPage__Em {
+  padding-bottom: 16px;
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Em {
+    padding-bottom: 24px;
+  }
+}
+
+.ConstructionPage__Title {
+  margin-top: 0rem;
+}
+
+@media (min-width: 640px) {
+  .ConstructionPage__Title {
+    margin-top: -3rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Title {
+    margin-top: -5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ConstructionPage__Title {
+    margin-top: -7rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ConstructionPage__Title {
+    margin-top: -9rem;
+  }
+}
+
+.ConstructionPage__EntryWrapper {
+  position: relative;
+  z-index: 2;
+}
+
+.ConstructionPage__Block {
+  background-color: #f2e8df;
+}
+
+.ConstructionPage__Block--White {
+  background-color: #f2f2f2;
+}
+
+.ConstructionPage__Block--Dark {
+  background-color: #232622;
+}
+
+.ConstructionPage__WaveWrapper {
+  padding-top: 96px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__WaveWrapper {
+    padding-top: 144px;
+  }
+}
+
+.ConstructionPage__WaveWrapper--Design {
+  padding-top: 96px;
+  padding-bottom: 72px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__WaveWrapper--Design {
+    padding-top: 216px;
+    padding-bottom: 144px;
+  }
+}
+
+.ConstructionPage__WaveWrapper--Accessibility {
+  padding-bottom: 72px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__WaveWrapper--Accessibility {
+    padding-bottom: 216px;
+  }
+}
+
+.ConstructionPage__WaveWrapper--Optimization {
+  padding-top: 144px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__WaveWrapper--Optimization {
+    padding-top: 216px;
+  }
+}
+
+.ConstructionPage__WaveWrapper::after {
+  background-image: url("/patterns/topWave_Construction_Design3.svg");
+}
+
+.ConstructionPage__Block--Accessibility .ConstructionPage__WaveWrapper::after {
+  background-image: url("/patterns/topWave_Construction_Accessibility.svg");
+}
+
+.ConstructionPage__Block--Optimization .ConstructionPage__WaveWrapper::after {
+  background-image: url("/patterns/topWave_Construction_Optimization2.svg");
+}
+
+.ConstructionPage__Paragraph {
+  position: relative;
+  z-index: 3;
+  padding-bottom: 74px;
+}
+
+.ConstructionPage__CarouselWrapper {
+  padding-top: 24px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__CarouselWrapper {
+    padding-top: 4rem;
+  }
+}
+
+.ConstructionPage__CarouselTitle {
+  padding-bottom: 32px;
+}
+
+.ConstructionPage__Subtitle, .ConstructionPage__Em {
+  display: block;
+}
+
+.ConstructionPage__Preamble {
+  padding-bottom: 72px;
+}
+
+.ConstructionPage__Lighthouse {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  padding: 0 0 96px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__Lighthouse {
+    padding: 0 0 120px;
+  }
+}
+
+.ConstructionPage__LighthouseTitle {
+  padding-bottom: 32px;
+  text-align: center;
+}
+
+.EntryCentered--Dark .ConstructionPage__LighthouseTitle {
+  color: #f2e8df;
+}
+
+.ConstructionPage__OuterImageWrapper {
+  width: 100%;
+  max-width: 100rem;
+  height: auto;
+  -webkit-box-shadow: 2px 2px 6px;
+          box-shadow: 2px 2px 6px;
+}
+
+@media (min-width: 768px) {
+  .ConstructionPage__OuterImageWrapper {
+    width: 80%;
+  }
+}
+
+.ConstructionPage__LighthouseImageWrapper {
+  position: relative;
+  width: 100%;
+  padding-top: calc(1031 / 1920 * 100%);
+  height: 0;
+}
+
+.ConstructionPage__LighthouseImageWrapper img {
+  -o-object-position: 100% 0%;
+     object-position: 100% 0%;
+}

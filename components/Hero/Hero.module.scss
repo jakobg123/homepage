@@ -4,13 +4,22 @@
 
 .Hero {
   height: 0;
-  padding-top: 35rem;
+  padding-top: 25rem;
+  //   padding-top: 35rem;
   width: 100%;
   overflow: hidden;
   position: relative;
 
   &--Construction.Hero {
     padding-top: 35rem;
+  }
+
+  @include media(xs) {
+    padding-top: 29rem;
+  }
+
+  @include media(s) {
+    padding-top: 37rem;
   }
 
   @include media(ms) {

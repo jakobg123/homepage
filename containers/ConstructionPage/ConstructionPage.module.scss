@@ -14,22 +14,23 @@
     // position: relative;
     // word-break: break-word;
     // hyphens: manual;
-    margin-top: -2rem;
+    // margin-top: -2rem;
+    margin-top: 0rem;
 
     @include media(ms) {
-      margin-top: -5rem;
+      margin-top: -3rem;
     }
 
     @include media(tablet) {
-      margin-top: -7rem;
+      margin-top: -5rem;
     }
 
     @include media(desktop) {
-      margin-top: -10rem;
+      margin-top: -7rem;
     }
 
     @include media(xl) {
-      margin-top: -11rem;
+      margin-top: -9rem;
     }
   }
 
