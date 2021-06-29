@@ -37,6 +37,11 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
         threshold: 0,
         // triggerOnce: true,
     });
+    const [ref2, inView2] = useInView({
+        threshold: 0,
+        triggerOnce: true,
+    });
+    // console.log("🚀 ~ file: StartPage.tsx ~ line 41 ~ inView2", inView2)
     
     const [lightTheme, setLightTheme] = useState(false);
     // const [importKnowledgeMobile, setImportKnowledgeMobile] = useState(false);
@@ -131,7 +136,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                     styles['StartPage__Block'],
                     styles['StartPage__Block--White']
                 )}>
-                <div className={styles['StartPage__WaveWrapper']}>
+                <div className={styles['StartPage__WaveWrapper']} ref={ref2}>
                     <div
                         className={styles['StartPage__Paragraph'] + " " + styles['StartPage__Paragraph--Git']}
                         dangerouslySetInnerHTML={{ __html: ctaText }}></div>
@@ -161,7 +166,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
 
                     <div className={styles['StartPage__KnowledgeWrapper']}>
                         {/* {(screenWidth < 768 && !!importKnowledgeMobile) ? ( */}
-                        {(screenWidth < 768 && !!inView) && (
+                        {(screenWidth < 768 && !!inView2) && (
                             <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
                         )} 
                         {(screenWidth > 768) && (

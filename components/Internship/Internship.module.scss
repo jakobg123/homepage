@@ -20,6 +20,16 @@
     background-color: $colorPrimary;
   }
 
+  &--StartDark{
+    background-color: $colorBlack !important;
+  }
+
+  &__BackgroundRef{
+    height: 0px;
+    // border: 1px solid red;
+  }
+
+
   &__Grid {
     @extend %grid;
   }

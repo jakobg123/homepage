@@ -23,7 +23,6 @@ interface ITabProps {
 }
 
 const Tab: React.FC<ITabProps> = ({ type, number, html, title, dark, id, onClick, mobile = false, showIcon = false }) => {
-console.log("🚀 ~ file: Tab.tsx ~ line 26 ~ showIcon", showIcon)
     const [isExpanded, setIsExpanded] = useState(false)
     const { setModalContent } = useContext(ModalContext);
     // const { ref, inView, entry } = useInView({
