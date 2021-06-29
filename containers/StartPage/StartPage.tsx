@@ -161,11 +161,17 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
 
                     <div className={styles['StartPage__KnowledgeWrapper']}>
                         {/* {(screenWidth < 768 && !!importKnowledgeMobile) ? ( */}
-                        {(screenWidth < 768 && !!inView) ? (
+                        {(screenWidth < 768 && !!inView) && (
+                            <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
+                        )} 
+                        {(screenWidth > 768) && (
+                            <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
+                        )}
+                        {/* {(screenWidth < 768 && !!inView) ? (
                             <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
                         ) : (
                             <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
-                        )}
+                        )} */}
                     </div>
 
                 </div>
