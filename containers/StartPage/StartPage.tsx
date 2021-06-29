@@ -39,7 +39,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
     });
     
     const [lightTheme, setLightTheme] = useState(false);
-    const [importKnowledgeMobile, setImportKnowledgeMobile] = useState(false);
+    // const [importKnowledgeMobile, setImportKnowledgeMobile] = useState(false);
 
     const [screenWidth] = useWindowSize();
     // const mobileViewport = screenWidth < 768 ? true : false;
@@ -47,7 +47,7 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
     useEffect(() => {
         inView ? setLightTheme(false) : setLightTheme(true);
 
-        (inView && !importKnowledgeMobile) && setImportKnowledgeMobile(true);
+        // (inView && !importKnowledgeMobile) && setImportKnowledgeMobile(true);
 
         return (() => setLightTheme(false));
     }, [inView]);
@@ -160,7 +160,8 @@ const StartPage: React.FC<IStartPageProps> = ({ data, knowledge }) => {
                     })}>
 
                     <div className={styles['StartPage__KnowledgeWrapper']}>
-                        {(screenWidth < 768 && !!importKnowledgeMobile) ? (
+                        {/* {(screenWidth < 768 && !!importKnowledgeMobile) ? ( */}
+                        {(screenWidth < 768 && !!inView) ? (
                             <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
                         ) : (
                             <Knowledge knowledge={knowledge} screenWidth={screenWidth}/>
