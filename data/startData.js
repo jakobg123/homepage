@@ -3,7 +3,7 @@ export default {
     greeting: 'Vad kul att du har hittat hit!',
     preamble:
         // '<p>Nu till sommaren 2021 tar jag examen i Frontendutveckling på IT-Högskolan i Stockholm.</p><p><strong>Jag söker nu ett jobb</strong> där jag får tillämpa mina kunskaper i webbutveckling, samtidigt som jag fortsätter växa och får arbetslivserfarenhet inom IT-branschen.</p>',
-        `<p>Den här sajten är ett sidoprojekt som jag påbörjade i Februari 2021. Idéen var att ha ett större projekt som lärde mig mer webbutveckling och samtidigt öka min chans att få jobb efter <a href="https://www.iths.se/courses/frontend/">frontendutbildningen på IT-Högskolan</a>.</p><p>Som tur var fungerade det! Jag har både lärt mig mer och fått ett jobb. 🤓🔥🚀</p>`,
+        `<p>Den här sajten är ett sidoprojekt som jag påbörjade i Februari 2021. Idéen var att ha ett större projekt som lärde mig mer webbutveckling och samtidigt öka min chans att få jobb efter <a href="https://www.iths.se/courses/frontend/">frontendutbildningen på IT-Högskolan</a>.</p><p>Som tur var fungerade det! Jag har både lärt mig mer och fått ett jobb. <span class="emoji">🤓🔥🚀</span></p>`,
     entryText:
         '<h2>Det som finns här på sajten</h2><p>Här får man se lite av det jag har lärt mig under den 2-åriga YH-utbildningen, som bl.a. bestått av en mycket lärorik 6 månaders LIA(praktik) på <a href="https://www.frojd.se" >digitalbyrån Fröjd</a>.</p><p>På sajten lägger jag löpande upp moduler och funktionalitet som jag tycker är kul att koda ihop, och förhoppningsvis kommer sajten aldrig bli helt klar.</p><p>Ta gärna en titt på "Sajtbygget", där du får en översiktsbild av hur jag gått tillväga när jag byggt hemsidan.</p>',
     ctaText:

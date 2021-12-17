@@ -185,6 +185,10 @@
 
   &__Preamble {
     @extend %preamble;
+
+    span{
+      font-weight: 400 !important;
+    }
   }
 
   &__Paragraph {

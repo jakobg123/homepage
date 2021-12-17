@@ -28,7 +28,7 @@ class OtherBase extends PureComponent<IBaseProps>  {
 
         return (
             <>
-                <Meta title={"Sajtbygget - så här gjorde jag webbsidan"} description={"Snart är jag en nyexad junior Frontendutvecklare. Nu söker jag jobb där jag får arbeta med webbutveckling och programmering. Här är min portfolio-sajt."} />
+                <Meta title={"Sajtbygget - så här gjorde jag webbsidan"} description={'Se hur jag tänkt gällande design, tillgänglighet och optimering av portfolio-sajten.'} />
                 <PageContext.Provider value="Construction">
                     <BaseContainer
                         {...baseData} page={"Construction"}
