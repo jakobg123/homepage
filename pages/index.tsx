@@ -22,6 +22,8 @@ import PageContext from "../utils/Page.context";
 // import StartPage from '../containers/StartPage/StartPage.tsx';
 import StartPage from "../containers/StartPage";
 // const StartPage = dynamic(() => import("../containers/StartPage"));
+import Icon from "../components/Icon";
+
 
 export interface IBaseProps {
     baseData: {
@@ -46,6 +48,11 @@ class Base extends PureComponent<IBaseProps>  {
         return (
             <>
                 <Meta {...baseData.metaData} />
+                {/* <h1 style={{fontSize: '5rem'}}>hej</h1> */}
+                {/* <div style={{height: '200px', width: '200px', border: '1px solid red'}}>
+                    <img style={{minWidth: '100%', transform: 'scale(1.2)'}} src="/icons/arrowNext.svg" alt="" />
+                    {/* <Icon type={'arrowNext'} color={'Primary'} />
+                </div> */}
                 <PageContext.Provider value="Start">
                     <BaseContainer {...baseData} page={"Start"}>
                         <StartPage
